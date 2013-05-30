@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -38,7 +38,12 @@ end
 # Use unicorn as the app server
 gem 'unicorn'
 
-group :test, :development do
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
+
+group :development, :test do
   gem 'rspec-rails', "~> 2.13"
 
   gem 'debugger'
@@ -49,6 +54,13 @@ group :test do
 
   gem 'vcr'
 end
+
+group :production do
+  gem 'newrelic-grape' # need to setup
+end
+
+# API Builder
+gem 'grape', github: "intridea/grape"
 
 gem 'haml'
 

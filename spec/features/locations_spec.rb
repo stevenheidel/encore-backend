@@ -12,5 +12,7 @@ feature 'The locations page', :vcr do
 
     locations = all '#locations p'
     locations.should_not be_empty
+
+    page.should have_content "City Hall"
   end
 end

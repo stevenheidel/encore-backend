@@ -8,7 +8,7 @@ describe InstagramLocation do
       ]
       Instagram::Location.should_receive(:search).and_return(locations)
 
-      
+
     end
   end
 end
