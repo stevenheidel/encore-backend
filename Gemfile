@@ -56,11 +56,8 @@ group :test do
 end
 
 group :production do
-  gem 'newrelic-grape' # need to setup
+  
 end
-
-# API Builder
-gem 'grape', github: "intridea/grape"
 
 gem 'haml'
 
