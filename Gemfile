@@ -62,3 +62,8 @@ end
 gem 'haml'
 
 gem 'instagram'
+
+# RABL views
+gem 'rabl'
+# Also add either `oj` or `yajl-ruby` as the JSON parser
+gem 'oj'

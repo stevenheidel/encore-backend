@@ -1,18 +1,3 @@
-GIT
-  remote: git://github.com/intridea/grape.git
-  revision: dce96e180878ae11893c8c7982ec5abcc2811454
-  specs:
-    grape (0.4.2)
-      activesupport
-      builder
-      hashie (>= 1.2.0)
-      multi_json (>= 1.3.2)
-      multi_xml (>= 0.5.2)
-      rack (>= 1.3.0)
-      rack-accept
-      rack-mount
-      virtus
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -42,7 +27,6 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.9)
-    backports (2.6.7)
     better_errors (0.9.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
@@ -74,7 +58,6 @@ GEM
       debugger-ruby_core_source (~> 1.2.1)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.2)
-    descendants_tracker (0.0.1)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (1.4.0)
@@ -108,19 +91,13 @@ GEM
     mime-types (1.23)
     minitest (4.7.4)
     multi_json (1.7.3)
-    multi_xml (0.5.3)
     multipart-post (1.2.0)
-    newrelic-grape (1.3.0)
-      grape
-      newrelic_rpm
-    newrelic_rpm (3.6.2.96)
     nokogiri (1.5.9)
+    oj (2.0.14)
     polyglot (0.3.3)
+    rabl (0.8.5)
+      activesupport (>= 2.3.14)
     rack (1.5.2)
-    rack-accept (0.4.5)
-      rack (>= 0.4)
-    rack-mount (0.8.3)
-      rack (>= 1.0.0)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0.rc1)
@@ -198,9 +175,6 @@ GEM
       rack
       raindrops (~> 0.7)
     vcr (2.5.0)
-    virtus (0.5.4)
-      backports (~> 2.6.1)
-      descendants_tracker (~> 0.0.1)
     websocket (1.0.7)
     xpath (1.0.0)
       nokogiri (~> 1.3)
@@ -214,12 +188,12 @@ DEPENDENCIES
   capybara (= 2.0.2)
   coffee-rails (~> 4.0.0)
   debugger
-  grape!
   haml
   instagram
   jbuilder (~> 1.0.1)
   jquery-rails
-  newrelic-grape
+  oj
+  rabl
   rails (= 4.0.0.rc1)
   rspec-rails (~> 2.13)
   sass-rails (~> 4.0.0.rc1)
