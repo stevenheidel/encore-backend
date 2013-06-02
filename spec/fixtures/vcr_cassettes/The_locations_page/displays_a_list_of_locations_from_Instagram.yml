@@ -21,18 +21,18 @@ http_interactions:
       content-type:
       - application/json; charset=utf-8
       date:
-      - Sun, 19 May 2013 02:49:10 GMT
+      - Sun, 02 Jun 2013 03:50:34 GMT
       server:
       - nginx
       set-cookie:
-      - csrftoken=1977702b23d19a879933e68f952db506; expires=Sun, 18-May-2014 02:49:10
+      - csrftoken=7411f5feafdae29ed67144181e02b4b3; expires=Sun, 01-Jun-2014 03:50:34
         GMT; Max-Age=31449600; Path=/
       vary:
       - Cookie, Accept-Language, Accept-Encoding
       x-ratelimit-limit:
       - '5000'
       x-ratelimit-remaining:
-      - '4988'
+      - '4999'
       content-length:
       - '726'
       connection:
@@ -45,15 +45,15 @@ http_interactions:
         Im5hbWUiOiJUaGUgUGxhY2UgVG8gQmUifSx7ImxhdGl0dWRlIjo0My42NTMy
         MjYsImlkIjoiNzE2MzcwMTMiLCJsb25naXR1ZGUiOi03OS4zODMxODQsIm5h
         bWUiOiJOZXN0bFx1MDBlOSBUb2xsIEhvdXNlIENhZlx1MDBlOSBieSBDaGlw
+        In0seyJsYXRpdHVkZSI6NDMuNjUzMjI2LCJpZCI6IjQ2NTQyMDEwIiwibG9u
+        Z2l0dWRlIjotNzkuMzgzMTg0MywibmFtZSI6Ikxlc2xpZXZpbGxlIFB1bXBz
         In0seyJsYXRpdHVkZSI6NDMuNjUzMjI2LCJpZCI6IjM3MzcyNzE4IiwibG9u
         Z2l0dWRlIjotNzkuMzgzMTg0MywibmFtZSI6IlN1c2hpIEthamkifSx7Imxh
-        dGl0dWRlIjo0My42NTMyMjYsImlkIjoiMjQ0MDg2ODUiLCJsb25naXR1ZGUi
-        Oi03OS4zODMxODQzLCJuYW1lIjoiVGhlIERhbmZvcnRoIEV4cGVyaWVuY2Ug
-        LSBUaHJpbGwgb2YgdGhlIEdyaWxsIDNyZCBBbm51YWwifSx7ImxhdGl0dWRl
-        Ijo0My42NTMyMjYsImlkIjoiNDY1NDIwMTAiLCJsb25naXR1ZGUiOi03OS4z
-        ODMxODQzLCJuYW1lIjoiTGVzbGlldmlsbGUgUHVtcHMifSx7ImxhdGl0dWRl
-        Ijo0My42NTMyMjYsImlkIjoiMzA0NDUwNjYiLCJsb25naXR1ZGUiOi03OS4z
-        ODMxODQzLCJuYW1lIjoiUG9ydGVyIEFpcnBvcnQifSx7ImxhdGl0dWRlIjo0
+        dGl0dWRlIjo0My42NTMyMjYsImlkIjoiMzA0NDUwNjYiLCJsb25naXR1ZGUi
+        Oi03OS4zODMxODQzLCJuYW1lIjoiUG9ydGVyIEFpcnBvcnQifSx7ImxhdGl0
+        dWRlIjo0My42NTMyMjYsImlkIjoiMjQ0MDg2ODUiLCJsb25naXR1ZGUiOi03
+        OS4zODMxODQzLCJuYW1lIjoiVGhlIERhbmZvcnRoIEV4cGVyaWVuY2UgLSBU
+        aHJpbGwgb2YgdGhlIEdyaWxsIDNyZCBBbm51YWwifSx7ImxhdGl0dWRlIjo0
         My42NTMzMzM5NjMsImlkIjoiNjUyMjE2NSIsImxvbmdpdHVkZSI6LTc5LjM4
         MzMxMjQ2NCwibmFtZSI6IlRvcm9udG8gUHVibGljIExpYnJhcnkifSx7Imxh
         dGl0dWRlIjo0My42NTI5NDUsImlkIjoiNDg1MzI4NyIsImxvbmdpdHVkZSI6
@@ -85,5 +85,5 @@ http_interactions:
         dGl0dWRlIjo0My42NTMxMzk4OTcsImlkIjoiMzM5MTAiLCJsb25naXR1ZGUi
         Oi03OS4zODM5NjY5MjMsIm5hbWUiOiJUb3JvbnRvIENpdHkgSGFsbCJ9XX0=
     http_version: 
-  recorded_at: Sun, 19 May 2013 02:49:10 GMT
+  recorded_at: Sun, 02 Jun 2013 03:50:35 GMT
 recorded_with: VCR 2.5.0

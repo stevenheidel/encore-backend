@@ -1,0 +1,22 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.eventful.com/json/events/search?app_key=2J3KXtGbfVvkp3ZZ
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 
+      message: 
+    headers: {}
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    http_version: 
+  recorded_at: Sun, 02 Jun 2013 05:26:15 GMT
+recorded_with: VCR 2.5.0

@@ -32,15 +32,18 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
 # Use unicorn as the app server
 gem 'unicorn'
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem 'annotate', ">= 2.5.0"
+
+  gem "flay"
+  gem "rails_best_practices"
+  gem "reek"
 end
 
 group :development, :test do
@@ -59,8 +62,10 @@ group :production do
   
 end
 
+# Use HAML for HTML templates
 gem 'haml'
 
+# Social APIs
 gem 'instagram'
 
 # RABL views
@@ -71,3 +76,13 @@ gem 'oj' # Also add either `oj` or `yajl-ruby` as the JSON parser
 gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', branch: 'rails-4'
 gem 'devise'
 gem 'protected_attributes'
+
+# Faraday
+gem 'faraday'
+gem 'faraday_middleware'
+gem 'hashie'
+
+# Sidekiq
+gem 'sidekiq'
+gem 'slim', ">= 1.3.0"
+gem 'sinatra', '>= 1.3.0', :require => nil

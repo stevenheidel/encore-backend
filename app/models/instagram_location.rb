@@ -1,7 +1,14 @@
-class InstagramLocation < ActiveRecord::Base
-  include Instagramable
+# == Schema Information
+#
+# Table name: instagram_locations
+#
+#  id         :integer          not null, primary key
+#  created_at :datetime
+#  updated_at :datetime
+#
 
+class InstagramLocation < ActiveRecord::Base
   def self.search(latitude, longitude)
-    instagram_locations(latitude, longitude)
+    InstagramAPI.instagram_locations(latitude, longitude)
   end
 end
