@@ -8,6 +8,7 @@
 #  longitude  :decimal(, )
 #  created_at :datetime
 #  updated_at :datetime
+#  location   :string(255)
 #
 
 require 'spec_helper'

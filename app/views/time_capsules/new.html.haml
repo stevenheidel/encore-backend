@@ -1,0 +1,6 @@
+= form_tag controller: 'time_capsules', action: 'create', method: 'post' do
+  = text_field_tag :concert_name
+  = text_field_tag :concert_date
+  = text_field_tag :venue_name
+  = text_field_tag :venue_location
+  = submit_tag "Populate"

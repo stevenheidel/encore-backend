@@ -8,6 +8,8 @@
 #  date       :date
 #  created_at :datetime
 #  updated_at :datetime
+#  start_time :datetime
+#  end_time   :datetime
 #
 
 require 'spec_helper'

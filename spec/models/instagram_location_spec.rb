@@ -5,6 +5,7 @@
 #  id         :integer          not null, primary key
 #  created_at :datetime
 #  updated_at :datetime
+#  venue_id   :integer
 #
 
 require 'spec_helper'
@@ -15,8 +16,10 @@ describe InstagramLocation do
       locations = [
         {}
       ]
-      Instagram::Location.should_receive(:search).and_return(locations)
+      #InstagramLocation.should_receive(:search).and_return(locations)
+    end
 
+    it '' do
 
     end
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130602034507) do
+ActiveRecord::Schema.define(version: 20130603200117) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -37,9 +37,25 @@ ActiveRecord::Schema.define(version: 20130602034507) do
     t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "instagram_locations", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "venue_id"
+  end
+
+  create_table "instagram_photos", force: true do |t|
+    t.string   "instagram_id"
+    t.text     "caption"
+    t.string   "link"
+    t.string   "image_url"
+    t.integer  "time_capsule_id"
+    t.string   "user_name"
+    t.string   "user_profile_picture"
+    t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -70,6 +86,7 @@ ActiveRecord::Schema.define(version: 20130602034507) do
     t.decimal  "longitude"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "location"
   end
 
 end

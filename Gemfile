@@ -44,6 +44,15 @@ group :development do
   gem "flay"
   gem "rails_best_practices"
   gem "reek"
+
+  # Guard
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-rails'
+  gem 'guard-bundler'
+  gem 'guard-spin'
+  gem 'guard-zeus'
+  # gem 'guard-livereload' look into setting up
 end
 
 group :development, :test do
@@ -56,6 +65,10 @@ group :test do
   gem 'capybara', "2.0.2"
 
   gem 'vcr'
+
+  gem "factory_girl_rails", "~> 4.0"
+
+  gem 'test_after_commit'
 end
 
 group :production do

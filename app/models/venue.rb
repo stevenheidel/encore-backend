@@ -8,8 +8,20 @@
 #  longitude  :decimal(, )
 #  created_at :datetime
 #  updated_at :datetime
+#  location   :string(255)
 #
 
 class Venue < ActiveRecord::Base
-  belongs_to :concert
+  has_many :concerts
+  has_many :instagram_locations
+
+  after_commit :location_from_eventful
+
+  private
+
+  def location_from_eventful
+    return if self.latitude or self.longitude
+
+    EventfulFiller.perform_async(:venue, self.id)
+  end
 end
