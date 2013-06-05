@@ -45,4 +45,9 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  # Guard starts the first line at the wrong point for some reason
+  config.before(:all) do
+    print "\n"
+  end
 end

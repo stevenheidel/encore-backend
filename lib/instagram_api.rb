@@ -8,12 +8,14 @@ class InstagramAPI
     Instagram.location_search(latitude, longitude)
   end
 
-  def self.location_recent_media(location_id, min_timestamp, max_timestamp)
-    Instagram.location_recent_media(
-      location_id,
-      min_timestamp: min_timestamp.to_i, # to_i converts to a Unix timestamp
-      max_timestamp: max_timestamp.to_i
-    )
+  # TODO pass through a hash for min, max, etc.
+  def self.location_recent_media(location_id, min_timestamp, max_timestamp, max_id=nil)
+    hash = {}
+    hash[:min_timestamp] = min_timestamp.to_i # to_i converts to a Unix timestamp
+    hash[:max_timestamp] = max_timestamp.to_i
+    hash[:max_id] = max_id if max_id
+
+    Instagram.location_recent_media(location_id, hash)
   end
 
   def self.media_search(latitude, longitude, min_timestamp, max_timestamp)

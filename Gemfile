@@ -86,7 +86,7 @@ gem 'rabl'
 gem 'oj' # Also add either `oj` or `yajl-ruby` as the JSON parser
 
 # Using Rails 4 branch of Rails Admin
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git', branch: 'rails-4'
+gem 'rails_admin', :github => 'sferik/rails_admin', branch: 'rails-4'
 gem 'devise'
 gem 'protected_attributes'
 
