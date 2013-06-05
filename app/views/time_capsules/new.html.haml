@@ -1,6 +1,29 @@
-= form_tag controller: 'time_capsules', action: 'create', method: 'post' do
-  = text_field_tag :concert_name
-  = text_field_tag :concert_date
-  = text_field_tag :venue_name
-  = text_field_tag :venue_location
-  = submit_tag "Populate"
+= form_tag({controller: 'time_capsules', action: 'new'}, {method: 'get'}) do
+  = label_tag :concert_name
+  = text_field_tag :concert_name, params[:concert_name]
+  = label_tag :concert_date
+  = text_field_tag :concert_date, params[:concert_date]
+
+  -#= label_tag :venue_name
+  -#= text_field_tag :venue_name
+  = label_tag :city
+  = text_field_tag :city, params[:city]
+
+  = submit_tag "Search"
+
+%br
+
+- if @concerts
+  %table{border: 1}
+    %thead
+      %th Concert Name
+      %th Venue Name
+      %th Start Time
+      %th 
+    %tbody
+      - @concerts.each do |concert|
+        %tr
+          %td= concert.title
+          %td= concert.venue_name
+          %td= concert.start_time
+          %td= button_to "Add Timecapsule", action: 'create', eventful_id: concert.id

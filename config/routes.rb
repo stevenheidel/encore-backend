@@ -13,6 +13,7 @@ EncoreBackend::Application.routes.draw do
   get 'locations' => 'locations#index'
 
   resources :time_capsules
+  get 'time_capsules/:id/populated' => 'time_capsules#populated'
 
   mount Sidekiq::Web => '/sidekiq'
 end

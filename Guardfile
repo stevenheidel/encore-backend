@@ -27,6 +27,5 @@ end
 
 guard :rails, zeus: true do
   watch('Gemfile.lock')
-  #watch(%r{^(config|lib)/.*})
-  watch(%r{^(config)/.*})
+  watch(%r{^(config|lib)/.*})
 end

@@ -9,10 +9,18 @@ class InstagramAPI
   end
 
   def self.location_recent_media(location_id, min_timestamp, max_timestamp)
-    pp location_id, min_timestamp.to_i, max_timestamp.to_i
     Instagram.location_recent_media(
       location_id,
       min_timestamp: min_timestamp.to_i, # to_i converts to a Unix timestamp
+      max_timestamp: max_timestamp.to_i
+    )
+  end
+
+  def self.media_search(latitude, longitude, min_timestamp, max_timestamp)
+    Instagram.media_search(
+      latitude,
+      longitude,
+      min_timestamp: min_timestamp.to_i,
       max_timestamp: max_timestamp.to_i
     )
   end

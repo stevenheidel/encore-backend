@@ -5,18 +5,15 @@ feature 'The populator page', :vcr do
     visit '/time_capsules/new'
   end
 
-  scenario 'displays a list of sample images from Instagram' do
-    fill_in "concert_name", with: 'Sensation'
-    fill_in "concert_date", with: 'June 01 2013'
+  scenario 'performs searches and displays results' do
+    fill_in "concert_name", with: 'How To Destroy Angels'
+    fill_in "concert_date", with: 'April 25 2013'
 
-    fill_in "venue_name", with: 'Rogers Centre'
-    fill_in "venue_location", with: 'Toronto'
+    #fill_in "venue_name", with: 'Sound Academy'
+    fill_in "city", with: 'Toronto'
 
-    click_button "Populate"
+    click_button "Search"
 
-    photos = all '#photos p'
-    photos.should_not be_empty
-
-    page.should have_content "http://instagram.com/p/YiwNpiNycl/"
+    
   end
 end
