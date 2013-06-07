@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130607024031) do
+ActiveRecord::Schema.define(version: 20130607193802) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20130607024031) do
   create_table "artists", force: true do |t|
     t.string   "name"
     t.integer  "songkick_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "attendances", force: true do |t|
+    t.integer  "concert_id"
+    t.integer  "user_id"
+    t.integer  "who_referred"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -96,6 +104,17 @@ ActiveRecord::Schema.define(version: 20130607024031) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users", force: true do |t|
+    t.integer  "facebook_uuid"
+    t.string   "oauth_string"
+    t.datetime "oauth_expirty"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["facebook_uuid"], name: "index_users_on_facebook_uuid", unique: true
 
   create_table "venues", force: true do |t|
     t.string   "name"

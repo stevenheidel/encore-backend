@@ -17,7 +17,10 @@
 class Concert < ActiveRecord::Base
   has_one :time_capsule
 
+  belongs_to :artist
   belongs_to :venue
-  belongs_to :concert
   has_many :setlist_songs
+
+  has_many :attendances
+  has_many :users, through: :attendances
 end
