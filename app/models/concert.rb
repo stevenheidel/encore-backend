@@ -10,10 +10,14 @@
 #  updated_at  :datetime
 #  start_time  :datetime
 #  end_time    :datetime
-#  eventful_id :integer
+#  eventful_id :string(255)
+#  artist_id   :integer
 #
 
 class Concert < ActiveRecord::Base
-  has_one :time_capsule # may be changed to has_many later
+  has_one :time_capsule
+
   belongs_to :venue
+  belongs_to :concert
+  has_many :setlist_songs
 end

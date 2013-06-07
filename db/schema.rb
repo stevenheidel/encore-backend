@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130604214856) do
+ActiveRecord::Schema.define(version: 20130607024031) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(version: 20130604214856) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
+  create_table "artists", force: true do |t|
+    t.string   "name"
+    t.integer  "songkick_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "concerts", force: true do |t|
     t.string   "name"
     t.integer  "venue_id"
@@ -40,6 +47,7 @@ ActiveRecord::Schema.define(version: 20130604214856) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "eventful_id"
+    t.integer  "artist_id"
   end
 
   create_table "instagram_locations", force: true do |t|
@@ -73,6 +81,14 @@ ActiveRecord::Schema.define(version: 20130604214856) do
   end
 
   add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+
+  create_table "setlist_songs", force: true do |t|
+    t.string   "name"
+    t.string   "itunes_link"
+    t.string   "concert_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "time_capsules", force: true do |t|
     t.boolean  "populated"

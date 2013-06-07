@@ -10,7 +10,7 @@ describe ConcertPopulator, :vcr do
 
   describe '.perform' do
     it 'should get some posts from Instagram' do
-      puts "Count: #{InstagramPhoto.count}"
+      InstagramPhoto.count.should > 0
     end
   end
 end

@@ -11,5 +11,7 @@
 
 class TimeCapsule < ActiveRecord::Base
   belongs_to :concert
+
+  # All the fun associations
   has_many :instagram_photos
 end

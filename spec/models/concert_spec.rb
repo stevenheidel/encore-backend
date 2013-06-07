@@ -10,7 +10,8 @@
 #  updated_at  :datetime
 #  start_time  :datetime
 #  end_time    :datetime
-#  eventful_id :integer
+#  eventful_id :string(255)
+#  artist_id   :integer
 #
 
 require 'spec_helper'

@@ -9,7 +9,7 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  location    :string(255)
-#  eventful_id :integer
+#  eventful_id :string(255)
 #
 
 class Venue < ActiveRecord::Base

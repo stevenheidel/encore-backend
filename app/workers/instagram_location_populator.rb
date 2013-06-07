@@ -14,7 +14,6 @@ class InstagramLocationPopulator
     )
     
     if (max_id = result.pagination.next_max_id)
-      p max_id
       InstagramLocationPopulator.perform_async(time_capsule_id, instagram_location_id, max_id)
     end
 
