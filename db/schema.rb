@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130607193802) do
+ActiveRecord::Schema.define(version: 20130608014111) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -105,13 +105,24 @@ ActiveRecord::Schema.define(version: 20130607193802) do
     t.datetime "updated_at"
   end
 
+  create_table "user_photos", force: true do |t|
+    t.string   "time_capsule_id"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.integer  "facebook_uuid"
     t.string   "oauth_string"
-    t.datetime "oauth_expirty"
+    t.datetime "oauth_expiry"
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["facebook_uuid"], name: "index_users_on_facebook_uuid", unique: true

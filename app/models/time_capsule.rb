@@ -14,8 +14,9 @@ class TimeCapsule < ActiveRecord::Base
 
   # All the fun associations
   has_many :instagram_photos
+  has_many :user_photos
 
   def posts
-    self.instagram_photos
+    self.instagram_photos + self.user_photos
   end
 end

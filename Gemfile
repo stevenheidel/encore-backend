@@ -69,6 +69,8 @@ group :test do
   gem "factory_girl_rails", "~> 4.0"
 
   gem 'test_after_commit'
+
+  gem 'rack-test'
 end
 
 group :production do
@@ -80,6 +82,8 @@ gem 'haml'
 
 # Social APIs
 gem 'instagram'
+gem 'koala' # for Facebook
+gem 'twitter'
 
 # RABL views
 gem 'rabl'
@@ -99,3 +103,5 @@ gem 'hashie'
 gem 'sidekiq'
 gem 'slim', ">= 1.3.0"
 gem 'sinatra', '>= 1.3.0', :require => nil
+
+gem 'paperclip'
