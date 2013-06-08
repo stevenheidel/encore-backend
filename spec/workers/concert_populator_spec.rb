@@ -10,8 +10,8 @@ describe ConcertPopulator, :vcr do
 
   describe '.perform' do
     it 'should create a populated time capsule' do
-      concert.time_capsule.should_not be_nil
-      concert.time_capsule.populated.should be_true
+      concert.posts.any?.should be_true
+      concert.populated.should be_true
     end
 
     it 'should get some posts from Instagram' do

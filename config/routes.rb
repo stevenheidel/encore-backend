@@ -10,7 +10,7 @@ EncoreBackend::Application.routes.draw do
 
       resources :concerts, only: [:index, :show] do
         resources :users, only: []
-        resource :time_capsule, only: [:show]
+        resources :posts, only: [:index, :create]
 
         collection do
           get :popular
@@ -36,6 +36,6 @@ EncoreBackend::Application.routes.draw do
   # Testing Routes
   get 'locations' => 'locations#index'
 
-  resources :time_capsules
-  get 'time_capsules/:id/populated' => 'time_capsules#populated'
+  resources :concerts
+  get 'concerts/:id/populated' => 'concerts#populated'
 end

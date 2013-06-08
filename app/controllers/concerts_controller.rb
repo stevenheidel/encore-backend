@@ -1,6 +1,6 @@
 require 'eventful_api'
 
-class TimeCapsulesController < ApplicationController
+class ConcertsController < ApplicationController
   def new
     if params[:concert_name].blank?
       @concerts = nil
@@ -11,8 +11,6 @@ class TimeCapsulesController < ApplicationController
 
   def create
     e = EventfulAPI.get_event_by_id(params[:eventful_id])
-
-    time_capsule = TimeCapsule.new
 
     concert = Concert.new
     concert.name   = e.title
@@ -36,19 +34,16 @@ class TimeCapsulesController < ApplicationController
 
     concert.venue = venue
     concert.save
-
-    time_capsule.concert = concert
-    time_capsule.save
     
-    redirect_to time_capsule
+    redirect_to concert
   end
 
   def show
-    @time_capsule = TimeCapsule.find(params[:id])
-    ConcertPopulator.perform_async(@time_capsule.concert.id) unless @time_capsule.populated
+    @concert = Concert.find(params[:id])
+    ConcertPopulator.perform_async(@concert.id) unless @concert.populated
   end
 
   def populated
-    render :text => TimeCapsule.find(params[:id]).populated
+    render :text => Concert.find(params[:id]).populated
   end
 end

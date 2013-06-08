@@ -90,7 +90,7 @@ gem 'rabl'
 gem 'oj' # Also add either `oj` or `yajl-ruby` as the JSON parser
 
 # Using Rails 4 branch of Rails Admin
-gem 'rails_admin', :github => 'sferik/rails_admin', branch: 'rails-4'
+gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
 gem 'devise'
 gem 'protected_attributes'
 
@@ -104,4 +104,4 @@ gem 'sidekiq'
 gem 'slim', ">= 1.3.0"
 gem 'sinatra', '>= 1.3.0', :require => nil
 
-gem 'paperclip'
+gem 'paperclip', github: 'thoughtbot/paperclip'

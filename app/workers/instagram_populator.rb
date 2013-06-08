@@ -1,13 +1,12 @@
 class InstagramPopulator
   include Sidekiq::Worker
 
-  def perform(time_capsule_id)
-    time_capsule = TimeCapsule.find(time_capsule_id)
-    concert = time_capsule.concert
+  def perform(concert_id)
+    concert = Concert.find(concert_id)
 
     # Populate with Instagram Photos by Locations
     InstagramLocation.search(concert.venue.latitude, concert.venue.longitude).each do |location|
-      InstagramLocationPopulator.perform_async(time_capsule_id, location.id)
+      InstagramLocationPopulator.perform_async(concert_id, location.id)
     end
 
     #pp InstagramAPI.media_search(concert.venue.latitude, concert.venue.longitude,

@@ -3,9 +3,8 @@ require 'instagram_api'
 class InstagramLocationPopulator
   include Sidekiq::Worker
 
-  def perform(time_capsule_id, instagram_location_id, instagram_max_id=nil)
-    time_capsule = TimeCapsule.find(time_capsule_id)
-    concert = time_capsule.concert
+  def perform(concert_id, instagram_location_id, instagram_max_id=nil)
+    concert = Concert.find(concert_id)
 
     result = InstagramAPI.location_recent_media(
       instagram_location_id, 
@@ -14,17 +13,17 @@ class InstagramLocationPopulator
     )
     
     if (max_id = result.pagination.next_max_id)
-      InstagramLocationPopulator.perform_async(time_capsule_id, instagram_location_id, max_id)
+      InstagramLocationPopulator.perform_async(concert_id, instagram_location_id, max_id)
     end
 
     result.each do |media|
-      unless InstagramPhoto.where(:link => media.link, :time_capsule => concert.time_capsule).exists?
+      unless InstagramPhoto.where(:link => media.link, :concert => concert).exists?
         InstagramPhoto.create({
           instagram_id: media.id,
           caption: media.caption.try(:text),
           link: media.link,
           image_url: media.images.standard_resolution.url,
-          time_capsule: concert.time_capsule,
+          concert: concert,
           user_name: media.user.username,
           user_profile_picture: media.user.profile_picture,
           user_id: media.user.id

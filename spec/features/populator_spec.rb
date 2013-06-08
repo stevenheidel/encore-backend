@@ -2,7 +2,7 @@ require 'spec_helper'
 
 feature 'The populator page', :vcr do
   before do
-    visit '/time_capsules/new'
+    visit '/concerts/new'
   end
 
   scenario 'performs searches and displays results' do

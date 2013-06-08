@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130608014111) do
+ActiveRecord::Schema.define(version: 20130608041032) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 20130608014111) do
     t.datetime "end_time"
     t.string   "eventful_id"
     t.integer  "artist_id"
+    t.boolean  "populated"
   end
 
   create_table "instagram_locations", force: true do |t|
@@ -69,7 +70,7 @@ ActiveRecord::Schema.define(version: 20130608014111) do
     t.text     "caption"
     t.string   "link"
     t.string   "image_url"
-    t.integer  "time_capsule_id"
+    t.integer  "concert_id"
     t.string   "user_name"
     t.string   "user_profile_picture"
     t.string   "user_id"
@@ -106,10 +107,14 @@ ActiveRecord::Schema.define(version: 20130608014111) do
   end
 
   create_table "user_photos", force: true do |t|
-    t.string   "time_capsule_id"
+    t.string   "concert_id"
     t.string   "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -119,10 +124,6 @@ ActiveRecord::Schema.define(version: 20130608014111) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.integer  "photo_file_size"
-    t.datetime "photo_updated_at"
   end
 
   add_index "users", ["facebook_uuid"], name: "index_users_on_facebook_uuid", unique: true

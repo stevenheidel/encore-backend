@@ -13,8 +13,4 @@ FactoryGirl.define do
     latitude  43.6413958
     longitude -79.3543721
   end
-
-  factory :time_capsule do 
-    concert
-  end
 end

@@ -12,6 +12,7 @@
 #  end_time    :datetime
 #  eventful_id :string(255)
 #  artist_id   :integer
+#  populated   :boolean
 #
 
 class Concert < ActiveRecord::Base
@@ -23,4 +24,12 @@ class Concert < ActiveRecord::Base
 
   has_many :attendances
   has_many :users, through: :attendances
+
+  # All the fun associations
+  has_many :instagram_photos
+  has_many :user_photos
+
+  def posts
+    self.instagram_photos + self.user_photos
+  end
 end

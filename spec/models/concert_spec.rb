@@ -12,6 +12,7 @@
 #  end_time    :datetime
 #  eventful_id :string(255)
 #  artist_id   :integer
+#  populated   :boolean
 #
 
 require 'spec_helper'

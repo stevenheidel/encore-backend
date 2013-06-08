@@ -7,7 +7,7 @@
 #  caption              :text
 #  link                 :string(255)
 #  image_url            :string(255)
-#  time_capsule_id      :integer
+#  concert_id           :integer
 #  user_name            :string(255)
 #  user_profile_picture :string(255)
 #  user_id              :string(255)

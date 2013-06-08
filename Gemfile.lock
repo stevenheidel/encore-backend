@@ -19,6 +19,17 @@ GIT
       safe_yaml (~> 0.6)
       sass-rails (~> 4.0.0.beta1)
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: 1da9e4d6fed33987bdf8fb9a4f21d1ca902b1c7f
+  specs:
+    paperclip (3.4.2)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -185,12 +196,6 @@ GEM
     nokogiri (1.5.10)
     oj (2.0.14)
     orm_adapter (0.0.7)
-    paperclip (3.4.2)
-      activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
-      activesupport (>= 3.0.0)
-      cocaine (~> 0.5.0)
-      mime-types
     polyglot (0.3.3)
     protected_attributes (1.0.1)
       activemodel (>= 4.0.0.beta, < 5.0)
@@ -375,7 +380,7 @@ DEPENDENCIES
   jquery-rails
   koala
   oj
-  paperclip
+  paperclip!
   protected_attributes
   rabl
   rack-test

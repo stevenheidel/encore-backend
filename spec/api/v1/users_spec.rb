@@ -8,7 +8,7 @@ describe "/api/v1/users", :type => :api do
         "facebook_id" => "1651770074"} }
 
     it "should be successful for a brand new user" do
-      post "#{url}.json", params
+      post url, params
 
       assert last_response.ok?
       last_response.body.should == "success"
@@ -18,7 +18,7 @@ describe "/api/v1/users", :type => :api do
     end
 
     it "should be successful for a current user" do
-      5.times { post "#{url}.json", params }
+      5.times { post url, params }
 
       assert last_response.ok?
 
