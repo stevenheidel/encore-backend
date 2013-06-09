@@ -7,7 +7,7 @@ gem 'rails', '4.0.0.rc1'
 gem 'sqlite3'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0.rc1'
+gem 'sass-rails', '4.0.0.rc1'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -91,6 +91,7 @@ gem 'oj' # Also add either `oj` or `yajl-ruby` as the JSON parser
 
 # Using Rails 4 branch of Rails Admin
 gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
+gem 'font-awesome-sass-rails' # TODO Temporary see: https://github.com/sferik/rails_admin/issues/1443
 gem 'devise'
 gem 'protected_attributes'
 
