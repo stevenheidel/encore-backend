@@ -56,25 +56,25 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails', "~> 2.13"
-
   gem 'debugger'
 end
 
 group :test do
+  # RSpec
+  gem 'rspec-rails', "~> 2.13"
   gem 'capybara', "2.0.2"
-
   gem 'vcr'
-
   gem "factory_girl_rails", "~> 4.0"
-
   gem 'test_after_commit'
-
   gem 'rack-test'
+
+  # Cucumber
+  gem 'cucumber-rails', :require => false
+  gem 'database_cleaner'
 end
 
 group :production do
-  
+  gem 'pg'
 end
 
 # Use HAML for HTML templates
@@ -105,4 +105,5 @@ gem 'sidekiq'
 gem 'slim', ">= 1.3.0"
 gem 'sinatra', '>= 1.3.0', :require => nil
 
+# Paperclip
 gem 'paperclip', github: 'thoughtbot/paperclip'
