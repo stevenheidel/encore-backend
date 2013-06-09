@@ -1,12 +1,14 @@
 class Api::V1::UsersController < Api::V1::BaseController
   def create
     # Take Facebook login info and either update or create new user
+    p params
+
     user = User.where(:facebook_uuid => params[:facebook_id])
     if user.any?
       user = user.first
     else
       user = User.new
-      user.facebook_uuid = "1651770074"
+      user.facebook_uuid = params[:facebook_id].to_i
     end
 
     user.oauth_string = params[:oauth]
