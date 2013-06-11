@@ -14,4 +14,6 @@
 class User < ActiveRecord::Base
   has_many :attendances
   has_many :concerts, through: :attendances
+
+  has_many :user_photos
 end

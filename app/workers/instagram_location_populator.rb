@@ -17,20 +17,7 @@ class InstagramLocationPopulator
     end
 
     result.each do |media|
-      unless InstagramPhoto.where(:link => media.link, :concert => concert).exists?
-        InstagramPhoto.create({
-          instagram_id: media.id,
-          caption: media.caption.try(:text),
-          link: media.link,
-          image_url: media.images.standard_resolution.url,
-          concert: concert,
-          user_name: media.user.username,
-          user_profile_picture: media.user.profile_picture,
-          user_id: media.user.id
-        },
-        :without_protection => true # TODO avoid this
-        )
-      end
+      concert.instagram_photos << InstagramPhoto.build_from_hashie(media)
     end
   end
 end

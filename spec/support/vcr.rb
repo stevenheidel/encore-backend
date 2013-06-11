@@ -7,4 +7,6 @@ VCR.configure do |config|
     re_record_interval: 1.week,
     record: :new_episodes
   }
+
+  config.allow_http_connections_when_no_cassette = true
 end

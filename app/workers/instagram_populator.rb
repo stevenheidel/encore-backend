@@ -6,10 +6,9 @@ class InstagramPopulator
 
     # Populate with Instagram Photos by Locations
     InstagramLocation.search(concert.venue.latitude, concert.venue.longitude).each do |location|
-      InstagramLocationPopulator.perform_async(concert_id, location.id)
+      InstagramLocationPopulator.perform_async(concert_id, location.id.to_i)
     end
 
-    #pp InstagramAPI.media_search(concert.venue.latitude, concert.venue.longitude,
-     # concert.start_time, concert.end_time)
+    InstagramSearchPopulator.perform_async(concert_id)
   end
 end

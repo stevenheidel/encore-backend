@@ -2,7 +2,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   # TODO: The 'else' should be listings based on location, etc.
   def index
     if params[:user_id]
-      @concerts = User.find(params[:user_id]).concerts
+      @concerts = User.find_by(:facebook_uuid => params[:user_id]).concerts
     else
       @concerts = Concert.all
     end
