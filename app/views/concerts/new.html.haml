@@ -16,14 +16,16 @@
 - if @concerts
   %table{border: 1}
     %thead
-      %th Concert Name
-      %th Venue Name
+      %th Concert
+      %th Venue
+      %th City
       %th Start Time
       %th 
     %tbody
       - @concerts.each do |concert|
         %tr
-          %td= concert.title
-          %td= concert.venue_name
-          %td= concert.start_time
-          %td= button_to "Add Timecapsule", action: 'create', eventful_id: concert.id
+          %td= concert.displayName
+          %td= concert.venue.displayName
+          %td= concert.location.city
+          %td= concert.start.datetime
+          %td= button_to "Add Timecapsule", action: 'create', songkick_id: concert.id

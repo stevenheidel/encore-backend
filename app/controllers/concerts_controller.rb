@@ -1,35 +1,34 @@
-require 'eventful_api'
+require 'songkick_api'
 
 class ConcertsController < ApplicationController
   def new
-    if params[:concert_name].blank?
-      @concerts = nil
-    else
-      @concerts = EventfulAPI.full_search(params[:concert_name], params[:city], params[:concert_date])
+    unless params[:concert_name].blank?
+      @concerts = SongkickAPI.full_search(params[:concert_name], params[:concert_date], params[:city])
     end
   end
 
   def create
-    e = EventfulAPI.get_event_by_id(params[:eventful_id])
+    e = SongkickAPI.get_event_by_id(params[:songkick_id])
 
     concert = Concert.new
-    concert.name   = e.title
-    concert.date   = e.start_time
-    concert.start_time = DateTime.parse(e.start_time)
-    if e.stop_time
-      concert.end_time = DateTime.parse(e.stop_time)
+    concert.name   = e.displayName
+    concert.date   = e.start.date
+    if e.start.time
+      concert.start_time = DateTime.parse(e.start.date + "T" + e.start.time)
     else
-      # Arbitrarily add 6 hours from start time
-      concert.end_time = concert.start_time + 6.hours
+      # TODO: Arbitrarily choose 6:00 as starting time
+      concert.start_time = DateTime.parse(e.start.date + "T" + "18:00:00")
     end
-    concert.eventful_id = e.id
+    # TODO: Arbitrarily add 6 hours from start time
+    concert.end_time = concert.start_time + 6.hours
+    concert.songkick_id = e.id
 
     venue = Venue.new
-    venue.name     = e.venue_name
-    venue.location = e.city
-    venue.latitude  = e.latitude
-    venue.longitude = e.longitude
-    venue.eventful_id = e.venue_id
+    venue.name     = e.venue.displayName
+    venue.location = e.location.city
+    venue.latitude  = e.location.lat
+    venue.longitude = e.location.lng
+    venue.songkick_id = e.venue.id
     venue.save
 
     concert.venue = venue

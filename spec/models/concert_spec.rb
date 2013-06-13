@@ -10,9 +10,9 @@
 #  updated_at  :datetime
 #  start_time  :datetime
 #  end_time    :datetime
-#  eventful_id :string(255)
 #  artist_id   :integer
 #  populated   :boolean
+#  songkick_id :integer
 #
 
 require 'spec_helper'
