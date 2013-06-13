@@ -11,7 +11,7 @@ describe "/api/v1/users", :type => :api do
       post url, params
 
       assert last_response.ok?
-      last_response.body.should == "success"
+      last_response.body.should == '{"response":"success"}'
 
       (u = User.where(:facebook_uuid => 1651770074)).count.should == 1
       u.first.oauth_expiry.should == DateTime.parse("2013-08-02T02:53:23Z")

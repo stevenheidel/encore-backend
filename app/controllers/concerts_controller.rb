@@ -23,12 +23,11 @@ class ConcertsController < ApplicationController
     concert.end_time = concert.start_time + 6.hours
     concert.songkick_id = e.id
 
-    venue = Venue.new
+    venue = Venue.first_or_initialize(songkick_id: e.venue_id)
     venue.name     = e.venue.displayName
     venue.location = e.location.city
     venue.latitude  = e.location.lat
     venue.longitude = e.location.lng
-    venue.songkick_id = e.venue.id
     venue.save
 
     concert.venue = venue

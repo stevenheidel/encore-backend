@@ -8,6 +8,10 @@ class InstagramAPI
     Instagram.location_search(latitude, longitude)
   end
 
+  def self.foursquare_location(foursquare_id)
+    Instagram.location_search(foursquare_id)
+  end
+
   # TODO pass through a hash for min, max, etc.
   def self.location_recent_media(location_id, min_timestamp, max_timestamp, max_id=nil)
     hash = {}

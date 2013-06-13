@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130611162254) do
+ActiveRecord::Schema.define(version: 20130613215847) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 20130611162254) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "venue_id"
+    t.integer  "instagram_id"
   end
 
   create_table "instagram_photos", force: true do |t|

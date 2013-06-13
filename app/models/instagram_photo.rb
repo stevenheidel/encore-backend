@@ -20,7 +20,7 @@
 class InstagramPhoto < ActiveRecord::Base
   belongs_to :concert
 
-  #validates_uniqueness_of :link, scope: :concert # TODO: add back in
+  validates_uniqueness_of :link, scope: :concert
 
   # Builds an object from JSON returned by Instagram
   def self.build_from_hashie(media)

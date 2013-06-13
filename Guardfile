@@ -26,7 +26,7 @@ guard :bundler do
   watch('Gemfile')
 end
 
-guard :rails, zeus: true, port: 9283 do
+guard :rails, zeus: true, port: 3000 do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
 end

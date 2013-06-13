@@ -84,6 +84,7 @@ gem 'haml'
 gem 'instagram'
 gem 'koala' # for Facebook
 gem 'twitter'
+gem 'foursquare2'
 
 # RABL views
 gem 'rabl'
@@ -99,6 +100,7 @@ gem 'protected_attributes'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'hashie'
+# gem 'typhoeus' # TODO: Use Typhoeus for concurrent HTTP requests
 
 # Sidekiq
 gem 'sidekiq'
