@@ -11,8 +11,19 @@
     %li
       %a#future Future
 
-#menu
+%script{id: 'concert_template', type: 'text/html'}
+  %h1 {{concert.name}}
+  %p {{concert.date}}
+  #photos 
+    %a Show Photos
 
-#content
+%script{id: 'posts_template', type: 'text/html'}
+  .gallery
+    {{#posts}}
+    %a
+      %img{src: '{{image_url}}', width: 200, height: 200}
+    {{/posts}}
 
-= link_to "Return to User List", users_path
+#container{'data-id' => @user_id}
+  #menu
+  #content
