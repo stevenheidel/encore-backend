@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130613215847) do
+ActiveRecord::Schema.define(version: 20130615184230) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20130613215847) do
 
   create_table "artists", force: true do |t|
     t.string   "name"
-    t.integer  "songkick_id"
+    t.integer  "songkick_uuid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -56,25 +56,26 @@ ActiveRecord::Schema.define(version: 20130613215847) do
     t.datetime "end_time"
     t.integer  "artist_id"
     t.boolean  "populated"
-    t.integer  "songkick_id"
+    t.integer  "songkick_uuid"
   end
 
   create_table "instagram_locations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "venue_id"
-    t.integer  "instagram_id"
+    t.integer  "instagram_uuid"
+    t.string   "name"
   end
 
   create_table "instagram_photos", force: true do |t|
-    t.string   "instagram_id"
+    t.string   "instagram_uuid"
     t.text     "caption"
     t.string   "link"
     t.string   "image_url"
     t.integer  "concert_id"
     t.string   "user_name"
     t.string   "user_profile_picture"
-    t.string   "user_id"
+    t.string   "user_uuid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -129,7 +130,7 @@ ActiveRecord::Schema.define(version: 20130613215847) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
-    t.integer  "songkick_id"
+    t.integer  "songkick_uuid"
   end
 
 end

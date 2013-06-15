@@ -3,7 +3,7 @@ class ConcertPopulator
 
   def perform(concert_id)
     # Create a timecapsule that belongs to concert
-    concert = Concert.find_by_id(concert_id)
+    concert = Concert.find(concert_id)
     return if concert.populated
 
     InstagramPopulator.perform_async(concert.id)

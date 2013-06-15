@@ -21,9 +21,9 @@ class ConcertsController < ApplicationController
     end
     # TODO: Arbitrarily add 6 hours from start time
     concert.end_time = concert.start_time + 6.hours
-    concert.songkick_id = e.id
+    concert.songkick_uuid = e.id.to_i
 
-    venue = Venue.first_or_initialize(songkick_id: e.venue_id)
+    venue = Venue.where(songkick_uuid: e.venue.id.to_i).first_or_initialize
     venue.name     = e.venue.displayName
     venue.location = e.location.city
     venue.latitude  = e.location.lat

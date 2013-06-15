@@ -6,7 +6,7 @@ class EventfulFiller
   def perform(type, id)
     case type
     when "concert"
-      concert = Concert.find_by_id(id)
+      concert = Concert.find(id)
       e = EventfulAPI.event_search(concert.name, concert.venue.location, concert.date)
 
       concert.start_time = DateTime.parse(e.start_time)
@@ -19,7 +19,7 @@ class EventfulFiller
 
       concert.save
     when "venue"
-      venue = Venue.find_by_id(id)
+      venue = Venue.find(id)
       e = EventfulAPI.venue_search(venue.name, venue.location)
 
       venue.latitude  = e.latitude

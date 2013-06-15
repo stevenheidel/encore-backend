@@ -2,14 +2,14 @@
 #
 # Table name: venues
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  latitude    :decimal(, )
-#  longitude   :decimal(, )
-#  created_at  :datetime
-#  updated_at  :datetime
-#  location    :string(255)
-#  songkick_id :integer
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  latitude      :decimal(, )
+#  longitude     :decimal(, )
+#  created_at    :datetime
+#  updated_at    :datetime
+#  location      :string(255)
+#  songkick_uuid :integer
 #
 
 require 'spec_helper'

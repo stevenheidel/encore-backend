@@ -2,11 +2,12 @@
 #
 # Table name: instagram_locations
 #
-#  id           :integer          not null, primary key
-#  created_at   :datetime
-#  updated_at   :datetime
-#  venue_id     :integer
-#  instagram_id :integer
+#  id             :integer          not null, primary key
+#  created_at     :datetime
+#  updated_at     :datetime
+#  venue_id       :integer
+#  instagram_uuid :integer
+#  name           :string(255)
 #
 
 require 'foursquare_api'
@@ -15,7 +16,7 @@ require 'instagram_api'
 class InstagramLocation < ActiveRecord::Base
   belongs_to :venue
 
-  validates_uniqueness_of :instagram_id, scope: :venue
+  validates_uniqueness_of :instagram_uuid, scope: :venue
 
   def self.find_instagram_ids_for_venue(venue)
     instagram_locations = []
@@ -24,6 +25,7 @@ class InstagramLocation < ActiveRecord::Base
     FoursquareAPI.search_venues(venue.name, venue.latitude, venue.longitude).each do |v|
       instagram_locations << InstagramAPI.foursquare_location(v.id).first
     end
+    instagram_locations.compact! # in case some foursquare finds didn't match up
 
     # Then do an Instagram Search on the venue latitude and longitude
     InstagramAPI.location_search(venue.latitude, venue.longitude).each do |l|
@@ -34,7 +36,7 @@ class InstagramLocation < ActiveRecord::Base
     end
 
     # Then go through each found location and search around it as well
-    to_be_searched = instagram_locations.uniq{|s| s.id}
+    to_be_searched = instagram_locations.compact.uniq{|s| s.id}
     while (l = to_be_searched.shift)
       InstagramAPI.location_search(l.latitude, l.longitude).each do |ll|
         if string_similarity(ll.name, venue.name) > 0.25
@@ -47,7 +49,8 @@ class InstagramLocation < ActiveRecord::Base
     # Then save them all to the database
     instagram_locations.each do |il|
       record = self.new
-      record.instagram_id = il[:id]
+      record.instagram_uuid = il[:id]
+      record.name = il[:name]
       venue.instagram_locations << record
     end
   end
@@ -55,11 +58,11 @@ class InstagramLocation < ActiveRecord::Base
   private
 
   # http://stackoverflow.com/questions/653157/a-better-similarity-ranking-algorithm-for-variable-length-strings
-  def self.string_similarity(str1, str2)
-    str1.downcase! 
+  def self.string_similarity(string1, string2)
+    str1 = string1.downcase 
     pairs1 = (0..str1.length-2).collect {|i| str1[i,2]}.reject {
       |pair| pair.include? " "}
-    str2.downcase! 
+    str2 = string2.downcase
     pairs2 = (0..str2.length-2).collect {|i| str2[i,2]}.reject {
       |pair| pair.include? " "}
     union = pairs1.size + pairs2.size 

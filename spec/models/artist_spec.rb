@@ -2,11 +2,11 @@
 #
 # Table name: artists
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  songkick_id :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id            :integer          not null, primary key
+#  name          :string(255)
+#  songkick_uuid :integer
+#  created_at    :datetime
+#  updated_at    :datetime
 #
 
 require 'spec_helper'
