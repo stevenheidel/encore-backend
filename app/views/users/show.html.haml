@@ -1,0 +1,18 @@
+%script{id: 'menu_template', type: 'text/html'}
+  %ul.menu
+    %li
+      %a#past Past
+    {{#concerts}}
+    %li 
+      %a{id: '{{server_id}}'} {{name}}
+    {{/concerts}}
+    %li.current
+      %a#today Today
+    %li
+      %a#future Future
+
+#menu
+
+#content
+
+= link_to "Return to User List", users_path

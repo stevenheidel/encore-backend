@@ -22,7 +22,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.0.1'
@@ -80,6 +80,9 @@ end
 # Use HAML for HTML templates
 gem 'haml'
 
+# Template for demo frontend
+gem 'htmlkickstart'
+
 # Social APIs
 gem 'instagram'
 gem 'koala' # for Facebook
@@ -100,7 +103,7 @@ gem 'protected_attributes'
 gem 'faraday'
 gem 'faraday_middleware'
 gem 'hashie'
-# gem 'typhoeus' # TODO: Use Typhoeus for concurrent HTTP requests
+gem 'typhoeus'
 
 # Sidekiq
 gem 'sidekiq'

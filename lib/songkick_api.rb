@@ -1,3 +1,5 @@
+require 'typhoeus/adapters/faraday'
+
 class SongkickAPI
   APP_KEY = "0Zpbq2MQoAmjobgY"
 
@@ -12,18 +14,22 @@ class SongkickAPI
     conn.get("search/artists.json", query: query).body.resultsPage.results.artist
   end
 
-  # TODO: change to Sidekiq workers or something
   def self.artist_gigography(artist_id, all=false)
+    responses = [conn.get("artists/#{artist_id}/gigography.json")]
+
     if all
-      resp = conn.get("artists/#{artist_id}/gigography.json").body.resultsPage
-      pages = (resp.totalEntries / resp.perPage.to_f).ceil
-    else
-      pages = 1
+      pages = (responses[0].body.resultsPage.totalEntries / responses[0].body.resultsPage.perPage.to_f).ceil
+
+      conn.in_parallel do
+        2.upto(pages) do |page|
+          responses << conn.get("artists/#{artist_id}/gigography.json", page: page)
+        end
+      end
     end
-    
+
     results = []
-    1.upto(pages) do |page|
-      results += conn.get("artists/#{artist_id}/gigography.json", page: page).body.resultsPage.results.event
+    responses.each do |r| 
+      results += r.body.resultsPage.results.event
     end
     results
   end
@@ -42,7 +48,7 @@ class SongkickAPI
       conn.response :mashify
       conn.response :json
 
-      conn.adapter Faraday.default_adapter
+      conn.adapter :typhoeus
     end
   end
 end

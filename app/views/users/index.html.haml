@@ -1,0 +1,14 @@
+%h1 List of Users
+
+%table.sortable.striped
+  %thead
+    %tr
+      %th
+      %th Number of Concerts
+      %th Facebook ID
+  %tbody
+  - @users.each do |u|
+    %tr
+      %td= link_to u.name, u
+      %td= u.concerts.count
+      %td= u.facebook_uuid

@@ -13,8 +13,8 @@ EncoreBackend::Application.routes.draw do
         resources :posts, only: [:index, :create]
 
         collection do
-          get :popular
-          get :search
+          get :past
+          get :future
         end
       end
 
@@ -26,6 +26,10 @@ EncoreBackend::Application.routes.draw do
     end
   end
 
+  # Demo webapp
+  root to: redirect('/users')
+  resources :users
+
   # Rails Admin
   devise_for :admins
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
@@ -35,7 +39,5 @@ EncoreBackend::Application.routes.draw do
 
   # Testing Routes
   get 'locations' => 'locations#index'
-
   resources :concerts
-  get 'concerts/:id/populated' => 'concerts#populated'
 end
