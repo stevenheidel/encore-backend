@@ -3,9 +3,6 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0.rc2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '4.0.0.rc2'
 
@@ -37,6 +34,9 @@ end
 gem 'unicorn'
 
 group :development do
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
+
   gem 'better_errors'
   gem 'binding_of_caller'
 
@@ -74,8 +74,12 @@ group :test do
   gem 'database_cleaner'
 end
 
+group :staging do
+  gem 'mysql2'
+end
+
 group :production do
-  gem 'pg'
+  gem 'mysql2'
 end
 
 # Use HAML for HTML templates

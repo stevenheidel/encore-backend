@@ -217,11 +217,11 @@ GEM
     minitest (4.7.4)
     multi_json (1.7.6)
     multipart-post (1.2.0)
+    mysql2 (0.3.11)
     nested_form (0.3.2)
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.0.7)
-    pg (0.15.1)
     polyglot (0.3.3)
     protected_attributes (1.0.1)
       activemodel (>= 4.0.0.beta, < 5.0)
@@ -408,8 +408,8 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   koala
+  mysql2
   paperclip!
-  pg
   protected_attributes
   rack-test
   rails (= 4.0.0.rc2)
