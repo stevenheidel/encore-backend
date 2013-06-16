@@ -4,8 +4,8 @@
 #
 #  id            :integer          not null, primary key
 #  name          :string(255)
-#  latitude      :decimal(, )
-#  longitude     :decimal(, )
+#  latitude      :decimal(10, 6)
+#  longitude     :decimal(10, 6)
 #  created_at    :datetime
 #  updated_at    :datetime
 #  location      :string(255)

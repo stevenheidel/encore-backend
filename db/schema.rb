@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130615184230) do
+ActiveRecord::Schema.define(version: 20130616171142) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -125,8 +125,8 @@ ActiveRecord::Schema.define(version: 20130615184230) do
 
   create_table "venues", force: true do |t|
     t.string   "name"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
+    t.decimal  "latitude",      precision: 10, scale: 6
+    t.decimal  "longitude",     precision: 10, scale: 6
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "location"
