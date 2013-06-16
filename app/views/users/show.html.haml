@@ -12,8 +12,8 @@
       %a#future Future
 
 %script{id: 'concert_template', type: 'text/html'}
-  %h1 {{concert.name}}
-  %p {{concert.date}}
+  %h1 {{name}}
+  %p {{date}}
   #photos 
     %a Show Photos
 
@@ -28,7 +28,26 @@
   %h1 {{title}}
   %input{type: 'text', id: 'artist_search', placeholder: 'Artist'}
   %input{type: 'text', id: 'city_search', value: 'Toronto'}
+  #concerts
 
-#container{'data-id' => @user_id}
+%script{id: 'concerts_template', type: 'text/html'}
+  %table
+    %thead
+      %tr
+        %td
+        %td Venue
+        %td Start Time
+        %td Add Timecapsule
+    %tbody
+      {{#concerts}}
+      %tr
+        %td {{name}}
+        %td {{venue_name}}
+        %td {{start_time}}
+        %td
+          %button{id: '{{server_id}}'} Add Timecapsule
+      {{/concerts}}
+
+#container{'data-userid' => @user_id}
   #menu
   #content

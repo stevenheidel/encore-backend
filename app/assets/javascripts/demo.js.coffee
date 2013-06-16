@@ -5,27 +5,28 @@ $(document).ajaxStop ->
     $('body').removeClass("loading")
 
 $(document).ready ->
-  # Create the menu
-  $.getJSON "/api/v1/users/" + $("#container").attr('data-id') + "/concerts.json", (concerts) ->
-    # TODO sort between future and past
-    $("#menu").html ich.menu_template concerts
+  if $("#container").attr('data-userid')?
+    # Create the menu
+    $.getJSON "/api/v1/users/" + $("#container").attr('data-userid') + "/concerts.json", (concerts) ->
+      # TODO sort between future and past
+      $("#menu").html ich.menu_template concerts
 
-    # Deal with navigation
-    $("#menu a").click ->
-      $("#menu li.current").removeClass('current')
-      $(this).parent().addClass('current')
-      switch $(this).attr('id')
-        when "past"
-          insert_past()
-        when "today"
-          insert_today()
-        when "future"
-          insert_future()
-        else
-          insert_concert($(this).attr('id'))
+      # Deal with navigation
+      $("#menu a").click ->
+        $("#menu li.current").removeClass('current')
+        $(this).parent().addClass('current')
+        switch $(this).attr('id')
+          when "past"
+            insert_past()
+          when "today"
+            insert_today()
+          when "future"
+            insert_future()
+          else
+            insert_concert($(this).attr('id'))
 
-    # Start screen
-    insert_today()
+      # Start screen
+      insert_today()
 
 insert_past = ->
   $("#content").html ich.ptf_template {'title': 'Past'}
@@ -42,7 +43,11 @@ insert_past = ->
             'id': value.server_id
           }
     select: (event, ui) ->
-      console.log ui.item.id
+      $.getJSON "/api/v1/artists/" + ui.item.id + "/concerts/past?city=" + $("#city_search").val(), (concerts) ->
+        $("#concerts").html ich.concerts_template concerts
+
+        $("#concerts button").click ->
+          console.log $(this).attr('id')
   }
 
 insert_today = ->
@@ -57,5 +62,5 @@ insert_concert = (id) ->
 
     # Load posts on click
     $("#photos a").click ->
-      $.getJSON "/api/v1/concerts/" + concert.concert.server_id + "/posts.json", (posts) ->
+      $.getJSON "/api/v1/concerts/" + concert.server_id + "/posts.json", (posts) ->
         $("#photos").html ich.posts_template posts
