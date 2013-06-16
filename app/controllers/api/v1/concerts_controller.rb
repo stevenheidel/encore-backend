@@ -1,3 +1,5 @@
+require 'songkick_api'
+
 class Api::V1::ConcertsController < Api::V1::BaseController
   # TODO: The 'else' should be listings based on location, etc. MAYBE
   def index
@@ -18,18 +20,12 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   end
 
   def past
-    if params[:q] # do a search
+    @concerts = SongkickAPI.artist_gigography_city(params[:artist_id], params[:city])
 
-    else # else popular in area
+    pp @concerts[0].displayName
+    @concerts.each{|c| c.name = c.displayName; c.venue.name = c.venue.displayName}
+    pp @concerts[0].venue.name
 
-    end
-  end
-
-  def future
-    if params[:q] # do a search
-
-    else # else popular in area
-
-    end
+    render 'api/v1/concerts/index.json'
   end
 end

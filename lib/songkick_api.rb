@@ -34,6 +34,10 @@ class SongkickAPI
     results
   end
 
+  def self.artist_gigography_city(artist_id, city)
+    artist_gigography(artist_id, true).keep_if {|c| c.location.city.include?(city)}
+  end
+
   def self.get_event_by_id(event_id)
     conn.get("events/#{event_id}.json").body.resultsPage.results.event
   end

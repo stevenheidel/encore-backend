@@ -24,6 +24,11 @@
       %img{src: '{{image_url}}', width: 200, height: 200}
     {{/posts}}
 
+%script{id: 'ptf_template', type: 'text/html'}
+  %h1 {{title}}
+  %input{type: 'text', id: 'artist_search', placeholder: 'Artist'}
+  %input{type: 'text', id: 'city_search', value: 'Toronto'}
+
 #container{'data-id' => @user_id}
   #menu
   #content

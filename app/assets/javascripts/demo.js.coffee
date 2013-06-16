@@ -1,3 +1,9 @@
+# Ajax loader
+$(document).ajaxStart ->
+    $('body').addClass("loading")
+$(document).ajaxStop ->
+    $('body').removeClass("loading")
+
 $(document).ready ->
   # Create the menu
   $.getJSON "/api/v1/users/" + $("#container").attr('data-id') + "/concerts.json", (concerts) ->
@@ -18,14 +24,32 @@ $(document).ready ->
         else
           insert_concert($(this).attr('id'))
 
+    # Start screen
+    insert_today()
+
 insert_past = ->
-  $("#content").html "past"
+  $("#content").html ich.ptf_template {'title': 'Past'}
+
+  $("#artist_search").autocomplete {
+    source: '/api/v1/artists/search.json',
+    minLength: 2,
+    response: (event, ui) ->
+      $.each ui.content[0], (index, value) ->
+        if value?
+          ui.content[index] = {
+            'label': value.name, 
+            'value': value.name,
+            'id': value.server_id
+          }
+    select: (event, ui) ->
+      console.log ui.item.id
+  }
 
 insert_today = ->
-  $("#content").html "today"
+  $("#content").html ich.ptf_template {'title': 'Today'}
 
 insert_future = ->
-  $("#content").html "future"
+  $("#content").html ich.ptf_template {'title': 'Future'}
 
 insert_concert = (id) ->
   $.getJSON "/api/v1/concerts/" + id + ".json", (concert) ->
