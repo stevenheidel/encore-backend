@@ -8,6 +8,6 @@ class Api::V1::UsersController < Api::V1::BaseController
     user.oauth_expiry = params[:expiration_date]
     user.save
 
-    render :text => '{"response":"success"}'
+    render 'api/v1/base/result.json', locals: {result: 'success'}
   end
 end

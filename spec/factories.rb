@@ -13,4 +13,9 @@ FactoryGirl.define do
     latitude  43.6413958
     longitude -79.3543721
   end
+
+  factory :user do
+    name "Steven Heidel"
+    facebook_uuid 696955405
+  end
 end

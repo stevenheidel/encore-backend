@@ -10,7 +10,7 @@ class Api::V1::PostsController < Api::V1::BaseController
     @user_photo = @concert.user_photos.new
     @user_photo.photo = params[:file]
 
-    render :text => '{"response":"success"}'
+    render 'api/v1/base/result.json', locals: {result: 'success'}
   end
 
   # TODO
