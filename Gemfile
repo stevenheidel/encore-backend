@@ -110,6 +110,7 @@ gem 'typhoeus'
 gem 'sidekiq'
 gem 'slim', ">= 1.3.0"
 gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'clockwork'
 
 # Paperclip
 gem 'paperclip', github: 'thoughtbot/paperclip'

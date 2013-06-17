@@ -27,6 +27,35 @@ class Concert < ActiveRecord::Base
   has_many :instagram_photos
   has_many :user_photos
 
+  # Convert event from songkick into concert
+  def self.build_from_hashie(hashie)
+    if hashie.start.time
+      start_time = DateTime.parse(hashie.start.date + "T" + hashie.start.time)
+    else
+      # TODO: Arbitrarily choose 6:00 as starting time
+      start_time = DateTime.parse(hashie.start.date + "T" + "18:00:00")
+    end
+    # TODO: Arbitrarily add 6 hours from start time
+    end_time = start_time + 6.hours
+
+    venue = Venue.where(songkick_uuid: hashie.venue.id.to_i).first_or_create do |v|
+      v.name     = hashie.venue.displayName
+      v.location = hashie.location.city
+      v.latitude  = hashie.location.lat
+      v.longitude = hashie.location.lng
+    end
+
+    self.create({
+      name: hashie.displayName,
+      date: hashie.start.date,
+      start_time: start_time,
+      end_time: end_time,
+      venue: venue
+    },
+    :without_protection => true # TODO avoid this
+    )
+  end
+
   def posts
     self.instagram_photos + self.user_photos
   end

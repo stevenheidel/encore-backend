@@ -20,27 +20,11 @@ class Api::V1::ConcertsController < Api::V1::BaseController
     concert = Concert.where(songkick_uuid: params[:songkick_id].to_i).first_or_create do |c|
       e = SongkickAPI.get_event_by_id(params[:songkick_id])
 
-      c.name   = e.displayName
-      c.date   = e.start.date
-      if e.start.time
-        c.start_time = DateTime.parse(e.start.date + "T" + e.start.time)
-      else
-        # TODO: Arbitrarily choose 6:00 as starting time
-        c.start_time = DateTime.parse(e.start.date + "T" + "18:00:00")
-      end
-      # TODO: Arbitrarily add 6 hours from start time
-      c.end_time = c.start_time + 6.hours
-
-      c.venue = Venue.where(songkick_uuid: e.venue.id.to_i).first_or_create do |v|
-        v.name     = e.venue.displayName
-        v.location = e.location.city
-        v.latitude  = e.location.lat
-        v.longitude = e.location.lng
-      end
+      c = Concert.build_from_hashie(e)
     end
 
     # Populate the concert
-    ConcertPopulator.perform_async(concert.id) unless concert.populated
+    # ConcertPopulator.perform_async(concert.id) unless concert.populated
 
     u = User.find_by(facebook_uuid: params[:user_id].to_i)
     u.concerts << concert

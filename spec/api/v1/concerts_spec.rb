@@ -33,10 +33,10 @@ describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: false do
 
   it "should add a concert to a user" do
     get url
-    last_response.body.should == "{\"concerts\":[]}"
+    last_response.body.should == "{\"concerts\":{\"past\":[],\"future\":[]}}"
 
     post url, songkick_id: 14695959 # Taylor Swift in Toronto
     last_response.body.should == "{\"response\":\"success\"}"
     user.concerts.count.should == 1
   end
-end if false # TODO: turn off for now
+end #if false # TODO: turn off for now

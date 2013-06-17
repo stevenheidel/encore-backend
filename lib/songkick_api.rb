@@ -3,7 +3,7 @@ require 'typhoeus/adapters/faraday'
 class SongkickAPI
   APP_KEY = "0Zpbq2MQoAmjobgY"
 
-  # TODO: depcrecated
+  # TODO: deprecated
   def self.full_search(concert_name, date, city)
     artist = self.artist_search(concert_name).first
     concerts = SongkickAPI.artist_gigography(artist.id, true)

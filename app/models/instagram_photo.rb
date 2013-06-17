@@ -23,15 +23,15 @@ class InstagramPhoto < ActiveRecord::Base
   validates_uniqueness_of :link, scope: :concert
 
   # Builds an object from JSON returned by Instagram
-  def self.build_from_hashie(media)
+  def self.build_from_hashie(hashie)
     self.create({
-      instagram_uuid: media.id,
-      caption: media.caption.try(:text),
-      link: media.link,
-      image_url: media.images.standard_resolution.url,
-      user_name: media.user.username,
-      user_profile_picture: media.user.profile_picture,
-      user_uuid: media.user.id
+      instagram_uuid: hashie.id,
+      caption: hashie.caption.try(:text),
+      link: hashie.link,
+      image_url: hashie.images.standard_resolution.url,
+      user_name: hashie.user.username,
+      user_profile_picture: hashie.user.profile_picture,
+      user_uuid: hashie.user.id
     },
     :without_protection => true # TODO avoid this
     )
