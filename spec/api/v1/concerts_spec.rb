@@ -10,7 +10,24 @@ describe "/api/v1/artists/:artist_id/concerts/past", type: :api, vcr: true do
   end
 end
 
-describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: true do
+describe "/api/v1/(artists/:artist_id/)concerts/future", type: :api, vcr: true do
+  let(:url_artist) { "/api/v1/artists/3732956/concerts/future.json" } #276130 is One Direction
+  let(:url_city) { "/api/v1/concerts/future.json" }
+
+  it "should return future concerts (for an artist)" do
+    get url_artist, {city: 'Toronto'}
+
+    last_response.body
+  end
+
+  it "should return future concerts (for a city)" do
+    get url_city, {city: 'Toronto'}
+
+    last_response.body
+  end
+end
+
+describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: false do
   let(:user) { FactoryGirl.create :user }
   let(:url) { "/api/v1/users/#{user.facebook_uuid}/concerts.json" }
 
@@ -22,4 +39,4 @@ describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: true do
     last_response.body.should == "{\"response\":\"success\"}"
     user.concerts.count.should == 1
   end
-end
+end if false # TODO: turn off for now

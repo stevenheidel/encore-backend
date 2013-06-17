@@ -9,6 +9,6 @@ class InstagramSearchPopulator
     InstagramAPI.media_search(concert.venue.latitude, concert.venue.longitude,
           concert.start_time, concert.end_time).each do |media|
       concert.instagram_photos << InstagramPhoto.build_from_hashie(media)
-    end
+    end unless Rails.env.test? # Don't run for tests
   end
 end

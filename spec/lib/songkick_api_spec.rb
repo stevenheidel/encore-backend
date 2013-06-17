@@ -6,5 +6,7 @@ describe SongkickAPI, :vcr do
     SongkickAPI.artist_gigography(253846).count.should == 50
     SongkickAPI.artist_gigography(253846, true).count.should == 999
     SongkickAPI.get_event_by_id(3037536)
+
+    SongkickAPI.artist_upcoming_city(3732956, "Toronto").count.should == 2 # One direction
   end
 end

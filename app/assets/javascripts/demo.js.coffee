@@ -46,8 +46,12 @@ insert_past = ->
       $.getJSON "/api/v1/artists/" + ui.item.id + "/concerts/past?city=" + $("#city_search").val(), (concerts) ->
         $("#concerts").html ich.concerts_template concerts
 
+        # Add Timecapsule to profile
         $("#concerts button").click ->
-          console.log $(this).attr('id')
+          $.post '/api/v1/users/' + $("#container").attr('data-userid') + '/concerts', {
+            songkick_id: $(this).attr('id')
+          }, (data) ->
+            console.log data
   }
 
 insert_today = ->

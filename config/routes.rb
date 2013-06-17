@@ -11,12 +11,18 @@ EncoreBackend::Application.routes.draw do
       resources :concerts, only: [:index, :show] do
         resources :users, only: []
         resources :posts, only: [:index, :create]
+
+        collection do
+          get :past
+          get :future
+        end
       end
 
       resources :artists, only: [] do
         resources :concerts, only: [] do
           collection do
             get :past
+            get :future
           end
         end
 
