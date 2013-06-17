@@ -12,6 +12,6 @@ describe "/api/v1/artists/search?term=", :type => :api do
   it "should return something for a term" do
     get url, term: "Radiohead"
 
-    last_response.body.should == "{\"artists\":[{\"name\":\"Radiohead\"}]}"
+    last_response.body.should == "{\"artists\":[{\"name\":\"Radiohead\",\"server_id\":253846}]}"
   end
 end
