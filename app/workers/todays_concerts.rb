@@ -12,7 +12,7 @@ class TodaysConcerts
     concerts = concerts.keep_if{|c| c.start.date == date}
     
     concerts.each do |c|
-      Concert.build_from_hashie(c)
+      Concert.build_from_hashie(c).save
     end
   end
 end

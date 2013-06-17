@@ -47,7 +47,7 @@ class Concert < ActiveRecord::Base
       v.longitude = hashie.location.lng
     end
 
-    self.create({
+    self.new({
       name: hashie.performance[0].displayName, # TODO: just the artist name
       date: hashie.start.date,
       start_time: start_time,
