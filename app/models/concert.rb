@@ -27,6 +27,8 @@ class Concert < ActiveRecord::Base
   has_many :instagram_photos
   has_many :user_photos
 
+  validates_uniqueness_of :songkick_uuid
+
   # Convert event from songkick into concert
   def self.build_from_hashie(hashie)
     if hashie.start.time
@@ -46,10 +48,11 @@ class Concert < ActiveRecord::Base
     end
 
     self.create({
-      name: hashie.displayName,
+      name: hashie.performance[0].displayName, # TODO: just the artist name
       date: hashie.start.date,
       start_time: start_time,
       end_time: end_time,
+      songkick_uuid: hashie.id,
       venue: venue
     },
     :without_protection => true # TODO avoid this

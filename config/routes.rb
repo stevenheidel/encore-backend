@@ -14,6 +14,7 @@ EncoreBackend::Application.routes.draw do
 
         collection do
           get :past
+          get :today
           get :future
         end
       end

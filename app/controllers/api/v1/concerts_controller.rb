@@ -23,7 +23,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
       c = Concert.build_from_hashie(e)
     end
 
-    # Populate the concert
+    # Populate the concert # TODO: off for now
     # ConcertPopulator.perform_async(concert.id) unless concert.populated
 
     u = User.find_by(facebook_uuid: params[:user_id].to_i)
@@ -43,5 +43,9 @@ class Api::V1::ConcertsController < Api::V1::BaseController
       location = SongkickAPI.location_search(params[:city]).first.metroArea.id
       @concerts = SongkickAPI.metroarea_upcoming(location)
     end
+  end
+
+  def today
+    @concerts = Concert.where("date = ?", Date.today)
   end
 end

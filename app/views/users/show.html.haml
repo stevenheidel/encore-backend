@@ -30,8 +30,10 @@
 
 %script{id: 'ptf_template', type: 'text/html'}
   %h1 {{title}}
+  {{#search}}
   %input{type: 'text', id: 'artist_search', placeholder: 'Artist'}
   %input{type: 'text', id: 'city_search', value: 'Toronto'}
+  {{/search}}
   #concerts
 
 %script{id: 'concerts_template', type: 'text/html'}

@@ -61,14 +61,15 @@ insert_popular = (tense) ->
     $("#concerts").html ich.concerts_template concerts
 
 insert_past = ->
-  $("#content").html ich.ptf_template {'title': 'Past'}
+  $("#content").html ich.ptf_template {'title': 'Past', 'search': true}
   enable_search("past")
 
 insert_today = ->
   $("#content").html ich.ptf_template {'title': 'Today'}
+  insert_popular("today")
 
 insert_future = ->
-  $("#content").html ich.ptf_template {'title': 'Future'}
+  $("#content").html ich.ptf_template {'title': 'Future', 'search': true}
   enable_search("future")
   insert_popular("future")
 

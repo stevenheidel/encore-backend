@@ -10,6 +10,9 @@ class TodaysConcerts
     concerts = SongkickAPI.metroarea_upcoming(location)
 
     concerts = concerts.keep_if{|c| c.start.date == date}
-    pp concerts
+    
+    concerts.each do |c|
+      Concert.build_from_hashie(c)
+    end
   end
 end
