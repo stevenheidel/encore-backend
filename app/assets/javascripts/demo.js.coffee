@@ -6,31 +6,33 @@ $(document).ajaxStop ->
 
 $(document).ready ->
   if $("#container").attr('data-userid')?
-    # Create the menu
-    $.getJSON "/api/v1/users/" + $("#container").attr('data-userid') + "/concerts.json", (concerts) ->
-      # TODO sort between future and past
-      $("#menu").html ich.menu_template concerts
+    insert_menu()
 
-      # Deal with navigation
-      $("#menu a").click ->
-        $("#menu li.current").removeClass('current')
-        $(this).parent().addClass('current')
-        switch $(this).attr('id')
-          when "past"
-            insert_past()
-          when "today"
-            insert_today()
-          when "future"
-            insert_future()
-          else
-            insert_concert($(this).attr('id'))
+    # Start screen
+    insert_today()
 
-      # Start screen
-      insert_today()
+insert_menu = ->
+  # Create the menu
+  $.getJSON "/api/v1/users/" + $("#container").attr('data-userid') + "/concerts.json", (concerts) ->
+    # TODO sort between future and past
+    $("#menu").html ich.menu_template concerts
 
-insert_past = ->
-  $("#content").html ich.ptf_template {'title': 'Past'}
+    # Deal with navigation
+    $("#menu a").click ->
+      $("#menu li.current").removeClass('current')
+      $(this).parent().addClass('current')
+      switch $(this).attr('id')
+        when "past"
+          insert_past()
+        when "today"
+          insert_today()
+        when "future"
+          insert_future()
+        else
+          insert_concert($(this).attr('id'))
 
+# tense is past, today, or future
+enable_search = (tense) ->
   $("#artist_search").autocomplete {
     source: '/api/v1/artists/search.json',
     minLength: 2,
@@ -43,7 +45,7 @@ insert_past = ->
             'id': value.server_id
           }
     select: (event, ui) ->
-      $.getJSON "/api/v1/artists/" + ui.item.id + "/concerts/past?city=" + $("#city_search").val(), (concerts) ->
+      $.getJSON "/api/v1/artists/" + ui.item.id + "/concerts/" + tense + "?city=" + $("#city_search").val(), (concerts) ->
         $("#concerts").html ich.concerts_template concerts
 
         # Add Timecapsule to profile
@@ -51,14 +53,24 @@ insert_past = ->
           $.post '/api/v1/users/' + $("#container").attr('data-userid') + '/concerts', {
             songkick_id: $(this).attr('id')
           }, (data) ->
-            console.log data
+            insert_menu()
   }
+
+insert_popular = (tense) ->
+  $.getJSON "/api/v1/concerts/" + tense + "?city=" + $("#city_search").val(), (concerts) ->
+    $("#concerts").html ich.concerts_template concerts
+
+insert_past = ->
+  $("#content").html ich.ptf_template {'title': 'Past'}
+  enable_search("past")
 
 insert_today = ->
   $("#content").html ich.ptf_template {'title': 'Today'}
 
 insert_future = ->
   $("#content").html ich.ptf_template {'title': 'Future'}
+  enable_search("future")
+  insert_popular("future")
 
 insert_concert = (id) ->
   $.getJSON "/api/v1/concerts/" + id + ".json", (concert) ->

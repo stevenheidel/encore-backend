@@ -2,12 +2,16 @@
   %ul.menu
     %li
       %a#past Past
-    {{#concerts}}
+    {{#concerts.past}}
     %li 
       %a{id: '{{server_id}}'} {{name}}
-    {{/concerts}}
+    {{/concerts.past}}
     %li.current
       %a#today Today
+    {{#concerts.future}}
+    %li 
+      %a{id: '{{server_id}}'} {{name}}
+    {{/concerts.future}}
     %li
       %a#future Future
 
@@ -36,6 +40,7 @@
       %tr
         %td
         %td Venue
+        %td Date
         %td Start Time
         %td 
     %tbody
@@ -43,6 +48,7 @@
       %tr
         %td {{name}}
         %td {{venue_name}}
+        %td {{date}}
         %td {{start_time}}
         %td
           %button{id: '{{songkick_id}}'} Add to Profile
