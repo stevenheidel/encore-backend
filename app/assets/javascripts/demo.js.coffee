@@ -42,7 +42,7 @@ enable_search = (tense) ->
           ui.content[index] = {
             'label': value.name, 
             'value': value.name,
-            'id': value.server_id
+            'id': value.songkick_id
           }
     select: (event, ui) ->
       $.getJSON "/api/v1/artists/" + ui.item.id + "/concerts/" + tense + "?city=" + $("#city_search").val(), (concerts) ->

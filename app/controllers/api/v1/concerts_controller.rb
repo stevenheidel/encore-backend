@@ -33,7 +33,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   end
 
   def past
-    @concerts = SongkickAPI.artist_gigography_city(params[:artist_id], params[:city])
+    @concerts = SongkickAPI.artist_gigography_city(params[:artist_id], params[:city]).reverse
   end
 
   def future

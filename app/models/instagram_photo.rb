@@ -24,7 +24,7 @@ class InstagramPhoto < ActiveRecord::Base
 
   # Builds an object from JSON returned by Instagram
   def self.build_from_hashie(hashie)
-    self.create({
+    self.new({
       instagram_uuid: hashie.id,
       caption: hashie.caption.try(:text),
       link: hashie.link,
