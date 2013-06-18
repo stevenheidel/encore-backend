@@ -93,6 +93,7 @@ gem 'instagram'
 gem 'koala' # for Facebook
 gem 'twitter'
 gem 'foursquare2'
+gem 'flickraw'
 
 # Using Rails 4 branch of Rails Admin
 gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'

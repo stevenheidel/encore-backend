@@ -144,6 +144,7 @@ GEM
     flay (2.3.0)
       ruby_parser (~> 3.0)
       sexp_processor (~> 4.0)
+    flickraw (0.9.6)
     font-awesome-rails (3.2.0.0)
       railties (>= 3.2, < 5.0)
     font-awesome-sass-rails (3.0.2.2)
@@ -396,6 +397,7 @@ DEPENDENCIES
   faraday
   faraday_middleware
   flay
+  flickraw
   font-awesome-sass-rails
   foursquare2
   guard
