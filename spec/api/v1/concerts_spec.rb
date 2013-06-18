@@ -38,5 +38,8 @@ describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: false do
     post url, songkick_id: 14695959 # Taylor Swift in Toronto
     last_response.body.should == "{\"response\":\"success\"}"
     user.concerts.count.should == 1
+    user.concerts.first.name.should == "Taylor Swift"
+
+    ConcertPopulator.jobs.size.should == 1
   end
-end #if false # TODO: turn off for now
+end

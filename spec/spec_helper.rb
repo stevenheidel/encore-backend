@@ -5,7 +5,9 @@ require 'rspec/rails'
 #require 'rspec/autorun' # Turn off for Zeus
 
 # Required for Sidekiq
-require 'sidekiq/testing/inline'
+require 'sidekiq/testing'
+
+require 'bullet'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -49,5 +51,17 @@ RSpec.configure do |config|
   # Guard starts the first line at the wrong point for some reason
   config.before(:all) do
     print "\n"
+  end
+
+  # Bullet
+  config.before(:each) do
+    Bullet.start_request if Bullet.enable?
+  end
+
+  config.after(:each) do
+    if Bullet.enable? && Bullet.notification?
+      Bullet.perform_out_of_channel_notifications
+    end
+    Bullet.end_request if Bullet.enable?
   end
 end

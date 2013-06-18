@@ -3,13 +3,13 @@
     %li
       %a#past Past
     {{#concerts.past}}
-    %li 
+    %li
       %a{id: '{{server_id}}'} {{name}}
     {{/concerts.past}}
     %li.current
       %a#today Today
     {{#concerts.future}}
-    %li 
+    %li
       %a{id: '{{server_id}}'} {{name}}
     {{/concerts.future}}
     %li
@@ -18,7 +18,7 @@
 %script{id: 'concert_template', type: 'text/html'}
   %h1 {{name}}
   %p {{date}}
-  #photos 
+  #photos
     %a Show Photos
 
 %script{id: 'posts_template', type: 'text/html'}
@@ -44,7 +44,7 @@
         %td Venue
         %td Date
         %td Start Time
-        %td 
+        %td
     %tbody
       {{#concerts}}
       %tr

@@ -14,9 +14,9 @@ require 'spec_helper'
 
 describe InstagramLocation, :vcr do
   let(:venue) { FactoryGirl.create :venue }
-  let(:aircanada1) { FactoryGirl.create :venue, 
+  let(:aircanada1) { FactoryGirl.create :venue,
     name: "Air Canda Centre", latitude: 43.6440859, longitude: -79.3783696 }
-  let(:aircanada2) { FactoryGirl.create :venue, 
+  let(:aircanada2) { FactoryGirl.create :venue,
     name: "Air Canda Centre", latitude: 43.6437852, longitude: -79.3784416 }
   let(:rogerscentre) { FactoryGirl.create :venue,
     name: "Rogers Centre", latitude: 43.641658, longitude: -79.39180639999999 }

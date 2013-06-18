@@ -61,7 +61,7 @@ class SongkickAPI
     end
 
     results = []
-    responses.each do |r| 
+    responses.each do |r|
       results += r.body.resultsPage.results.event
     end
     results

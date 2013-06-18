@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130616171142) do
+ActiveRecord::Schema.define(version: 20130618185153) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.datetime "updated_at"
   end
 
+  add_index "artists", ["songkick_uuid"], name: "index_artists_on_songkick_uuid"
+
   create_table "attendances", force: true do |t|
     t.integer  "concert_id"
     t.integer  "user_id"
@@ -45,6 +47,9 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "attendances", ["concert_id"], name: "index_attendances_on_concert_id"
+  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id"
 
   create_table "concerts", force: true do |t|
     t.string   "name"
@@ -59,6 +64,10 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.integer  "songkick_uuid"
   end
 
+  add_index "concerts", ["artist_id"], name: "index_concerts_on_artist_id"
+  add_index "concerts", ["songkick_uuid"], name: "index_concerts_on_songkick_uuid"
+  add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id"
+
   create_table "instagram_locations", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -66,6 +75,9 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.integer  "instagram_uuid"
     t.string   "name"
   end
+
+  add_index "instagram_locations", ["instagram_uuid"], name: "index_instagram_locations_on_instagram_uuid"
+  add_index "instagram_locations", ["venue_id"], name: "index_instagram_locations_on_venue_id"
 
   create_table "instagram_photos", force: true do |t|
     t.string   "instagram_uuid"
@@ -79,6 +91,9 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "instagram_photos", ["concert_id"], name: "index_instagram_photos_on_concert_id"
+  add_index "instagram_photos", ["instagram_uuid"], name: "index_instagram_photos_on_instagram_uuid"
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -101,6 +116,8 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.datetime "updated_at"
   end
 
+  add_index "setlist_songs", ["concert_id"], name: "index_setlist_songs_on_concert_id"
+
   create_table "user_photos", force: true do |t|
     t.string   "concert_id"
     t.string   "user_id"
@@ -111,6 +128,9 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
   end
+
+  add_index "user_photos", ["concert_id"], name: "index_user_photos_on_concert_id"
+  add_index "user_photos", ["user_id"], name: "index_user_photos_on_user_id"
 
   create_table "users", force: true do |t|
     t.integer  "facebook_uuid"
@@ -132,5 +152,7 @@ ActiveRecord::Schema.define(version: 20130616171142) do
     t.string   "location"
     t.integer  "songkick_uuid"
   end
+
+  add_index "venues", ["songkick_uuid"], name: "index_venues_on_songkick_uuid"
 
 end

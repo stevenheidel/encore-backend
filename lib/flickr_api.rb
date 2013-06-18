@@ -14,7 +14,7 @@ class FlickrAPI
 
   def self.search(latitude, longitude, min_timestamp, max_timestamp)
     flickr.photos.search(
-      min_taken_date: min_timestamp.to_i, 
+      min_taken_date: min_timestamp.to_i,
       max_taken_date: max_timestamp.to_i,
       lat: latitude,
       lon: longitude,

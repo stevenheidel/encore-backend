@@ -15,7 +15,7 @@
 
 class UserPhoto < ActiveRecord::Base
   belongs_to :concert
-  belongs_to :user 
+  belongs_to :user
 
   has_attached_file :photo
 

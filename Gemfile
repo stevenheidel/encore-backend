@@ -40,11 +40,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 
-  gem 'annotate', ">= 2.5.0"
-
-  gem "flay"
-  gem "rails_best_practices"
-  gem "reek"
+  gem 'metric_fu'
 
   # Guard
   gem 'guard'
@@ -53,10 +49,10 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-spin'
   gem 'guard-zeus'
-  # gem 'guard-livereload' look into setting up
 end
 
 group :development, :test do
+  gem 'bullet'
   gem 'debugger'
 end
 

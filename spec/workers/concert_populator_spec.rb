@@ -3,19 +3,20 @@ require 'spec_helper'
 describe ConcertPopulator, :vcr do
   let(:concert) { FactoryGirl.create :concert }
 
-  before do
-    ConcertPopulator.perform_async(concert.id)
-    concert.reload
-  end
-
   describe '.perform' do
     it 'should create a populated time capsule' do
-      concert.posts.any?.should be_true
+      ConcertPopulator.new.perform(concert.id)
+
+      concert.reload
       concert.populated.should be_true
     end
 
-    it 'should get some posts from Instagram' do
-      #p InstagramPhoto.all
+    it 'should queue other populators' do
+      expect {
+        ConcertPopulator.new.perform(concert.id)
+        }.to change(InstagramPopulator.jobs, :size).by(1)
+      # Flickr
+      # Twitter...
     end
   end
 end

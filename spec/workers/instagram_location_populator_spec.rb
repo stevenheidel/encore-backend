@@ -5,7 +5,7 @@ describe InstagramLocationPopulator, :vcr do
 
   before do
     # "76266" is Sound Academy
-    InstagramLocationPopulator.perform_async(concert.id, 76266)
+    InstagramLocationPopulator.new.perform(concert.id, 76266)
   end
 
   describe '.perform' do

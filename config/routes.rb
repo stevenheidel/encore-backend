@@ -36,7 +36,7 @@ EncoreBackend::Application.routes.draw do
 
   # Demo webapp
   root to: redirect('/users')
-  resources :users
+  resources :users, only: [:show, :index]
 
   # Rails Admin
   devise_for :admins
