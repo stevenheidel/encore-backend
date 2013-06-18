@@ -1,9 +1,0 @@
-= form_tag locations_path, method: 'get' do
-  = text_field_tag :latitude, params[:latitude]
-  = text_field_tag :longitude, params[:longitude]
-  = submit_tag "Search"
-
-#locations
-  - @instagram_locations.each do |il|
-    %p= il.name
-    %p= il.id
