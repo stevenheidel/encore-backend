@@ -27,7 +27,8 @@ describe "/api/v1/(artists/:artist_id/)concerts/future", type: :api, vcr: true d
   end
 end
 
-describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: false do
+describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: true do
+  let(:concert) { FactoryGirl.create :concert }
   let(:user) { FactoryGirl.create :user }
   let(:url) { "/api/v1/users/#{user.facebook_uuid}/concerts.json" }
 
@@ -41,5 +42,29 @@ describe "/api/v1/users/:facebook_uuid/concerts", type: :api, vcr: false do
     user.concerts.first.name.should == "Taylor Swift"
 
     ConcertPopulator.jobs.size.should == 1
+  end
+
+  it "should check if the user has that concert" do
+    user.concerts << concert
+
+    get url, songkick_id: concert.songkick_uuid
+    last_response.body.should == "{\"response\":true}"
+
+    get url, songkick_id: 12345
+    last_response.body.should == "{\"response\":false}"
+  end
+end
+
+describe "/api/v1/users/:facebook_uuid/concerts/:id", type: :api, vcr: true do
+  let(:concert) { FactoryGirl.create :concert }
+  let(:user) { FactoryGirl.create :user }
+  let(:url) { "/api/v1/users/#{user.facebook_uuid}/concerts/#{concert.id}.json" }
+
+  it "should delete a concert from the user's concerts" do
+    user.concerts << concert
+
+    delete url
+
+    user.concerts.count.should == 0
   end
 end

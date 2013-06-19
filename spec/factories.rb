@@ -4,6 +4,7 @@ FactoryGirl.define do
     date      DateTime.parse("April 25 2013")
     start_time  DateTime.parse("April 25, 2013 16:00")
     end_time  DateTime.parse("April 25, 2013 22:00")
+    songkick_uuid 15782629
     venue
   end
 

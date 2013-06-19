@@ -2,8 +2,12 @@ require 'songkick_api'
 
 class Api::V1::ConcertsController < Api::V1::BaseController
   def index
-    if params[:user_id]
-      @concerts = User.find_by(:facebook_uuid => params[:user_id]).concerts.order("date ASC").includes(:venue)
+    if params[:songkick_id]
+      found = !User.find_by(params[:user_id]).concerts.find_by(songkick_uuid: params[:songkick_id]).blank?
+      
+      render 'api/v1/base/result.json', locals: {result: found}
+    else
+      @concerts = User.find_by(facebook_uuid: params[:user_id]).concerts.order("date ASC").includes(:venue)
       @concerts_past = @concerts.where("date < ?", Date.today)
       @concerts_future = @concerts.where("date >= ?", Date.today)
     end
@@ -14,7 +18,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   end
 
   def create
-    concert = Concert.find_by(songkick_uuid: params[:songkick_id].to_i)
+    concert = Concert.find_by(songkick_uuid: params[:songkick_id])
 
     unless concert
       e = SongkickAPI.get_event_by_id(params[:songkick_id])
@@ -26,7 +30,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
     # Populate the concert
     ConcertPopulator.perform_async(concert.id) unless concert.populated
 
-    u = User.find_by(facebook_uuid: params[:user_id].to_i)
+    u = User.find_by(facebook_uuid: params[:user_id])
     u.concerts << concert
 
     render 'api/v1/base/result.json', locals: {result: 'success'}
@@ -54,5 +58,13 @@ class Api::V1::ConcertsController < Api::V1::BaseController
 
   def today
     @concerts = Concert.where("date = ?", Date.today).includes(:venue)
+  end
+
+  def destroy
+    concert = Concert.find(params[:id])
+    user = User.find_by(facebook_uuid: params[:user_id])
+    user.concerts.delete(concert)
+
+    render 'api/v1/base/result.json', locals: {result: 'success'}
   end
 end

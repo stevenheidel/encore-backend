@@ -5,7 +5,7 @@ EncoreBackend::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create] do
-        resources :concerts, only: [:index, :create]
+        resources :concerts, only: [:index, :create, :destroy]
       end
 
       resources :concerts, only: [:index, :show] do
