@@ -1,3 +1,4 @@
+require 'echonest_api'
 require 'songkick_api'
 
 class Api::V1::ArtistsController < Api::V1::BaseController
