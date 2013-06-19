@@ -34,8 +34,8 @@ insert_menu = ->
 # tense is past, today, or future
 enable_search = (tense) ->
   $("#artist_search").autocomplete {
-    source: '/api/v1/artists/search.json',
-    minLength: 2,
+    source: '/api/v1/artists/search.json'
+    minLength: 2
     response: (event, ui) ->
       $.each ui.content[0], (index, value) ->
         if value?
@@ -76,6 +76,16 @@ insert_future = ->
 insert_concert = (id) ->
   $.getJSON "/api/v1/concerts/" + id + ".json", (concert) ->
     $("#content").html ich.concert_template concert
+
+    # Remove concert from profile
+    $("a#remove").click ->
+      $.ajax {
+        url: "/api/v1/users/" + $("#container").attr('data-userid') + "/concerts/" + id
+        type: 'DELETE'
+        success: (result) ->
+          insert_menu()
+          insert_today()
+      }
 
     # Load posts on click
     $("#photos a").click ->
