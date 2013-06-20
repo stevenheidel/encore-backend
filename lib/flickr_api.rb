@@ -9,7 +9,7 @@ class FlickrAPI
         file.write "http://farm#{photo.farm}.staticflickr.com/#{photo.server}/#{photo.id}_#{photo.secret}.jpg"
         file.write "' />\n"
       end
-    end
+    end if false # TODO: turn off
   end
 
   def self.search(latitude, longitude, min_timestamp, max_timestamp)

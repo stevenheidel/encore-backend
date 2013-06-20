@@ -1,34 +1,33 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-development:
-  adapter: sqlite3
-  database: db/development.sqlite3
+mysql2: &mysql2
+  adapter: mysql2
+  encoding: utf8
   pool: 5
   timeout: 5000
+
+local: &local
+  username: root
+  password: 'rSkmvxthCzj6M/kItIVi2)Vi#'
+
+development:
+  database: encoretheapp_development
+  <<: *mysql2
+  <<: *local
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test: &test
-  adapter: sqlite3
-  database: db/test.sqlite3
-  pool: 5
-  timeout: 5000
+  database: encoretheapp_test
+  <<: *mysql2
+  <<: *local
 
 cucumber:
   <<: *test
 
 staging:
-  adapter: mysql2
-  encoding: utf8
   database: encoretheapp_staging
-  pool: 5
+  <<: *mysql2
 
 production:
-  adapter: mysql2
-  encoding: utf8
   database: encoretheapp_production
-  pool: 5
+  <<: *mysql2

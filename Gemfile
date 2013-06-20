@@ -19,11 +19,11 @@ gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
-# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-# gem 'turbolinks'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.4.2'
+
+# Use MySQL as the database for Active Record
+gem 'mysql2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
@@ -34,9 +34,6 @@ end
 gem 'unicorn'
 
 group :development do
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
-
   gem 'better_errors'
   gem 'binding_of_caller'
 
@@ -68,14 +65,6 @@ group :test do
   # Cucumber
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-end
-
-group :staging do
-  gem 'mysql2'
-end
-
-group :production do
-  gem 'mysql2'
 end
 
 # Use HAML for HTML templates
