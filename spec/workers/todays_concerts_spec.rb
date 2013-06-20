@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe TodaysConcerts, :vcr do
   before do
-    TodaysConcerts.new.perform(Date.today, "Toronto")
+    TodaysConcerts.new.perform(Date.today.strftime("%F"), "Toronto")
   end
 
   describe '.perform' do

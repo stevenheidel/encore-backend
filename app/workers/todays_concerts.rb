@@ -9,7 +9,7 @@ class TodaysConcerts
     location = SongkickAPI.location_search(city).first.metroArea.id
     concerts = SongkickAPI.metroarea_upcoming(location)
 
-    concerts = concerts.keep_if{|c| c.start.date == date.strftime("%F")}
+    concerts = concerts.keep_if{|c| c.start.date == date}
 
     concerts.each do |c|
       Concert.build_from_hashie(c).save
