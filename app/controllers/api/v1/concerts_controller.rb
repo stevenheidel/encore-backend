@@ -55,6 +55,9 @@ class Api::V1::ConcertsController < Api::V1::BaseController
       location = SongkickAPI.location_search(params[:city]).first.metroArea.id
       @concerts = SongkickAPI.metroarea_upcoming(location)
 
+      # IMPORTANT TODO: Deal with festivals
+      @concerts.delete_if {|c| c.type == "Festival"}
+
       # don't include today's concerts
       @concerts.delete_if {|c| c.start.date == Date.today.strftime("%F")}
     end

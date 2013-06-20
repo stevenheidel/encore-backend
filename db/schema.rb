@@ -28,8 +28,8 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.datetime "updated_at"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "artists", force: true do |t|
     t.string   "name"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.datetime "updated_at"
   end
 
-  add_index "artists", ["songkick_uuid"], name: "index_artists_on_songkick_uuid"
+  add_index "artists", ["songkick_uuid"], name: "index_artists_on_songkick_uuid", using: :btree
 
   create_table "attendances", force: true do |t|
     t.integer  "concert_id"
@@ -48,8 +48,8 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.datetime "updated_at"
   end
 
-  add_index "attendances", ["concert_id"], name: "index_attendances_on_concert_id"
-  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id"
+  add_index "attendances", ["concert_id"], name: "index_attendances_on_concert_id", using: :btree
+  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id", using: :btree
 
   create_table "concerts", force: true do |t|
     t.string   "name"
@@ -64,9 +64,9 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.integer  "songkick_uuid"
   end
 
-  add_index "concerts", ["artist_id"], name: "index_concerts_on_artist_id"
-  add_index "concerts", ["songkick_uuid"], name: "index_concerts_on_songkick_uuid"
-  add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id"
+  add_index "concerts", ["artist_id"], name: "index_concerts_on_artist_id", using: :btree
+  add_index "concerts", ["songkick_uuid"], name: "index_concerts_on_songkick_uuid", using: :btree
+  add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id", using: :btree
 
   create_table "instagram_locations", force: true do |t|
     t.datetime "created_at"
@@ -76,8 +76,8 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.string   "name"
   end
 
-  add_index "instagram_locations", ["instagram_uuid"], name: "index_instagram_locations_on_instagram_uuid"
-  add_index "instagram_locations", ["venue_id"], name: "index_instagram_locations_on_venue_id"
+  add_index "instagram_locations", ["instagram_uuid"], name: "index_instagram_locations_on_instagram_uuid", using: :btree
+  add_index "instagram_locations", ["venue_id"], name: "index_instagram_locations_on_venue_id", using: :btree
 
   create_table "instagram_photos", force: true do |t|
     t.string   "instagram_uuid"
@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.datetime "updated_at"
   end
 
-  add_index "instagram_photos", ["concert_id"], name: "index_instagram_photos_on_concert_id"
-  add_index "instagram_photos", ["instagram_uuid"], name: "index_instagram_photos_on_instagram_uuid"
+  add_index "instagram_photos", ["concert_id"], name: "index_instagram_photos_on_concert_id", using: :btree
+  add_index "instagram_photos", ["instagram_uuid"], name: "index_instagram_photos_on_instagram_uuid", using: :btree
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
@@ -101,12 +101,12 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.integer  "item"
     t.string   "table"
     t.integer  "month",      limit: 2
-    t.integer  "year",       limit: 5
+    t.integer  "year",       limit: 8
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories"
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], name: "index_rails_admin_histories", using: :btree
 
   create_table "setlist_songs", force: true do |t|
     t.string   "name"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.datetime "updated_at"
   end
 
-  add_index "setlist_songs", ["concert_id"], name: "index_setlist_songs_on_concert_id"
+  add_index "setlist_songs", ["concert_id"], name: "index_setlist_songs_on_concert_id", using: :btree
 
   create_table "user_photos", force: true do |t|
     t.string   "concert_id"
@@ -129,8 +129,8 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.datetime "photo_updated_at"
   end
 
-  add_index "user_photos", ["concert_id"], name: "index_user_photos_on_concert_id"
-  add_index "user_photos", ["user_id"], name: "index_user_photos_on_user_id"
+  add_index "user_photos", ["concert_id"], name: "index_user_photos_on_concert_id", using: :btree
+  add_index "user_photos", ["user_id"], name: "index_user_photos_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.integer  "facebook_uuid"
@@ -141,7 +141,7 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["facebook_uuid"], name: "index_users_on_facebook_uuid", unique: true
+  add_index "users", ["facebook_uuid"], name: "index_users_on_facebook_uuid", unique: true, using: :btree
 
   create_table "venues", force: true do |t|
     t.string   "name"
@@ -153,6 +153,6 @@ ActiveRecord::Schema.define(version: 20130618185153) do
     t.integer  "songkick_uuid"
   end
 
-  add_index "venues", ["songkick_uuid"], name: "index_venues_on_songkick_uuid"
+  add_index "venues", ["songkick_uuid"], name: "index_venues_on_songkick_uuid", using: :btree
 
 end
