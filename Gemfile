@@ -23,7 +23,7 @@ gem 'jquery-ui-rails'
 gem 'jbuilder', '~> 1.4.2'
 
 # Use MySQL as the database for Active Record
-gem 'mysql2'
+gem 'mysql2', github: 'brianmario/mysql2'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

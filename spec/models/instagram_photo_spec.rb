@@ -18,5 +18,11 @@
 require 'spec_helper'
 
 describe InstagramPhoto do
-  #pending "add some examples to (or delete) #{__FILE__}"
+  it "should insert crazy UTF8 4 byte characters" do
+    ip = InstagramPhoto.new
+    ip.caption = "MADONNA!!!!!! "
+    ip.save
+
+    InstagramPhoto.first.caption.should == "MADONNA!!!!!! "
+  end
 end

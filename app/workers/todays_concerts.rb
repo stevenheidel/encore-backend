@@ -14,8 +14,8 @@ class TodaysConcerts
     concerts.each do |c|
       Concert.build_from_hashie(c).save
 
-      # IMPORTANT TODO: schedule using ConcertPopulator.perform_at in 15min intervals from start to end time
-      # https://github.com/mperham/sidekiq/wiki/Scheduled-Jobs
+      # schedule live population during concert
+      ConcertPopulator.perform_async(c.id)
     end
   end
 end

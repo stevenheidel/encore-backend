@@ -8,6 +8,8 @@ describe TodaysConcerts, vcr: false do
   describe '.perform' do
     it "should get a list of today's concerts" do
       Concert.count.should_not == 0
+
+      ConcertPopulator.jobs.count.should == Concert.count
     end
   end
 end
