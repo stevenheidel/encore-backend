@@ -100,3 +100,6 @@ gem 'clockwork'
 
 # Paperclip
 gem 'paperclip', github: 'thoughtbot/paperclip'
+
+# New Relic
+gem 'newrelic_rpm'
