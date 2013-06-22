@@ -47,18 +47,21 @@ enable_search = (tense) ->
     select: (event, ui) ->
       $.getJSON "/api/v1/artists/" + ui.item.id + "/concerts/" + tense + "?city=" + $("#city_search").val(), (concerts) ->
         $("#concerts").html ich.concerts_template concerts
-
-        # Add Timecapsule to profile
-        $("#concerts button").click ->
-          $.post '/api/v1/users/' + $("#container").attr('data-userid') + '/concerts', {
-            songkick_id: $(this).attr('id')
-          }, (data) ->
-            insert_menu()
+        enable_add()
   }
+
+enable_add = ->
+  # Add Timecapsule to profile
+  $("#concerts button").click ->
+    $.post '/api/v1/users/' + $("#container").attr('data-userid') + '/concerts', {
+      songkick_id: $(this).attr('id')
+    }, (data) ->
+      insert_menu()
 
 insert_popular = (tense) ->
   $.getJSON "/api/v1/concerts/" + tense + "?city=" + $("#city_search").val(), (concerts) ->
     $("#concerts").html ich.concerts_template concerts
+    enable_add()
 
 insert_past = ->
   $("#content").html ich.ptf_template {'title': 'Past', 'search': true}
@@ -89,5 +92,5 @@ insert_concert = (id) ->
 
     # Load posts on click
     $("#photos a").click ->
-      $.getJSON "/api/v1/concerts/" + concert.server_id + "/posts.json", (posts) ->
+      $.getJSON "/api/v1/concerts/" + concert.songkick_id + "/posts.json", (posts) ->
         $("#photos").html ich.posts_template posts

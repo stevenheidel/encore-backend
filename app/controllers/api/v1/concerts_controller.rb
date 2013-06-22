@@ -31,8 +31,8 @@ class Api::V1::ConcertsController < Api::V1::BaseController
     if user.concerts.include?(concert) # already been added to profile
       render 'api/v1/base/result.json', locals: {result: 'already added'}
     else
-      # Populate the concert
-      ConcertPopulator.perform_async(concert.id) unless concert.populated
+      # Populate the concert TODO: disabled for now
+      #ConcertPopulator.perform_async(concert.id) unless concert.populated
 
       user.concerts << concert
 

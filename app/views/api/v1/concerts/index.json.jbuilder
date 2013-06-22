@@ -1,7 +1,7 @@
 json.concerts do
   json.past do
     json.array! @concerts_past do |concert|
-      json.server_id concert.id
+      json.songkick_id concert.songkick_uuid
       json.extract! concert, :name, :date
       json.venue_name concert.venue.name
     end
@@ -9,7 +9,7 @@ json.concerts do
 
   json.future do
     json.array! @concerts_future do |concert|
-      json.server_id concert.id
+      json.songkick_id concert.songkick_uuid
       json.extract! concert, :name, :date
       json.venue_name concert.venue.name
     end
