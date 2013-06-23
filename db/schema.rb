@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130618185153) do
+ActiveRecord::Schema.define(version: 20130623183732) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -67,6 +67,22 @@ ActiveRecord::Schema.define(version: 20130618185153) do
   add_index "concerts", ["artist_id"], name: "index_concerts_on_artist_id", using: :btree
   add_index "concerts", ["songkick_uuid"], name: "index_concerts_on_songkick_uuid", using: :btree
   add_index "concerts", ["venue_id"], name: "index_concerts_on_venue_id", using: :btree
+
+  create_table "flickr_photos", force: true do |t|
+    t.integer  "flickr_uuid",   limit: 8
+    t.string   "flickr_secret"
+    t.string   "link"
+    t.string   "image_url"
+    t.integer  "concert_id"
+    t.string   "title"
+    t.text     "description"
+    t.string   "user_name"
+    t.string   "user_uuid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "flickr_photos", ["flickr_uuid"], name: "index_flickr_photos_on_flickr_uuid", using: :btree
 
   create_table "instagram_locations", force: true do |t|
     t.datetime "created_at"

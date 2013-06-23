@@ -26,6 +26,7 @@ class Concert < ActiveRecord::Base
   # All the fun associations
   has_many :instagram_photos
   has_many :user_photos
+  has_many :flickr_photos
 
   validates_uniqueness_of :songkick_uuid
 

@@ -3,7 +3,7 @@ require 'songkick_api'
 class Api::V1::ConcertsController < Api::V1::BaseController
   def index
     if params[:songkick_id]
-      found = !User.find_by(params[:user_id]).concerts.find_by(songkick_uuid: params[:songkick_id]).blank?
+      found = !User.find_by(facebook_uuid: params[:user_id]).concerts.find_by(songkick_uuid: params[:songkick_id]).blank?
       
       render 'api/v1/base/result.json', locals: {result: found}
     else
@@ -14,7 +14,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   end
 
   def show
-    @concert = Concert.find(params[:id])
+    @concert = Concert.find_by(songkick_uuid: params[:id])
   end
 
   def create

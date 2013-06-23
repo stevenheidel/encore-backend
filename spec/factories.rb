@@ -12,7 +12,14 @@ FactoryGirl.define do
   factory :rolling_stones, class: Concert do
     name "Rolling Stones"
     start_time "May 25, 2013 15:00"
-    end_time "May 25, 2013 21:00"
+    end_time "May 25, 2013 23:00"
+    association :venue, factory: :air_canada_centre
+  end
+
+  factory :madonna, class: Concert do
+    name "Madonna"
+    start_time "September 12, 2012 15:00"
+    end_time "September 12, 2012 23:00"
     association :venue, factory: :air_canada_centre
   end
 
