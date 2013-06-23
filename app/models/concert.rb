@@ -57,7 +57,7 @@ class Concert < ActiveRecord::Base
   end
 
   def posts
-    self.instagram_photos + self.user_photos
+    self.instagram_photos # TODO + self.user_photos + self.flickr_photos
   end
 
   def start_time

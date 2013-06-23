@@ -20,9 +20,9 @@ require 'spec_helper'
 describe InstagramPhoto do
   it "should insert crazy UTF8 4 byte characters" do
     ip = InstagramPhoto.new
-    ip.caption = "MADONNA!!!!!! "
+    ip.caption = "MADONNA!!!!!!  Other: \xF0\x9F\x8E\xB6"
     ip.save
 
-    InstagramPhoto.first.caption.should == "MADONNA!!!!!! "
+    InstagramPhoto.first.caption.should == "MADONNA!!!!!!  Other: "
   end
 end

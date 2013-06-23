@@ -22,6 +22,15 @@ class InstagramPhoto < ActiveRecord::Base
 
   validates_uniqueness_of :link, scope: :concert
 
+  def caption=(value)
+    # get rid of UTF-8 4 byte characters
+    if value
+      self[:caption] = value.each_char.select{|c| c.bytes.count < 4 }.join('')
+    else
+      self[:caption] = nil
+    end
+  end
+
   # Builds an object from JSON returned by Instagram
   def self.build_from_hashie(hashie)
     self.new({
