@@ -16,7 +16,7 @@
 #
 
 class Concert < ActiveRecord::Base
-  belongs_to :artist #HABTM artists
+  belongs_to :artist #TODO: HABTM artists
   belongs_to :venue
   has_many :setlist_songs
 
@@ -34,11 +34,8 @@ class Concert < ActiveRecord::Base
     if hashie.start.time
       start_time = DateTime.parse(hashie.start.date + "T" + hashie.start.time)
     else
-      # TODO: Arbitrarily choose 6:00 as starting time
-      start_time = DateTime.parse(hashie.start.date + "T" + "18:00:00")
+      start_time = nil
     end
-    # TODO: Arbitrarily add 6 hours from start time
-    end_time = start_time + 6.hours
 
     venue = Venue.where(songkick_uuid: hashie.venue.id.to_i).first_or_create do |v|
       v.name     = hashie.venue.displayName
@@ -51,7 +48,6 @@ class Concert < ActiveRecord::Base
       name: hashie.performance[0].displayName, # TODO: just the artist name
       date: hashie.start.date,
       start_time: start_time,
-      end_time: end_time,
       songkick_uuid: hashie.id,
       venue: venue
     },
@@ -61,5 +57,21 @@ class Concert < ActiveRecord::Base
 
   def posts
     self.instagram_photos + self.user_photos
+  end
+
+  def start_time
+    # TODO: Arbitrarily choose 6:00 as starting time
+    start_time_accurate? ? self[:start_time] : DateTime.parse(self.date + "T" + "18:00:00")
+  end
+
+  # Did we get the start time from Songkick or not?
+  # TODO: continually check Songkick to see if updated
+  def start_time_accurate?
+    !self[:start_time].blank?
+  end
+
+  def end_time
+    # TODO: Arbitrarily add 6 hours from start time
+    self[:start_time] + 6.hours
   end
 end
