@@ -12,10 +12,11 @@ class TodaysConcerts
     concerts = concerts.keep_if{|c| c.start.date == date}
 
     concerts.each do |c|
-      Concert.build_from_hashie(c).save
+      concert = Concert.build_from_hashie(c)
+      concert.save
 
       # schedule live population during concert
-      ConcertPopulator.perform_async(c.id)
+      ConcertPopulator.perform_async(concert.id)
     end
   end
 end
