@@ -14,7 +14,7 @@ class TodaysConcerts
     concerts.each do |c|
       concert = Concert.build_from_hashie(c)
       concert.save
-
+      
       # schedule live population during concert
       ConcertPopulator.perform_async(concert.id)
     end
