@@ -75,7 +75,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
     # TODO: WTF is wrong with today view?
     #@concerts = Concert.where("date = ?", Date.today).includes(:venue)
 
-    render 'api/v1/base/future.json'
+    render 'api/v1/concerts/future.json'
   end
 
   def destroy
