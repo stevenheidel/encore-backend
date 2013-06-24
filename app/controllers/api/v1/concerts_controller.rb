@@ -64,7 +64,18 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   end
 
   def today
-    @concerts = Concert.where("date = ?", Date.today).includes(:venue)
+    # Get today's concerts from Songkick
+    location = SongkickAPI.location_search(params[:city]).first.metroArea.id
+    @concerts = SongkickAPI.metroarea_upcoming(location)
+
+    @concerts.delete_if {|c| c.type == "Festival"}
+
+    @concerts.keep_if {|c| c.start.date == Date.today.strftime("%F")}
+
+    # TODO: WTF is wrong with today view?
+    #@concerts = Concert.where("date = ?", Date.today).includes(:venue)
+
+    render 'api/v1/base/future.json'
   end
 
   def destroy
