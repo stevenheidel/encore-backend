@@ -79,7 +79,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   end
 
   def destroy
-    concert = Concert.find(params[:id])
+    concert = Concert.find_by(songkick_uuid: params[:id])
     user = User.find_by(facebook_uuid: params[:user_id])
     user.concerts.delete(concert)
 

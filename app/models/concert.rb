@@ -62,17 +62,21 @@ class Concert < ActiveRecord::Base
 
   def start_time
     # TODO: Arbitrarily choose 6:00 as starting time
-    start_time_accurate? ? self[:start_time] : DateTime.parse(self.date + "T" + "18:00:00")
+    if start_time_accurate?
+      self[:start_time]
+    else
+      DateTime.parse(self[:date].strftime("%F") + "T" + "18:00:00")
+    end
   end
 
   # Did we get the start time from Songkick or not?
   # TODO: continually check Songkick to see if updated
   def start_time_accurate?
-    !self[:start_time].blank?
+    !self[:start_time].nil?
   end
 
   def end_time
     # TODO: Arbitrarily add 6 hours from start time
-    self[:start_time] + 6.hours
+    start_time + 6.hours
   end
 end

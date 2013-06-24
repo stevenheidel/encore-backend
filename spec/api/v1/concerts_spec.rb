@@ -58,7 +58,7 @@ end
 describe "/api/v1/users/:facebook_uuid/concerts/:id", type: :api, vcr: true do
   let(:concert) { FactoryGirl.create :concert }
   let(:user) { FactoryGirl.create :user }
-  let(:url) { "/api/v1/users/#{user.facebook_uuid}/concerts/#{concert.id}.json" }
+  let(:url) { "/api/v1/users/#{user.facebook_uuid}/concerts/#{concert.songkick_uuid}.json" }
 
   it "should delete a concert from the user's concerts" do
     user.concerts << concert
