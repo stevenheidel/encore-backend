@@ -4,7 +4,7 @@ describe SongkickAPI, :vcr do
   it 'should test some methods' do
     SongkickAPI.artist_search("Radiohead").first.displayName.should == "Radiohead"
     SongkickAPI.artist_gigography(253846).count.should == 50
-    SongkickAPI.artist_gigography(253846, true).count.should == 998
+    SongkickAPI.artist_gigography(253846, true).count.should == 992
     SongkickAPI.get_event_by_id(3037536)
 
     SongkickAPI.artist_upcoming_city(3732956, "Toronto").count.should == 2 # One direction

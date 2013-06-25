@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TodaysConcerts, vcr: false do
+describe TodaysConcerts, vcr: true do
   before do
     TodaysConcerts.new.perform(Date.today.strftime("%F"), "Toronto")
   end

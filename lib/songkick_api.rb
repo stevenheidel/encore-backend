@@ -3,14 +3,6 @@ require 'typhoeus/adapters/faraday'
 class SongkickAPI
   APP_KEY = "0Zpbq2MQoAmjobgY"
 
-  # TODO: deprecated
-  def self.full_search(concert_name, date, city)
-    artist = self.artist_search(concert_name).first
-    concerts = SongkickAPI.artist_gigography(artist.id, true)
-
-    concerts.keep_if {|c| c.location.city.include?(city) }
-  end
-
   def self.artist_search(query)
     conn.get("search/artists.json", query: query).body.resultsPage.results.artist
   end

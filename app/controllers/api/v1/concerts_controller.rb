@@ -46,6 +46,8 @@ class Api::V1::ConcertsController < Api::V1::BaseController
     else # get popular past for city
       @concerts = []
     end
+
+    render 'api/v1/concerts/songkick.json'
   end
 
   def future
@@ -61,6 +63,8 @@ class Api::V1::ConcertsController < Api::V1::BaseController
       # don't include today's concerts
       @concerts.delete_if {|c| c.start.date == Date.today.strftime("%F")}
     end
+
+    render 'api/v1/concerts/songkick.json'
   end
 
   def today
@@ -73,9 +77,10 @@ class Api::V1::ConcertsController < Api::V1::BaseController
     @concerts.keep_if {|c| c.start.date == Date.today.strftime("%F")}
 
     # TODO: WTF is wrong with today view?
-    #@concerts = Concert.where("date = ?", Date.today).includes(:venue)
+    # @concerts = Concert.where("date = ?", Date.today).includes(:venue)
+    # render 'api/v1/concerts/database.json'
 
-    render 'api/v1/concerts/future.json'
+    render 'api/v1/concerts/songkick.json'
   end
 
   def destroy
