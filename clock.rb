@@ -8,6 +8,7 @@ module Clockwork
   end
 
   every(1.day, "today's concerts", :at => '06:00') do
-    TodaysConcerts.perform_async(Date.today, "Toronto")
+    # TODO: disabled for now
+    #TodaysConcerts.perform_async(Date.today, "Toronto")
   end
 end
