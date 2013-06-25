@@ -1,0 +1,7 @@
+%h1= @concert.name
+= link_to "Return to list", concerts_path
+
+.gallery
+  - @concert.posts.each do |p|
+    %a
+      %img{src: p.image_url, width: 200, height: 200}
