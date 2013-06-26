@@ -46,7 +46,6 @@ EncoreBackend::Application.routes.draw do
   # Sidekiq
   mount Sidekiq::Web => '/sidekiq'
 
-  # Testing Routes
-  get 'locations' => 'locations#index'
-  resources :concerts
+  # Documentation
+  get '/api', :to => redirect('/docs/index.html')
 end
