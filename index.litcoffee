@@ -1,5 +1,7 @@
-Encore API
-==========
+Encore API v1
+=============
+
+_All URLs begin with 'http://{server}/api/v1' and end with '.json'_
 
 Welcome
 -------
