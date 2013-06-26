@@ -5,6 +5,6 @@ json.concerts do
     json.date concert.start.date
     json.start_time concert.start.time
     json.venue_name concert.venue.displayName
-    json.image_url "http://www1.sk-static.com/images/media/profile_images/artists/#{concert.id}/avatar"
+    json.image_url "http://www1.sk-static.com/images/media/profile_images/artists/#{concert.performance[0].id}/avatar"
   end
 end
