@@ -3,8 +3,8 @@
 # Table name: user_photos
 #
 #  id                 :integer          not null, primary key
-#  concert_id         :string(255)
-#  user_id            :string(255)
+#  concert_id         :integer
+#  user_id            :integer
 #  created_at         :datetime
 #  updated_at         :datetime
 #  photo_file_name    :string(255)

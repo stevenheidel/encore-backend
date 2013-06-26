@@ -5,10 +5,15 @@ class Api::V1::PostsController < Api::V1::BaseController
 
   # upload a user photo to the time_capsule
   def create
+    pp params
+
     @concert = Concert.find_by(songkick_uuid: params[:concert_id])
 
     @user_photo = @concert.user_photos.new
-    @user_photo.photo = params[:file]
+    @user_photo.photo = params[:image]
+    @user_photo.save
+
+    pp @user_photo
 
     render 'api/v1/base/result.json', locals: {result: 'success'}
   end

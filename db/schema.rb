@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130623183732) do
+ActiveRecord::Schema.define(version: 20130626141649) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                              default: "", null: false
@@ -135,8 +135,8 @@ ActiveRecord::Schema.define(version: 20130623183732) do
   add_index "setlist_songs", ["concert_id"], name: "index_setlist_songs_on_concert_id", using: :btree
 
   create_table "user_photos", force: true do |t|
-    t.string   "concert_id"
-    t.string   "user_id"
+    t.integer  "concert_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"
