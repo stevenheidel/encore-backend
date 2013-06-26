@@ -6,6 +6,6 @@ json.concerts do
     json.start_time concert.start.time
     json.venue_name concert.venue.displayName
     json.image_url "http://www1.sk-static.com/images/media/profile_images/artists/#{concert.performance[0].artist.id}/avatar"
-    json.background_url "http://www1.sk-static.com/images/media/profile_images/artists/#{concert.songkick_uuid}/col3"
+    json.background_url "http://www1.sk-static.com/images/media/profile_images/artists/#{concert.performance[0].artist.id}/col3"
   end
 end
