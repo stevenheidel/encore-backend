@@ -30,3 +30,7 @@ guard :rails, zeus: true, port: 3000 do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
 end
+
+guard 'shell' do
+  watch(/index.litcoffee/) {|m| `docco -l parallel #{m[0]} -o public/docs` }
+end
