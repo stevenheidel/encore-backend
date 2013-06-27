@@ -34,18 +34,27 @@ EncoreBackend::Application.routes.draw do
     end
   end
 
-  # Demo webapp
-  root to: redirect('/users')
-  resources :users, only: [:show, :index]
-  resources :concerts, only: [:show, :index]
+  # Public routes
+  resources :concerts, only: [:show]
+  resources :posts, only: [:show]
 
-  # Rails Admin
-  devise_for :admins
-  mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+  # Private routes TODO: Secure this from outsiders
+  scope '/private' do
+    # Demo webapp
+    namespace :demo do
+      root to: redirect('/demo/users')
+      resources :users, only: [:show, :index]
+      resources :concerts, only: [:show, :index]
+    end
 
-  # Sidekiq
-  mount Sidekiq::Web => '/sidekiq'
+    # Rails Admin
+    devise_for :admins
+    mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
-  # Documentation
-  get '/api', :to => redirect('/docs/index.html')
+    # Sidekiq
+    mount Sidekiq::Web => '/sidekiq'
+
+    # Documentation
+    get '/api', :to => redirect('/docs/index.html')
+  end
 end

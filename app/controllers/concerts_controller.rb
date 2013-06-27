@@ -1,9 +1,6 @@
 class ConcertsController < ApplicationController
-  def index
-    @concerts = Concert.all
-  end
-
   def show
-    @concert = Concert.find(params[:id])
+    @concert = Concert.find_by(songkick_uuid: params[:id])
+    @posts = @concert.posts
   end
 end

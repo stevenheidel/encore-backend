@@ -9,6 +9,6 @@
   %tbody
   - @concerts.each do |c|
     %tr
-      %td= link_to c.name, c
+      %td= link_to c.name, demo_concert_path(c)
       %td= c.date
       %td= c.posts.count

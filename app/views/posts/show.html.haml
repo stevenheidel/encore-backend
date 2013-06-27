@@ -1,0 +1,14 @@
+- content_for :opengraph_tags do
+  %meta{property: 'og:title', content: 'Encore - Image from #{@concert.name} Concert'}
+  %meta{property: 'og:type', content: 'og:website'}
+  %meta{property: 'og:image', content: @post.image_url}
+  %meta{property: 'og:url', content: "#{request.protocol}#{request.host_with_port}#{request.fullpath}"}
+
+  %meta{property: 'og:description', content: 'Download Encore in the App Store!'}
+
+.grid.flex
+  .col_6
+    %img.caption{title: @post.caption, src: @post.image_url}
+  .col_6
+    %h3= "Image from the #{@concert.name} concert"
+    %p Download Encore now to see more photos from this concert!
