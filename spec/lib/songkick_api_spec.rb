@@ -8,7 +8,5 @@ describe SongkickAPI, :vcr do
     SongkickAPI.get_event_by_id(3037536)
 
     SongkickAPI.artist_upcoming_city(3732956, "Toronto").count.should == 2 # One direction
-
-    pp SongkickAPI.artist_upcoming_city(3732956, "Toronto")
   end
 end

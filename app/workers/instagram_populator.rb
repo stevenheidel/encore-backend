@@ -12,6 +12,6 @@ class InstagramPopulator
       InstagramLocationPopulator.perform_async(concert_id, location.instagram_uuid)
     end
 
-    InstagramSearchPopulator.perform_async(concert_id)
+    #InstagramSearchPopulator.perform_async(concert_id) TODO disabled for now
   end
 end

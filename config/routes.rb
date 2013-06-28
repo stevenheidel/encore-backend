@@ -42,7 +42,7 @@ EncoreBackend::Application.routes.draw do
   scope '/private' do
     # Demo webapp
     namespace :demo do
-      root to: redirect('/demo/users')
+      root to: redirect('/private/demo/users')
       resources :users, only: [:show, :index]
       resources :concerts, only: [:show, :index]
     end

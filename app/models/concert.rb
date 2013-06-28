@@ -38,6 +38,10 @@ class Concert < ActiveRecord::Base
       start_time = nil
     end
 
+    artist = Artist.where(songkick_uuid: hashie.performance[0].artist.id).first_or_create do |a|
+      a.name = hashie.performance[0].artist.displayName
+    end
+
     venue = Venue.where(songkick_uuid: hashie.venue.id.to_i).first_or_create do |v|
       v.name     = hashie.venue.displayName
       v.location = hashie.location.city
@@ -50,6 +54,7 @@ class Concert < ActiveRecord::Base
       date: hashie.start.date,
       start_time: start_time,
       songkick_uuid: hashie.id,
+      artist: artist,
       venue: venue
     },
     :without_protection => true # TODO avoid this
