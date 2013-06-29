@@ -6,8 +6,10 @@ describe "/api/v1/concerts/:concert_id/posts", :type => :api do
   let(:file)    { "spec/fixtures/files/profile.jpg" }
 
   context "POST to add new photos" do
-    it "should print the URL" do
+    it "post to the URL" do
       post url, "image" => Rack::Test::UploadedFile.new(file, "image/jpeg")
+
+      pp UserPhoto.first.photo.url
     end
   end
 end

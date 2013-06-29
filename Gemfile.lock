@@ -1,8 +1,23 @@
 GIT
   remote: git://github.com/brianmario/mysql2.git
-  revision: 5ebf34171d30048ef1cc641120208b134ea401bd
+  revision: e5f468c2c7d7190d7f8fe68fced74f70a8b5455d
   specs:
     mysql2 (0.3.12b6)
+
+GIT
+  remote: git://github.com/fog/fog.git
+  revision: 3b7b7aeb896ec97b8061bb1f66bd2fbb75b36548
+  specs:
+    fog (1.12.1)
+      builder
+      excon (~> 0.25.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5.0)
+      ruby-hmac
 
 GIT
   remote: git://github.com/sferik/rails_admin.git
@@ -63,10 +78,10 @@ GEM
       multi_json (~> 1.3)
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
-    addressable (2.3.4)
+    addressable (2.3.5)
     arel (4.0.0)
     arrayfields (4.7.4)
-    atomic (1.1.9)
+    atomic (1.1.10)
     awesome_print (1.1.0)
     bcrypt-ruby (3.0.1)
     better_errors (0.9.0)
@@ -137,7 +152,7 @@ GEM
       debugger-linecache (~> 1.2.0)
       debugger-ruby_core_source (~> 1.2.1)
     debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.2)
+    debugger-ruby_core_source (1.2.3)
     devise (1.5.4)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.0.3)
@@ -147,6 +162,7 @@ GEM
     ethon (0.5.12)
       ffi (>= 1.3.0)
       mime-types (~> 1.18)
+    excon (0.25.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -238,7 +254,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
-    lumberjack (1.0.3)
+    lumberjack (1.0.4)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -272,20 +288,21 @@ GEM
     metric_fu-roodi (2.2.1)
       ruby_parser
     mime-types (1.23)
-    mini_portile (0.5.0)
     minitest (4.7.5)
     multi_json (1.7.7)
     multipart-post (1.2.0)
     nested_form (0.3.2)
-    newrelic_rpm (3.6.4.122)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
+    net-scp (1.1.1)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.6.7)
+    newrelic_rpm (3.6.5.130)
+    nokogiri (1.5.10)
     orm_adapter (0.0.7)
     parallel (0.6.2)
     polyglot (0.3.3)
     progressbar (0.20.0)
-    protected_attributes (1.0.1)
-      activemodel (>= 4.0.0.beta, < 5.0)
+    protected_attributes (1.0.3)
+      activemodel (>= 4.0.0, < 5.0)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -351,6 +368,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    ruby-hmac (0.4.0)
     ruby2ruby (2.0.6)
       ruby_parser (~> 3.1)
       sexp_processor (~> 4.0)
@@ -449,6 +467,7 @@ DEPENDENCIES
   faraday
   faraday_middleware
   flickraw
+  fog!
   font-awesome-sass-rails
   foursquare2
   guard

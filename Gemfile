@@ -96,6 +96,7 @@ gem 'clockwork'
 
 # Paperclip
 gem 'paperclip', github: 'thoughtbot/paperclip'
+gem 'fog', github: 'fog/fog'
 
 # New Relic
 gem 'newrelic_rpm'
