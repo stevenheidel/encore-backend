@@ -9,7 +9,7 @@ describe "/api/v1/concerts/:concert_id/posts", :type => :api do
     it "post to the URL" do
       post url, "image" => Rack::Test::UploadedFile.new(file, "image/jpeg")
 
-      pp UserPhoto.first.photo.url
+      UserPhoto.first.photo.url
     end
   end
 end

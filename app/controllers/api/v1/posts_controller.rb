@@ -9,6 +9,7 @@ class Api::V1::PostsController < Api::V1::BaseController
 
     @user_photo = @concert.user_photos.new
     @user_photo.photo = params[:image]
+    @user_photo.user = User.find_by(facebook_uuid: params[:facebook_id])
     @user_photo.save
 
     render 'api/v1/base/result.json', locals: {result: 'success'}

@@ -20,4 +20,21 @@ class UserPhoto < ActiveRecord::Base
   has_attached_file :photo
 
   attr_accessible :photo_file_name # for Paperclip
+
+  # TODO: Below is for indexing the posts
+  def caption
+    "Uploaded to Encore"
+  end
+
+  def image_url
+    self.photo.url
+  end
+
+  def user_name
+    self.user.name
+  end
+
+  def user_profile_picture
+    "https://graph.facebook.com/#{self.user.facebook_uuid}/picture"
+  end
 end

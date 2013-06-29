@@ -26,4 +26,8 @@ describe Concert do
     concert.start_time.should == DateTime.parse("April 25 2013 18:00")
     concert.end_time.should == DateTime.parse("April 26 2013 00:00")
   end
+
+  it "should get all the posts" do
+    concert.posts
+  end
 end
