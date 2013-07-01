@@ -48,9 +48,9 @@ group :test do
   gem 'rspec-rails', "~> 2.13"
   gem 'capybara', "2.0.2"
   gem 'vcr'
-  gem "factory_girl_rails", "~> 4.0"
-  gem 'test_after_commit'
+  gem 'factory_girl_rails', "~> 4.0"
   gem 'rack-test'
+  gem 'database_cleaner'
 
   # Cucumber
   gem 'cucumber-rails', :require => false
@@ -77,9 +77,8 @@ gem 'foursquare2'
 gem 'flickraw'
 
 # Using Rails 4 branch of Rails Admin
-gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
-gem 'font-awesome-sass-rails' # TODO Temporary see: https://github.com/sferik/rails_admin/issues/1443
-gem 'devise'
+gem 'rails_admin'
+gem 'devise', "~> 3.0.0.rc"
 gem 'protected_attributes'
 
 # Faraday

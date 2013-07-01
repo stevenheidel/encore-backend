@@ -16,7 +16,19 @@
 #  updated_at    :datetime
 #
 
-class FlickrPhoto < ActiveRecord::Base
+class FlickrPhoto
+  include Mongoid::Document
+  include Mongoid::Timestamps
+
+  field :flickr_uuid, type: Integer 
+  field :flickr_secret, type: String 
+  field :link, type: String 
+  field :image_url, type: String
+  field :title, type: String
+  field :description, type: String
+  field :user_name, type: String
+  field :user_uuid, type: String
+
   belongs_to :concert
 
   validates_uniqueness_of :link, scope: :concert

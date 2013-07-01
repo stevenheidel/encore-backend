@@ -13,7 +13,13 @@
 require 'foursquare_api'
 require 'instagram_api'
 
-class InstagramLocation < ActiveRecord::Base
+class InstagramLocation
+  include Mongoid::Document
+  include Mongoid::Timestamps
+
+  field :name, type: String
+  field :instagram_uuid, type: Integer
+
   belongs_to :venue
 
   validates_uniqueness_of :instagram_uuid, scope: :venue

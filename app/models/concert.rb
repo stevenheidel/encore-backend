@@ -15,17 +15,26 @@
 #  songkick_uuid :integer
 #
 
-class Concert < ActiveRecord::Base
+class Concert
+  include Mongoid::Document
+  include Mongoid::Timestamps
+
+  field :name, type: String 
+  field :date, type: Date 
+  field :start_time, type: DateTime 
+  field :end_time, type: DateTime
+  field :populated, type: Boolean 
+  field :songkick_uuid, type: Integer
+
   belongs_to :artist #TODO: HABTM artists
   belongs_to :venue
   has_many :setlist_songs
 
-  has_many :attendances
-  has_many :users, through: :attendances
+  has_and_belongs_to_many :users
 
   # All the fun associations
   has_many :instagram_photos
-  has_many :user_photos
+  #has_many :user_photos
   has_many :flickr_photos
 
   validates_uniqueness_of :songkick_uuid
