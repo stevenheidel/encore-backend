@@ -20,9 +20,6 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 # ActiveRecord::Migration.check_pending! if defined?(ActiveRecord::Migration)
 
 RSpec.configure do |config|
-  # Required for VCR
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-
   # ## Mock Framework
   #
   # If you prefer to use mocha, flexmock or RR, uncomment the appropriate line:
@@ -32,22 +29,12 @@ RSpec.configure do |config|
   # config.mock_with :rr
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  # config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   # config.use_transactional_fixtures = true
-
-  # Database cleaner
-  config.before :each do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.start
-  end
-
-  config.after do
-    DatabaseCleaner.clean
-  end
 
   # If true, the base class of anonymous controllers will be inferred
   # automatically. This will be the default behavior in future versions of
@@ -60,12 +47,26 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
+  # Required for VCR
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+
+  # Database cleaner
+  config.before :each do
+    DatabaseCleaner.strategy = :truncation
+    DatabaseCleaner.start
+  end
+
+  config.after do
+    DatabaseCleaner.clean
+  end
+
   # Guard starts the first line at the wrong point for some reason
   config.before :all do
     print "\n"
   end
 
   # Bullet
+=begin
   config.before(:each) do
     Bullet.start_request if Bullet.enable?
   end
@@ -76,4 +77,5 @@ RSpec.configure do |config|
     end
     Bullet.end_request if Bullet.enable?
   end
+=end
 end

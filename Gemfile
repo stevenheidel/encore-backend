@@ -45,15 +45,15 @@ end
 
 group :test do
   # RSpec
-  gem 'rspec-rails', "~> 2.13"
-  gem 'capybara', "2.0.2"
+  gem 'rspec-rails', '~> 2.13'
+  gem 'capybara', '2.0.2'
   gem 'vcr'
-  gem 'factory_girl_rails', "~> 4.0"
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'rack-test'
   gem 'database_cleaner'
 
   # Cucumber
-  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 end
 
@@ -77,9 +77,9 @@ gem 'foursquare2'
 gem 'flickraw'
 
 # Using Rails 4 branch of Rails Admin
-gem 'rails_admin'
-gem 'devise', "~> 3.0.0.rc"
-gem 'protected_attributes'
+#gem 'rails_admin'
+#gem 'devise', '~> 3.0.0.rc'
+#gem 'protected_attributes'
 
 # Faraday
 gem 'faraday'
@@ -89,13 +89,14 @@ gem 'typhoeus'
 
 # Sidekiq
 gem 'sidekiq'
-gem 'slim', ">= 1.3.0"
-gem 'sinatra', '>= 1.3.0', :require => nil
+gem 'slim', '>= 1.3.0'
+gem 'sinatra', '>= 1.3.0', require: nil
 gem 'clockwork'
 
 # Paperclip
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'fog', github: 'fog/fog'
+gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 
 # New Relic
 gem 'newrelic_rpm'

@@ -13,13 +13,15 @@
 #  photo_updated_at   :datetime
 #
 
-class UserPhoto < ActiveRecord::Base
+class UserPhoto
+  include Mongoid::Document
+  include Mongoid::Timestamps
+  include Mongoid::Paperclip
+
   belongs_to :concert
   belongs_to :user
 
-  has_attached_file :photo
-
-  attr_accessible :photo_file_name # for Paperclip
+  has_mongoid_attached_file :photo
 
   # TODO: Below is for indexing the posts
   def caption
