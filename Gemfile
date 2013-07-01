@@ -22,12 +22,6 @@ gem 'jquery-ui-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.4.2'
 
-# Use MySQL as the database for Active Record
-gem 'mysql2', github: 'brianmario/mysql2'
-
-# Use unicorn as the app server
-gem 'unicorn'
-
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -62,6 +56,12 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
 end
+
+# Use MongoDB as the database
+gem 'mongoid', github: 'mongoid/mongoid'
+
+# Use Unicorn as the app server
+gem 'unicorn'
 
 # Use HAML for HTML templates
 gem 'haml'
