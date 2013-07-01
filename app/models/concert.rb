@@ -34,7 +34,7 @@ class Concert
 
   # All the fun associations
   has_many :instagram_photos
-  #has_many :user_photos
+  has_many :user_photos
   has_many :flickr_photos
 
   validates_uniqueness_of :songkick_uuid
@@ -58,15 +58,13 @@ class Concert
       v.longitude = hashie.location.lng
     end
 
-    self.new({
+    self.new(
       name: hashie.performance[0].displayName, # TODO: just the artist name
       date: hashie.start.date,
       start_time: start_time,
       songkick_uuid: hashie.id,
       artist: artist,
       venue: venue
-    },
-    :without_protection => true # TODO avoid this
     )
   end
 

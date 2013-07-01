@@ -35,7 +35,7 @@ class FlickrPhoto
 
   # Builds an object from JSON returned by Flickr
   def self.build_from_hashie(hashie)
-    self.new({
+    self.new(
       flickr_uuid: hashie.id,
       flickr_secret: hashie.secret,
       link: hashie.urls[0]._content,
@@ -44,8 +44,6 @@ class FlickrPhoto
       description: hashie.description,
       user_name: hashie.owner.realname,
       user_uuid: hashie.owner.nsid
-    },
-    :without_protection => true # TODO avoid this
     )
   end
 end

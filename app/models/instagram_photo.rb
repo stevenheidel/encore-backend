@@ -44,7 +44,7 @@ class InstagramPhoto
 
   # Builds an object from JSON returned by Instagram
   def self.build_from_hashie(hashie)
-    self.new({
+    self.new(
       instagram_uuid: hashie.id,
       caption: hashie.caption.try(:text),
       link: hashie.link,
@@ -52,8 +52,6 @@ class InstagramPhoto
       user_name: hashie.user.username,
       user_profile_picture: hashie.user.profile_picture,
       user_uuid: hashie.user.id
-    },
-    :without_protection => true # TODO avoid this
     )
   end
 end

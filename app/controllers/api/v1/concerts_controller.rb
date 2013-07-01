@@ -3,13 +3,13 @@ require 'songkick_api'
 class Api::V1::ConcertsController < Api::V1::BaseController
   def index
     if params[:songkick_id]
-      found = !User.find_by(facebook_uuid: params[:user_id]).concerts.find_by(songkick_uuid: params[:songkick_id]).blank?
+      found = User.find_by(facebook_uuid: params[:user_id].to_i).concerts.where(songkick_uuid: params[:songkick_id].to_i).exists?
       
       render 'api/v1/base/result.json', locals: {result: found}
     else
-      @concerts = User.find_by(facebook_uuid: params[:user_id]).concerts.order("date ASC").includes(:venue)
-      @concerts_past = @concerts.where("date < ?", Date.today)
-      @concerts_future = @concerts.where("date >= ?", Date.today)
+      @concerts = User.find_by(facebook_uuid: params[:user_id]).concerts.order_by(:date.asc).includes(:venue)
+      @concerts_past = @concerts.where(:date.lt => Date.today)
+      @concerts_future = @concerts.where(:date.gte => Date.today)
     end
   end
 
@@ -18,9 +18,11 @@ class Api::V1::ConcertsController < Api::V1::BaseController
   end
 
   def create
-    concert = Concert.find_by(songkick_uuid: params[:songkick_id])
+    concert = Concert.where(songkick_uuid: params[:songkick_id].to_i)
 
-    unless concert
+    if concert.exists?
+      concert = concert.first
+    else
       e = SongkickAPI.get_event_by_id(params[:songkick_id])
 
       concert = Concert.build_from_hashie(e)

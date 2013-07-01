@@ -1,6 +1,6 @@
 class Api::V1::PostsController < Api::V1::BaseController
   def index
-    @posts = Concert.find_by(songkick_uuid: params[:concert_id]).try(:posts)
+    @posts = Concert.find_by(songkick_uuid: params[:concert_id].to_i).try(:posts)
   end
 
   # upload a user photo to the time_capsule
