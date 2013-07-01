@@ -10,7 +10,7 @@ describe InstagramLocationPopulator, :vcr do
 
   describe '.perform' do
     it 'should get some posts from Instagram' do
-      InstagramPhoto.count.should > 0
+      Post::InstagramPhoto.count.should > 0
     end
   end
 end

@@ -16,8 +16,8 @@ class ConcertPopulator
         concert.save
       end
 
-      InstagramPopulator.perform_async(concert.id)
-      FlickrPopulator.perform_async(concert.id)
+      InstagramPopulator.perform_async(concert_id)
+      FlickrPopulator.perform_async(concert_id)
     end
   end
 end

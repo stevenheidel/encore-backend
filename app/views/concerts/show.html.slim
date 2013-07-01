@@ -1,0 +1,16 @@
+- content_for :opengraph_tags do
+  meta property="og:title" content="Encore - Images from #{@concert.name} Concert"
+  meta property="og:type"  content="og:website"
+  - @posts.each do |p|
+    meta property="og:image" content=p.image_url
+  meta property="og:url" content="#{request.protocol}#{request.host_with_port}#{request.fullpath}"
+
+  meta property="og:description" content="Download Encore in the App Store!"
+
+h3 Images from the #{@concert.name} concert
+p Download Encore now to see more photos from this concert!
+
+.gallery
+  - @posts.each do |p|
+    = link_to post_path(p.id) do
+      = image_tag p.image_url

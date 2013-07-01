@@ -1,16 +1,3 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id            :integer          not null, primary key
-#  facebook_uuid :integer
-#  oauth_string  :string(255)
-#  oauth_expiry  :datetime
-#  name          :string(255)
-#  created_at    :datetime
-#  updated_at    :datetime
-#
-
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -22,5 +9,5 @@ class User
 
   has_and_belongs_to_many :concerts
 
-  has_many :user_photos
+  has_many :user_photos, class_name: "Post::UserPhoto"
 end

@@ -9,7 +9,7 @@ class FlickrPopulator
     FlickrAPI.search(
         concert.venue.latitude, concert.venue.longitude, 
         concert.start_time, concert.end_time).each do |photo|
-      concert.flickr_photos << FlickrPhoto.build_from_hashie(FlickrAPI.get_info(photo.id, photo.secret))
+      concert.posts << Post::FlickrPhoto.build_from_hashie(FlickrAPI.get_info(photo.id, photo.secret))
     end
   end
 end

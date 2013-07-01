@@ -17,7 +17,7 @@ class InstagramLocationPopulator
     end
 
     result.each do |media|
-      concert.instagram_photos << InstagramPhoto.build_from_hashie(media)
+      concert.posts << Post::InstagramPhoto.build_from_hashie(media)
     end
   end
 end

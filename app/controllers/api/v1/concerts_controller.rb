@@ -34,7 +34,7 @@ class Api::V1::ConcertsController < Api::V1::BaseController
       render 'api/v1/base/result.json', locals: {result: 'already added'}
     else
       # Populate the concert
-      ConcertPopulator.perform_async(concert.id)
+      ConcertPopulator.perform_async(concert.id.to_s)
 
       user.concerts << concert
 

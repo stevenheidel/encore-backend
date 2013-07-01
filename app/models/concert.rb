@@ -1,20 +1,3 @@
-# == Schema Information
-#
-# Table name: concerts
-#
-#  id            :integer          not null, primary key
-#  name          :string(255)
-#  venue_id      :integer
-#  date          :date
-#  created_at    :datetime
-#  updated_at    :datetime
-#  start_time    :datetime
-#  end_time      :datetime
-#  artist_id     :integer
-#  populated     :boolean
-#  songkick_uuid :integer
-#
-
 class Concert
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -32,10 +15,7 @@ class Concert
 
   has_and_belongs_to_many :users
 
-  # All the fun associations
-  has_many :instagram_photos
-  has_many :user_photos
-  has_many :flickr_photos
+  has_many :posts
 
   validates_uniqueness_of :songkick_uuid
 
@@ -66,10 +46,6 @@ class Concert
       artist: artist,
       venue: venue
     )
-  end
-
-  def posts
-    self.instagram_photos + self.user_photos# + self.flickr_photos
   end
 
   def start_time

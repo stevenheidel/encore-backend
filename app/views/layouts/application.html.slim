@@ -1,11 +1,11 @@
-!!!
-%html
-  %head
-    %title Encore
+doctype html
+html
+  head
+    title Encore
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-    = yield :opengraph_tags
-  %body
-    = yield
+    == yield :opengraph_tags
+  body
+    == yield
     .modal

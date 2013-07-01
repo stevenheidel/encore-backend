@@ -9,7 +9,7 @@ describe FlickrPopulator, :vcr do
 
   describe '.perform' do
     it 'should get some posts from Flickr' do
-      FlickrPhoto.count.should > 0
+      Post::FlickrPhoto.count.should > 0
     end
   end
 end

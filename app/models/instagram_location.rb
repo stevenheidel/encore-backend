@@ -1,15 +1,3 @@
-# == Schema Information
-#
-# Table name: instagram_locations
-#
-#  id             :integer          not null, primary key
-#  created_at     :datetime
-#  updated_at     :datetime
-#  venue_id       :integer
-#  instagram_uuid :integer
-#  name           :string(255)
-#
-
 require 'foursquare_api'
 require 'instagram_api'
 

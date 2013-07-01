@@ -41,11 +41,13 @@ end
 group :development, :test do
   gem 'bullet'
   gem 'debugger'
+
+  # RSpec
+  gem 'rspec-rails', '~> 2.13'
 end
 
 group :test do
-  # RSpec
-  gem 'rspec-rails', '~> 2.13'
+  # RSpec friends
   gem 'capybara', '2.0.2'
   gem 'vcr'
   gem 'factory_girl_rails', '~> 4.0'
@@ -54,7 +56,6 @@ group :test do
 
   # Cucumber
   gem 'cucumber-rails', require: false
-  gem 'database_cleaner'
 end
 
 # Use MongoDB as the database
@@ -63,8 +64,8 @@ gem 'mongoid', github: 'mongoid/mongoid'
 # Use Unicorn as the app server
 gem 'unicorn'
 
-# Use HAML for HTML templates
-gem 'haml'
+# Use Slim for HTML templates
+gem 'slim-rails'
 
 # Template for demo frontend
 gem 'htmlkickstart'
@@ -76,10 +77,9 @@ gem 'twitter'
 gem 'foursquare2'
 gem 'flickraw'
 
-# Using Rails 4 branch of Rails Admin
-#gem 'rails_admin'
-#gem 'devise', '~> 3.0.0.rc'
-#gem 'protected_attributes'
+# Rails Admin
+gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'devise', '~> 3.0.0.rc'
 
 # Faraday
 gem 'faraday'
@@ -89,14 +89,16 @@ gem 'typhoeus'
 
 # Sidekiq
 gem 'sidekiq'
-gem 'slim', '>= 1.3.0'
 gem 'sinatra', '>= 1.3.0', require: nil
-gem 'clockwork'
+gem 'kiqstand', github: 'mongoid/kiqstand' # to make it work nicely with Mongoid
 
 # Paperclip
-gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'fog', github: 'fog/fog'
+gem 'paperclip'
+gem 'fog'
 gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 
 # New Relic
 gem 'newrelic_rpm'
+
+# Whenever
+gem 'whenever'
