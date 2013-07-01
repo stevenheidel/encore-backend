@@ -4,12 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 #require 'rspec/autorun' # Turn off for Zeus
 
-# Required for Sidekiq
-require 'sidekiq/testing'
-
-require 'bullet'
-
-require 'database_cleaner'
+require 'sidekiq/testing' # Required for Sidekiq
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -47,35 +42,8 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  # Required for VCR
-  config.treat_symbols_as_metadata_keys_with_true_values = true
-
-  # Database cleaner
-  config.before :each do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.start
-  end
-
-  config.after do
-    DatabaseCleaner.clean
-  end
-
   # Guard starts the first line at the wrong point for some reason
   config.before :all do
     print "\n"
   end
-
-  # Bullet
-=begin
-  config.before(:each) do
-    Bullet.start_request if Bullet.enable?
-  end
-
-  config.after(:each) do
-    if Bullet.enable? && Bullet.notification?
-      Bullet.perform_out_of_channel_notifications
-    end
-    Bullet.end_request if Bullet.enable?
-  end
-=end
 end
