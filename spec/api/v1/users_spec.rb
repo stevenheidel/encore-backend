@@ -14,16 +14,16 @@ describe "/api/v1/users", :type => :api do
       assert last_response.ok?
       last_response.body.should == '{"response":"success"}'
 
-      (u = User.where(:facebook_uuid => 1651770074)).count.should == 1
-      u.first.oauth_expiry.should == DateTime.parse("2013-08-02T02:53:23Z")
+      (u = User.where(:facebook_id => 1651770074)).count.should == 1
+      u.first.oauth_expiry.should == DateTime.parse(params["expiration_date"])
     end
 
-    it "should be successful for a current user" do
+    it "should be successful for a current user multiple times" do
       5.times { post url, params }
 
       assert last_response.ok?
 
-      (u = User.where(:facebook_uuid => 1651770074)).count.should == 1
+      (u = User.where(:facebook_id => 1651770074)).count.should == 1
     end
   end
 end

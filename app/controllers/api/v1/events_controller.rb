@@ -22,7 +22,7 @@ class Api::V1::EventsController < Api::V1::BaseController
   def create
     event = Event.get(params[:lastfm_id])
 
-    user = User.find_by(facebook_uuid: params[:user_id])
+    user = User.get(params[:user_id])
     if user.events.include?(event) # already been added to profile
       render 'api/v1/base/result.json', locals: {result: 'already added'}
     else
@@ -37,7 +37,7 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def past
     if params[:artist_id] # get past for artist
-      @events = SongkickAPI.artist_gigography_city(params[:artist_id], params[:city]).reverse
+      @events = Artist.get(params[:artist_id]).past_events(params[:city])
     else # get popular past for city
       @events = []
     end
@@ -79,8 +79,8 @@ class Api::V1::EventsController < Api::V1::BaseController
   end
 
   def destroy
-    event = event.find_by(lastfm_id: params[:id])
-    user = User.find_by(facebook_uuid: params[:user_id])
+    event = Event.get(params[:id])
+    user = User.get(params[:user_id])
     user.events.delete(event)
 
     render 'api/v1/base/result.json', locals: {result: 'success'}

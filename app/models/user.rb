@@ -11,6 +11,13 @@ class User
 
   has_many :user_photos, class_name: "Post::UserPhoto"
 
+  validates_uniqueness_of :facebook_id
+
+  # Get a user by the facebook id
+  def self.get(facebook_id)
+    self.find_by(facebook_id: facebook_id)
+  end
+
   # TODO DEPRECATION
   def facebook_uuid
     puts "DEPRECATED: Use facebook_id instead"

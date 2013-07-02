@@ -1,12 +1,12 @@
 require 'spec_helper'
 
 describe "/api/v1/artists/:artist_id/events/past", type: :api, vcr: true do
-  let(:url) { "/api/v1/artists/276130/events/past.json" } #276130 is AC/DC
+  let(:artist) { FactoryGirl.create :artist }
+  let(:url) { "/api/v1/artists/#{artist.lastfm_id}/events/past.json" }
 
   it "should return past events" do
     get url, {city: 'Toronto'}
-
-    last_response.body
+    last_response.body.should == "{\"events\":[{\"lastfm_id\":\"206280\",\"name\":\"Cher\",\"venue_name\":\"Air Canada Centre\"}]}"
   end
 end
 
@@ -36,14 +36,14 @@ describe "/api/v1/users/:facebook_uuid/events", type: :api, vcr: true do
     get url
     last_response.body.should == "{\"events\":{\"past\":[],\"future\":[]}}"
 
-    post url, lastfm_id: event.id
+    post url, lastfm_id: event.lastfm_id
     last_response.body.should == "{\"response\":\"success\"}"
     
     user.reload
     user.events.count.should == 1
-    user.events.first.name.should == "Taylor Swift"
+    user.events.first.name.should == "pRIvate"
 
-    eventPopulator.jobs.size.should == 1
+    ConcertPopulator.jobs.size.should == 1
   end
 
   it "should check if the user has that event" do

@@ -8,7 +8,7 @@ class InstagramLocation
   field :name, type: String
   field :instagram_uuid, type: Integer
 
-  belongs_to :venue
+  embedded_in :venue
 
   validates_uniqueness_of :instagram_uuid, scope: :venue
 

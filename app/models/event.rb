@@ -1,7 +1,4 @@
 class Event
-  include Mongoid::Document
-  include Mongoid::Timestamps
-
   include Lastfmable
   
   field :flickr_tag, type: String
@@ -10,12 +7,16 @@ class Event
 
   has_and_belongs_to_many :artists
   has_many :posts
-  has_many :setlist_songs
   has_and_belongs_to_many :users
   belongs_to :venue
 
   scope :past, where(:start_date.lt => Time.now)
   scope :future, where(:start_date.gte => Time.now)
+
+  scope :in_geo, ->(geo) {
+    venue_ids = Venue.where(geo: geo).only(:_id).map(&:_id)
+    where(:venue_id.in => venue_ids)
+  }
 
   def fill(response=nil)
     response ||= LastfmAPI.event_getInfo(self.lastfm_id)

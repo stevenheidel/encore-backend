@@ -9,7 +9,7 @@ describe Event, :vcr do
     end
 
     it "should retrieve a concert if it doesn't exist" do
-      e = Event.get(2011881)
+      e = Event.get!(2011881)
 
       e.name.should == "Salvationz Outdoor"
       e.images.size.should == 4

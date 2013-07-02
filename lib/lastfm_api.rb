@@ -22,9 +22,14 @@ class LastfmAPI
     get('event.getInfo', event: id).event
   end
 
+  def self.geo_getMetros_all
+    get('geo.getMetros').metros.metro
+  end
+
   private
 
-  def self.get(method, params)
+  def self.get(method, params=nil)
+    params ||= {}
     params[:method] = method
     conn.get('', params).body
   end

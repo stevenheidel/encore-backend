@@ -17,9 +17,14 @@ module Lastfmable
   end
 
   module ClassMethods
-    # Search for an entity by the lastfm_id, fill from the API if needed
+    # Search for an entity but don't fill from API
     def get(lastfm_id)
-      search = self.where(lastfm_id: lastfm_id.to_s)
+      self.find_by(lastfm_id: lastfm_id)
+    end
+
+    # Search for an entity by the lastfm_id, fill from the API if needed
+    def get!(lastfm_id)
+      search = self.where(lastfm_id: lastfm_id)
 
       if search.exists?
         search.first
@@ -28,6 +33,7 @@ module Lastfmable
         entity.lastfm_id = lastfm_id
 
         entity.fill
+        entity.save
 
         entity
       end
@@ -36,7 +42,7 @@ module Lastfmable
     # Search for an entity by the response.id, fill from the response if needed
     def get_or_set(response)
       entity = self.find_or_create_by(lastfm_id: response.id)
-      entity.fill(response) # TODO: does it all the time, good idea?
+      entity.fill(response)
       entity.save
 
       entity
