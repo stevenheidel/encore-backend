@@ -1,4 +1,23 @@
 FactoryGirl.define do
+  # ARTISTS
+  factory :artist do
+    lastfm_id "Cher"
+    name "Cher"
+  end
+  
+  # EVENTS
+  factory :event do
+    lastfm_id "1196301"
+    name "pRIvate"
+    url "http://www.last.fm/event/1196301+pRIvate"
+
+    flickr_tag "lastfm:event=1196301"
+    headliner "CSS"
+    start_date "Fri, 28 Aug 2009 04:42:01"
+  end
+
+
+=begin
   # CONCERT
   factory :concert do
     name      "How To Destroy Angels"
@@ -43,4 +62,5 @@ FactoryGirl.define do
     name "Steven Heidel"
     facebook_uuid 696955405
   end
+=end
 end
