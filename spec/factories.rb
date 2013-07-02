@@ -16,7 +16,11 @@ FactoryGirl.define do
     start_date "Fri, 28 Aug 2009 04:42:01"
   end
 
-
+  # USERS
+  factory :user do
+    name "Steven Heidel"
+    facebook_id 696955405
+  end
 =begin
   # CONCERT
   factory :concert do
@@ -55,12 +59,6 @@ FactoryGirl.define do
     latitude 43.6437852
     longitude -79.3784416
     location "Toronto"
-  end
-
-  # USER
-  factory :user do
-    name "Steven Heidel"
-    facebook_uuid 696955405
   end
 =end
 end

@@ -5,10 +5,10 @@ EncoreBackend::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create] do
-        resources :concerts, only: [:index, :create, :destroy]
+        resources :events, only: [:index, :create, :destroy]
       end
 
-      resources :concerts, only: [:index, :show] do
+      resources :events, only: [:index, :show] do
         resources :users, only: []
         resources :posts, only: [:index, :create]
 
@@ -20,7 +20,7 @@ EncoreBackend::Application.routes.draw do
       end
 
       resources :artists, only: [] do
-        resources :concerts, only: [] do
+        resources :events, only: [] do
           collection do
             get :past
             get :future
@@ -35,7 +35,7 @@ EncoreBackend::Application.routes.draw do
   end
 
   # Public routes
-  resources :concerts, only: [:show]
+  resources :events, only: [:show]
   resources :posts, only: [:show]
 
   # Private routes TODO: Secure this from outsiders
@@ -44,7 +44,7 @@ EncoreBackend::Application.routes.draw do
     namespace :demo do
       root to: redirect('/private/demo/users')
       resources :users, only: [:show, :index]
-      resources :concerts, only: [:show, :index]
+      resources :events, only: [:show, :index]
     end
 
     # Rails Admin

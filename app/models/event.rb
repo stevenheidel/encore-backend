@@ -17,7 +17,7 @@ class Event
   scope :past, where(:start_date.lt => Time.now)
   scope :future, where(:start_date.gte => Time.now)
 
-  def fill(response = nil)
+  def fill(response=nil)
     response ||= LastfmAPI.event_getInfo(self.lastfm_id)
 
     fill_defaults(response)
@@ -41,7 +41,6 @@ class Event
       artist = Artist.find_or_create_by({lastfm_id: a})
       #artist.fill TODO: this should go into some kind of queue
       self.artists << artist
-
     end
   end
 end
