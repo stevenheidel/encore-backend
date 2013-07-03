@@ -2,25 +2,25 @@ script id="menu_template" type="text/html"
   ul.menu
     li
       a#past Past
-    | {{#concerts.past}}
+    | {{#events.past}}
     li
       a id="{{songkick_id}}" {{name}}
-    | {{/concerts.past}}
+    | {{/events.past}}
     li.current
       a#today Today
-    | {{#concerts.future}}
+    | {{#events.future}}
     li
       a id="{{songkick_id}}" {{name}}
-    | {{/concerts.future}}
+    | {{/events.future}}
     li
       a#future Future
 
-script id="concert_template" type="text/html"
+script id="event_template" type="text/html"
   h1 
     | {{name}}
   p 
     | {{date}}
-  a#remove Remove concert from profile
+  a#remove Remove event from profile
   #photos
     a Show Photos
 
@@ -38,9 +38,9 @@ script id="ptf_template" type="text/html"
   input#artist_search type="text" placeholder="Artist"
   | {{/search}}
   input#city_search type="text" value="Toronto"
-  #concerts
+  #events
 
-script id="concerts_template" type="text/html"
+script id="events_template" type="text/html"
   table
     thead
       tr
@@ -50,7 +50,7 @@ script id="concerts_template" type="text/html"
         td Start Time
         td
     tbody
-      | {{#concerts}}
+      | {{#events}}
       tr
         td 
           | {{name}}
@@ -62,7 +62,7 @@ script id="concerts_template" type="text/html"
           | {{start_time}}
         td
           button id="{{songkick_id}}" Add to Profile
-      | {{/concerts}}
+      | {{/events}}
 
 #container data-userid=@user_id
   #menu

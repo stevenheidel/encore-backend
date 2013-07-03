@@ -27,7 +27,7 @@ describe "/api/v1/(artists/:artist_id/)events/future", type: :api, vcr: true do
   end
 end
 
-describe "/api/v1/users/:facebook_uuid/events", type: :api, vcr: true do
+describe "/api/v1/users/:facebook_id/events", type: :api, vcr: true do
   let(:event) { FactoryGirl.create :event }
   let(:user) { FactoryGirl.create :user }
   let(:url) { "/api/v1/users/#{user.facebook_id}/events.json" }
@@ -42,8 +42,6 @@ describe "/api/v1/users/:facebook_uuid/events", type: :api, vcr: true do
     user.reload
     user.events.count.should == 1
     user.events.first.name.should == "pRIvate"
-
-    ConcertPopulator.jobs.size.should == 1
   end
 
   it "should check if the user has that event" do

@@ -4,6 +4,6 @@ class Demo::UsersController < ApplicationController
   end
 
   def show
-    @user_id = User.find(params[:id]).facebook_uuid
+    @user_id = User.find(params[:id]).facebook_id
   end
 end

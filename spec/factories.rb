@@ -6,7 +6,7 @@ FactoryGirl.define do
   end
   
   # EVENTS
-  factory :event do
+  factory :event, class: Event do
     lastfm_id "1196301"
     name "pRIvate"
     url "http://www.last.fm/event/1196301+pRIvate"
@@ -14,6 +14,16 @@ FactoryGirl.define do
     flickr_tag "lastfm:event=1196301"
     headliner "CSS"
     start_date "Fri, 28 Aug 2009 04:42:01"
+  end
+
+  factory :future_event, class: Event do
+    lastfm_id "3591559"
+    name "Spiders"
+    url "http://www.last.fm/event/3591559+Spiders+at+Wurlitzer+Ballroom+on+3+July+2013"
+
+    flickr_tag "lastfm:event=3591559"
+    headliner "Spiders"
+    start_date "Wed, 03 Jul 2013 22:30:00"
   end
 
   # USERS

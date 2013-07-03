@@ -8,7 +8,7 @@ class Post
   field :user_name, type: String
   field :user_profile_picture, type: String
 
-  belongs_to :concert
+  belongs_to :event
 
-  validates_uniqueness_of :link, scope: :concert
+  validates_uniqueness_of :link, scope: :event
 end

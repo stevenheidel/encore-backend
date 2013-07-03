@@ -4,11 +4,11 @@ table.sortable.striped
   thead
     tr
       th
-      th Number of Concerts
+      th Number of Events
       th Facebook ID
   tbody
   - @users.each do |u|
     tr
       td= link_to u.name, demo_user_path(u)
-      td= u.concerts.count
-      td= u.facebook_uuid
+      td= u.events.count
+      td= u.facebook_id

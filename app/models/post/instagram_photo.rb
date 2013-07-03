@@ -3,9 +3,7 @@ class Post::InstagramPhoto < Post
   field :user_uuid, type: String
 
   # TODO: add belongs_to instagram_location or something
-
-  validates_uniqueness_of :link, scope: :concert
-
+  
   def caption=(value)
     # get rid of UTF-8 4 byte characters
     if value

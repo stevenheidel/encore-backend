@@ -13,9 +13,9 @@ $(document).ready ->
 
 insert_menu = ->
   # Create the menu
-  $.getJSON "/api/v1/users/" + $("#container").attr('data-userid') + "/concerts.json", (concerts) ->
+  $.getJSON "/api/v1/users/" + $("#container").attr('data-userid') + "/events.json", (events) ->
     # TODO sort between future and past
-    $("#menu").html ich.menu_template concerts
+    $("#menu").html ich.menu_template events
 
     # Deal with navigation
     $("#menu a").click ->
@@ -29,7 +29,7 @@ insert_menu = ->
         when "future"
           insert_future()
         else
-          insert_concert($(this).attr('id'))
+          insert_event($(this).attr('id'))
 
 # tense is past, today, or future
 enable_search = (tense) ->
@@ -42,30 +42,31 @@ enable_search = (tense) ->
           ui.content[index] = {
             'label': value.name, 
             'value': value.name,
-            'id': value.songkick_id
+            'id': value.lastfm_id
           }
     select: (event, ui) ->
-      $.getJSON "/api/v1/artists/" + ui.item.id + "/concerts/" + tense + "?city=" + $("#city_search").val(), (concerts) ->
-        $("#concerts").html ich.concerts_template concerts
+      $.getJSON "/api/v1/artists/" + ui.item.id + "/events/" + tense + "?city=" + $("#city_search").val(), (events) ->
+        $("#events").html ich.events_template events
         enable_add()
   }
 
 enable_add = ->
   # Add Timecapsule to profile
-  $("#concerts button").click ->
-    $.post '/api/v1/users/' + $("#container").attr('data-userid') + '/concerts', {
-      songkick_id: $(this).attr('id')
+  $("#events button").click ->
+    $.post '/api/v1/users/' + $("#container").attr('data-userid') + '/events', {
+      lastfm_id: $(this).attr('id')
     }, (data) ->
       insert_menu()
 
 insert_popular = (tense) ->
-  $.getJSON "/api/v1/concerts/" + tense + "?city=" + $("#city_search").val(), (concerts) ->
-    $("#concerts").html ich.concerts_template concerts
+  $.getJSON "/api/v1/events/" + tense + "?city=" + $("#city_search").val(), (events) ->
+    $("#events").html ich.events_template events
     enable_add()
 
 insert_past = ->
   $("#content").html ich.ptf_template {'title': 'Past', 'search': true}
   enable_search("past")
+  insert_popular("past")
 
 insert_today = ->
   $("#content").html ich.ptf_template {'title': 'Today'}
@@ -76,14 +77,14 @@ insert_future = ->
   enable_search("future")
   insert_popular("future")
 
-insert_concert = (id) ->
-  $.getJSON "/api/v1/concerts/" + id + ".json", (concert) ->
-    $("#content").html ich.concert_template concert
+insert_event = (id) ->
+  $.getJSON "/api/v1/events/" + id + ".json", (event) ->
+    $("#content").html ich.event_template event
 
-    # Remove concert from profile
+    # Remove event from profile
     $("a#remove").click ->
       $.ajax {
-        url: "/api/v1/users/" + $("#container").attr('data-userid') + "/concerts/" + id
+        url: "/api/v1/users/" + $("#container").attr('data-userid') + "/events/" + id
         type: 'DELETE'
         success: (result) ->
           insert_menu()
@@ -92,5 +93,5 @@ insert_concert = (id) ->
 
     # Load posts on click
     $("#photos a").click ->
-      $.getJSON "/api/v1/concerts/" + concert.songkick_id + "/posts.json", (posts) ->
+      $.getJSON "/api/v1/events/" + event.lastfm_id + "/posts.json", (posts) ->
         $("#photos").html ich.posts_template posts

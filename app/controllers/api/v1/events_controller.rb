@@ -26,10 +26,11 @@ class Api::V1::EventsController < Api::V1::BaseController
     if user.events.include?(event) # already been added to profile
       render 'api/v1/base/result.json', locals: {result: 'already added'}
     else
-      # Populate the event
-      ConcertPopulator.perform_async(event.id.to_s)
-
       user.events << event
+
+      # TODO: this should eventually go somewhere else ie. model
+      # Populate the event
+      # ConcertPopulator.perform_async(event.id.to_s)
 
       render 'api/v1/base/result.json', locals: {result: 'success'}
     end
@@ -39,7 +40,7 @@ class Api::V1::EventsController < Api::V1::BaseController
     if params[:artist_id] # get past for artist
       @events = Artist.get(params[:artist_id]).past_events(params[:city])
     else # get popular past for city
-      @events = []
+      @events = Geo.get(params[:city]).past_events
     end
 
     render 'api/v1/events/index.json'
@@ -47,33 +48,17 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def future
     if params[:artist_id] # get future for artist
-      @events = SongkickAPI.artist_upcoming_city(params[:artist_id], params[:city])
+      @events = Artist.get(params[:artist_id]).future_events(params[:city])
     else # get popular future for city
-      location = SongkickAPI.location_search(params[:city]).first.metroArea.id
-      @events = SongkickAPI.metroarea_upcoming(location)
-
-      # IMPORTANT TODO: Deal with festivals
-      @events.delete_if {|c| c.type == "Festival"}
-
-      # don't include today's events
-      @events.delete_if {|c| c.start.date == Date.today.strftime("%F")}
+      @events = Geo.get(params[:city]).future_events
     end
 
     render 'api/v1/events/index.json'
   end
 
   def today
-    # Get today's events from Songkick
-    location = SongkickAPI.location_search(params[:city]).first.metroArea.id
-    @events = SongkickAPI.metroarea_upcoming(location)
-
-    @events.delete_if {|c| c.type == "Festival"}
-
-    @events.keep_if {|c| c.start.date == Date.today.strftime("%F")}
-
-    # TODO: WTF is wrong with today view?
-    # @events = event.where("date = ?", Date.today).includes(:venue)
-    # render 'api/v1/events/database.json'
+    # Get today's events from Lastfm
+    @events = Geo.get(params[:city]).todays_events
 
     render 'api/v1/events/index.json'
   end

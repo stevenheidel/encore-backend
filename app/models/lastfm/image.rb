@@ -4,7 +4,7 @@ class Lastfm::Image
   field :size, type: String
   field :url, type: String
 
-  embedded_in :concert
+  embedded_in :event
 
   validates_uniqueness_of :size, :url
 end

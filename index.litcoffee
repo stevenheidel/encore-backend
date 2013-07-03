@@ -3,8 +3,8 @@ Encore API v1
 
 _All URLs begin with 'http://{server}/api/v1' and end with '.json'_
 
-Welcome
--------
+**Welcome**
+-----------
 
 **Login with Facebook**
 
@@ -14,7 +14,7 @@ Welcome
     {
       "expiration_date": "2013-08-02T02:53:23Z",
       "oauth": "CAACp5xj4c9sBAIeNLxb3204nzPOYmP......",
-      "facebook_id": 12345,
+      "facebook_id": 696955405,
       "name": "Steven Heidel"
     }
 
@@ -23,28 +23,28 @@ Welcome
       "response": "success"
     }
 
-**List of User's Concerts**
+**List of User's Events**
 
-- should return image_url with each concert
+- should return image_url with each event
 
-    GET '/users/:facebook_id/concerts'
+    GET '/users/:facebook_id/events'
 
     Response:
     {
-      "concerts": {
-        "past": [@concerts],
-        "future": [@concerts]
+      "events": {
+        "past": [@past_event],
+        "future": [@future_event]
       }
     }
 
-Concert Listings
-----------------
+**Event Listings**
+--------------------
 
 **Today List**
 
 - should be populated daily for Toronto in the morning
 
-    GET '/concerts/today'
+    GET '/events/today'
 
     Request:
     {
@@ -53,7 +53,7 @@ Concert Listings
 
     Response:
     {
-      "concerts": [@concerts]
+      "events": [@event]
     }
 
 **Future List**
@@ -61,7 +61,7 @@ Concert Listings
 - should work for multiple cities
 - should be based on latitude and longitude
 
-    GET '/concerts/future'
+    GET '/events/future'
 
     Request:
     {
@@ -70,35 +70,36 @@ Concert Listings
 
     Response:
     {
-      "concerts": [@concerts]
+      "events": [@event]
     }
 
-Searching
----------
+**Searching**
+-------------
 
-**Search for an Artist's Concerts**
+**Search for an Artist's Events**
 
 - should be implemented based on this spec
+- tense can be either "past" or "future"
 
     GET '/artists/search'
 
     Request:
     {
       "city": "Toronto",
-      "term": "Radiohe",
-      "tense": "past" / "future"
+      "term": "Cher",
+      "tense": "past"
     }
 
     Response:
     {
       "artist": @artist,
-      "others": [@artists]
-      "concerts": [@concerts]
+      "others": [@artist],
+      "events": [@event]
     }
 
-**Artist's Past Concerts**
+**Artist's Past Events**
 
-    GET '/artists/:songkick_id/concerts/past'
+    GET '/artists/:lastfm_id/events/past'
 
     Request:
     {
@@ -108,12 +109,12 @@ Searching
     Response:
 
     {
-      "concerts": [@concerts]
+      "events": [@event]
     }
 
-**Artist's Future Concerts**
+**Artist's Future Events**
 
-    GET '/artists/:songkick_id/concerts/future'
+    GET '/artists/:lastfm_id/events/future'
 
     Request:
     {
@@ -123,33 +124,33 @@ Searching
     Response:
 
     {
-      "concerts": [@concerts]
+      "events": [@event]
     }
 
-Viewing Concerts
-----------------
+**Viewing Events**
+--------------------
 
-**Check if Concert on Profile**
+**Check if Event on Profile**
 
-    GET '/users/:facebook_id/concerts'
+    GET '/users/:facebook_id/events'
 
     Request:
     {
-      "songkick_id": 12345
+      "lastfm_id": 12345
     }
 
     Response:
     {
-      "response": true / false
+      "response": true
     }
 
-**Add Concert to Profile**
+**Add Event to Profile**
 
-    POST '/users/:facebook_id/concerts'
+    POST '/users/:facebook_id/events'
 
     Request:
     {
-      "songkick_id": 12345
+      "lastfm_id": 12345
     }
 
     Response:
@@ -157,9 +158,9 @@ Viewing Concerts
       "response": "success"
     }
 
-**Remove Concert from Profile**
+**Remove Event from Profile**
 
-    DELETE '/users/:facebook_id/concerts/:songkick_id'
+    DELETE '/users/:facebook_id/events/:lastfm_id'
 
     Response:
     {
@@ -168,27 +169,27 @@ Viewing Concerts
 
 **Viewing all Photos**
 
-    GET '/concerts/:songkick_id/posts'
+    GET '/events/:lastfm_id/posts'
 
     Response:
     {
-      "posts": [@posts]
+      "posts": [@post]
     }
 
 **Upload Photos**
 
 - should attach post to User
 
-    POST '/concerts/:songkick_id/posts'
+    POST '/events/:lastfm_id/posts'
 
     Request:
     {
       "facebook_id": 1651770074,
-      "image": MultiPart::File
+      "image": @file
     }
 
-Entities
---------
+**Entities**
+------------
 
 **@artist**
 
@@ -196,22 +197,39 @@ Entities
 
     {
       "name": "Radiohead",
-      "songkick_id": 12345,
+      "lastfm_id": 12345,
       "image_url": "http:\/\/www1.sk-static.com\/images\/media\/profile_images\/artists\/16151999\/avatar"
     }
 
-**@concert**
+**@event**
 
 - start time is sometimes null
 
+    {}
+
+**@past_event**
+
     {
-      "songkick_id": 16151999,
-      "name": "Logic",
-      "date": "2013-06-26",
-      "start_time": "19:00:00",
-      "venue_name": "Virgin Mobile Mod Club",
-      "image_url": "http:\/\/www1.sk-static.com\/images\/media\/profile_images\/artists\/16151999\/avatar"
+      "lastfm_id": 1196301,
+      "name": "pRIvate",
+      "date": "2009-08-28",
+      "venue_name": "Berlusconni´s",
+      "image_url": ""
     }
+
+**@future_event**
+
+    {
+      "lastfm_id": 3591559,
+      "name": "Spiders",
+      "date": "2013-07-03",
+      "venue_name": "Wurlitzer Ballroom",
+      "image_url": ""
+    }
+
+**@file**
+
+    {}
 
 **@post**
 
