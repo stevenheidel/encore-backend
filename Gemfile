@@ -34,7 +34,6 @@ group :development do
   gem 'guard-cucumber'
   gem 'guard-rails'
   gem 'guard-rspec'
-  gem 'guard-shell'
   gem 'guard-spin'
   gem 'guard-zeus'
 end

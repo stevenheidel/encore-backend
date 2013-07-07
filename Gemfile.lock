@@ -215,8 +215,6 @@ GEM
     guard-rspec (3.0.2)
       guard (>= 1.8)
       rspec (~> 2.13)
-    guard-shell (0.5.1)
-      guard (>= 1.1.0)
     guard-spin (0.3.0)
       guard
       spin
@@ -501,7 +499,6 @@ DEPENDENCIES
   guard-cucumber
   guard-rails
   guard-rspec
-  guard-shell
   guard-spin
   guard-zeus
   hashie
