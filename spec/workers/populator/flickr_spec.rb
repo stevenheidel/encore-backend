@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe FlickrPopulator, :vcr do
-  let(:concert) { FactoryGirl.create :rolling_stones }
+describe Populator::Flickr, :vcr do
+  let(:event) { FactoryGirl.create :rolling_stones }
 
   before do
-    FlickrPopulator.new.perform(concert.id)
+    Populator::Flickr.new.perform(event.id)
   end
 
   describe '.perform' do

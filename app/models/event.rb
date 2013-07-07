@@ -21,4 +21,12 @@ class Event
   def date
     self.start_date.to_date
   end
+
+  def start_time
+    self.start_date
+  end
+
+  def end_time
+    self.start_date + 6.hours # TODO: arbitralily add 6 hours for end of event
+  end
 end

@@ -1,15 +1,15 @@
 require 'spec_helper'
 
-describe InstagramPopulator, :vcr do
-  let(:concert) { FactoryGirl.create :concert }
+describe Populator::Instagram, vcr: false do
+  let(:event) { FactoryGirl.create :rolling_stones }
 
   before do
-    InstagramPopulator.new.perform(concert.id)
+    Populator::Instagram.new.perform(event.id)
   end
 
   describe '.perform' do
     it 'should queue up the right sub-populators' do
-      concert.venue.instagram_locations.count.should > 0
+      event.venue.instagram_locations.count.should > 0
 
       InstagramLocationPopulator.jobs.size.should > 1
       #InstagramSearchPopulator.jobs.size.should == 1 TODO disabled for now

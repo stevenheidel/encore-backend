@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe InstagramLocationPopulator, :vcr do
-  let(:concert) { FactoryGirl.create :concert }
+describe Populator::InstagramLocation, :vcr do
+  let(:event) { FactoryGirl.create :rolling_stones }
 
   before do
     # "76266" is Sound Academy
-    InstagramLocationPopulator.new.perform(concert.id, 76266)
+    Populator::InstagramLocation.new.perform(event.id, 76266)
   end
 
   describe '.perform' do

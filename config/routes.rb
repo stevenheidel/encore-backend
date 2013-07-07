@@ -55,6 +55,6 @@ EncoreBackend::Application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
 
     # Documentation
-    get '/api', :to => redirect('/docs/index.html')
+    get '/api', :to => redirect('https://relishapp.com/encore/backend/docs/api/api')
   end
 end
