@@ -5,7 +5,6 @@ class Post::UserPhoto < Post
 
   has_mongoid_attached_file :photo
 
-  # TODO: Below is for indexing the posts
   def caption
     "Uploaded to Encore"
   end

@@ -14,7 +14,6 @@ $(document).ready ->
 insert_menu = ->
   # Create the menu
   $.getJSON "/api/v1/users/" + $("#container").attr('data-userid') + "/events.json", (events) ->
-    # TODO sort between future and past
     $("#menu").html ich.menu_template events
 
     # Deal with navigation

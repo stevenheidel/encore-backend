@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 EncoreBackend::Application.routes.draw do
   # API Routes
+  # TODO: secure this with some sort of shared key
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create, :show] do
