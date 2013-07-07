@@ -52,6 +52,5 @@ describe Lastfm::Event do
 
   it "should create a new object" do
     le = Lastfm::Event.new(sample)
-    le.json.should == sample
   end
 end

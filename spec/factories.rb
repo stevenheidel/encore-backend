@@ -6,6 +6,7 @@ FactoryGirl.define do
   
   factory :event do
     name "Event Name"
+    lastfm_id "12345"
 
     factory :past_event do
       association :venue, lastfm_id: "543"

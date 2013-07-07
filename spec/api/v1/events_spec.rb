@@ -41,7 +41,7 @@ describe "/api/v1/users/:facebook_id/events", type: :api, vcr: true do
     
     user.reload
     user.events.count.should == 1
-    user.events.first.name.should == "pRIvate"
+    user.events.first.name.should == "Event Name"
   end
 
   it "should check if the user has that event" do
@@ -50,7 +50,7 @@ describe "/api/v1/users/:facebook_id/events", type: :api, vcr: true do
     get url, lastfm_id: event.lastfm_id
     last_response.body.should == "{\"response\":true}"
 
-    get url, lastfm_id: 12345
+    get url, lastfm_id: 666
     last_response.body.should == "{\"response\":false}"
   end
 end

@@ -43,7 +43,7 @@ RSpec.configure do |config|
   config.order = "random"
 
   # Guard starts the first line at the wrong point for some reason
-  config.before :all do
+  config.before :suite do
     print "\n"
   end
 end
