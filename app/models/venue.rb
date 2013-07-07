@@ -1,5 +1,5 @@
 class Venue
-  include Lastfmable
+  include Concerns::Lastfmable
 
   field :street, type: String
   field :postalcode, type: String
@@ -10,18 +10,5 @@ class Venue
   has_many :events
   belongs_to :geo
   embeds_many :instagram_locations
-
-  def fill(response=nil)
-    # TODO there is no venue.getInfo
-
-    fill_defaults(response)
-
-    # Associate with geo
-    self.geo = Geo.get_or_set(response.location.city, response.location.country)
-
-    self.street = response.location.street
-    self.postalcode = response.location.postalcode
-    self.latitude = response.location["geo:point"]["geo:lat"]
-    self.longitude = response.location["geo:point"]["geo:long"]
-  end
+  accepts_nested_attributes_for :instagram_locations # TODO: for RailsAdmin
 end

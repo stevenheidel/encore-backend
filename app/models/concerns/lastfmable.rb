@@ -1,6 +1,6 @@
 require 'lastfm_api'
 
-module Lastfmable
+module Concerns::Lastfmable
   extend ActiveSupport::Concern
 
   included do
@@ -9,59 +9,34 @@ module Lastfmable
 
     field :lastfm_id, type: String
     field :name, type: String
+    field :website, type: String
     field :url, type: String
 
     embeds_many :images, class_name: "Lastfm::Image"
+    accepts_nested_attributes_for :images # TODO: for RailsAdmin
 
     validates_uniqueness_of :lastfm_id
   end
 
   module ClassMethods
-    # Search for an entity but don't fill from API
+    # Search for an entity by lastfm_id
     def get(lastfm_id)
-      self.find_by(lastfm_id: lastfm_id)
-    end
-
-    # Search for an entity by the lastfm_id, fill from the API if needed
-    def get!(lastfm_id)
-      search = self.where(lastfm_id: lastfm_id)
-
-      if search.exists?
-        search.first
-      else
-        entity = self.new
-        entity.lastfm_id = lastfm_id
-
-        entity.fill
-        entity.save
-
-        entity
-      end
-    end
-
-    # Search for an entity by the response.id, fill from the response if needed
-    def get_or_set(response)
-      entity = self.find_or_create_by(lastfm_id: response.id)
-      entity.fill(response)
-      entity.save
-
-      entity
+      self.find_or_create_by(lastfm_id: lastfm_id)
     end
   end
 
-  # Fill the default fields that come with all lastfm entities
-  def fill_defaults(response)
-    self.lastfm_id = response.id
-    self.name = response.name
-    self.url = response.url
+  # Update an object from its corresponding Lastfm:: class
+  def update_from_lastfm(lastfm_object)
+    # Create a hash with the name of the method and response to it
+    params = {}
+    lastfm_object.methods.each { |m| params[m] = lastfm_object.send(m) }
 
-    fill_images(response)
-  end
+    self.update_attributes(params)
 
-  # Find all the image tags and put them in embeds_many images
-  def fill_images(response)
-    response.image.each do |image|
-      self.images << Lastfm::Image.new({size: image["size"], url: image["#text"]})
+    # Find all the image tags and put them in embeds_many images
+    # TODO: this also causes a lot of errors in Sidekiq
+    lastfm_object.images.each do |image|
+      self.images.find_or_create_by(size: image["size"], url: image["#text"])
     end
   end
 end

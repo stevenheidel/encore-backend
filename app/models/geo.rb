@@ -1,4 +1,4 @@
-require 'lastfm_api'
+require 'lastfm_api' # geo is not part of lastfmable, so need to include this here
 
 class Geo
   include Mongoid::Document
@@ -10,40 +10,24 @@ class Geo
 
   validates_uniqueness_of :city, scope: :country
 
+  # TODO: sometimes American cities are stored as "City, State 2 letter code"
+  def self.get(city, country=nil)
+    if country
+      self.find_or_create_by(city: city, country: country)
+    else
+      self.find_or_create_by(city: city)
+    end
+  end
+
   def past_events
-    
+    # TODO: do this, by past searching on venues in the geo maybe?
   end
 
   def todays_events
-    
+    # TODO: do this, keep in mind caching this could throw off past events count!
   end
 
   def future_events
-    
+    LastfmAPI.geo_getEvents(self.city).map { |e| Lastfm::Event.new(e) }
   end
-
-  # TODO: sometimes American cities are stored as "City, State 2 letter code"
-  def self.get(city)
-    self.seed
-
-    self.find_by(city: city)
-  end
-
-  def self.get_or_set(city, country)
-    self.seed
-
-    self.find_or_create_by(city: city, country: country)
-  end
-
-  private
-
-    # Seed from Lastfm's list of metros
-    def self.seed
-      unless @@seeded ||= false
-        LastfmAPI.geo_getMetros_all.each do |metro|
-          self.create(city: metro.name, country: metro.country)
-        end
-        @@seeded = true
-      end
-    end
 end

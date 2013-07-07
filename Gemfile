@@ -58,6 +58,10 @@ group :test do
   gem 'cucumber-rails', require: false
 end
 
+group :profile do
+  gem 'ruby-prof'
+end
+
 # Use MongoDB as the database
 gem 'mongoid', github: 'mongoid/mongoid'
 

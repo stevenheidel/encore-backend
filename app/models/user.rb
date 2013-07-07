@@ -15,16 +15,6 @@ class User
 
   # Get a user by the facebook id
   def self.get(facebook_id)
-    self.find_by(facebook_id: facebook_id)
-  end
-
-  # TODO DEPRECATION
-  def facebook_uuid
-    puts "DEPRECATED: Use facebook_id instead"
-    facebook_id
-  end
-  def facebook_uuid=(uuid)
-    puts "DEPRECATED: Use facebook_id= instead"
-    self.facebook_id = uuid
+    self.find_by(facebook_id: facebook_id.to_i)
   end
 end

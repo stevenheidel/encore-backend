@@ -4,13 +4,13 @@ script id="menu_template" type="text/html"
       a#past Past
     | {{#events.past}}
     li
-      a id="{{songkick_id}}" {{name}}
+      a id="{{lastfm_id}}" {{name}}
     | {{/events.past}}
     li.current
       a#today Today
     | {{#events.future}}
     li
-      a id="{{songkick_id}}" {{name}}
+      a id="{{lastfm_id}}" {{name}}
     | {{/events.future}}
     li
       a#future Future
@@ -61,7 +61,7 @@ script id="events_template" type="text/html"
         td 
           | {{start_time}}
         td
-          button id="{{songkick_id}}" Add to Profile
+          button id="{{lastfm_id}}" Add to Profile
       | {{/events}}
 
 #container data-userid=@user_id

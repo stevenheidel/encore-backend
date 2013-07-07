@@ -1,4 +1,3 @@
-json.extract! @concert, :lastfm_id, :name
-# json.date :date # TODO
-json.venue_name @concert.venue.name
+json.extract! @event, :lastfm_id, :name, :date
+json.venue_name @event.venue.name
 # json.image_url # TODO

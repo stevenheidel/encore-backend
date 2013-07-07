@@ -6,12 +6,12 @@ describe "/api/v1/artists/:artist_id/events/past", type: :api, vcr: true do
 
   it "should return past events" do
     get url, {city: 'Toronto'}
-    last_response.body.should == "{\"events\":[{\"lastfm_id\":\"206280\",\"name\":\"Cher\",\"venue_name\":\"Air Canada Centre\"}]}"
+    last_response.body.should == "{\"events\":[{\"lastfm_id\":\"206280\",\"name\":\"Cher\",\"date\":\"2002-10-24\",\"venue_name\":\"Air Canada Centre\"}]}"
   end
 end
 
 describe "/api/v1/(artists/:artist_id/)events/future", type: :api, vcr: true do
-  let(:url_artist) { "/api/v1/artists/3732956/events/future.json" } #276130 is One Direction
+  let(:url_artist) { "/api/v1/artists/One+Direction/events/future.json" }
   let(:url_city) { "/api/v1/events/future.json" }
 
   it "should return future events (for an artist)" do
@@ -58,7 +58,7 @@ end
 describe "/api/v1/users/:facebook_uuid/events/:id", type: :api, vcr: true do
   let(:event) { FactoryGirl.create :event }
   let(:user) { FactoryGirl.create :user }
-  let(:url) { "/api/v1/users/#{user.facebook_uuid}/events/#{event.lastfm_id}.json" }
+  let(:url) { "/api/v1/users/#{user.facebook_id}/events/#{event.lastfm_id}.json" }
 
   it "should delete a event from the user's events" do
     user.events << event

@@ -2,12 +2,11 @@ class Api::V1::EventsController < Api::V1::BaseController
   def index
     if params[:lastfm_id]
       # TODO: awfully complicated line
-      found = User.find_by(facebook_id: params[:user_id].to_i).events.where(lastfm_id: params[:lastfm_id].to_i).exists?
-      
+      found = User.get(params[:user_id]).events.where(lastfm_id: params[:lastfm_id].to_i).exists?
+
       render 'api/v1/base/result.json', locals: {result: found}
     else
-      # TODO: awfully complicated line
-      @events = User.find_by(facebook_id: params[:user_id]).events.order_by(:date.asc).includes(:venue)
+      @events = User.get(params[:user_id]).events.includes(:venue)
       @events_past = @events.past
       @events_future = @events.future
 
@@ -19,6 +18,7 @@ class Api::V1::EventsController < Api::V1::BaseController
     @event = Event.get(params[:id])
   end
 
+  # Add an event to a user
   def create
     event = Event.get(params[:lastfm_id])
 
