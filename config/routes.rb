@@ -4,7 +4,7 @@ EncoreBackend::Application.routes.draw do
   # API Routes
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create] do
+      resources :users, only: [:create, :show] do
         resources :events, only: [:index, :create, :destroy]
       end
 
@@ -55,6 +55,6 @@ EncoreBackend::Application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
 
     # Documentation
-    get '/api', :to => redirect('https://relishapp.com/encore/backend/docs/api/api')
+    get '/api', to: redirect('https://relishapp.com/encore/backend/docs/api/api?token=EVAxzeK6EqNFbhsX3s7C')
   end
 end

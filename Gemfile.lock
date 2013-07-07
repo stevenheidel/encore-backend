@@ -75,6 +75,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    archive-tar-minitar (0.5.2)
     arel (4.0.0)
     arrayfields (4.7.4)
     atomic (1.1.10)
@@ -215,6 +216,8 @@ GEM
     guard-rspec (3.0.2)
       guard (>= 1.8)
       rspec (~> 2.13)
+    guard-shell (0.5.1)
+      guard (>= 1.1.0)
     guard-spin (0.3.0)
       guard
       spin
@@ -368,7 +371,13 @@ GEM
       ruby_parser (~> 3.1.1)
       sexp_processor
     ref (1.0.5)
+    relish (0.7)
+      archive-tar-minitar (>= 0.5.2)
+      json (>= 1.4.6)
+      rest-client (>= 1.6.1)
     remotipart (1.2.0)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     rspec (2.14.0)
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
@@ -499,6 +508,7 @@ DEPENDENCIES
   guard-cucumber
   guard-rails
   guard-rspec
+  guard-shell
   guard-spin
   guard-zeus
   hashie
@@ -517,6 +527,7 @@ DEPENDENCIES
   rack-test
   rails (~> 4.0.0)
   rails_admin!
+  relish
   rspec-rails (~> 2.13)
   ruby-prof
   sass-rails (~> 4.0.0)

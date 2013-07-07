@@ -6,6 +6,10 @@ shared_examples "lastfmable" do
       described_class.get(model.lastfm_id).should == model
     end
   end
+
+  describe ".image_url" do
+    it "should return the largest image"
+  end
 end
 
 describe Artist do

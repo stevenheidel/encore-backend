@@ -34,6 +34,7 @@ group :development do
   gem 'guard-cucumber'
   gem 'guard-rails'
   gem 'guard-rspec'
+  gem 'guard-shell'
   gem 'guard-spin'
   gem 'guard-zeus'
 end
@@ -58,6 +59,7 @@ group :test do
   gem 'cucumber-rails', github: 'cucumber/cucumber-rails', branch: 'master_rails4_test', require: false
   gem 'cucumber-api-steps', require: false
   gem 'cucumber_factory'
+  gem 'relish'
 end
 
 group :profile do

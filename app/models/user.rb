@@ -17,4 +17,8 @@ class User
   def self.get(facebook_id)
     self.find_by(facebook_id: facebook_id.to_i)
   end
+
+  def facebook_image_url
+    "https://graph.facebook.com/#{self.facebook_id}/picture?type=large"
+  end
 end

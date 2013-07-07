@@ -10,6 +10,4 @@ class Lastfm::Image
   embedded_in :event
 
   validates_uniqueness_of :url, scope: :size
-
-  # TODO: potentially move fill_images here
 end

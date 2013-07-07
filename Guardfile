@@ -35,3 +35,7 @@ guard :rspec, zeus: true, bundler: false do
   # Capybara features specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})         { |m| "spec/features/#{m[1]}_spec.rb" }
 end
+
+guard :shell do
+  watch(%r{^features/.+\.feature$}) { `relish push encore/backend` }
+end

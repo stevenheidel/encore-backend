@@ -39,4 +39,13 @@ module Concerns::Lastfmable
       self.images.find_or_create_by(size: image["size"], url: image["#text"])
     end
   end
+
+  # Get the largest of the images
+  def image_url
+    %w[small medium large extralarge mega].reverse.each do |size|
+      query = self.images.where(size: size)
+      return query.first.url if query.exists?
+    end
+    return "TODO: default image for events without images"
+  end
 end
