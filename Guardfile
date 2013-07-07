@@ -1,5 +1,19 @@
-# A sample Guardfile
-# More info at https://github.com/guard/guard#readme
+guard :bundler do
+  watch('Gemfile')
+end
+
+guard :cucumber, command_prefix: 'zeus', cli: '--profile guard', bundler: false do
+  watch(%r{^features/.+\.feature$})
+  watch(%r{^features/support/.+$})          { 'features' }
+  watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
+
+  watch(%r{^config/cucumber.yml$})          { 'features' }
+end
+
+guard :rails, zeus: true, port: 3000 do
+  watch('Gemfile.lock')
+  watch(%r{^(config|lib)/.*})
+end
 
 guard :rspec, zeus: true, bundler: false do
   watch(%r{^spec/.+_spec\.rb})  
@@ -20,15 +34,6 @@ guard :rspec, zeus: true, bundler: false do
 
   # Capybara features specs
   watch(%r{^app/views/(.+)/.*\.(erb|haml)$})         { |m| "spec/features/#{m[1]}_spec.rb" }
-end
-
-guard :bundler do
-  watch('Gemfile')
-end
-
-guard :rails, zeus: true, port: 3000 do
-  watch('Gemfile.lock')
-  watch(%r{^(config|lib)/.*})
 end
 
 guard 'shell' do

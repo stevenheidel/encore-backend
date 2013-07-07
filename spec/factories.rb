@@ -6,69 +6,37 @@ FactoryGirl.define do
   end
   
   # EVENTS
-  factory :event, class: Event do
-    lastfm_id "1196301"
-    name "pRIvate"
-    url "http://www.last.fm/event/1196301+pRIvate"
+  factory :event do
+    name "Event Name"
 
-    flickr_tag "lastfm:event=1196301"
-    headliner "CSS"
-    start_date "Fri, 28 Aug 2009 04:42:01"
+    factory :past_event do
+      association :venue, lastfm_id: "543"
+      lastfm_id "54321"
+      start_date "Fri, 28 Aug 2009 04:42:01"
+    end
+
+    factory :future_event do
+      association :venue, lastfm_id: "123"
+      lastfm_id "12345"
+      start_date "Fri, 28 Aug 2014 04:42:01"
+    end
   end
 
-  factory :future_event, class: Event do
-    lastfm_id "3591559"
-    name "Spiders"
-    url "http://www.last.fm/event/3591559+Spiders+at+Wurlitzer+Ballroom+on+3+July+2013"
-
-    flickr_tag "lastfm:event=3591559"
-    headliner "Spiders"
-    start_date "Wed, 03 Jul 2013 22:30:00"
+  factory :venue do
+    lastfm_id "123"
+    name "Venue name"
   end
 
   # USERS
   factory :user do
     name "Steven Heidel"
     facebook_id 696955405
-  end
-=begin
-  # CONCERT
-  factory :concert do
-    name      "How To Destroy Angels"
-    date      DateTime.parse("April 25 2013")
-    start_time  DateTime.parse("April 25, 2013 16:00")
-    end_time  DateTime.parse("April 25, 2013 22:00")
-    songkick_uuid 15782629
-    venue
-  end
 
-  factory :rolling_stones, class: Concert do
-    name "Rolling Stones"
-    start_time "May 25, 2013 15:00"
-    end_time "May 25, 2013 23:00"
-    association :venue, factory: :air_canada_centre
+    factory :with_events do
+      events {[
+        create(:past_event),
+        create(:future_event)
+      ]}
+    end
   end
-
-  factory :madonna, class: Concert do
-    name "Madonna"
-    start_time "September 12, 2012 15:00"
-    end_time "September 12, 2012 23:00"
-    association :venue, factory: :air_canada_centre
-  end
-
-  # VENUE
-  factory :venue do
-    name      "Sound Academy"
-    location  "Toronto"
-    latitude  43.6413958
-    longitude -79.3543721
-  end
-
-  factory :air_canada_centre, class: Venue do
-    name "Air Canada Centre"
-    latitude 43.6437852
-    longitude -79.3784416
-    location "Toronto"
-  end
-=end
 end

@@ -31,6 +31,7 @@ group :development do
   # Guard
   gem 'guard'
   gem 'guard-bundler'
+  gem 'guard-cucumber'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-shell'
@@ -55,7 +56,9 @@ group :test do
   gem 'database_cleaner'
 
   # Cucumber
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails', github: 'cucumber/cucumber-rails', branch: 'master_rails4_test', require: false
+  gem 'cucumber-api-steps', require: false
+  gem 'cucumber_factory'
 end
 
 group :profile do
