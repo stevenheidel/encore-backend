@@ -21,7 +21,7 @@ class Lastfm::Venue < Lastfm::Base
 
   # City and country come from lastfm in venue but stored in database as Geo
   def city
-    @json["location"]["city"]
+    @json["location"]["city"] rescue nil # TODO: sometimes events don't have venues?
   end
 
   def country

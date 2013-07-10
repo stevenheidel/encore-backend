@@ -36,4 +36,9 @@ class Lastfm::Event < Lastfm::Base
   def date
     start_date.to_date
   end
+
+  # TODO: DRY this up with lastfmable
+  def image_url
+    @json["image"].last["#text"]
+  end
 end

@@ -6,7 +6,7 @@ describe "/api/v1/artists/:artist_id/events/past", type: :api, vcr: true do
 
   it "should return past events" do
     get url, {city: 'Toronto'}
-    last_response.body.should == "{\"events\":[{\"lastfm_id\":\"206280\",\"name\":\"Cher\",\"date\":\"2002-10-24\",\"venue_name\":\"Air Canada Centre\"}]}"
+    last_response.body.should == "{\"events\":[{\"lastfm_id\":\"206280\",\"name\":\"Cher\",\"date\":\"2002-10-24\",\"image_url\":\"http://userserve-ak.last.fm/serve/252/71212358.png\",\"venue_name\":\"Air Canada Centre\"}]}"
   end
 end
 

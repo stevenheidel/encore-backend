@@ -21,7 +21,32 @@ module Concerns::Lastfmable
   module ClassMethods
     # Search for an entity by lastfm_id
     def get(lastfm_id)
-      self.find_or_create_by(lastfm_id: lastfm_id)
+      self.find_by(lastfm_id: lastfm_id)
+    end
+
+    # Like find_or_create_by but calls its corresponding info API call
+    # TODO: Doesn't work for venues probably
+    def find_or_create_from_lastfm(lastfm_id)
+      begin
+        self.get(lastfm_id)
+      rescue Mongoid::Errors::DocumentNotFound
+        # Doesn't exist yet so make it and populate it
+        object = self.new
+        object.lastfm_id = lastfm_id
+
+        case self.name
+        when "Event"
+          lastfm_json = LastfmAPI.event_getInfo(lastfm_id)
+          Saver::Events.new.perform(lastfm_json)
+          object = self.get(lastfm_id)
+        when "Artist"
+          lastfm_object = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
+          object.update_from_lastfm(lastfm_object)
+          object.save
+        end
+        
+        object
+      end
     end
   end
 

@@ -25,6 +25,7 @@ class Geo
 
   def todays_events
     # TODO: do this, keep in mind caching this could throw off past events count!
+    LastfmAPI.geo_getEvents(self.city).map { |e| Lastfm::Event.new(e) }
   end
 
   def future_events

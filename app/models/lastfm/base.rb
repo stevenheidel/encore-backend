@@ -1,3 +1,5 @@
+require 'lastfm_api'
+
 class Lastfm::Base
   def initialize(json)
     @json = json

@@ -5,10 +5,10 @@ class Saver::Events
   def perform(lastfm_json)
     lastfm_event = Lastfm::Event.new(lastfm_json)
 
-    event = Event.get(lastfm_event.lastfm_id)
+    event = Event.find_or_create_by(lastfm_id: lastfm_event.lastfm_id)
     event.update_from_lastfm(lastfm_event)
 
-    venue = Venue.get(lastfm_event.venue.lastfm_id)
+    venue = Venue.find_or_create_by(lastfm_id: lastfm_event.venue.lastfm_id)
     venue.update_from_lastfm(lastfm_event.venue)
     venue.geo = Geo.get(lastfm_event.venue.city, lastfm_event.venue.country)
     venue.save!
@@ -17,7 +17,7 @@ class Saver::Events
 
     # TODO: causes a lot of Artists is invalid errors which resolve themselves
     lastfm_event.artists.each do |a| 
-      event.artists << Artist.get(a)
+      event.artists << Artist.find_or_create_by(lastfm_id: a)
     end
 
     event.save!

@@ -57,28 +57,134 @@ Feature: API
       }
       """
 
-  @wip
   Scenario: Today List
-    When I send a GET request to "/api/v1/events/today.json"
-    Then the JSON response should be:
+    When I send a GET request to "/api/v1/events/today.json" with the following:
+      """
+      {
+        "city": "Toronto"
+      }
+      """
+    Then the JSON response should have 10 copies similar to this under "events":
+      """
+      {
+        "lastfm_id": "12345",
+        "name": "Event Name",
+        "date": "2014-08-28",
+        "image_url": "TODO: default image for events without images",
+        "venue_name": "Venue name"
+      }
+      """
 
-  @wip
   Scenario: Future List
-    When I send a GET request to "/api/v1/events/future.json"
-    Then the JSON response should be:
+    When I send a GET request to "/api/v1/events/future.json" with the following:
+      """
+      {
+        "city": "Toronto"
+      }
+      """
+    Then the JSON response should have 10 copies similar to this under "events":
+      """
+      {
+        "lastfm_id": "12345",
+        "name": "Event Name",
+        "date": "2014-08-28",
+        "image_url": "TODO: default image for events without images",
+        "venue_name": "Venue name"
+      }
+      """
 
-  Scenario: Search for an Artist's Events
+  Scenario: Search for an Artist
     When I send a GET request to "/api/v1/artists/search.json" with the following:
       """
       {
+        "term": "Cher"
+      }
+      """
+    Then the JSON response should have 30 copies similar to this under "artists":
+      """
+      {
+        "name": "Cher",
+        "lastfm_id": "Cher"
+      }
+      """
+
+  Scenario: Combined Search for an Artist's Events
+    When I send a GET request to "/api/v1/artists/combined_search.json" with the following:
+      """
+      {
         "city": "Toronto",
-        "term": "Cher",
+        "term": "The Rolling Stones",
         "tense": "past"
       }
       """
-    Then the JSON response should have "$.artists[0].name" with the text "Cher"
-    # TODO: implement version wherein you can have multiline strings as a with the text
-    And the JSON response should have "$.artists..name" with a length of 30
+    Then the JSON response should have something similar to the following under "$":
+      """
+      {
+        "artist": "Hash of most likely matching artist",
+        "others": "Array of other matching artists",
+        "events": "Array of most likely matching artist's events"
+      }
+      """
+    And the JSON response should have the following under "artist":
+      """
+      {
+        "name": "The Rolling Stones",
+        "lastfm_id": "The Rolling Stones"
+      }
+      """
+    And the JSON response should have 29 copies similar to this under "others":
+      """
+      {
+        "name": "Other",
+        "lastfm_id": "Other id"
+      }
+      """
+    And the JSON response should have 6 copies similar to this under "events":
+      """
+      {
+        "lastfm_id": "12345",
+        "name": "Event Name",
+        "date": "2014-08-28",
+        "image_url": "TODO: default image for events without images",
+        "venue_name": "Venue name"
+      }
+      """
+
+  Scenario: List of artist's past events
+    When I send a GET request to "/api/v1/artists/Vampire%20Weekend/events/past.json" with the following:
+      """
+      {
+        "city": "Toronto"
+      }
+      """
+    Then the JSON response should have 6 copies similar to this under "events":
+      """
+      {
+        "lastfm_id": "12345",
+        "name": "Event Name",
+        "date": "2014-08-28",
+        "image_url": "TODO: default image for events without images",
+        "venue_name": "Venue name"
+      }
+      """
+
+  Scenario: List of artist's future events
+    When I send a GET request to "/api/v1/artists/Imagine%20Dragons/events/future.json" with the following:
+      """
+      {
+        "city": "Toronto"
+      }
+      """
+    Then the JSON response should have 1 copies similar to this under "events":
+      """
+      {
+        "lastfm_id": "12345",
+        "name": "Event Name",
+        "date": "2014-08-28",
+        "image_url": "TODO: default image for events without images",
+        "venue_name": "Venue name"
+      }
+      """
 
   Scenario: Check if Event on Profile
     Given there is a user (with events) with the facebook_id "696955405"
@@ -96,9 +202,10 @@ Feature: API
     When I send a POST request to "/api/v1/users/696955405/events.json" with the following:
       """
       {
-        "lastfm_id": 12345
+        "lastfm_id": "3196544"
       }
       """
+      # that's a Madonna concert from 2012
     Then the JSON response should have "response" with the text "success"
     # TODO: check if the event was persisted
 

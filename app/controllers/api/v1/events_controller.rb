@@ -27,7 +27,7 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   # Add an event to a user
   def create
-    event = Event.get(params[:lastfm_id])
+    event = Event.find_or_create_from_lastfm(params[:lastfm_id])
 
     user = User.get(params[:user_id])
     if user.events.include?(event) # already been added to profile
@@ -45,19 +45,9 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def past
     if params[:artist_id] # get past for artist
-      @events = Artist.get(params[:artist_id]).past_events(params[:city])
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).past_events(params[:city])
     else # get popular past for city
       @events = Geo.get(params[:city]).past_events
-    end
-
-    render 'api/v1/events/index.json'
-  end
-
-  def future
-    if params[:artist_id] # get future for artist
-      @events = Artist.get(params[:artist_id]).future_events(params[:city])
-    else # get popular future for city
-      @events = Geo.get(params[:city]).future_events
     end
 
     render 'api/v1/events/index.json'
@@ -66,6 +56,16 @@ class Api::V1::EventsController < Api::V1::BaseController
   def today
     # Get today's events from Lastfm
     @events = Geo.get(params[:city]).todays_events
+
+    render 'api/v1/events/index.json'
+  end
+
+  def future
+    if params[:artist_id] # get future for artist
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(params[:city])
+    else # get popular future for city
+      @events = Geo.get(params[:city]).future_events
+    end
 
     render 'api/v1/events/index.json'
   end
