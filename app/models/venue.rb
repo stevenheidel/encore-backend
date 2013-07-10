@@ -8,7 +8,7 @@ class Venue
   field :longitude, type: Float
 
   has_many :events
-  belongs_to :geo
+  belongs_to :geo, index: true
   embeds_many :instagram_locations
   accepts_nested_attributes_for :instagram_locations # TODO: for RailsAdmin
 end

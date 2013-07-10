@@ -11,6 +11,8 @@ class User
 
   has_many :user_photos, class_name: "Post::UserPhoto"
 
+  index({facebook_id: 1}, {unique: true})
+
   validates_uniqueness_of :facebook_id
 
   # Get a user by the facebook id

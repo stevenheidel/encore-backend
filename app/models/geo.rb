@@ -8,6 +8,8 @@ class Geo
 
   has_many :venues
 
+  index({city: 1}, {unique: true})
+
   validates_uniqueness_of :city, scope: :country
 
   # TODO: sometimes American cities are stored as "City, State 2 letter code"
@@ -21,6 +23,7 @@ class Geo
 
   def past_events
     # TODO: do this, by past searching on venues in the geo maybe?
+    []
   end
 
   def todays_events

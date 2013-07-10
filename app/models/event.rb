@@ -5,10 +5,10 @@ class Event
   field :headliner, type: String
   field :start_date, type: DateTime
 
-  has_and_belongs_to_many :artists
+  has_and_belongs_to_many :artists, index: true
   has_many :posts
-  has_and_belongs_to_many :users
-  belongs_to :venue
+  has_and_belongs_to_many :users, index: true
+  belongs_to :venue, index: true
 
   scope :past, where(:start_date.lt => Time.now).desc(:start_date)
   scope :future, where(:start_date.gte => Time.now).asc(:start_date)

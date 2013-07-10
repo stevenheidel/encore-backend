@@ -5,7 +5,7 @@ class Artist
 
   field :mbid, type: String
 
-  has_and_belongs_to_many :events
+  has_and_belongs_to_many :events, index: true
 
   def self.search(term)
     LastfmAPI.artist_search(term).map { |a| Lastfm::Artist.new(a) }

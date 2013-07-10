@@ -15,6 +15,8 @@ module Concerns::Lastfmable
     embeds_many :images, class_name: "Lastfm::Image"
     accepts_nested_attributes_for :images # TODO: for RailsAdmin
 
+    index({lastfm_id: 1}, {unique: true})
+
     validates_uniqueness_of :lastfm_id
   end
 
