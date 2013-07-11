@@ -71,6 +71,7 @@ gem 'mongoid', github: 'mongoid/mongoid'
 
 # Use Unicorn as the app server
 gem 'unicorn'
+gem 'unicorn-rails'
 
 # Use Slim for HTML templates
 gem 'slim-rails'

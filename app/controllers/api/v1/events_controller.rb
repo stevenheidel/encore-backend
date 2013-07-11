@@ -37,7 +37,7 @@ class Api::V1::EventsController < Api::V1::BaseController
 
       # TODO: this should eventually go somewhere else ie. model
       # Populate the event
-      # ConcertPopulator.perform_async(event.id.to_s)
+      Populator::Start.perform_async(event.id.to_s)
 
       render 'api/v1/base/result.json', locals: {result: 'success'}
     end

@@ -10,7 +10,7 @@ guard :cucumber, command_prefix: 'zeus', cli: '--profile guard', bundler: false 
   watch(%r{^config/cucumber.yml$})          { 'features' }
 end
 
-guard :rails, zeus: true, port: 3000 do
+guard :rails, zeus: true, port: 3000, server: :unicorn do
   watch('Gemfile.lock')
   watch(%r{^(config|lib)/.*})
 end
