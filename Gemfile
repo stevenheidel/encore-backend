@@ -100,6 +100,7 @@ gem 'typhoeus'
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: nil
 gem 'kiqstand', github: 'mongoid/kiqstand' # to make it work nicely with Mongoid
+gem 'sidekiq_status'
 
 # Paperclip
 gem 'paperclip'

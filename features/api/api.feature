@@ -28,7 +28,7 @@ Feature: API
       """
     # TODO: add here to check for user
 
-  Scenario: List of User's Concerts
+  Scenario: List of User's Events
     Given there is a user (with events) with the facebook_id "696955405"
     When I send a GET request to "/api/v1/users/696955405/events.json"
     Then the JSON response should be:
@@ -227,3 +227,8 @@ Feature: API
   Scenario: Upload Photos
     Given there is an event with the lastfm_id 12345
     And there is a user (with events) with the facebook_id "696955405"
+
+  Scenario: Checking if Event Population is in Progress
+    Given there is an event with the lastfm_id 12345
+    When I send a GET request to "/api/v1/events/12345/populating.json"
+    Then the JSON response should have "response" with the text "false"

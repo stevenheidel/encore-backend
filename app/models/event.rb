@@ -6,6 +6,8 @@ class Event
   field :start_date, type: DateTime
   field :local_start_time, type: DateTime
 
+  field :sidekiq_workers, type: Array, default: []
+
   has_and_belongs_to_many :artists, index: true
   has_many :posts
   has_and_belongs_to_many :users, index: true
@@ -18,6 +20,32 @@ class Event
     venue_ids = Geo.get(city).venues.only(:_id).map(&:_id)
     where(:venue_id.in => venue_ids)
   }
+
+  # Is the event currently waiting for photos and videos?
+  def populating?
+    self.sidekiq_workers.each do |job_id|
+      status = SidekiqStatus::Container.load(job_id).status
+
+      if status == 'waiting' || status == 'working'
+        return true
+      else # status either :complete, :failed, or nil
+        self.sidekiq_workers.delete(status)
+        self.save
+      end
+    end
+
+    return false
+  end
+
+  def populated?
+    self.posts.count > 0
+  end
+
+  # Populate the event
+  def populate!
+    self.sidekiq_workers << Populator::Start.perform_async(self.id.to_s)
+    self.save
+  end
 
   def date
     self.start_date.to_date

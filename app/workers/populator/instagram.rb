@@ -1,5 +1,5 @@
 class Populator::Instagram
-  include Sidekiq::Worker
+  include SidekiqStatus::Worker
 
   def perform(event_id)
     event = Event.find(event_id)
@@ -9,9 +9,12 @@ class Populator::Instagram
       InstagramLocation.find_instagram_ids_for_venue(event.venue)
     end
     event.venue.instagram_locations.each do |location|
-      Populator::InstagramLocation.perform_async(event_id, location.instagram_uuid)
+      event.sidekiq_workers << Populator::InstagramLocation.perform_async(
+        event_id, location.instagram_uuid)
     end
 
     #Populator::InstagramSearch.perform_async(event_id) TODO disabled for now
+
+    event.save
   end
 end

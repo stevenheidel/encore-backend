@@ -25,6 +25,11 @@ class Api::V1::EventsController < Api::V1::BaseController
     @event = Event.get(params[:id])
   end
 
+  def populating
+    @event = Event.get(params[:id])
+    render 'api/v1/base/result.json', locals: {result: @event.populating?}
+  end
+
   # Add an event to a user
   def create
     event = Event.find_or_create_from_lastfm(params[:lastfm_id])
@@ -35,9 +40,8 @@ class Api::V1::EventsController < Api::V1::BaseController
     else
       user.events << event
 
-      # TODO: this should eventually go somewhere else ie. model
       # Populate the event
-      Populator::Start.perform_async(event.id.to_s)
+      event.populate!
 
       render 'api/v1/base/result.json', locals: {result: 'success'}
     end

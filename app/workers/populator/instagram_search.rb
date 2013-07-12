@@ -1,7 +1,7 @@
 require 'instagram_api'
 
 class Populator::InstagramSearch
-  include Sidekiq::Worker
+  include SidekiqStatus::Worker
 
   def perform(event_id)
     event = Event.find(event_id)

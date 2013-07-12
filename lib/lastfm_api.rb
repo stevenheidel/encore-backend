@@ -62,7 +62,7 @@ class LastfmAPI
 
   # Get upcoming events for a location
   def self.geo_getEvents(location)
-    get('geo.getEvents', location: location)["events"]["event"]
+    get('geo.getEvents', location: location, limit: 30)["events"]["event"]
   end
 
   private

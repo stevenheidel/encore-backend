@@ -34,11 +34,13 @@ class Geo
 
   def todays_events
     # TODO: do this, keep in mind caching this could throw off past events count!
-    LastfmAPI.geo_getEvents(self.city).map do |e| 
+    events = LastfmAPI.geo_getEvents(self.city).map do |e| 
       Saver::Events.perform_async(e) # send to worker to save to database
 
       Lastfm::Event.new(e)
     end
+
+    events.keep_if { |e| e.date == Date.today }
   end
 
   def future_events

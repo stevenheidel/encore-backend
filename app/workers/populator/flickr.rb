@@ -1,7 +1,7 @@
 require 'flickr_api'
 
 class Populator::Flickr
-  include Sidekiq::Worker
+  include SidekiqStatus::Worker
 
   def perform(event_id)
     event = Event.find(event_id)

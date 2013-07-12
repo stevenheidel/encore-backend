@@ -36,7 +36,7 @@ class Artist
       end
 
       # return only those in the correct city
-      events.keep_if { |e| e.venue.city == city }
+      events.keep_if { |e| e.venue.try(:city) == city }
     end
 
     events
@@ -46,6 +46,6 @@ class Artist
     # TODO: temporary
     LastfmAPI.artist_getEvents_all(self.lastfm_id).map do |e|
       Lastfm::Event.new(e)
-    end.keep_if { |e| e.venue.city == city }
+    end.keep_if { |e| e.venue.try(:city) == city }
   end
 end

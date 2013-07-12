@@ -1,4 +1,5 @@
 require 'sidekiq/web'
+require 'sidekiq_status/web'
 
 EncoreBackend::Application.routes.draw do
   # API Routes
@@ -17,6 +18,10 @@ EncoreBackend::Application.routes.draw do
           get :past
           get :today
           get :future
+        end
+
+        member do
+          get :populating
         end
       end
 

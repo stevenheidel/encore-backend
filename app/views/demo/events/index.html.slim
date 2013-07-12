@@ -1,14 +1,17 @@
-h1 List of Concerts
+form
+  input type="text" placeholder="Artist Name" name="term"
+
+h1 List of Events
 
 table.sortable.striped
   thead
     tr
-      th Concert Name
-      th Concert Date
-      th Number of Photos
+      th Event Name
+      th Event Date
+      th Venue
   tbody
-  - @concerts.each do |c|
+  - @events.each do |e|
     tr
-      td= link_to c.name, demo_concert_path(c)
-      td= c.date
-      td= c.posts.count
+      td= link_to e.name, demo_event_path(e.lastfm_id)
+      td= e.date
+      td= e.venue.name
