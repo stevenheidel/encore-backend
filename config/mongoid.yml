@@ -86,5 +86,7 @@ production:
   sessions:
     default:
       database: encore_backend_production
+      hosts:
+        - localhost:27017
   options:
     identity_map_enabled: true
