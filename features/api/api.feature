@@ -215,6 +215,7 @@ Feature: API
     Then the JSON response should have "response" with the text "success"
     # TODO: check if the event was removed from the user
 
+  @wip
   Scenario: Viewing all Photos
     # Given there are photos
     Given there is an event with the lastfm_id 12345

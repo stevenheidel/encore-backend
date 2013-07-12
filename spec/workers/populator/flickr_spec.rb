@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Populator::Flickr, :vcr do
+describe Populator::Flickr, vcr: true do
   let(:event) { FactoryGirl.create :rolling_stones }
 
   before do

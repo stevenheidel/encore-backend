@@ -8,12 +8,15 @@ class Saver::Events
     event = Event.find_or_create_by(lastfm_id: lastfm_event.lastfm_id)
     event.update_from_lastfm(lastfm_event)
 
-    venue = Venue.find_or_create_by(lastfm_id: lastfm_event.venue.lastfm_id)
-    venue.update_from_lastfm(lastfm_event.venue)
-    venue.geo = Geo.get(lastfm_event.venue.city, lastfm_event.venue.country)
-    venue.save!
+    # Not all events have venues on lastfm
+    if lastfm_event.venue
+      venue = Venue.find_or_create_by(lastfm_id: lastfm_event.venue.lastfm_id)
+      venue.update_from_lastfm(lastfm_event.venue)
+      venue.geo = Geo.get(lastfm_event.venue.city, lastfm_event.venue.country)
+      venue.save!
 
-    event.venue = venue
+      event.venue = venue
+    end
 
     # TODO: causes a lot of Artists is invalid errors which resolve themselves
     lastfm_event.artists.each do |a| 

@@ -21,14 +21,24 @@ class Geo
     end
   end
 
+  # Pseudo-join method
+  def events
+    # Don't use .only(:_id) here because you still need the venue name later (identity map)
+    Event.in(venue_id: self.venues.map(&:_id))
+  end
+
   def past_events
     # TODO: do this, by past searching on venues in the geo maybe?
-    []
+    self.events.past
   end
 
   def todays_events
     # TODO: do this, keep in mind caching this could throw off past events count!
-    LastfmAPI.geo_getEvents(self.city).map { |e| Lastfm::Event.new(e) }
+    LastfmAPI.geo_getEvents(self.city).map do |e| 
+      Saver::Events.perform_async(e) # send to worker to save to database
+
+      Lastfm::Event.new(e)
+    end
   end
 
   def future_events

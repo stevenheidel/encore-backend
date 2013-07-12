@@ -8,7 +8,7 @@ class Populator::Flickr
 
     FlickrAPI.search(
         event.venue.latitude, event.venue.longitude, 
-        event.start_time, event.end_time).each do |photo|
+        event.local_start_time, event.local_end_time).each do |photo|
       event.posts << Post::FlickrPhoto.build_from_hashie(FlickrAPI.get_info(photo.id, photo.secret))
     end
   end

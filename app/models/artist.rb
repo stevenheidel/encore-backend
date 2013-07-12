@@ -11,6 +11,11 @@ class Artist
     LastfmAPI.artist_search(term).map { |a| Lastfm::Artist.new(a) }
   end
 
+  # Name and lastfm_id are synonyms
+  def name
+    self.lastfm_id
+  end
+
   def past_events(city)
     events = self.events.past
     lastfm_count = LastfmAPI.artist_getPastEvents_count(self.lastfm_id)

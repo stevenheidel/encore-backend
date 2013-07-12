@@ -4,6 +4,7 @@ class Event
   field :flickr_tag, type: String
   field :headliner, type: String
   field :start_date, type: DateTime
+  field :local_start_time, type: DateTime
 
   has_and_belongs_to_many :artists, index: true
   has_many :posts
@@ -14,7 +15,7 @@ class Event
   scope :future, where(:start_date.gte => Time.now).asc(:start_date)
 
   scope :in_city, ->(city) {
-    venue_ids = Venue.where(geo: Geo.get(city)).only(:_id).map(&:_id)
+    venue_ids = Geo.get(city).venues.only(:_id).map(&:_id)
     where(:venue_id.in => venue_ids)
   }
 
@@ -26,7 +27,16 @@ class Event
     self.start_date
   end
 
+  def local_start_time
+    self[:local_start_time] ||= self.start_time + 
+      GoogleTimezone.fetch(self.venue.latitude, self.venue.longitude).raw_offset.seconds
+  end
+
   def end_time
-    self.start_date + 6.hours # TODO: arbitralily add 6 hours for end of event
+    self.start_time + 6.hours # TODO: arbitralily add 6 hours for end of event
+  end
+
+  def local_end_time
+    self.local_start_time + 6.hours
   end
 end

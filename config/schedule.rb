@@ -1,5 +1,5 @@
 env :PATH, ENV['PATH']
 
-every 10.minutes do 
-  
+every 1.minute do 
+  runner "LiveEvent.perform_async"
 end

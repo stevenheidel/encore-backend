@@ -110,4 +110,6 @@ gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 gem 'newrelic_rpm'
 
 # Whenever
-gem 'whenever'
+gem 'whenever', github: 'iTakeshi/whenever', branch: 'rails4'
+
+gem 'google_timezone'
