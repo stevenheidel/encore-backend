@@ -81,3 +81,10 @@ profile:
       database: encore_backend_profile
       hosts:
         - localhost:27017
+
+production:
+  sessions:
+    default:
+      database: encore_backend_production
+  options:
+    identity_map_enabled: true
