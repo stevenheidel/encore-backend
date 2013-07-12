@@ -89,6 +89,7 @@ gem 'flickraw'
 # Rails Admin
 gem 'rails_admin', github: 'sferik/rails_admin'
 gem 'devise', '~> 3.0.0.rc'
+gem 'safe_yaml', github: 'dtao/safe_yaml' # see: http://codedecoder.wordpress.com/2013/05/31/cannot-load-such-file-safe_yaml-rails_admin/
 
 # Faraday
 gem 'faraday'

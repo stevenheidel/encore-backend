@@ -10,6 +10,12 @@ GIT
       rails (>= 3.0.0)
 
 GIT
+  remote: git://github.com/dtao/safe_yaml.git
+  revision: aa743300c1e2d80033c73034d4ea30f7953191f0
+  specs:
+    safe_yaml (0.9.4)
+
+GIT
   remote: git://github.com/iTakeshi/whenever.git
   revision: 04e96f765af3a0761294fd888bc1fc728b5bfb1d
   branch: rails4
@@ -413,7 +419,6 @@ GEM
     ruby_parser (3.1.3)
       sexp_processor (~> 4.1)
     rubyzip (0.9.9)
-    safe_yaml (0.9.4)
     sass (3.2.9)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -545,6 +550,7 @@ DEPENDENCIES
   relish
   rspec-rails (~> 2.13)
   ruby-prof
+  safe_yaml!
   sass-rails (~> 4.0.0)
   sidekiq
   sidekiq_status

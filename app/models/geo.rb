@@ -29,7 +29,7 @@ class Geo
 
   def past_events
     # TODO: do this, by past searching on venues in the geo maybe?
-    self.events.past
+    self.events.past.limit(50)
   end
 
   def todays_events
