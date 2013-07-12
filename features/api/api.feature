@@ -64,7 +64,7 @@ Feature: API
         "city": "Toronto"
       }
       """
-    Then the JSON response should have 10 copies similar to this under "events":
+    Then the JSON response should have 17 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
@@ -82,7 +82,7 @@ Feature: API
         "city": "Toronto"
       }
       """
-    Then the JSON response should have 10 copies similar to this under "events":
+    Then the JSON response should have 30 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",

@@ -24,7 +24,13 @@ class Event
   # Is the event currently waiting for photos and videos?
   def populating?
     self.sidekiq_workers.each do |job_id|
-      status = SidekiqStatus::Container.load(job_id).status
+      begin
+        status = SidekiqStatus::Container.load(job_id).status
+      rescue SidekiqStatus::Container::StatusNotFound
+        self.sidekiq_workers.delete(status)
+        self.save
+        next
+      end
 
       if status == 'waiting' || status == 'working'
         return true
