@@ -1,1 +1,1 @@
-sidekiq: ./bin/sidekiq
+sidekiq: ./bin/sidekiq -q default -q saver
