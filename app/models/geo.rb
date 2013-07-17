@@ -7,8 +7,7 @@ class Geo
   end
 
   def past_events
-    # TODO: do this, by past searching on venues in the geo maybe?
-    Venue.geo_near([@long, @lat])
+    Event.in_radius([@long, @lat], 20)
   end
 
   def todays_events
@@ -23,6 +22,6 @@ class Geo
   end
 
   def future_events
-    LastfmAPI.geo_getEvents(self.city).map { |e| Lastfm::Event.new(e) }
+    LastfmAPI.geo_getEvents(@lat, @long).map { |e| Lastfm::Event.new(e) }
   end
 end

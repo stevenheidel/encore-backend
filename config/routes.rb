@@ -38,6 +38,12 @@ EncoreBackend::Application.routes.draw do
           get :combined_search
         end
       end
+
+      resources :posts, only: [] do
+        member do
+          post :flag
+        end
+      end
     end
   end
 
@@ -62,6 +68,6 @@ EncoreBackend::Application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
 
     # Documentation
-    get '/api', to: redirect('https://relishapp.com/encore/backend/docs/api/api?token=EVAxzeK6EqNFbhsX3s7C')
+    get '/api', to: redirect('https://relishapp.com/encore/backend/docs/api?token=EVAxzeK6EqNFbhsX3s7C')
   end
 end

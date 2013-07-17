@@ -10,9 +10,9 @@ class Api::V1::ArtistsController < Api::V1::BaseController
     
     case params[:tense]
     when "past"
-      @events = @artist.past_events(params[:city])
+      @events = @artist.past_events(params[:latitude], params[:longitude])
     when "future"
-      @events = @artist.future_events(params[:city])
+      @events = @artist.future_events(params[:latitude], params[:longitude])
     end
   end
 end

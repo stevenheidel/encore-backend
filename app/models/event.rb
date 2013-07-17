@@ -16,8 +16,10 @@ class Event
   scope :past, where(:start_date.lt => Time.now).desc(:start_date)
   scope :future, where(:start_date.gte => Time.now).asc(:start_date)
 
-  scope :in_city, ->(city) {
-    venue_ids = Geo.get(city).venues.only(:_id).map(&:_id)
+  scope :in_radius, ->(point, radius) {
+    # 3959 is a magic number for miles
+    command = Venue.geo_near(point).distance_multiplier(3959).max_distance(radius/3959.0).spherical
+    venue_ids = command.map(&:_id)
     where(:venue_id.in => venue_ids)
   }
 
@@ -63,7 +65,8 @@ class Event
 
   def local_start_time
     self[:local_start_time] ||= self.start_time + 
-      GoogleTimezone.fetch(self.venue.latitude, self.venue.longitude).raw_offset.seconds
+      GoogleTimezone.fetch(*self.venue.coordinates.reverse).raw_offset.seconds
+    # GoogleTimezone needs latitude, longitude order
   end
 
   def end_time

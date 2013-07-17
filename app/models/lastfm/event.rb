@@ -13,7 +13,7 @@ class Lastfm::Event < Lastfm::Base
   end
 
   def venue
-    return nil unless @json["venue"]
+    return nil unless @json["venue"] # sometimes events don't have venues
     @venue ||= Lastfm::Venue.new(@json["venue"])
   end
 
