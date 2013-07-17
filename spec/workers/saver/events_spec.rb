@@ -8,6 +8,5 @@ describe Saver::Events, :vcr do
     Event.first.venue
     Venue.first.events.count
     Event.first.images.count
-    Event.first.venue.geo
   end
 end

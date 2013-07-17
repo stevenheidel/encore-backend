@@ -60,9 +60,9 @@ class LastfmAPI
     get('event.getInfo', event: id)["event"]
   end
 
-  # Get upcoming events for a location
-  def self.geo_getEvents(location)
-    get('geo.getEvents', location: location, limit: 30)["events"]["event"]
+  # Get upcoming events for latitude and longitude
+  def self.geo_getEvents(latitude, longitude)
+    get('geo.getEvents', lat: latitude, long: longitude, limit: 30)["events"]["event"]
   end
 
   private

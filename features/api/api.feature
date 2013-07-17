@@ -57,14 +57,16 @@ Feature: API
       }
       """
 
+  @in-progress
   Scenario: Today List
     When I send a GET request to "/api/v1/events/today.json" with the following:
       """
       {
-        "city": "Toronto"
+        "latitude": 43.670906,
+        "longitude": -79.393331
       }
       """
-    Then the JSON response should have 17 copies similar to this under "events":
+    Then the JSON response should have 5 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
@@ -75,6 +77,7 @@ Feature: API
       }
       """
 
+  @wip
   Scenario: Future List
     When I send a GET request to "/api/v1/events/future.json" with the following:
       """
@@ -108,11 +111,13 @@ Feature: API
       }
       """
 
+  @in-progress
   Scenario: Combined Search for an Artist's Events
     When I send a GET request to "/api/v1/artists/combined_search.json" with the following:
       """
       {
-        "city": "Toronto",
+        "latitude": 43.670906,
+        "longitude": -79.393331,
         "term": "The Rolling Stones",
         "tense": "past"
       }
@@ -129,7 +134,8 @@ Feature: API
       """
       {
         "name": "The Rolling Stones",
-        "lastfm_id": "The Rolling Stones"
+        "lastfm_id": "The Rolling Stones",
+        "image_url": "http://userserve-ak.last.fm/serve/_/5775770/The+Rolling+Stones+prisonStone.jpg"
       }
       """
     And the JSON response should have 29 copies similar to this under "others":
@@ -150,6 +156,7 @@ Feature: API
       }
       """
 
+  @in-progress
   Scenario: List of artist's past events
     When I send a GET request to "/api/v1/artists/Vampire%20Weekend/events/past.json" with the following:
       """
@@ -168,6 +175,7 @@ Feature: API
       }
       """
 
+  @wip
   Scenario: List of artist's future events
     When I send a GET request to "/api/v1/artists/Imagine%20Dragons/events/future.json" with the following:
       """

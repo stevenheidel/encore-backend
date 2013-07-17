@@ -21,6 +21,6 @@ class Populator::InstagramLocation
       event.posts << Post::InstagramPhoto.build_from_hashie(media)
     end
 
-    event.save
+    event.save!
   end
 end

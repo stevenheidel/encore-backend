@@ -12,7 +12,6 @@ class Saver::Events
     if lastfm_event.venue
       venue = Venue.find_or_create_by(lastfm_id: lastfm_event.venue.lastfm_id)
       venue.update_from_lastfm(lastfm_event.venue)
-      venue.geo = Geo.get(lastfm_event.venue.city, lastfm_event.venue.country)
       venue.save!
 
       event.venue = venue

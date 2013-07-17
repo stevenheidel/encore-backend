@@ -1,6 +1,14 @@
 class Lastfm::Venue < Lastfm::Base
   def methods
-    super + [:street, :postalcode, :latitude, :longitude]
+    super + [:city, :country, :street, :postalcode, :coordinates]
+  end
+
+  def city
+    @json["location"]["city"] rescue nil # TODO: sometimes events don't have venues?
+  end
+
+  def country
+    @json["location"]["country"]
   end
 
   def street
@@ -11,20 +19,11 @@ class Lastfm::Venue < Lastfm::Base
     @json["location"]["postalcode"]
   end
 
-  def latitude
-    @json["location"]["geo:point"]["geo:lat"]
-  end
-
-  def longitude
-    @json["location"]["geo:point"]["geo:long"]
-  end
-
-  # City and country come from lastfm in venue but stored in database as Geo
-  def city
-    @json["location"]["city"] rescue nil # TODO: sometimes events don't have venues?
-  end
-
-  def country
-    @json["location"]["country"]
+  def coordinates
+    # MongoDB stores coordinates with longitude first
+    [ @json["location"]["geo:point"]["geo:long"], 
+      @json["location"]["geo:point"]["geo:lat"] ].map do |l|
+      l.to_f
+    end
   end
 end

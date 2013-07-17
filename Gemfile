@@ -57,6 +57,7 @@ group :test do
 
   # Cucumber
   gem 'cucumber-rails', github: 'cucumber/cucumber-rails', branch: 'master_rails4_test', require: false
+  gem 'cucumber', '= 1.3.2' # needs to be locked at 1.3.2 because https://github.com/cucumber/cucumber/issues/501
   gem 'cucumber-api-steps', require: false
   gem 'cucumber_factory'
   gem 'relish'
