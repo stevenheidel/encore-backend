@@ -86,6 +86,7 @@ gem 'koala' # for Facebook
 gem 'twitter'
 gem 'foursquare2'
 gem 'flickraw'
+gem 'youtube_it'
 
 # Rails Admin
 gem 'rails_admin', github: 'sferik/rails_admin'
