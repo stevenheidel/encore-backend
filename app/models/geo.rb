@@ -22,6 +22,6 @@ class Geo
   end
 
   def future_events
-    LastfmAPI.geo_getEvents(self.city).map { |e| Lastfm::Event.new(e) }
+    LastfmAPI.geo_getEvents(@lat, @long).map { |e| Lastfm::Event.new(e) }
   end
 end

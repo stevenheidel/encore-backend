@@ -57,7 +57,6 @@ Feature: API
       }
       """
 
-  @in-progress
   Scenario: Today List
     When I send a GET request to "/api/v1/events/today.json" with the following:
       """
@@ -77,7 +76,6 @@ Feature: API
       }
       """
 
-  @wip
   Scenario: Future List
     When I send a GET request to "/api/v1/events/future.json" with the following:
       """
@@ -112,7 +110,6 @@ Feature: API
       }
       """
 
-  @in-progress
   Scenario: Combined Search for an Artist's Events
     When I send a GET request to "/api/v1/artists/combined_search.json" with the following:
       """
@@ -176,7 +173,6 @@ Feature: API
       }
       """
 
-  @wip
   Scenario: List of artist's future events
     When I send a GET request to "/api/v1/artists/Imagine%20Dragons/events/future.json" with the following:
       """
