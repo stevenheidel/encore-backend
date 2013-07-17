@@ -4,7 +4,7 @@ class Lastfm::Venue < Lastfm::Base
   end
 
   def city
-    @json["location"]["city"] rescue nil # TODO: sometimes events don't have venues?
+    @json["location"]["city"]
   end
 
   def country
@@ -25,5 +25,12 @@ class Lastfm::Venue < Lastfm::Base
       @json["location"]["geo:point"]["geo:lat"] ].map do |l|
       l.to_f
     end
+  end
+
+  # Check if venue is within a particular radius from a point
+  # Point should be [long, lat] and radius is in miles
+  def in_radius?(point, radius)
+    Geocoder::Calculations.distance_between(
+      point.reverse, self.coordinates.reverse) < radius
   end
 end

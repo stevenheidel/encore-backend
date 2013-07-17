@@ -116,3 +116,4 @@ gem 'newrelic_rpm'
 gem 'whenever', github: 'iTakeshi/whenever', branch: 'rails4'
 
 gem 'google_timezone'
+gem 'geocoder'

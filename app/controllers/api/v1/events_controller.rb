@@ -49,7 +49,7 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def past
     if params[:artist_id] # get past for artist
-      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).past_events(params[:city])
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).past_events(params[:latitude], params[:longitude])
     else # get popular past for location
       @events = Geo.new(params[:latitude], params[:longitude]).past_events
     end
@@ -66,7 +66,7 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def future
     if params[:artist_id] # get future for artist
-      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(params[:city])
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(params[:latitude], params[:longitude])
     else # get popular future for location
       @events = Geo.new(params[:latitude], params[:longitude]).future_events
     end

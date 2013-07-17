@@ -66,7 +66,7 @@ Feature: API
         "longitude": -79.393331
       }
       """
-    Then the JSON response should have 5 copies similar to this under "events":
+    Then the JSON response should have 6 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
@@ -82,7 +82,8 @@ Feature: API
     When I send a GET request to "/api/v1/events/future.json" with the following:
       """
       {
-        "city": "Toronto"
+        "latitude": 43.670906,
+        "longitude": -79.393331
       }
       """
     Then the JSON response should have 30 copies similar to this under "events":
@@ -135,7 +136,7 @@ Feature: API
       {
         "name": "The Rolling Stones",
         "lastfm_id": "The Rolling Stones",
-        "image_url": "http://userserve-ak.last.fm/serve/_/5775770/The+Rolling+Stones+prisonStone.jpg"
+        "image_url": "http://userserve-ak.last.fm/serve/_/7596573/The+Rolling+Stones+rolling+stones+malmo.jpg"
       }
       """
     And the JSON response should have 29 copies similar to this under "others":
@@ -156,12 +157,12 @@ Feature: API
       }
       """
 
-  @in-progress
   Scenario: List of artist's past events
     When I send a GET request to "/api/v1/artists/Vampire%20Weekend/events/past.json" with the following:
       """
       {
-        "city": "Toronto"
+        "latitude": 43.670906,
+        "longitude": -79.393331
       }
       """
     Then the JSON response should have 6 copies similar to this under "events":
@@ -180,7 +181,8 @@ Feature: API
     When I send a GET request to "/api/v1/artists/Imagine%20Dragons/events/future.json" with the following:
       """
       {
-        "city": "Toronto"
+        "latitude": 43.670906,
+        "longitude": -79.393331
       }
       """
     Then the JSON response should have 1 copies similar to this under "events":

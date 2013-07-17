@@ -16,14 +16,14 @@ class Artist
     self.lastfm_id
   end
 
-  def past_events(city)
+  def past_events(latitude, longitude)
     events = self.events.past
     lastfm_count = LastfmAPI.artist_getPastEvents_count(self.lastfm_id)
 
     # Check if database is current
     if events.count == lastfm_count # TODO: && the first event itself matches entirely
-      # return only those in the correct city
-      events = events.in_city(city).includes(:venue)
+      # return only those in the correct radius
+      events = events.in_radius([longitude, latitude], 20)
     else
       # extract above comparison to method
 
@@ -35,17 +35,16 @@ class Artist
         Lastfm::Event.new(e)
       end
 
-      # return only those in the correct city
-      events.keep_if { |e| e.venue.try(:city) == city }
+      # return only those in the correct radius
+      events.keep_if { |e| e.venue.try(:in_radius?, [longitude, latitude], 20) }
     end
 
     events
   end
 
-  def future_events(city)
-    # TODO: temporary
+  def future_events(latitude, longitude)
     LastfmAPI.artist_getEvents_all(self.lastfm_id).map do |e|
       Lastfm::Event.new(e)
-    end.keep_if { |e| e.venue.try(:city) == city }
+    end.keep_if { |e| e.venue.try(:in_radius?, [longitude, latitude], 20) }
   end
 end
