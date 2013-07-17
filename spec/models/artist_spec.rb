@@ -1,16 +1,12 @@
-# == Schema Information
-#
-# Table name: artists
-#
-#  id            :integer          not null, primary key
-#  name          :string(255)
-#  songkick_uuid :integer
-#  created_at    :datetime
-#  updated_at    :datetime
-#
-
 require 'spec_helper'
 
-describe Artist do
-  #pending "add some examples to (or delete) #{__FILE__}"
+describe Artist, :vcr do
+  let(:artist) { FactoryGirl.create :artist }
+
+  describe ".past_events" do
+    it "should call API for past events" do
+      artist.past_events("Toronto").count.should == 1
+      artist.past_events("Las Vegas").first.venue.images.count.should == 5
+    end
+  end
 end

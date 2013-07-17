@@ -1,46 +1,54 @@
 FactoryGirl.define do
-  # CONCERT
-  factory :concert do
-    name      "How To Destroy Angels"
-    date      DateTime.parse("April 25 2013")
-    start_time  DateTime.parse("April 25, 2013 16:00")
-    end_time  DateTime.parse("April 25, 2013 22:00")
-    songkick_uuid 15782629
-    venue
+  factory :artist do
+    lastfm_id "Cher"
+    name "Cher"
+  end
+  
+  factory :event do
+    name "Event Name"
+    lastfm_id "12345"
+
+    factory :past_event do
+      association :venue, lastfm_id: "543"
+      lastfm_id "54321" # TODO: automatically deal with unique lastfm_id's
+      start_date "Fri, 28 Aug 2009 04:42:01"
+    end
+
+    factory :future_event do
+      association :venue, lastfm_id: "123"
+      lastfm_id "12345"
+      start_date "Fri, 28 Aug 2014 04:42:01"
+    end
+
+    factory :rolling_stones do
+      name "Rolling Stones"
+      association :venue, factory: :air_canada_centre
+      lastfm_id "11111"
+      start_date "June 07, 2013 00:00" # in UTC
+    end
   end
 
-  factory :rolling_stones, class: Concert do
-    name "Rolling Stones"
-    start_time "May 25, 2013 15:00"
-    end_time "May 25, 2013 23:00"
-    association :venue, factory: :air_canada_centre
-  end
-
-  factory :madonna, class: Concert do
-    name "Madonna"
-    start_time "September 12, 2012 15:00"
-    end_time "September 12, 2012 23:00"
-    association :venue, factory: :air_canada_centre
-  end
-
-  # VENUE
   factory :venue do
-    name      "Sound Academy"
-    location  "Toronto"
-    latitude  43.6413958
-    longitude -79.3543721
+    lastfm_id "123"
+    name "Venue name"
+
+    factory :air_canada_centre do
+      name "Air Canada Centre"
+      lastfm_id 8781753
+      latitude 43.643929
+      longitude -79.379305
+    end
   end
 
-  factory :air_canada_centre, class: Venue do
-    name "Air Canada Centre"
-    latitude 43.6437852
-    longitude -79.3784416
-    location "Toronto"
-  end
-
-  # USER
   factory :user do
     name "Steven Heidel"
-    facebook_uuid 696955405
+    facebook_id 696955405
+
+    factory :with_events do
+      events {[
+        create(:past_event),
+        create(:future_event)
+      ]}
+    end
   end
 end

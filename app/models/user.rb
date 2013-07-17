@@ -1,19 +1,26 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id            :integer          not null, primary key
-#  facebook_uuid :integer
-#  oauth_string  :string(255)
-#  oauth_expiry  :datetime
-#  name          :string(255)
-#  created_at    :datetime
-#  updated_at    :datetime
-#
+class User
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-class User < ActiveRecord::Base
-  has_many :attendances
-  has_many :concerts, through: :attendances
+  field :facebook_id, type: Integer 
+  field :oauth_string, type: String 
+  field :oauth_expiry, type: DateTime 
+  field :name, type: String
 
-  has_many :user_photos
+  has_and_belongs_to_many :events
+
+  has_many :user_photos, class_name: "Post::UserPhoto"
+
+  index({facebook_id: 1}, {unique: true})
+
+  validates_uniqueness_of :facebook_id
+
+  # Get a user by the facebook id
+  def self.get(facebook_id)
+    self.find_by(facebook_id: facebook_id.to_i)
+  end
+
+  def facebook_image_url
+    "https://graph.facebook.com/#{self.facebook_id}/picture?type=large"
+  end
 end

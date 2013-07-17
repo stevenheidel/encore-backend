@@ -1,3 +1,9 @@
+require 'vcr'
+
+RSpec.configure do |config|
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+end
+
 VCR.configure do |config|
   config.hook_into :faraday
   config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
