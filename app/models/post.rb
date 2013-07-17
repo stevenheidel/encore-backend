@@ -9,6 +9,12 @@ class Post
   field :user_profile_picture, type: String
 
   belongs_to :event
+  embeds_many :flags, class_name: "Post::Flag"
+  accepts_nested_attributes_for :flags # Railsadmin
 
   validates_uniqueness_of :link, scope: :event
+
+  def add_flag(type, user_id)
+    self.flags.create(type: type, user_id: user_id)
+  end
 end

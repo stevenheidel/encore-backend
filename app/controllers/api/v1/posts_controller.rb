@@ -14,4 +14,11 @@ class Api::V1::PostsController < Api::V1::BaseController
 
     render 'api/v1/base/result.json', locals: {result: 'success'}
   end
+
+  def flag
+    @post = Post.find(params[:id])
+    @post.add_flag(params[:flag], params[:facebook_id])
+
+    render 'api/v1/base/result.json', locals: {result: 'success'}
+  end
 end

@@ -65,7 +65,8 @@ class Event
 
   def local_start_time
     self[:local_start_time] ||= self.start_time + 
-      GoogleTimezone.fetch(self.venue.latitude, self.venue.longitude).raw_offset.seconds
+      GoogleTimezone.fetch(*self.venue.coordinates.reverse).raw_offset.seconds
+    # GoogleTimezone needs latitude, longitude order
   end
 
   def end_time

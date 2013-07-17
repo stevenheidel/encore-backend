@@ -51,4 +51,7 @@ FactoryGirl.define do
       ]}
     end
   end
+
+  factory :post do
+  end
 end
