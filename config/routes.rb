@@ -1,14 +1,16 @@
 require 'sidekiq/web'
+require 'sidekiq_status/web'
 
 EncoreBackend::Application.routes.draw do
   # API Routes
+  # TODO: secure this with some sort of shared key
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create] do
-        resources :concerts, only: [:index, :create, :destroy]
+      resources :users, only: [:create, :show] do
+        resources :events, only: [:index, :create, :destroy]
       end
 
-      resources :concerts, only: [:index, :show] do
+      resources :events, only: [:index, :show] do
         resources :users, only: []
         resources :posts, only: [:index, :create]
 
@@ -17,10 +19,14 @@ EncoreBackend::Application.routes.draw do
           get :today
           get :future
         end
+
+        member do
+          get :populating
+        end
       end
 
       resources :artists, only: [] do
-        resources :concerts, only: [] do
+        resources :events, only: [] do
           collection do
             get :past
             get :future
@@ -29,13 +35,14 @@ EncoreBackend::Application.routes.draw do
 
         collection do
           get :search
+          get :combined_search
         end
       end
     end
   end
 
   # Public routes
-  resources :concerts, only: [:show]
+  resources :events, only: [:show]
   resources :posts, only: [:show]
 
   # Private routes TODO: Secure this from outsiders
@@ -44,17 +51,17 @@ EncoreBackend::Application.routes.draw do
     namespace :demo do
       root to: redirect('/private/demo/users')
       resources :users, only: [:show, :index]
-      resources :concerts, only: [:show, :index]
+      resources :events, only: [:show, :index]
     end
 
     # Rails Admin
-    devise_for :admins
+    devise_for :admins, :path_prefix => '/private'
     mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
     # Sidekiq
     mount Sidekiq::Web => '/sidekiq'
 
     # Documentation
-    get '/api', :to => redirect('/docs/index.html')
+    get '/api', to: redirect('https://relishapp.com/encore/backend/docs/api/api?token=EVAxzeK6EqNFbhsX3s7C')
   end
 end

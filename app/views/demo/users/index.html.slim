@@ -1,0 +1,14 @@
+h1 List of Users
+
+table.sortable.striped
+  thead
+    tr
+      th
+      th Number of Events
+      th Facebook ID
+  tbody
+  - @users.each do |u|
+    tr
+      td= link_to u.name, demo_user_path(u)
+      td= u.events.count
+      td= u.facebook_id

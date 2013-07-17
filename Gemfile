@@ -22,12 +22,6 @@ gem 'jquery-ui-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.4.2'
 
-# Use MySQL as the database for Active Record
-gem 'mysql2', github: 'brianmario/mysql2'
-
-# Use unicorn as the app server
-gem 'unicorn'
-
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -37,6 +31,7 @@ group :development do
   # Guard
   gem 'guard'
   gem 'guard-bundler'
+  gem 'guard-cucumber'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-shell'
@@ -47,24 +42,40 @@ end
 group :development, :test do
   gem 'bullet'
   gem 'debugger'
+
+  # RSpec
+  gem 'rspec-rails', '~> 2.13'
 end
 
 group :test do
-  # RSpec
-  gem 'rspec-rails', "~> 2.13"
-  gem 'capybara', "2.0.2"
+  # RSpec friends
+  gem 'capybara', '2.0.2'
   gem 'vcr'
-  gem "factory_girl_rails", "~> 4.0"
-  gem 'test_after_commit'
+  gem 'factory_girl_rails', '~> 4.0'
   gem 'rack-test'
+  gem 'database_cleaner'
 
   # Cucumber
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
+  gem 'cucumber-rails', github: 'cucumber/cucumber-rails', branch: 'master_rails4_test', require: false
+  gem 'cucumber', '= 1.3.2' # needs to be locked at 1.3.2 because https://github.com/cucumber/cucumber/issues/501
+  gem 'cucumber-api-steps', require: false
+  gem 'cucumber_factory'
+  gem 'relish'
 end
 
-# Use HAML for HTML templates
-gem 'haml'
+group :profile do
+  gem 'ruby-prof'
+end
+
+# Use MongoDB as the database
+gem 'mongoid', github: 'mongoid/mongoid'
+
+# Use Unicorn as the app server
+gem 'unicorn'
+gem 'unicorn-rails'
+
+# Use Slim for HTML templates
+gem 'slim-rails'
 
 # Template for demo frontend
 gem 'htmlkickstart'
@@ -76,11 +87,10 @@ gem 'twitter'
 gem 'foursquare2'
 gem 'flickraw'
 
-# Using Rails 4 branch of Rails Admin
-gem 'rails_admin', github: 'sferik/rails_admin', branch: 'rails-4'
-gem 'font-awesome-sass-rails' # TODO Temporary see: https://github.com/sferik/rails_admin/issues/1443
-gem 'devise'
-gem 'protected_attributes'
+# Rails Admin
+gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'devise', '~> 3.0.0.rc'
+gem 'safe_yaml', github: 'dtao/safe_yaml' # see: http://codedecoder.wordpress.com/2013/05/31/cannot-load-such-file-safe_yaml-rails_admin/
 
 # Faraday
 gem 'faraday'
@@ -90,13 +100,19 @@ gem 'typhoeus'
 
 # Sidekiq
 gem 'sidekiq'
-gem 'slim', ">= 1.3.0"
-gem 'sinatra', '>= 1.3.0', :require => nil
-gem 'clockwork'
+gem 'sinatra', '>= 1.3.0', require: nil
+gem 'kiqstand', github: 'mongoid/kiqstand' # to make it work nicely with Mongoid
+gem 'sidekiq_status'
 
 # Paperclip
-gem 'paperclip', github: 'thoughtbot/paperclip'
-gem 'fog', github: 'fog/fog'
+gem 'paperclip'
+gem 'fog'
+gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 
 # New Relic
 gem 'newrelic_rpm'
+
+# Whenever
+gem 'whenever', github: 'iTakeshi/whenever', branch: 'rails4'
+
+gem 'google_timezone'

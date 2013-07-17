@@ -1,3 +1,0 @@
-web: ./bin/rails server -p 9283
-sidekiq: ./bin/sidekiq
-clockwork: ./bin/clockwork clock.rb

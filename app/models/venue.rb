@@ -1,18 +1,15 @@
-# == Schema Information
-#
-# Table name: venues
-#
-#  id            :integer          not null, primary key
-#  name          :string(255)
-#  latitude      :decimal(10, 6)
-#  longitude     :decimal(10, 6)
-#  created_at    :datetime
-#  updated_at    :datetime
-#  location      :string(255)
-#  songkick_uuid :integer
-#
+class Venue
+  include Concerns::Lastfmable
 
-class Venue < ActiveRecord::Base
-  has_many :concerts
-  has_many :instagram_locations
+  field :city, type: String
+  field :country, type: String
+  field :street, type: String
+  field :postalcode, type: String
+  field :coordinates, type: Array
+
+  has_many :events
+  embeds_many :instagram_locations
+  accepts_nested_attributes_for :instagram_locations # TODO: for RailsAdmin
+
+  index({coordinates: '2d'}, {min: -180, max: 180})
 end
