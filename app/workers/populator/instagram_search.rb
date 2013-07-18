@@ -2,6 +2,7 @@ require 'instagram_api'
 
 class Populator::InstagramSearch
   include SidekiqStatus::Worker
+  sidekiq_options :queue => :default, :backtrace => true
 
   def perform(event_id)
     event = Event.find(event_id)

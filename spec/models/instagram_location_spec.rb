@@ -1,21 +1,14 @@
 require 'spec_helper'
 
-describe InstagramLocation, vcr: false do
-  let(:venue) { FactoryGirl.create :venue }
-  let(:aircanada1) { FactoryGirl.create :air_canada_centre,
+describe InstagramLocation, vcr: true do
+  let(:aircanada1) { FactoryGirl.create :air_canada_centre, lastfm_id: 11,
     latitude: 43.6440859, longitude: -79.3783696 }
-  let(:aircanada2) { FactoryGirl.create :air_canada_centre,
+  let(:aircanada2) { FactoryGirl.create :air_canada_centre, lastfm_id: 22,
     latitude: 43.6437852, longitude: -79.3784416 }
-  let(:rogerscentre) { FactoryGirl.create :venue,
-    name: "Rogers Centre", latitude: 43.641658, longitude: -79.39180639999999 }
+  let(:rogerscentre) { FactoryGirl.create :venue, lastfm_id: 33,
+    name: "Rogers Centre", latitude: 43.641658, longitude: -79.3918064 }
 
   describe '.find_instagram_ids_for_venue' do
-    it 'should get instagram ids for Sound Academy' do
-      InstagramLocation.find_instagram_ids_for_venue(venue)
-
-      InstagramLocation.all.count.should > 0
-    end
-
     it 'should get instagram ids for Air Canada Centre' do
       InstagramLocation.find_instagram_ids_for_venue(aircanada1)
       InstagramLocation.find_instagram_ids_for_venue(aircanada2)
