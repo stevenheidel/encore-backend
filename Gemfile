@@ -84,6 +84,7 @@ gem 'htmlkickstart'
 gem 'koala' # for Facebook
 gem 'foursquare2'
 gem 'flickraw'
+gem 'youtube_it'
 
 # Rails Admin
 gem 'rails_admin', github: 'sferik/rails_admin'
