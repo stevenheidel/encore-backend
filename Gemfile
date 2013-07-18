@@ -81,9 +81,7 @@ gem 'slim-rails'
 gem 'htmlkickstart'
 
 # Social APIs
-gem 'instagram'
 gem 'koala' # for Facebook
-gem 'twitter'
 gem 'foursquare2'
 gem 'flickraw'
 

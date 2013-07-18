@@ -2,6 +2,7 @@ require 'instagram_api'
 
 class Populator::InstagramLocation
   include SidekiqStatus::Worker
+  sidekiq_options :queue => :default, :backtrace => true
 
   def perform(event_id, instagram_location_id, instagram_max_id=nil)
     event = Event.find(event_id)
@@ -21,6 +22,6 @@ class Populator::InstagramLocation
       event.posts << Post::InstagramPhoto.build_from_hashie(media)
     end
 
-    event.save!
+    event.save # TODO: causes major problems when you put save! here
   end
 end

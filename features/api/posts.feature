@@ -26,7 +26,7 @@ Feature: Posts API
     When I send a POST request to "/api/v1/posts/51e6dafd05ac8299110147fc/flag.json" with the following:
       """
       {
-        "type": "Not relevant",
+        "flag": "Not relevant",
         "facebook_id": 696955405
       }
       """

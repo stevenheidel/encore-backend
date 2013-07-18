@@ -1,5 +1,6 @@
 class Populator::Start
   include SidekiqStatus::Worker
+  sidekiq_options :queue => :default, :backtrace => true
 
   def perform(event_id)
     # Create a timecapsule that belongs to event

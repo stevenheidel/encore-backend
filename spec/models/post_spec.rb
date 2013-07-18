@@ -6,6 +6,6 @@ describe Post, :vcr do
   it "should add a flag to a post" do
     post.add_flag("Not relevant", 696955405)
 
-    pp post.flags
+    post.flags.count.should == 1
   end
 end

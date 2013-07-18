@@ -1,5 +1,5 @@
 require 'instagram_api'
 
-describe InstagramAPI do
+describe InstagramAPI, :vcr do
 
 end

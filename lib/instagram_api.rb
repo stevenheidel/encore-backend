@@ -1,8 +1,5 @@
 class InstagramAPI
-  Instagram.configure do |config|
-    config.client_id = "36887e12ddbc416fa4b3e84e899da701"
-    config.client_secret = "652b4bd17580438485ed278fc4428c7f"
-  end
+  CLIENT_ID = "36887e12ddbc416fa4b3e84e899da701"
 
   def self.location_search(latitude, longitude)
     Instagram.location_search(latitude, longitude)
@@ -30,4 +27,20 @@ class InstagramAPI
       max_timestamp: max_timestamp.to_i
     )
   end
+
+  private
+
+    def self.conn
+      @@conn ||= Faraday.new(
+        url: 'https://api.instagram.com/v1', params: {
+          client_id: CLIENT_ID,
+        }
+      ) do |conn|
+        # response middlewares are processed in reverse order
+        conn.response :mashify
+        conn.response :json
+
+        conn.adapter Faraday.default_adapter
+      end
+    end
 end
