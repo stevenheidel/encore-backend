@@ -8,7 +8,7 @@ class FlickrAPI
       max_taken_date: max_timestamp.to_i,
       lat: latitude,
       lon: longitude,
-      radius: 0.5#km TODO magic number
+      radius: 0.2#km TODO magic number
     )
   end
 
