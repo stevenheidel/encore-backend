@@ -3,8 +3,8 @@
 class YoutubeAPI
 	
 	
-	def self.search(artist)
-		client.videos_by(:query => artist, :categories => [:music], :page => 1, :per_page => 1, :fields => {:published  => ((Date.today - 30)..(Date.today))} )
+	def self.search(artist, city)
+		client.videos_by(:query => "#{artist} #{city}", :categories => [:music], :page => 5, :per_page => 5, :fields => {:published  => ((Date.today - 30)..(Date.today))} ).videos
 	end
 
 	
@@ -13,3 +13,4 @@ class YoutubeAPI
 	end
 
 end
+
