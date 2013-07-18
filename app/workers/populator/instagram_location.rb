@@ -18,7 +18,7 @@ class Populator::InstagramLocation
         event_id, instagram_location_id, max_id)
     end
 
-    result.each do |media|
+    result.data.each do |media|
       event.posts << Post::InstagramPhoto.build_from_hashie(media)
     end
 
