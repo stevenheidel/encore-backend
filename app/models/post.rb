@@ -17,4 +17,9 @@ class Post
   def add_flag(type, user_id)
     self.flags.create(type: type, user_id: user_id)
   end
+
+  # What kind of post is this? :instagram_photo, :youtube_video, etc.
+  def type
+    self.class.to_s.split("::").last.underscore.to_sym
+  end
 end
