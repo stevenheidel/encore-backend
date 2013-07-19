@@ -24,6 +24,7 @@ Feature: Users API
       """
     # TODO: add here to check for user
 
+  @wip
   Scenario: List of User's Events
     Given there is a user (with events) with the facebook_id "696955405"
     When I send a GET request to "/api/v1/users/696955405/events.json"

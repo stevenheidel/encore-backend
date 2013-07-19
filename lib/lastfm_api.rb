@@ -61,8 +61,9 @@ class LastfmAPI
   end
 
   # Get upcoming events for latitude and longitude
-  def self.geo_getEvents(latitude, longitude)
-    get('geo.getEvents', lat: latitude, long: longitude, limit: 30)["events"]["event"]
+  # radius is in miles, gets converted to km for lastfm
+  def self.geo_getEvents(latitude, longitude, radius)
+    get('geo.getEvents', lat: latitude, long: longitude, limit: 30, distance: 1.61*radius)["events"]["event"] rescue []
   end
 
   private

@@ -25,6 +25,7 @@ Feature: Artists API
       {
         "latitude": 43.670906,
         "longitude": -79.393331,
+        "radius": 0.5,
         "term": "The Rolling Stones",
         "tense": "past"
       }
@@ -68,7 +69,8 @@ Feature: Artists API
       """
       {
         "latitude": 43.670906,
-        "longitude": -79.393331
+        "longitude": -79.393331,
+        "radius": 0.5
       }
       """
     Then the JSON response should have 6 copies similar to this under "events":
@@ -87,7 +89,8 @@ Feature: Artists API
       """
       {
         "latitude": 43.670906,
-        "longitude": -79.393331
+        "longitude": -79.393331,
+        "radius": 0.5
       }
       """
     Then the JSON response should have 1 copies similar to this under "events":

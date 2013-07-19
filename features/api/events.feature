@@ -8,7 +8,8 @@ Feature: Events API
       """
       {
         "latitude": 43.670906,
-        "longitude": -79.393331
+        "longitude": -79.393331,
+        "radius": 0.5
       }
       """
     # TODO: nothing will be in the database because Sidekiq hasn't run
@@ -28,10 +29,11 @@ Feature: Events API
       """
       {
         "latitude": 43.670906,
-        "longitude": -79.393331
+        "longitude": -79.393331,
+        "radius": 0.5
       }
       """
-    Then the JSON response should have 6 copies similar to this under "events":
+    Then the JSON response should have 11 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
@@ -48,7 +50,8 @@ Feature: Events API
       """
       {
         "latitude": 43.670906,
-        "longitude": -79.393331
+        "longitude": -79.393331,
+        "radius": 0.5
       }
       """
     Then the JSON response should have 30 copies similar to this under "events":
