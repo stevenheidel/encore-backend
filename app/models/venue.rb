@@ -5,7 +5,7 @@ class Venue
   field :country, type: String
   field :street, type: String
   field :postalcode, type: String
-  field :coordinates, type: Array, default: [nil, nil]
+  field :coordinates, type: Array, default: [0,0]
 
   has_many :events
   embeds_many :instagram_locations

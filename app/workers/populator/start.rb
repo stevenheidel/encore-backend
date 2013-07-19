@@ -13,7 +13,7 @@ class Populator::Start < Populator::Base
       end
 
       unless Post::YoutubeVideo.where(event: event).any?
-        event.sidekiq_workers << Populator::Youtube.perform_async(event_id)
+        #event.sidekiq_workers << Populator::Youtube.perform_async(event_id)
       end
       
       event.save

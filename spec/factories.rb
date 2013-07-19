@@ -29,7 +29,7 @@ FactoryGirl.define do
   end
 
   factory :venue do
-    lastfm_id "123"
+    lastfm_id "12349"
     name "Venue name"
 
     factory :air_canada_centre do
