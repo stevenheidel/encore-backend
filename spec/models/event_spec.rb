@@ -1,3 +1,5 @@
+$force_sidekiq_status = true
+
 require 'spec_helper'
 
 describe Event, :vcr do
@@ -16,6 +18,7 @@ describe Event, :vcr do
     event.reload.populating?.should be_true
 
     Populator::Flickr.drain
+    Populator::Youtube.drain
     event.reload.populating?.should be_false
   end
 end

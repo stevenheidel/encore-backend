@@ -1,9 +1,6 @@
 require 'flickr_api'
 
-class Populator::Flickr
-  include SidekiqStatus::Worker
-  sidekiq_options :queue => :default, :backtrace => true
-
+class Populator::Flickr < Populator::Base
   def perform(event_id)
     event = Event.find(event_id)
 

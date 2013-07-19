@@ -11,7 +11,6 @@ describe Populator::InstagramLocation, :vcr do
   describe '.perform' do
     it 'should get some posts from Instagram' do
       Post::InstagramPhoto.count.should > 0
-      pp Post::InstagramPhoto.all.entries
     end
   end
 end
