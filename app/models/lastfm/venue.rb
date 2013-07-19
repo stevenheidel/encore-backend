@@ -29,8 +29,8 @@ class Lastfm::Venue < Lastfm::Base
 
   # Check if venue is within a particular radius from a point
   # Point should be [long, lat] and radius is in miles
-  def in_radius?(point, radius)
+  def in_radius?(geo)
     Geocoder::Calculations.distance_between(
-      point.reverse, self.coordinates.reverse) < radius
+      geo.point.reverse, self.coordinates.reverse) < geo.radius
   end
 end

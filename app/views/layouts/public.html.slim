@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Encore
+    = stylesheet_link_tag    "public/application", media: "all"
+    = javascript_include_tag "public/application"
+    = csrf_meta_tags
+    == yield :opengraph_tags
+  body
+    == yield

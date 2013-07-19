@@ -1,4 +1,4 @@
-class Demo::EventsController < ApplicationController
+class Demo::EventsController < Demo::BaseController
   def index
     if params[:term]
       # TODO same as combined_search

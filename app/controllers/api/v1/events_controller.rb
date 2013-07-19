@@ -47,38 +47,44 @@ class Api::V1::EventsController < Api::V1::BaseController
     end
   end
 
-  def past
-    if params[:artist_id] # get past for artist
-      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).past_events(params[:latitude], params[:longitude])
-    else # get popular past for location
-      @events = Geo.new(params[:latitude], params[:longitude]).past_events
-    end
-
-    render 'api/v1/events/index.json'
-  end
-
-  def today
-    # Get today's events from Lastfm
-    @events = Geo.new(params[:latitude], params[:longitude]).todays_events
-
-    render 'api/v1/events/index.json'
-  end
-
-  def future
-    if params[:artist_id] # get future for artist
-      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(params[:latitude], params[:longitude])
-    else # get popular future for location
-      @events = Geo.new(params[:latitude], params[:longitude]).future_events
-    end
-
-    render 'api/v1/events/index.json'
-  end
-
   def destroy
     event = Event.get(params[:id])
     user = User.get(params[:user_id])
     user.events.delete(event)
 
     render 'api/v1/base/result.json', locals: {result: 'success'}
+  end
+
+  def past
+    geo = Geo.new(params[:latitude], params[:longitude], params[:radius])
+
+    if params[:artist_id] # get past for artist
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).past_events(geo)
+    else # get popular past for location
+      @events = geo.past_events
+    end
+
+    render 'api/v1/events/index.json'
+  end
+
+  def today
+    geo = Geo.new(params[:latitude], params[:longitude], params[:radius])
+
+    # Get today's events from Lastfm
+    @events = geo.todays_events
+
+    render 'api/v1/events/index.json'
+  end
+
+  def future
+    geo = Geo.new(params[:latitude], params[:longitude], params[:radius])
+
+    if params[:artist_id] # get future for artist
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(geo)
+    else # get popular future for location
+      @events = geo.future_events
+    end
+
+    render 'api/v1/events/index.json'
   end
 end

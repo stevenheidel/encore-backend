@@ -48,8 +48,10 @@ EncoreBackend::Application.routes.draw do
   end
 
   # Public routes
-  resources :events, only: [:show]
-  resources :posts, only: [:show]
+  scope module: 'public' do
+    resources :events, only: [:show]
+    resources :posts, only: [:show]
+  end
 
   # Private routes TODO: Secure this from outsiders
   scope '/private' do

@@ -16,9 +16,9 @@ class Event
   scope :past, where(:start_date.lt => Time.now).desc(:start_date)
   scope :future, where(:start_date.gte => Time.now).asc(:start_date)
 
-  scope :in_radius, ->(point, radius) {
+  scope :in_radius, ->(geo) {
     # 3959 is a magic number for miles
-    command = Venue.geo_near(point).distance_multiplier(3959).max_distance(radius/3959.0).spherical
+    command = Venue.geo_near(geo.point).distance_multiplier(3959).max_distance(geo.radius/3959.0).spherical
     venue_ids = command.map(&:_id)
     where(:venue_id.in => venue_ids)
   }
