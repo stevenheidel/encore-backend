@@ -23,7 +23,8 @@ FactoryGirl.define do
     factory :rolling_stones do
       name "Rolling Stones"
       association :venue, factory: :air_canada_centre
-      lastfm_id "11111"
+      lastfm_id "3559569"
+      flickr_tag "lastfm:event=3559569"
       start_date "June 07, 2013 00:00" # in UTC
     end
   end

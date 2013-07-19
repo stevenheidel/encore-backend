@@ -9,5 +9,9 @@ class Populator::Flickr < Populator::Base
         event.local_start_time, event.local_end_time).each do |photo|
       event.posts << Post::FlickrPhoto.build_from_hashie(FlickrAPI.get_info(photo.id, photo.secret))
     end
+
+    FlickrAPI.machine_tag_search(event.flickr_tag).each do |photo|
+      event.posts << Post::FlickrPhoto.build_from_hashie(FlickrAPI.get_info(photo.id, photo.secret))
+    end
   end
 end
