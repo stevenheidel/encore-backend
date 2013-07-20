@@ -1,6 +1,6 @@
 class YoutubeAPI
 	def self.search(query)
-		client.videos_by(query: query, per_page: 5).videos
+		client.videos_by(query: query, per_page: 10).videos
 	end
 	
 	def self.client

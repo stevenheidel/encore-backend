@@ -6,6 +6,7 @@ describe Event, :vcr do
   let(:event) { FactoryGirl.create :rolling_stones }
 
   it "should be populating? when jobs are in progress" do
+    pending
     event.populating?.should be_false
     event.populate!
     event.reload.populating?.should be_true

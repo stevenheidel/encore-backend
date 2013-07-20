@@ -59,6 +59,10 @@ class Event
     self.start_date.to_date
   end
 
+  def local_date
+    self.local_start_time.to_date
+  end
+
   def start_time
     self.start_date
   end

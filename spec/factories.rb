@@ -2,20 +2,24 @@ FactoryGirl.define do
   factory :artist do
     lastfm_id "Cher"
     name "Cher"
+
+    factory :the_rolling_stones do
+      lastfm_id "The Rolling Stones"
+      name "The Rolling Stones"
+    end
   end
   
   factory :event do
     name "Event Name"
     lastfm_id "12345"
+    association :venue, lastfm_id: "123"
 
     factory :past_event do
-      association :venue, lastfm_id: "543"
       lastfm_id "54321" # TODO: automatically deal with unique lastfm_id's
       start_date "Fri, 28 Aug 2009 04:42:01"
     end
 
     factory :future_event do
-      association :venue, lastfm_id: "123"
       lastfm_id "12345"
       start_date "Fri, 28 Aug 2014 04:42:01"
     end
@@ -31,7 +35,8 @@ FactoryGirl.define do
 
   factory :venue do
     lastfm_id "12349"
-    name "Venue name"
+    name "Massey Hall"
+    city "Toronto"
 
     factory :air_canada_centre do
       name "Air Canada Centre"

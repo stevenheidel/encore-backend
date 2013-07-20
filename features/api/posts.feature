@@ -8,8 +8,29 @@ Feature: Posts API
     # Given there are photos
     Given there is an event with the lastfm_id 12345
     When I send a GET request to "/api/v1/events/12345/posts.json"
-    Then the JSON response should have "$.events" with a length of 0
-    # Then there are photos
+    Then there are photos like this:
+      """
+      {
+        "type": "photo",
+        "id": "51e6dafd05ac8299110147fc",
+        "caption": "something",
+        "image_url": "http://something.com",
+        "user_name": "someone",
+        "user_profile_picture": "http://someone.com"
+      }
+      """
+    And there are videos like this:
+      """
+      {
+        "type": "video",
+        "link": "http://youtube.com/link",
+        "id": "51e6dafd05ac8299110147fc",
+        "caption": "something",
+        "image_url": "http://something.com",
+        "user_name": "someone",
+        "user_profile_picture": "http://someone.com"
+      }
+      """
 
   @wip
   Scenario: Upload Photos
