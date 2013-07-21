@@ -34,7 +34,7 @@ GIT
 
 GIT
   remote: git://github.com/mongoid/mongoid.git
-  revision: cb541fa1fd7cf9ab0a725c757490d0ac435a79f7
+  revision: 5d8397e24b673724f4b70ca2923a62bfe20e6e79
   specs:
     mongoid (4.0.0)
       activemodel (~> 4.0.0)
@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: git://github.com/sferik/rails_admin.git
-  revision: 78b7deaba7f26ade376ad2e2aae6bc21d12c3226
+  revision: 8fb18e0628ee9ca61c6d2ec88dc7d9109c7ca78d
   specs:
     rails_admin (0.5.0)
       bootstrap-sass (~> 2.3)
@@ -102,7 +102,7 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bluff (0.1.0)
-    bootstrap-sass (2.3.2.0)
+    bootstrap-sass (2.3.2.1)
       sass (~> 3.2)
     builder (3.1.4)
     bullet (4.6.0)
@@ -174,7 +174,7 @@ GEM
     ethon (0.5.12)
       ffi (>= 1.3.0)
       mime-types (~> 1.18)
-    excon (0.6.6)
+    excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -195,15 +195,15 @@ GEM
     flog (3.2.2)
       ruby_parser (~> 3.1, > 3.1.0)
       sexp_processor (~> 4.0)
-    fog (0.9.0)
+    fog (1.14.0)
       builder
-      excon (~> 0.6.1)
-      formatador (>= 0.1.3)
-      json
+      excon (~> 0.25.0)
+      formatador (~> 0.2.0)
       mime-types
-      net-scp (>= 1.0.4)
-      net-ssh (>= 2.1.4)
-      nokogiri (>= 1.4.4)
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5)
       ruby-hmac
     font-awesome-rails (3.2.1.2)
       railties (>= 3.2, < 5.0)
@@ -326,9 +326,8 @@ GEM
     oauth (0.4.7)
     origin (1.1.0)
     orm_adapter (0.4.0)
-    paperclip (3.4.2)
+    paperclip (3.5.0)
       activemodel (>= 3.0.0)
-      activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
@@ -433,6 +432,7 @@ GEM
       redis-namespace
     sidekiq_status (1.0.4)
       sidekiq (>= 2.4, <= 2.12)
+    simple_oauth (0.2.0)
     sinatra (1.4.3)
       rack (~> 1.4)
       rack-protection (~> 1.4)

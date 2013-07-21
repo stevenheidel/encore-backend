@@ -15,11 +15,13 @@ FactoryGirl.define do
     association :venue, lastfm_id: "123"
 
     factory :past_event do
+      association :venue, lastfm_id: "12344"
       lastfm_id "54321" # TODO: automatically deal with unique lastfm_id's
       start_date "Fri, 28 Aug 2009 04:42:01"
     end
 
     factory :future_event do
+      association :venue, lastfm_id: "12322"
       lastfm_id "12345"
       start_date "Fri, 28 Aug 2014 04:42:01"
     end

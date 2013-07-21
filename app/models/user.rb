@@ -7,7 +7,7 @@ class User
   field :oauth_expiry, type: DateTime 
   field :name, type: String
 
-  has_and_belongs_to_many :events
+  has_and_belongs_to_many :events, index: true
 
   has_many :user_photos, class_name: "Post::UserPhoto"
 

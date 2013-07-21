@@ -14,7 +14,7 @@ class Geo
   end
 
   def past_events
-    Event.in_radius(self).limit(30)
+    Event.in_radius(self).order_by(:user_count.desc).limit(30)
   end
 
   def todays_events
