@@ -1,3 +1,3 @@
 json.events do
-  json.partial! 'events', events: @events
+  json.partial! 'api/v1/events/events', events: @events
 end

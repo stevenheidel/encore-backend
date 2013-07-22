@@ -1,2 +1,1 @@
-json.partial! 'events', events: [@event]
-# json.image_url # TODO
+json.partial! api/v1/events/event, event: @event
