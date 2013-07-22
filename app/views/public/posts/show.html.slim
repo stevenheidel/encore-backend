@@ -6,9 +6,39 @@
 
   meta property="og:description" content="Download Encore in the App Store!"
 
-.grid.flex
-  .col_6
-    img.caption title=@post.caption src=@post.image_url
-  .col_6
-    h3 Image from the #{@event.name} concert
-    p Download Encore now to see more photos from this concert!
+/ .grid.flex
+/   .col_6
+/     img.caption title=@post.caption src=@post.image_url
+/   .col_6
+/     h3 Image from the #{@event.name} concert
+/     p Download Encore now to see more photos from this concert!
+
+
+nav
+  .logocontain
+    = image_tag "public/encore_logo.png"
+.appstore
+  .appstorewrapper
+    .container
+      .two.columns
+        = image_tag "public/applogo.png", :id => 'applogo'
+      .three.columns
+        .dl
+          p Download Encore
+          p to claim this concert
+      .three.columns
+        = image_tag "public/appstorelogo.png", :id => 'appstorelogo'
+
+.photocontainer
+    .box2
+      img.caption title=@post.caption src=@post.image_url
+
+
+footer
+  ul
+    li About Us
+    li Terms
+    li FAQ
+    li Jobs
+    li Privacy
+    li#copyright © 2013 Encore

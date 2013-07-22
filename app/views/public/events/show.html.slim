@@ -7,10 +7,67 @@
 
   meta property="og:description" content="Download Encore in the App Store!"
 
-h3 Images from the #{@event.name} concert
-p Download Encore now to see more photos from this concert!
+/ h3 Images from the #{@event.name} concert
+/ p Download Encore now to see more photos from this concert!
 
-.gallery
-  - @posts.each do |p|
-    = link_to post_path(p.id) do
-      = image_tag p.image_url
+/ .gallery
+/   - @posts.each do |p|
+/     = link_to post_path(p.id) do
+/       = image_tag p.image_url, :size => '150'
+
+
+nav
+  .logocontain
+    = image_tag "public/encore_logo.png"
+.appstore
+  .appstorewrapper
+  	ul
+        li = image_tag "public/applogo.png", :id => 'applogo'
+        li = image_tag "public/appstorelogo.png", :id => 'appstorelogo'
+
+.photocontainer
+  .container
+    .four.columns
+      .artistpic
+        = image_tag @event.image_url, :size => '180'
+    .five.columns
+      .artist
+        p #{@event.name}
+      .venue
+        p #{@event.venue.name}
+        p #{@event.date.to_formatted_s(:long) }
+  .container
+    .nine.columns
+    	.gallery
+			  - @posts.each do |p|
+			    = link_to post_path(p.id) do
+			      = image_tag p.image_url, :size => '150'
+     	
+footer
+  ul
+    li About Us
+    li Terms
+    li FAQ
+    li Jobs
+    li Privacy
+    li#copyright © 2013 Encore
+
+
+
+
+
+
+
+
+
+  /   .appstore
+  / .appstorewrapper
+  /   .container
+  /     .two.columns
+  /       = image_tag "public/applogo.png", :id => 'applogo'
+  /     .three.columns
+  /       .dl
+  /         p Download Encore
+  /         p to claim this concert
+  /     .three.columns
+  /       = image_tag "public/appstorelogo.png", :id => 'appstorelogo'
