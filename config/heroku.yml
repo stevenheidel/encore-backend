@@ -16,6 +16,5 @@ staging:
     RACK_ENV: staging
     RAILS_ENV: staging
   addons:
-    - memcache: 5mb
     - mongohq: sandbox
     - redistogo: nano
