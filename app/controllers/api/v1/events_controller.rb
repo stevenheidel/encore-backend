@@ -2,7 +2,7 @@ class Api::V1::EventsController < Api::V1::BaseController
   def index
     # Check to see if event on profile
     if params[:lastfm_id]
-      # TODO: awfully complicated line
+      # SMELL: awfully complicated line
       found = User.get(params[:user_id]).events.where(lastfm_id: params[:lastfm_id].to_i).exists?
 
       render 'api/v1/base/result.json', locals: {result: found}

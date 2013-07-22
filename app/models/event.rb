@@ -85,7 +85,7 @@ class Event
   end
 
   def end_time
-    self.start_time + 6.hours # TODO: arbitralily add 6 hours for end of event
+    self.start_time + 6.hours # SMELL: arbitralily add 6 hours for end of event
   end
 
   def local_end_time

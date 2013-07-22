@@ -7,7 +7,7 @@ class Api::V1::UsersController < Api::V1::BaseController
     @user.name = params[:name]
     @user.save!
 
-    # TODO: should just redirect to the show action
+    # SMELL: should just redirect to the show action
     render "api/v1/users/show.json"
   end
 

@@ -13,7 +13,7 @@ module Concerns::Lastfmable
     field :url, type: String
 
     embeds_many :images, class_name: "Lastfm::Image"
-    accepts_nested_attributes_for :images # TODO: for RailsAdmin
+    accepts_nested_attributes_for :images # for RailsAdmin
 
     index({lastfm_id: 1}, {unique: true})
 
@@ -27,7 +27,7 @@ module Concerns::Lastfmable
     end
 
     # Like find_or_create_by but calls its corresponding info API call
-    # TODO: Doesn't work for venues probably
+    # Doesn't work for venues
     def find_or_create_from_lastfm(lastfm_id)
       begin
         self.get(lastfm_id)

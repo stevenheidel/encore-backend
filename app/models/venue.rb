@@ -9,7 +9,7 @@ class Venue
 
   has_many :events
   embeds_many :instagram_locations
-  accepts_nested_attributes_for :instagram_locations # TODO: for RailsAdmin
+  accepts_nested_attributes_for :instagram_locations # for RailsAdmin
 
   index({coordinates: '2dsphere'}, {min: -180, max: 180})
 
