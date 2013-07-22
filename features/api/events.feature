@@ -68,7 +68,6 @@ Feature: Events API
       }
       """
 
-  @vcr
   Scenario: Future List
     When I send a GET request to "/api/v1/events/future.json" with the following:
       """

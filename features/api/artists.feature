@@ -38,7 +38,7 @@ Feature: Artists API
         "events": "Array of most likely matching artist's events"
       }
       """
-    And the JSON response should have the following under "artist":
+    And the JSON response should have something similar to the following under "artist":
       """
       {
         "name": "The Rolling Stones",
