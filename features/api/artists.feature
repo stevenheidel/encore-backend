@@ -43,7 +43,7 @@ Feature: Artists API
       {
         "name": "The Rolling Stones",
         "lastfm_id": "The Rolling Stones",
-        "image_url": "http://userserve-ak.last.fm/serve/_/7596573/The+Rolling+Stones+rolling+stones+malmo.jpg"
+        "image_url": "http://userserve-ak.last.fm/serve/_/5775770/The+Rolling+Stones+prisonStone.jpg"
       }
       """
     And the JSON response should have 29 copies similar to this under "others":
@@ -60,7 +60,14 @@ Feature: Artists API
         "name": "Event Name",
         "date": "2014-08-28",
         "image_url": "TODO: default image for events without images",
-        "venue_name": "Venue name"
+        "venue_name": "Venue name",
+        "venue": {
+          "street": "Street Name",
+          "city": "City Name",
+          "postalcode" : "Postal Code",
+          "country" : "Country Name",
+          "coordinates": "1234, 1234"
+        }
       }
       """
 

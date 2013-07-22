@@ -20,7 +20,14 @@ Feature: Events API
         "name": "Event Name",
         "date": "2014-08-28",
         "image_url": "TODO: default image for events without images",
-        "venue_name": "Venue name"
+        "venue_name": "Venue name",
+        "venue": {
+          "street": "Street Name",
+          "city": "City Name",
+          "postalcode" : "Postal Code",
+          "country" : "Country Name",
+          "coordinates": "1234, 1234"
+        }
       }
       """
 
@@ -33,14 +40,21 @@ Feature: Events API
         "radius": 0.5
       }
       """
-    Then the JSON response should have 11 copies similar to this under "events":
+    Then the JSON response should have more than 2 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
         "name": "Event Name",
         "date": "2014-08-28",
         "image_url": "TODO: default image for events without images",
-        "venue_name": "Venue name"
+        "venue_name": "Venue name",
+        "venue": {
+          "street": "Street Name",
+          "city": "City Name",
+          "postalcode" : "Postal Code",
+          "country" : "Country Name",
+          "coordinates": "1234, 1234"
+        }
       }
       """
 
@@ -54,13 +68,20 @@ Feature: Events API
         "radius": 0.5
       }
       """
-    Then the JSON response should have 30 copies similar to this under "events":
+    Then the JSON response should have more than 2 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
         "name": "Event Name",
         "date": "2014-08-28",
         "image_url": "TODO: default image for events without images",
-        "venue_name": "Venue name"
+        "venue_name": "Venue name",
+        "venue": {
+          "street": "Street Name",
+          "city": "City Name",
+          "postalcode" : "Postal Code",
+          "country" : "Country Name",
+          "coordinates": "1234, 1234"
+        }
       }
       """
