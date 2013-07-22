@@ -22,6 +22,8 @@ class Populator::Youtube < Populator::Base
       return false unless string.include?(name.downcase)
       return false unless string.include?(city.downcase) || string.include?(venue.downcase)
 
+      # TODO: eventually check for different date formats
+
       true
     end
 end

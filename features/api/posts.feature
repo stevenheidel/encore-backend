@@ -23,7 +23,7 @@ Feature: Posts API
       """
       {
         "type": "video",
-        "link": "http://www.youtube.com/watch?v=8v-hcMsXAdo&feature=youtube_gdata_player",
+        "youtube_link": "http://www.youtube.com/watch?v=8v-hcMsXAdo&feature=youtube_gdata_player",
         "id": "51e6dafd05ac8299110147fc",
         "caption": "something",
         "image_url": "http://something.com",
