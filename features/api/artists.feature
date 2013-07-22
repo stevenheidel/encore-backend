@@ -67,7 +67,12 @@ Feature: Artists API
           "postalcode" : "Postal Code",
           "country" : "Country Name",
           "coordinates": "1234, 1234"
+        },
+        "headliner": "Artist Name",
+        "artists": {
+          "artist": "Artist Name"
         }
+        
       }
       """
 
@@ -94,7 +99,12 @@ Feature: Artists API
           "postalcode" : "Postal Code",
           "country" : "Country Name",
           "coordinates": "1234, 1234"
+        },
+        "headliner": "Artist Name",
+        "artists": {
+          "artist": "Artist Name"
         }
+        
       }
       """
 
@@ -121,6 +131,10 @@ Feature: Artists API
           "postalcode" : "Postal Code",
           "country" : "Country Name",
           "coordinates": "1234, 1234"
+        },
+        "headliner": "Artist Name",
+        "artists": {
+          "artist": "Artist Name"
         }
         
       }
