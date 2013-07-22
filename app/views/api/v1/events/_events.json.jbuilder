@@ -7,7 +7,7 @@ json.array! events do |event|
   json.headliner event.headliner
   json.artists do
     json.array! event.artists.each do |artist|
-      json.artist artist
+      json.artist artist.try(:name) || artist
     end
   end
 end
