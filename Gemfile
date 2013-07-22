@@ -37,6 +37,8 @@ group :development do
   gem 'guard-shell'
   gem 'guard-spin'
   gem 'guard-zeus'
+
+  gem 'heroku_san'
 end
 
 group :development, :test do

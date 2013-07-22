@@ -82,6 +82,14 @@ profile:
       hosts:
         - localhost:27017
 
+staging:
+  sessions:
+    default:
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      options:
+        skip_version_check: true
+        safe: true
+
 production:
   sessions:
     default:

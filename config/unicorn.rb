@@ -1,37 +1,74 @@
-worker_processes 3
+case ENV['RACK_ENV']
 
-working_directory "#{ENV['RAILS_STACK_PATH']}"
+when "production"
+  worker_processes 3
 
-listen "/tmp/web_server.sock", :backlog => 64
+  working_directory "#{ENV['RAILS_STACK_PATH']}"
 
-timeout 30
+  listen "/tmp/web_server.sock", :backlog => 64
 
-pid '/tmp/web_server.pid'
+  timeout 30
 
-stderr_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stderr.log"
-stdout_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stdout.log"
+  pid '/tmp/web_server.pid'
 
-preload_app true
-GC.respond_to?(:copy_on_write_friendly=) and
-  GC.copy_on_write_friendly = true
+  stderr_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stderr.log"
+  stdout_path "#{ENV['RAILS_STACK_PATH']}/log/unicorn.stdout.log"
 
-check_client_connection false
+  preload_app true
+  GC.respond_to?(:copy_on_write_friendly=) and
+    GC.copy_on_write_friendly = true
 
-before_fork do |server, worker|
-  old_pid = '/tmp/web_server.pid.oldbin'
-  if File.exists?(old_pid) && server.pid != old_pid
-    begin
-      Process.kill("QUIT", File.read(old_pid).to_i)
-    rescue Errno::ENOENT, Errno::ESRCH
-      # someone else did our job for us
+  check_client_connection false
+
+  before_fork do |server, worker|
+    old_pid = '/tmp/web_server.pid.oldbin'
+    if File.exists?(old_pid) && server.pid != old_pid
+      begin
+        Process.kill("QUIT", File.read(old_pid).to_i)
+      rescue Errno::ENOENT, Errno::ESRCH
+        # someone else did our job for us
+      end
+    end 
+
+    defined?(ActiveRecord::Base) and
+      ActiveRecord::Base.connection.disconnect!
+  end
+
+  after_fork do |server, worker|
+    defined?(ActiveRecord::Base) and
+      ActiveRecord::Base.establish_connection
+  end
+
+
+when "staging"
+  worker_processes 3
+
+  worker_processes Integer(ENV["WEB_CONCURRENCY"] || 3)
+  timeout 15
+  preload_app true
+
+  before_fork do |server, worker|
+    Signal.trap 'TERM' do
+      puts 'Unicorn master intercepting TERM and sending myself QUIT instead'
+      Process.kill 'QUIT', Process.pid
     end
+
+    defined?(ActiveRecord::Base) and
+      ActiveRecord::Base.connection.disconnect!
   end 
 
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.connection.disconnect!
-end
+  after_fork do |server, worker|
+    Signal.trap 'TERM' do
+      puts 'Unicorn worker intercepting TERM and doing nothing. Wait for master to send QUIT'
+    end
 
-after_fork do |server, worker|
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.establish_connection
+    defined?(ActiveRecord::Base) and
+      ActiveRecord::Base.establish_connection
+  end
+
+
+when "development"
+  worker_processes 3
+  
+
 end

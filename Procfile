@@ -1,2 +1,3 @@
-custom_web: ./bin/unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
+web: ./bin/web web
+custom_web: ./bin/web custom_web
 sidekiq: ./bin/sidekiq -q default -q saver

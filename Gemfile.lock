@@ -244,6 +244,11 @@ GEM
     haml (4.0.3)
       tilt
     hashie (2.0.5)
+    heroku-api (0.3.14)
+      excon (~> 0.25.1)
+    heroku_san (4.2.5)
+      heroku-api (>= 0.1.2)
+      rake
     hike (1.2.3)
     hirb (0.7.1)
     htmlkickstart (0.0.1)
@@ -534,6 +539,7 @@ DEPENDENCIES
   guard-spin
   guard-zeus
   hashie
+  heroku_san
   htmlkickstart
   jbuilder (~> 1.4.2)
   jquery-rails
