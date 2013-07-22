@@ -40,7 +40,7 @@ Feature: Events API
         "radius": 0.5
       }
       """
-    Then the JSON response should have 11 copies similar to this under "events":
+    Then the JSON response should have more than 2 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
@@ -68,7 +68,7 @@ Feature: Events API
         "radius": 0.5
       }
       """
-    Then the JSON response should have 30 copies similar to this under "events":
+    Then the JSON response should have more than 2 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
