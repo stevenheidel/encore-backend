@@ -20,7 +20,14 @@ Feature: Events API
         "name": "Event Name",
         "date": "2014-08-28",
         "image_url": "TODO: default image for events without images",
-        "venue_name": "Venue name"
+        "venue_name": "Venue name",
+        "venue": {
+          "street": "Street Name",
+          "city": "City Name",
+          "postalcode" : "Postal Code",
+          "country" : "Country Name",
+          "coordinates": "1234, 1234"
+        }
       }
       """
 
@@ -40,7 +47,14 @@ Feature: Events API
         "name": "Event Name",
         "date": "2014-08-28",
         "image_url": "TODO: default image for events without images",
-        "venue_name": "Venue name"
+        "venue_name": "Venue name",
+        "venue": {
+          "street": "Street Name",
+          "city": "City Name",
+          "postalcode" : "Postal Code",
+          "country" : "Country Name",
+          "coordinates": "1234, 1234"
+        }
       }
       """
 
@@ -61,6 +75,13 @@ Feature: Events API
         "name": "Event Name",
         "date": "2014-08-28",
         "image_url": "TODO: default image for events without images",
-        "venue_name": "Venue name"
+        "venue_name": "Venue name",
+        "venue": {
+          "street": "Street Name",
+          "city": "City Name",
+          "postalcode" : "Postal Code",
+          "country" : "Country Name",
+          "coordinates": "1234, 1234"
+        }
       }
       """
