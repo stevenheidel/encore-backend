@@ -16,5 +16,5 @@ staging:
     RACK_ENV: staging
     RAILS_ENV: staging
   addons:
-    - mongohq: sandbox
-    - redistogo: nano
+    - mongohq:sandbox
+    - redistogo:nano
