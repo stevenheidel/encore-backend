@@ -14,7 +14,7 @@ class Geo
   end
 
   def past_events
-    Event.in_radius(self).limit(30)
+    Event.in_radius(self).order_by(:user_count.desc).limit(30)
   end
 
   def todays_events
@@ -26,7 +26,7 @@ class Geo
   end
 
   def future_events
-    LastfmAPI.geo_getEvents(@lat, @long, @radius).map do |e| 
+    events = LastfmAPI.geo_getEvents(@lat, @long, @radius).map do |e| 
       Lastfm::Event.new(e)
     end
 

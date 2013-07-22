@@ -12,6 +12,10 @@ class FlickrAPI
     )
   end
 
+  def self.machine_tag_search(machine_tag)
+    flickr.photos.search(machine_tags: machine_tag)
+  end
+
   def self.get_info(photo_id, secret)
     flickr.photos.getInfo(photo_id: photo_id, secret: secret)
   end

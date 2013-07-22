@@ -10,7 +10,7 @@ class InstagramLocation
 
   embedded_in :venue
 
-  validates_uniqueness_of :instagram_uuid, scope: :venue
+  validates_uniqueness_of :instagram_uuid
 
   def self.find_instagram_ids_for_venue(venue)
     instagram_locations = []

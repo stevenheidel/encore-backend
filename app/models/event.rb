@@ -10,8 +10,19 @@ class Event
 
   has_and_belongs_to_many :artists, index: true
   has_many :posts
-  has_and_belongs_to_many :users, index: true
+  has_and_belongs_to_many :users, index: true, 
+    after_add: :inc_user_count, after_remove: :dec_user_count
   belongs_to :venue, index: true
+
+  # Keep an updated count of users
+  # TODO: this will obviously fail if user already added event
+  field :user_count, type: Integer
+  def inc_user_count(user)
+    self.inc(user_count: 1)
+  end
+  def dec_user_count(user)
+    self.inc(user_count: -1)
+  end
 
   scope :past, where(:start_date.lt => Time.now).desc(:start_date)
   scope :future, where(:start_date.gte => Time.now).asc(:start_date)
@@ -57,6 +68,10 @@ class Event
 
   def date
     self.start_date.to_date
+  end
+
+  def local_date
+    self.local_start_time.to_date
   end
 
   def start_time

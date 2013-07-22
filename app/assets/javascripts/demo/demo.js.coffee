@@ -44,7 +44,7 @@ enable_search = (tense) ->
             'id': value.lastfm_id
           }
     select: (event, ui) ->
-      $.getJSON "/api/v1/artists/" + ui.item.id + "/events/" + tense + "?city=" + $("#city_search").val(), (events) ->
+      $.getJSON "/api/v1/artists/" + ui.item.id + "/events/" + tense + "?latitude=" + $("#latitude_search").val() + "&longitude=" + $("#longitude_search").val(), (events) ->
         $("#events").html ich.events_template events
         enable_add()
   }
@@ -58,7 +58,7 @@ enable_add = ->
       insert_menu()
 
 insert_popular = (tense) ->
-  $.getJSON "/api/v1/events/" + tense + "?city=" + $("#city_search").val(), (events) ->
+  $.getJSON "/api/v1/events/" + tense + "?latitude=" + $("#latitude_search").val() + "&longitude=" + $("#longitude_search").val(), (events) ->
     $("#events").html ich.events_template events
     enable_add()
 
