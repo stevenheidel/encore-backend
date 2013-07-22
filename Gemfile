@@ -39,6 +39,7 @@ group :development do
   gem 'guard-zeus'
 
   gem 'heroku_san'
+  gem 'rails_12factor'
 end
 
 group :development, :test do

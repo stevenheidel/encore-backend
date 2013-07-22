@@ -19,7 +19,7 @@ class Saver::Events
 
     # TODO: causes a lot of Artists is invalid errors which resolve themselves
     lastfm_event.artists.each do |a| 
-      event.artists << Artist.find_or_create_by(lastfm_id: a)
+      event.artists << Artist.find_or_create_from_lastfm(a)
     end
 
     event.save!
