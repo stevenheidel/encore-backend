@@ -39,3 +39,5 @@ pickle-email-*.html
 
 # Ignore VCR cassettes
 spec/fixtures/vcr_cassettes
+
+.DS_Store
