@@ -61,6 +61,7 @@ Feature: Artists API
         "date": "2014-08-28",
         "start_time": "2010-11-23T19:00:00-05:00",
         "image_url": "TODO: default image for events without images",
+        "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
@@ -94,6 +95,7 @@ Feature: Artists API
         "date": "2014-08-28",
         "start_time": "2010-11-23T19:00:00-05:00",
         "image_url": "TODO: default image for events without images",
+        "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
@@ -127,6 +129,7 @@ Feature: Artists API
         "date": "2014-08-28",
         "start_time": "Tue, 23 Jul 2013 19:00:00",
         "image_url": "TODO: default image for events without images",
+        "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
