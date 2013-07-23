@@ -27,6 +27,14 @@ class Lastfm::Venue < Lastfm::Base
     end
   end
 
+  def latitude
+    coordinates[1]
+  end
+
+  def longitude
+    coordinates[0]
+  end
+
   # Check if venue is within a particular radius from a point
   # Point should be [long, lat] and radius is in miles
   def in_radius?(geo)

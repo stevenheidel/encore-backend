@@ -1,7 +1,7 @@
 json.extract! event, :lastfm_id, :name, :date, :image_url
 json.venue_name event.venue.try(:name)
 json.venue do
-  json.extract! event.venue, :street, :city, :postalcode, :country, :coordinates
+  json.extract! event.venue, :street, :city, :postalcode, :country, :latitude, :longitude
 end  
 json.headliner event.headliner
 json.artists do
