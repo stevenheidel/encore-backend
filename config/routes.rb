@@ -2,6 +2,8 @@ require 'sidekiq/web'
 require 'sidekiq_status/web'
 
 EncoreBackend::Application.routes.draw do
+  root to: redirect("http://encore.fm/")
+
   # API Routes
   # TODO: secure this with some sort of shared key
   namespace :api do
