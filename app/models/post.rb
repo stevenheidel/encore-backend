@@ -14,6 +14,10 @@ class Post
 
   validates_uniqueness_of :link, scope: :event
 
+  scope :flickr, where(:_type => "Post::FlickrPhoto")
+  scope :instagram, where(:_type => "Post::InstagramPhoto")
+  scope :youtube, where(:_type => "Post::YoutubeVideo")
+
   def add_flag(type, user_id)
     self.flags.create(type: type, user_id: user_id)
   end
