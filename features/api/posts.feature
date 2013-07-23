@@ -37,6 +37,11 @@ Feature: Posts API
     Given there is an event with the lastfm_id 12345
     And there is a user (with events) with the facebook_id "696955405"
 
+  Scenario: Start Populating
+    Given there is an event with the lastfm_id 12345
+    When I send a POST request to "/api/v1/events/12345/populate.json"
+    Then the JSON response should have "response" with the text "success"
+
   Scenario: Checking if Event Population is in Progress
     Given there is an event with the lastfm_id 12345
     When I send a GET request to "/api/v1/events/12345/populating.json"

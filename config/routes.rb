@@ -22,6 +22,7 @@ EncoreBackend::Application.routes.draw do
 
         member do
           get :populating
+          post :populate
         end
       end
 
