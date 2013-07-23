@@ -59,20 +59,21 @@ Feature: Artists API
         "lastfm_id": "12345",
         "name": "Event Name",
         "date": "2014-08-28",
+        "start_time": "2010-11-23T19:00:00-05:00",
         "image_url": "TODO: default image for events without images",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
           "city": "City Name",
-          "postalcode" : "Postal Code",
-          "country" : "Country Name",
-          "coordinates": "1234, 1234"
+          "postalcode": "Postal Code",
+          "country": "Country Name",
+          "latitude": 43.643929,
+          "longitude": -79.379305
         },
         "headliner": "Artist Name",
-        "artists": {
-          "artist": "Artist Name"
-        }
-        
+        "artists": [
+          {"artist": "Artist Name"}
+        ]
       }
       """
 
@@ -91,20 +92,21 @@ Feature: Artists API
         "lastfm_id": "12345",
         "name": "Event Name",
         "date": "2014-08-28",
+        "start_time": "2010-11-23T19:00:00-05:00",
         "image_url": "TODO: default image for events without images",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
           "city": "City Name",
-          "postalcode" : "Postal Code",
-          "country" : "Country Name",
-          "coordinates": "1234, 1234"
+          "postalcode": "Postal Code",
+          "country": "Country Name",
+          "latitude": 43.643929,
+          "longitude": -79.379305
         },
         "headliner": "Artist Name",
-        "artists": {
-          "artist": "Artist Name"
-        }
-        
+        "artists": [
+          {"artist": "Artist Name"}
+        ]
       }
       """
 
@@ -123,19 +125,20 @@ Feature: Artists API
         "lastfm_id": "12345",
         "name": "Event Name",
         "date": "2014-08-28",
+        "start_time": "Tue, 23 Jul 2013 19:00:00",
         "image_url": "TODO: default image for events without images",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
           "city": "City Name",
-          "postalcode" : "Postal Code",
-          "country" : "Country Name",
-          "coordinates": "1234, 1234"
+          "postalcode": "Postal Code",
+          "country": "Country Name",
+          "latitude": 43.643929,
+          "longitude": -79.379305
         },
         "headliner": "Artist Name",
-        "artists": {
-          "artist": "Artist Name"
-        }
-        
+        "artists": [
+          {"artist": "Artist Name"}
+        ]
       }
       """

@@ -26,10 +26,10 @@ class Api::V1::EventsController < Api::V1::BaseController
   end
 
   def populate
-    @event = Event.get(params[:id])
+    event = Event.get(params[:id])
 
     # Populate the event
-    @event.populate!
+    event.populate!
 
     render 'api/v1/base/result.json', locals: {result: 'success'}
   end
@@ -44,7 +44,7 @@ class Api::V1::EventsController < Api::V1::BaseController
     event = Event.find_or_create_from_lastfm(params[:lastfm_id])
 
     # Populate the event
-    @event.populate!
+    event.populate!
 
     user = User.get(params[:user_id])
     if user.events.include?(event) # already been added to profile

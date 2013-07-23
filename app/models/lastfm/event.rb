@@ -34,6 +34,10 @@ class Lastfm::Event < Lastfm::Base
     @json["startDate"]
   end
 
+  def start_time
+    start_date
+  end
+
   def date
     start_date.to_date
   end

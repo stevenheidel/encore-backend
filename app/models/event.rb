@@ -91,4 +91,9 @@ class Event
   def local_end_time
     self.local_start_time + 6.hours
   end
+
+  # Is the event currently taking place?
+  def live?
+    self.start_time < Time.now && Time.now < self.end_time
+  end
 end
