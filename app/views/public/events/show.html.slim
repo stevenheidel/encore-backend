@@ -21,9 +21,8 @@ nav
     = image_tag "public/encore_logo.png"
 .appstore
   .appstorewrapper
-  	ul
-        li = image_tag "public/applogo.png", :id => 'applogo'
-        li = image_tag "public/appstorelogo.png", :id => 'appstorelogo'
+  	h7 Experience Live Music
+  	= image_tag "public/appstorelogo.png", :id => 'appstorelogo'
 
 .photocontainer
   .container
@@ -41,7 +40,7 @@ nav
     	.gallery
 			  - @posts.each do |p|
 			    = link_to post_path(p.id) do
-			      = image_tag p.image_url, :size => '150'
+			      = image_tag p.image_url, :class => 'photos'
      	
 footer
   ul

@@ -18,16 +18,10 @@ nav
   .logocontain
     = image_tag "public/encore_logo.png"
 .appstore
-  .appstorewrapper
-    .container
-      .two.columns
-        = image_tag "public/applogo.png", :id => 'applogo'
-      .three.columns
-        .dl
-          p Download Encore
-          p to claim this concert
-      .three.columns
-        = image_tag "public/appstorelogo.png", :id => 'appstorelogo'
+    .appstorewrapper
+        ul
+          li = image_tag "public/applogo.png", :id => 'applogo'
+          li = image_tag "public/appstorelogo.png", :id => 'appstorelogo'
 
 .photocontainer
     .box2

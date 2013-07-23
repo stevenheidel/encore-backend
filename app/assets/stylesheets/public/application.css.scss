@@ -6,13 +6,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
+
+
 nav {
 	   position: absolute; 
        top: 0; 
        left: 0; 
        background-color: #01b5c5;
        width: 100%; 
-       height: 70px;
+       height: 90px;
+    //    border-top: 1px solid black;
+	   // box-shadow: 1px 1px 10px #444;
 } 
 
 .appstore {
@@ -21,20 +25,29 @@ nav {
     position: absolute; 
     top: 0; 
     left: 0; 
-    margin-top: 70px;
+    margin-top: 90px;
     background-image: url(https://d3b1b7hmpp3kpa.cloudfront.net/assets/bg-footer-4a7037452c2b11bcef0f301353605ab7.jpg);
     background-repeat:repeat;
+    // background-color: #dcdcdc;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    box-shadow: 1px 1px 10px #444;
 }
 
 .appstorewrapper {
-    width: 410px;
+    width: 170px;
     margin-left: auto ;
     margin-right: auto ;
     font-family: oxygen;
     font-size: 17px;
     color: white;
-    margin-top: -10px;
+    margin-top: 10px;
+    padding-left: 50px;
 } 
+
+.appstorewrapper img {
+	padding-left: 15px;
+}
 
 #applogo {
     margin-top: 8px;
@@ -56,7 +69,7 @@ body {
 	width: 230px;
 	margin-left: auto ;
   	margin-right: auto ;
-    margin-top: 5px;
+    margin-top: 15px;
 }
 
 .photocontainer {
@@ -143,23 +156,42 @@ footer ul li {
 
 .appstorewrapper ul li {
 	list-style-type: none;
-	display: inline;
-	margin-right: 25px;
+	// display: inline;
+	// margin-right: 25px;
 }
 
 .box2 img {
-	box-shadow: 1px 1px 10px #444;
+	box-shadow: 1px 1px px #444;
 }
 
+.gallery {
+	margin-top: 15px;
+}
+
+h7 {
+	text-align: center;
+	font-family: oxygen;
+}
+
+// .photos {
+// 	width: 150px;
+// 	height: 150px;
+// }
 
 
+@media all and (min-width: 600px) {
+ 	.photos {
+		width: 150px;
+		height: 150px;
+}
+}
 
-@media only screen and (max-device-width: 480px) {
-		body {
-			background-color: green;
-		}
-	}
-
+@media all and (max-width: 450px) {
+ 	.photos {
+		width: 220px;
+		height: 220px;
+}
+}
 
 
 /*
