@@ -13,6 +13,31 @@ class Populator::Youtube < Populator::Base
       end
     end
   end
+  
+  def self.valid_date?(date, string)
+    
+    date_formats = [:long, :long_ordinal, :number, :db, :rfc822]
+    date_formats.each {|date_format| #to_s
+      return true if string.downcase.include?( date.to_s(date_format).downcase )
+    }
+    
+    date_formats, base_formats = [], [
+      '%Y/%m/%d', '%Y/%d/%m', '%Y-%m-%d', '%Y.%m.%d', '%m-%d-%Y', '%b-%d-%Y', '%b. %d, %Y', '%d/%m/%Y','%m/%d/%Y', 
+      '%b %d,%Y', '%b %d, %Y', '%b %d.%Y', '%m %d %Y', '%b %d %Y'
+    ]
+    # permutations of date format strings
+    date_formats = base_formats
+    date_formats|= base_formats.collect {|f| f.gsub('%d', '%e') }
+    date_formats|= base_formats.collect {|f| f.gsub('%b', '%B') }
+    date_formats|= base_formats.collect {|f| f.gsub('%Y', '%y') }
+    
+    # date_formats.each {|f| p date.strftime(f) } #for testing
+    date_formats.compact.each {|date_format| #strftime
+      return true if string.include?( date.strftime(date_format).downcase )
+    }
+    
+    false
+  end
 
   private
 
@@ -21,9 +46,7 @@ class Populator::Youtube < Populator::Base
 
       return false unless string.include?(name.downcase)
       return false unless string.include?(city.downcase) || string.include?(venue.downcase)
-
-      # TODO: eventually check for different date formats
-
-      true
+      
+      Populator::Youtube.valid_date?(date, string)
     end
 end
