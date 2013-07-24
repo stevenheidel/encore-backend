@@ -2,9 +2,10 @@ doctype html
 html
   head
     title Encore
-    = stylesheet_link_tag    "public/application", media: "all"
     = javascript_include_tag "public/application"
+    = stylesheet_link_tag    "public/application", media: "all"
     = csrf_meta_tags
+    = favicon_link_tag 'favicon.ico'
     == yield :opengraph_tags
   body
     == yield

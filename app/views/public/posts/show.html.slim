@@ -18,10 +18,9 @@ nav
   .logocontain
     = image_tag "public/encore_logo.png"
 .appstore
-    .appstorewrapper
-        ul
-          li = image_tag "public/applogo.png", :id => 'applogo'
-          li = image_tag "public/appstorelogo.png", :id => 'appstorelogo'
+  .appstorewrapper
+    h7 Experience Live Music
+    = link_to image_tag("public/appstorelogo.png"), "https://itunes.apple.com/ca/app/encore-experience-live-music/id668917758?mt=8"
 
 .photocontainer
     .box2
@@ -32,7 +31,5 @@ footer
   ul
     li About Us
     li Terms
-    li FAQ
-    li Jobs
     li Privacy
     li#copyright © 2013 Encore
