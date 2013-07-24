@@ -8,4 +8,10 @@ describe Post, :vcr do
 
     post.flags.count.should == 1
   end
+  
+  it "should soft delete when adding a flag" do
+    post.add_flag("Not relevant", 696955405)
+    post.destroyed?.should be(true)
+  end
+  
 end
