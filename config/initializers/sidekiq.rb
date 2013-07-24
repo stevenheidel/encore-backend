@@ -1,6 +1,6 @@
 # Set up Redis connection on Cloud 66
 if Rails.env.production?
-  redis_address = "redis://ENV['REDIS_ADDRESS']:6379/"
+  redis_address = "redis://#{ENV['REDIS_ADDRESS']}:6379/"
 else
   redis_address = nil
 end
