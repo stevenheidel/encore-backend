@@ -72,6 +72,7 @@ end
 
 # Use MongoDB as the database
 gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid-paranoia', github: 'simi/mongoid-paranoia'
 
 # Use Unicorn as the app server
 gem 'unicorn'
