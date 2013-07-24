@@ -48,6 +48,10 @@ EncoreBackend::Application.routes.draw do
         end
       end
     end
+
+    namespace :stats do
+      get :users
+    end
   end
 
   # Public routes
