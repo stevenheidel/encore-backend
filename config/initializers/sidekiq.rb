@@ -1,3 +1,5 @@
+ENV['REDIS_URL'] = ENV['REDIS_ADDRESS']
+
 Sidekiq.configure_server do |config|
   config.server_middleware do |chain|
     chain.add Kiqstand::Middleware
