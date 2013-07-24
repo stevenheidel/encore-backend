@@ -1,6 +1,7 @@
 class Api::V1::PostsController < Api::V1::BaseController
   def index
-    @posts = Event.get(params[:event_id]).posts
+    # SMELL: simply shuffling the posts here
+    @posts = Event.find_or_create_from_lastfm(params[:event_id]).posts.shuffle(random: Random.new(1))
   end
 
   # upload a user photo to the time_capsule

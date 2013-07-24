@@ -4,15 +4,15 @@ class Populator::Start < Populator::Base
     event = Event.find(event_id)
 
     unless Time.now < event.start_time # don't populate if event is in the future
-      unless Post::InstagramPhoto.where(event: event).any?
+      if Post::InstagramPhoto.where(event: event).empty? || event.live?
         event.sidekiq_workers << Populator::Instagram.perform_async(event_id)
       end
 
-      unless Post::FlickrPhoto.where(event: event).any?
+      if Post::FlickrPhoto.where(event: event).empty? || event.live?
         event.sidekiq_workers << Populator::Flickr.perform_async(event_id)
       end
 
-      unless Post::YoutubeVideo.where(event: event).any?
+      if Post::YoutubeVideo.where(event: event).empty? || event.live?
         event.sidekiq_workers << Populator::Youtube.perform_async(event_id)
       end
       

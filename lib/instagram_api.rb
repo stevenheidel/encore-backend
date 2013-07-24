@@ -36,11 +36,26 @@ class InstagramAPI
   end
 
   private
+  
+    def self.get_response(method, params=nil)
+      begin
+        response = conn.get(method, params).body
+      rescue Faraday::Error::ParsingError => e
+        return Hashie::Mash.new(data: [], faraday_parse_error: true)
+      end
+    end
 
     def self.get(method, params=nil)
       CLIENT_IDS.count.times do
-        response = conn.get(method, params).body
-
+        response = get_response(method, params)
+        
+        #we need to scope to search, instagram servers are too slow
+        distances = [1000,500,250]
+        while response.faraday_parse_error && !distances.empty?
+          params[:distance] = distances.shift
+          response = get_response(method, params)
+        end
+        
         if response.code.to_i == 420
           switch_conns
         else

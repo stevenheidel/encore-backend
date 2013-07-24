@@ -72,6 +72,7 @@ end
 
 # Use MongoDB as the database
 gem 'mongoid', github: 'mongoid/mongoid'
+gem 'mongoid-paranoia', github: 'simi/mongoid-paranoia'
 
 # Use Unicorn as the app server
 gem 'unicorn'
@@ -86,7 +87,7 @@ gem 'htmlkickstart'
 # Social APIs
 gem 'koala' # for Facebook
 gem 'foursquare2'
-gem 'flickraw'
+gem 'flickraw', require: false
 gem 'youtube_it'
 
 # Rails Admin

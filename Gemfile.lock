@@ -62,6 +62,14 @@ GIT
       safe_yaml (~> 0.9)
       sass-rails (~> 4.0)
 
+GIT
+  remote: git://github.com/simi/mongoid-paranoia.git
+  revision: 4c8433ef7c33cd4bee52176cc654cd69f8786f8c
+  specs:
+    mongoid-paranoia (0.1)
+      activemodel (~> 4.0.0)
+      mongoid (~> 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -558,6 +566,7 @@ DEPENDENCIES
   metric_fu
   mongoid!
   mongoid-paperclip
+  mongoid-paranoia!
   newrelic_rpm
   paperclip
   rack-test

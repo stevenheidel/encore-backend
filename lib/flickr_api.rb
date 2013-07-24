@@ -1,3 +1,5 @@
+require 'flickraw'
+
 class FlickrAPI
   FlickRaw.api_key = "22229fa83164fe61cb46748c4b741dc2"
   FlickRaw.shared_secret = "c5c7b620d1203b4d"
