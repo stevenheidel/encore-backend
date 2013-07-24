@@ -50,7 +50,9 @@ EncoreBackend::Application.routes.draw do
     end
 
     namespace :stats do
-      get :users
+      get :users_time
+      get :users_gauge
+      get :posts_pie
     end
   end
 
