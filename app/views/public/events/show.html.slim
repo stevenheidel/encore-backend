@@ -42,9 +42,6 @@ nav
         = link_to 'Load More Posts', event_url(@event.lastfm_id, :page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page
 
 
-
-
-
 footer
   ul
     li About Us
