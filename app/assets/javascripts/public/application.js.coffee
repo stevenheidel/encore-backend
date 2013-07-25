@@ -9,6 +9,11 @@
 $(document).ready ->
   $(".appstore").hide()
   $(".appstore").fadeIn "slow"
+  $ ->
+  $('a.load-more-posts').on 'inview', (e, visible) ->
+    return unless visible
+    
+    $.getScript $(this).attr('href')
 
 WebFontConfig = fontdeck:
   id: "34568"
@@ -39,8 +44,3 @@ WebFontConfig = fontdeck:
 ga "create", "UA-40542837-4", "encore.fm"
 ga "send", "pageview"
 
-$ ->
-  $('a.load-more-posts').on 'inview', (e, visible) ->
-    return unless visible
-    
-    $.getScript $(this).attr('href')
