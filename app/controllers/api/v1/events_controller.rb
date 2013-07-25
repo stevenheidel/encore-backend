@@ -50,6 +50,7 @@ class Api::V1::EventsController < Api::V1::BaseController
     if user.events.include?(event) # already been added to profile
       render 'api/v1/base/result.json', locals: {result: 'already added'}
     else
+      event.users << user # have to do this too so count updates
       user.events << event
 
       render 'api/v1/base/result.json', locals: {result: 'success'}
