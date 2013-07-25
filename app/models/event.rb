@@ -16,7 +16,7 @@ class Event
 
   # Keep an updated count of users
   # TODO: this will obviously fail if user already added event
-  field :user_count, type: Integer
+  field :user_count, type: Integer, default: 0
   def inc_user_count(user)
     self.inc(user_count: 1)
   end
