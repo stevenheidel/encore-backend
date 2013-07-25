@@ -120,3 +120,6 @@ gem 'whenever', github: 'iTakeshi/whenever', branch: 'rails4'
 
 gem 'google_timezone'
 gem 'geocoder'
+
+# Paginate 
+gem 'will_paginate_mongoid'

@@ -1,0 +1,6 @@
+$('.gallery').append('#{escape_javascript(render partial: "posts", :locals => { :post => @event.posts })}');
+$('a.load-more-posts').attr('href', '#{event_url(@event.lastfm_id, page: @posts.next_page)}');
+
+ 
+- unless @posts.next_page
+  $('a.load-more-posts').remove();

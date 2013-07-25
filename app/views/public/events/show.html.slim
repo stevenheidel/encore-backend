@@ -22,7 +22,7 @@ nav
 .appstore
   .appstorewrapper
   	h7 Experience Live Music
-  	= image_tag "public/appstorelogo.png", :id => 'appstorelogo'
+  	= link_to image_tag("public/appstorelogo.png"), "https://itunes.apple.com/ca/app/encore-experience-live-music/id668917758?mt=8"
 
 .photocontainer
   .container
@@ -38,16 +38,17 @@ nav
   .container
     .nine.columns
     	.gallery
-			  - @posts.each do |p|
-			    = link_to post_path(p.id) do
-			      = image_tag p.image_url, :class => 'photos'
-     	
+			  = render :partial => 'posts', :locals => { :posts => @posts }
+        = link_to 'Load More Posts', event_url(@event.lastfm_id, :page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page
+
+
+
+
+
 footer
   ul
     li About Us
     li Terms
-    li FAQ
-    li Jobs
     li Privacy
     li#copyright © 2013 Encore
 
