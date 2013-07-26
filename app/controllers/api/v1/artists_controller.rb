@@ -8,7 +8,7 @@ class Api::V1::ArtistsController < Api::V1::BaseController
     @artist = Artist.find_or_create_from_lastfm(search_results[0].lastfm_id)
     @others = search_results[1..-1]
 
-    geo = Geo.new(params[:latitude], params[:longitude], params[:radius])
+    geo = Geo.new(params[:latitude], params[:longitude], params[:radius], request)
     
     case params[:tense]
     when "past"

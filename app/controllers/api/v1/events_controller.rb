@@ -66,7 +66,7 @@ class Api::V1::EventsController < Api::V1::BaseController
   end
 
   def past
-    geo = Geo.new(params[:latitude], params[:longitude], params[:radius])
+    geo = Geo.new(params[:latitude], params[:longitude], params[:radius], request)
 
     if params[:artist_id] # get past for artist
       @events = Artist.find_or_create_from_lastfm(params[:artist_id]).past_events(geo)
@@ -78,7 +78,7 @@ class Api::V1::EventsController < Api::V1::BaseController
   end
 
   def today
-    geo = Geo.new(params[:latitude], params[:longitude], params[:radius])
+    geo = Geo.new(params[:latitude], params[:longitude], params[:radius], request)
 
     # Get today's events from Lastfm
     @events = geo.todays_events
@@ -87,7 +87,7 @@ class Api::V1::EventsController < Api::V1::BaseController
   end
 
   def future
-    geo = Geo.new(params[:latitude], params[:longitude], params[:radius])
+    geo = Geo.new(params[:latitude], params[:longitude], params[:radius], request)
 
     if params[:artist_id] # get future for artist
       @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(geo)
