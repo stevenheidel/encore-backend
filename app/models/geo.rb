@@ -10,7 +10,7 @@ class Geo
   # TODO: remember to delete request
   def initialize(latitude, longitude, radius=0.5, request=nil)
     # TODO: default to Toronto due to app not working
-    if (latitude == 0 && longitude == 0) || (latitude.nil? && longitude.nil?)
+    if (latitude.to_i == 0 && longitude.to_i == 0) || (latitude.nil? && longitude.nil?)
       # Try and get lat/long from request object
       begin
         result = request.location
@@ -22,7 +22,7 @@ class Geo
       end
 
       # Otherwise default to Toronto
-      if (latitude == 0 && longitude == 0) || (latitude.nil? && longitude.nil?)
+      if (latitude.to_i == 0 && longitude.to_i == 0) || (latitude.nil? && longitude.nil?)
         latitude = 43.66621
         longitude = -79.39927
       end
