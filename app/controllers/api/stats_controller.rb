@@ -10,7 +10,7 @@ class Api::StatsController < ActionController::Base
         csv << [date.strftime("%Y%m%d"), user_count]
       end
 
-      csv << ["Cumulative", 0]
+      csv << ["Cumulative", 1]
     end
 
     send_data result
