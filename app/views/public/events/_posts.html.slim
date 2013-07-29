@@ -1,4 +1,5 @@
 - @posts.each do |p|
-	= link_to post_path(p.id) do
-		= image_tag p.image_url, :class => 'photos'
+  .photo
+  	= link_to post_path(p.id) do
+  		= image_tag p.image_url, :class => 'photos'
 		

@@ -43,50 +43,52 @@ nav {
 	   // box-shadow: 1px 1px 10px #444;
 } 
 
+.appstore-badge {
+  width: 150px;
+}
 .appstore {
-    height: 100px;
+    height: 135px;
     width: 100%;
     position: absolute; 
     top: 0; 
     left: 0; 
     margin-top: 70px;
-    background-image: url(https://d3b1b7hmpp3kpa.cloudfront.net/assets/bg-footer-4a7037452c2b11bcef0f301353605ab7.jpg);
-    background-repeat:repeat;
-    // background-color: #dcdcdc;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
-    box-shadow: 1px 1px 10px #444;
+    background-color: #232323;
+//    border-top: 1px solid black;
+//    border-bottom: 1px solid black;
+//    box-shadow: 1px 1px 10px #444;
 }
 
 .appstorewrapper {
-    width: 170px;
-    margin-left: auto ;
-    margin-right: auto ;
-    font-family: oxygen;
-    font-size: 17px;
-    color: white;
-    margin-top: 10px;
-    padding-left: 50px;
-} 
-
-.appstorewrapper img {
-	padding-left: 15px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+.appstorewrapper li {
+  font-family:"Hero Regular", Helvetica, Arial, Verdana , sans-serif; font-size-adjust:0.65; font-weight:normal; font-style:normal;
+  color: #fff;
+  display:inline-block;
+  vertical-align: middle;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.icon-small {
+  width: 50px;
+  height: 50px;
+}
 #applogo {
     margin-top: 8px;
 }
 
-.appstorewrapper img {
-    margin-top: 12px;
-}
 
 .dl {
     margin-top: 30px;
 }
 
 body {
-	background-color: #121212;
+	background-color: #000;
 }
 
 .logocontain {
@@ -177,12 +179,6 @@ footer ul li {
     border-radius: 10px;
 }
 
-.appstorewrapper ul li {
-	list-style-type: none;
-	// display: inline;
-	// margin-right: 25px;
-}
-
 .box2 img {
 	box-shadow: 1px 1px px #444;
 }
@@ -203,19 +199,30 @@ h7 {
 
 
 @media all and (min-width: 600px) {
- 	.photos {
-		width: 150px;
-		height: 150px;
-}
+  .photo {
+    display: inline;
+    float: left;
+    margin: 0 15px 10px 0;
+  }
+  
+  .photo img {
+    width: 500px;
+    height: 500px;
+  }
+  
 }
 
-@media all and (max-width: 450px) {
- 	.photos {
-		width: 220px;
-		height: 220px;
-}
+//iPhone 5 in portrait & landscape
+@media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+ 	.photo img { width: 600px; }
+  .photo { margin-bottom: 40px; }
 }
 
+//iPhone 2G-4S in portrait & landscape
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+ 	.photo img { width: 600px; }
+  .photo { margin-bottom: 40px; }
+}
 
 
 /*

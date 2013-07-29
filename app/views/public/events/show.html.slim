@@ -20,15 +20,19 @@ nav
   .logocontain
     = link_to image_tag("public/encore_logo.png"), "http://encore.fm"
 .appstore
-  .appstorewrapper
-  	h7 Experience Live Music
-  	= link_to image_tag("public/appstorelogo.png"), "https://itunes.apple.com/ca/app/encore-experience-live-music/id668917758?mt=8"
+  ul.appstorewrapper
+    li
+      = image_tag 'public/icon-Small-50@2x.png'
+    li DOWNLOAD ENCORE <br /> TO CLAIM THIS CONCERT!
+    li
+    	= link_to image_tag("public/appstore-badge.png", class: 'appstore-badge'), "https://itunes.apple.com/ca/app/encore-experience-live-music/id668917758?mt=8"
 
 .photocontainer
   .container
     .four.columns
       .artistpic
-        = image_tag @event.image_url, :size => '180'
+        # = image_tag @event.image_url, :size => '180'
+        = image_tag 'http://userserve-ak.last.fm/serve/252/85176341.png', :size => '180'
     .five.columns
       .artist
         p #{@event.name}
