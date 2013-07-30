@@ -1,5 +1,6 @@
-- @posts.each do |p|
-  .photo
-  	= link_to post_path(p.id) do
-  		= image_tag p.image_url, :class => 'photos'
+- posts.each do |p|
+  .col-lg-4.show-grid
+    .photo
+      = link_to post_path(p.id) do
+        = image_tag p.image_url, :class => 'photos'
 		
