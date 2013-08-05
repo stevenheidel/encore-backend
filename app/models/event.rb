@@ -40,7 +40,7 @@ class Event
       begin
         status = SidekiqStatus::Container.load(job_id).status
       rescue SidekiqStatus::Container::StatusNotFound
-        self.sidekiq_workers.delete(status)
+        self.sidekiq_workers.delete(job_id)
         self.save
         next
       end
