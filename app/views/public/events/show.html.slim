@@ -7,48 +7,41 @@
 
   meta property="og:description" content="Download Encore in the App Store!"
 
-/ h3 Images from the #{@event.name} concert
-/ p Download Encore now to see more photos from this concert!
+.row
+  ul.eventinfo
+    li.col-lg-2.artist-photo
+      = image_tag 'http://userserve-ak.last.fm/serve/252/85176341.png', :size => '180', :class => ''
+    / = image_tag @event.image_url, :size => '180'
+    li.col-lg-10
+      p.artist #{@event.name}
+      p.venue #{@event.venue.name}, #{@event.date.to_formatted_s(:long) }
+  
+.row
+  = render :partial => 'posts', :locals => { :posts => @posts }
+.row
+  = link_to 'Load More Posts', event_url(@event.lastfm_id, :page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page    
+  
+  
 
-/ .gallery
-/   - @posts.each do |p|
-/     = link_to post_path(p.id) do
-/       = image_tag p.image_url, :size => '150'
-
-
-nav
-  .logocontain
-    = link_to image_tag("public/encore_logo.png"), "http://encore.fm"
-.appstore
-  .appstorewrapper
-  	h7 Experience Live Music
-  	= link_to image_tag("public/appstorelogo.png"), "https://itunes.apple.com/ca/app/encore-experience-live-music/id668917758?mt=8"
-
-.photocontainer
-  .container
-    .four.columns
-      .artistpic
-        = image_tag @event.image_url, :size => '180'
-    .five.columns
-      .artist
-        p #{@event.name}
-      .venue
-        p #{@event.venue.name}
-        p #{@event.date.to_formatted_s(:long) }
-  .container
-    .nine.columns
-    	.gallery
-			  = render :partial => 'posts', :locals => { :posts => @posts }
-        = link_to 'Load More Posts', event_url(@event.lastfm_id, :page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page
-
-
-footer
-  ul
-    li#copyright © 2013 Encore
-    iframe#copyright allowtransparency="true" frameborder="0" scrolling="no" src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Ffacebook.com%2Fencoretheapp&send=false&layout=button_count&width=450&show_faces=false&font&colorscheme=light&action=like&height=21" style=("border:none; overflow:hidden; width:100px; height:21px;") 
-    
-
-
+/ .photocontainer
+/   .container
+/     .four.columns
+/       .artistpic
+/         / = image_tag @event.image_url, :size => '180'
+/         = image_tag 'http://userserve-ak.last.fm/serve/252/85176341.png', :size => '180'
+/     .five.columns
+/       .artist
+/         p #{@event.name}
+/       .venue
+/         p #{@event.venue.name}
+/         p #{@event.date.to_formatted_s(:long) }
+/   .container
+/     .nine.columns
+/       .gallery
+/         = render :partial => 'posts', :locals => { :posts => @posts }
+/         = link_to 'Load More Posts', event_url(@event.lastfm_id, :page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page    
+/ 
+/ 
 
 
 
