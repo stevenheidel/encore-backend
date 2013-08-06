@@ -24,8 +24,8 @@ class Event
     self.inc(user_count: -1)
   end
 
-  scope :past, where(:start_date.lt => Time.now).desc(:start_date)
-  scope :future, where(:start_date.gte => Time.now).asc(:start_date)
+  scope :past, lambda{ where(:start_date.lt => Time.now).desc(:start_date) }
+  scope :future, lambda{ where(:start_date.gte => Time.now).asc(:start_date) }
 
   scope :in_radius, ->(geo) {
     # 3959 is a magic number for miles
