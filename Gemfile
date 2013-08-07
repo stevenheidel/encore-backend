@@ -123,3 +123,5 @@ gem 'geocoder'
 
 # Paginate 
 gem 'will_paginate_mongoid'
+
+gem "twitter-bootstrap-rails"
