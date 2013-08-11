@@ -40,6 +40,10 @@ EncoreBackend::Application.routes.draw do
           get :search
           get :combined_search
         end
+
+        member do
+          get :picture
+        end
       end
 
       resources :posts, only: [] do

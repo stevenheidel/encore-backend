@@ -17,4 +17,8 @@ class Api::V1::ArtistsController < Api::V1::BaseController
       @events = @artist.future_events(geo)
     end
   end
+
+  def picture
+    @artist = Artist.find_or_create_from_lastfm(params[:id])
+  end
 end
