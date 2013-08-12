@@ -50,7 +50,7 @@ class InstagramAPI
         response = get_response(method, params)
         
         #we need to scope to search, instagram servers are too slow
-        distances = [1000,500,250]
+        distances = [5000,2500,1000,500,250,100]
         while response.faraday_parse_error && !distances.empty?
           params[:distance] = distances.shift
           response = get_response(method, params)

@@ -1,0 +1,1 @@
+json.image_url @artist.image_url

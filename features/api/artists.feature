@@ -78,6 +78,15 @@ Feature: Artists API
       }
       """
 
+  Scenario: Artist Picture
+    When I send a GET request to "/api/v1/artists/Cher/picture.json"
+    Then the JSON response should be:
+      """
+      {
+        "image_url": "http://userserve-ak.last.fm/serve/500/71158534/Cher.png"
+      }
+      """
+
   Scenario: List of artist's past events
     When I send a GET request to "/api/v1/artists/Vampire%20Weekend/events/past.json" with the following:
       """
