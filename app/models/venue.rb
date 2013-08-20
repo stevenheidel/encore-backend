@@ -11,7 +11,7 @@ class Venue
   embeds_many :instagram_locations
   accepts_nested_attributes_for :instagram_locations # for RailsAdmin
 
-  index({coordinates: '2dsphere'}, {min: -180, max: 180})
+  index({coordinates: '2d'}, {min: -180, max: 180})
 
   def latitude
     self.coordinates[1]
