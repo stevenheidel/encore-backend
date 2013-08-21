@@ -1,9 +1,9 @@
-@vcr
 Feature: Artists API
 
   Background:
     Given I send and accept JSON
 
+  @vcr
   Scenario: Search for an Artist
     When I send a GET request to "/api/v1/artists/search.json" with the following:
       """
@@ -19,6 +19,7 @@ Feature: Artists API
       }
       """
 
+  @vcr
   Scenario: Combined Search for an Artist's Events
     When I send a GET request to "/api/v1/artists/combined_search.json" with the following:
       """
@@ -78,6 +79,7 @@ Feature: Artists API
       }
       """
 
+  @vcr
   Scenario: Artist Picture
     When I send a GET request to "/api/v1/artists/Cher/picture.json"
     Then the JSON response should be:
@@ -87,6 +89,7 @@ Feature: Artists API
       }
       """
 
+  @vcr
   Scenario: List of artist's past events
     When I send a GET request to "/api/v1/artists/Vampire%20Weekend/events/past.json" with the following:
       """
@@ -121,16 +124,17 @@ Feature: Artists API
       }
       """
 
+  @vcr_record_once
   Scenario: List of artist's future events
     When I send a GET request to "/api/v1/artists/Imagine%20Dragons/events/future.json" with the following:
       """
       {
-        "latitude": 43.670906,
-        "longitude": -79.393331,
+        "latitude": 53.872715,
+        "longitude": -1.372895,
         "radius": 0.5
       }
       """
-    Then the JSON response should have 1 copies similar to this under "events":
+    Then the JSON response should have more than 1 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",
