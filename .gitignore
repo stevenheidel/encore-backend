@@ -40,5 +40,6 @@ pickle-email-*.html
 # Ignore VCR cassettes
 spec/fixtures/vcr_cassettes/*
 !spec/fixtures/vcr_cassettes/Artists_API/List_of_artist_s_future_events.yml
+!spec/fixtures/vcr_cassettes/Artists_API/Artist_Picture.yml
 
 .DS_Store

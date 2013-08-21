@@ -79,13 +79,13 @@ Feature: Artists API
       }
       """
 
-  @vcr
+  @vcr_record_once
   Scenario: Artist Picture
     When I send a GET request to "/api/v1/artists/Cher/picture.json"
     Then the JSON response should be:
       """
       {
-        "image_url": "http://userserve-ak.last.fm/serve/500/71158534/Cher.png"
+        "image_url": "http://userserve-ak.last.fm/serve/500/71162146/Cher.png"
       }
       """
 
