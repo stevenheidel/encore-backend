@@ -19,4 +19,8 @@ describe Event, :vcr do
     Populator::Youtube.drain
     event.reload.populating?.should be_false
   end
+
+  it "should format timestamps when exported as JSON" do
+    event.to_json.include?('Fri, 07 Jun 2013 04:00:00').should be_true
+  end
 end

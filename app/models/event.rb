@@ -96,4 +96,29 @@ class Event
   def live?
     self.start_time < Time.now && Time.now < self.end_time
   end
+
+  def to_json
+    {
+      _id: _id,
+      created_at: format_datetime(created_at.utc),
+      updated_at: format_datetime(updated_at.utc),
+      lastfm_id: lastfm_id,
+      name: name,
+      website: website,
+      url: url,
+      flickr_tag: flickr_tag,
+      headliner: headliner,
+      start_date: format_datetime(start_date.utc),
+      local_start_time: format_datetime(local_start_time),
+      sidekiq_workers: sidekiq_workers,
+      artist_ids: artist_ids,
+      user_ids: user_ids,
+      venue_id: venue_id,
+      user_count: user_count
+    }.to_json
+  end
+
+  def format_datetime datetime
+    datetime.strftime("%a, %d %b %Y %H:%M:%S")
+  end
 end
