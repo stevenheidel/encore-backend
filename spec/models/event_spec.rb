@@ -41,4 +41,34 @@ describe Event, :vcr do
     event.reload
     event.start_date.should == DateTime.parse('3rd Feb 2001 04:00:00 EST')
   end
+
+  it "should have at least one artist assigned" do
+    event = FactoryGirl.build :rolling_stones
+    event.artists = []
+    saved = event.save
+    saved.should be_false
+    event.valid?.should be_false
+    event.errors[:artists].should_not be_empty
+
+    event.artists = [Artist.first]
+    saved = event.save
+    saved.should be_true
+    event.valid?.should be_true
+    event.errors[:artists].should be_empty
+  end
+
+  it "should have start_date assigned" do
+    event = FactoryGirl.build :rolling_stones
+    event.start_date = nil
+    saved = event.save
+    saved.should be_false
+    event.valid?.should be_false
+    event.errors[:start_date].should_not be_empty
+
+    event.start_date = DateTime.parse('3rd Feb 2001 04:05:06 EST')
+    saved = event.save
+    saved.should be_true
+    event.valid?.should be_true
+    event.errors[:start_date].should be_empty
+  end
 end

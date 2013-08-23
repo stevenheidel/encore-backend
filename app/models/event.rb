@@ -13,6 +13,8 @@ class Event
   has_and_belongs_to_many :users, index: true, 
     after_add: :inc_user_count, after_remove: :dec_user_count
   belongs_to :venue, index: true
+  validates_presence_of :artists
+  validates_presence_of :start_date
   before_save :normalize_start_date
 
   # Keep an updated count of users
