@@ -21,7 +21,7 @@ describe Event, :vcr do
 
   it "should format timestamps when exported as JSON" do
     event = FactoryGirl.create :rolling_stones
-    event.to_json.include?('Fri, 07 Jun 2013 04:00:00').should be_true
+    event.to_json.include?('Fri, 07 Jun 2013 04:00:00 +0000').should be_true
   end
 
   it "should round the time to half-hour periods" do

@@ -109,7 +109,7 @@ class Event
       url: url,
       flickr_tag: flickr_tag,
       headliner: headliner,
-      start_date: format_datetime(start_date.utc),
+      start_date: format_datetime(start_date.utc, {with_timezone: true}),
       local_start_time: format_datetime(local_start_time),
       sidekiq_workers: sidekiq_workers,
       artist_ids: artist_ids,
@@ -120,8 +120,10 @@ class Event
   end
 
   private
-  def format_datetime datetime
-    datetime.strftime("%a, %d %b %Y %H:%M:%S")
+  def format_datetime datetime, options={}
+    format = "%a, %d %b %Y %H:%M:%S"
+    format += " %z" if options[:with_timezone]
+    datetime.strftime(format)
   end
 
   def normalize_start_date
