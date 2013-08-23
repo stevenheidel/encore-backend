@@ -13,6 +13,7 @@ class Event
   has_and_belongs_to_many :users, index: true, 
     after_add: :inc_user_count, after_remove: :dec_user_count
   belongs_to :venue, index: true
+  before_save :normalize_start_date
 
   # Keep an updated count of users
   # TODO: this will obviously fail if user already added event
@@ -118,7 +119,12 @@ class Event
     }.to_json
   end
 
+  private
   def format_datetime datetime
     datetime.strftime("%a, %d %b %Y %H:%M:%S")
+  end
+
+  def normalize_start_date
+    self.start_date = Time.at((self.start_date.to_f / 30.minutes).round * 30.minutes)
   end
 end
