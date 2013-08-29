@@ -42,3 +42,15 @@ describe "/api/v1/users/:facebook_uuid/events/:id", type: :api, vcr: true do
     user.events.count.should == 0
   end
 end
+
+describe "Events", type: :api, vcr: { record: :once, re_record_interval: nil } do
+  it "should not show tomorrow's events in Today events list" do
+    Timecop.freeze(Time.local(2013,8,30,22,8,00))
+
+    events_response = get "/api/v1/events/today?latitude=43.670906&longitude=-79.393331"
+    events = JSON.parse(events_response.body)['events']
+    events.count.should == 7
+
+    Timecop.return
+  end
+end

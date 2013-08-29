@@ -41,5 +41,6 @@ pickle-email-*.html
 spec/fixtures/vcr_cassettes/*
 !spec/fixtures/vcr_cassettes/Artists_API/List_of_artist_s_future_events.yml
 !spec/fixtures/vcr_cassettes/Artists_API/Artist_Picture.yml
+!spec/fixtures/vcr_cassettes/Events/should_not_show_tomorrow_s_events_in_Today_events_list.yml
 
 .DS_Store
