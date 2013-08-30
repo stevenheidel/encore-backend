@@ -13,6 +13,7 @@ FactoryGirl.define do
     name "Event Name"
     lastfm_id "12345"
     association :venue, lastfm_id: "123"
+    start_date Time.now
     artists {[FactoryGirl.create(:artist, {lastfm_id: "321"})]}
 
     factory :past_event do
