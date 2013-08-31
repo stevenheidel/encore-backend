@@ -7,6 +7,11 @@ FactoryGirl.define do
       lastfm_id "The Rolling Stones"
       name "The Rolling Stones"
     end
+
+    factory :streetlight_manifesto do
+      lastfm_id "Streetlight Manifesto"
+      name "Streetlight Manifesto"
+    end
   end
   
   factory :event do
