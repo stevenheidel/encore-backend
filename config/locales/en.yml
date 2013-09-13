@@ -21,3 +21,9 @@
 
 en:
   hello: "Hello world"
+  mongoid:
+    errors:
+      models:
+        venue:
+          attributes:
+            coordinates: 'Coordinates are not numeric'

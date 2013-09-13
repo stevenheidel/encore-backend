@@ -43,6 +43,7 @@ EncoreBackend::Application.routes.draw do
 
         member do
           get :picture
+          get :info
         end
       end
 
