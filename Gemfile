@@ -57,6 +57,7 @@ group :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'rack-test'
   gem 'database_cleaner'
+  gem 'timecop'
 
   # Cucumber
   gem 'cucumber-rails', github: 'cucumber/cucumber-rails', branch: 'master_rails4_test', require: false

@@ -7,28 +7,38 @@ FactoryGirl.define do
       lastfm_id "The Rolling Stones"
       name "The Rolling Stones"
     end
+
+    factory :streetlight_manifesto do
+      lastfm_id "Streetlight Manifesto"
+      name "Streetlight Manifesto"
+    end
   end
   
   factory :event do
     name "Event Name"
     lastfm_id "12345"
     association :venue, lastfm_id: "123"
+    start_date Time.now
+    artists {[FactoryGirl.create(:artist, {lastfm_id: "321"})]}
 
     factory :past_event do
       association :venue, lastfm_id: "12344"
       lastfm_id "54321" # TODO: automatically deal with unique lastfm_id's
       start_date "Fri, 28 Aug 2009 04:42:01"
+      artists {[FactoryGirl.create(:artist, {lastfm_id: "3211"})]}
     end
 
     factory :future_event do
       association :venue, lastfm_id: "12322"
-      lastfm_id "12345"
+      lastfm_id "234567"
       start_date "Fri, 28 Aug 2014 04:42:01"
+      artists {[FactoryGirl.create(:artist, {lastfm_id: "3212"})]}
     end
 
     factory :rolling_stones do
       name "Rolling Stones"
       association :venue, factory: :air_canada_centre
+      artists {[FactoryGirl.create(:the_rolling_stones)]}
       lastfm_id "3559569"
       flickr_tag "lastfm:event=3559569"
       start_date "June 07, 2013 00:00" # in UTC

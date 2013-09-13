@@ -13,6 +13,9 @@ class Event
   has_and_belongs_to_many :users, index: true, 
     after_add: :inc_user_count, after_remove: :dec_user_count
   belongs_to :venue, index: true
+  validates_presence_of :artists
+  validates_presence_of :start_date
+  before_save :normalize_start_date
 
   # Keep an updated count of users
   # TODO: this will obviously fail if user already added event
@@ -95,5 +98,37 @@ class Event
   # Is the event currently taking place?
   def live?
     self.start_time < Time.now && Time.now < self.end_time
+  end
+
+  def to_json
+    {
+      _id: _id,
+      created_at: format_datetime(created_at.utc),
+      updated_at: format_datetime(updated_at.utc),
+      lastfm_id: lastfm_id,
+      name: name,
+      website: website,
+      url: url,
+      flickr_tag: flickr_tag,
+      headliner: headliner,
+      start_date: format_datetime(start_date.utc, {with_timezone: true}),
+      local_start_time: format_datetime(local_start_time),
+      sidekiq_workers: sidekiq_workers,
+      artist_ids: artist_ids,
+      user_ids: user_ids,
+      venue_id: venue_id,
+      user_count: user_count
+    }.to_json
+  end
+
+  private
+  def format_datetime datetime, options={}
+    format = "%a, %d %b %Y %H:%M:%S"
+    format += " %z" if options[:with_timezone]
+    datetime.strftime(format)
+  end
+
+  def normalize_start_date
+    self.start_date = Time.at((self.start_date.to_f / 30.minutes).round * 30.minutes)
   end
 end
