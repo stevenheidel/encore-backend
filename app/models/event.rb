@@ -5,6 +5,7 @@ class Event
   field :headliner, type: String
   field :start_date, type: DateTime
   field :local_start_time, type: DateTime
+  field :tickets_url, type: String
 
   field :sidekiq_workers, type: Array, default: []
 

@@ -63,6 +63,7 @@ Feature: Artists API
         "start_time": "Thu, 22 Aug 2013 20:00:00",
         "image_url": "TODO: default image for events without images",
         "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
+        "tickets_url": "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
@@ -108,6 +109,7 @@ Feature: Artists API
         "start_time": "Thu, 22 Aug 2013 20:00:00",
         "image_url": "TODO: default image for events without images",
         "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
+        "tickets_url": "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
@@ -143,6 +145,7 @@ Feature: Artists API
         "start_time": "Thu, 22 Aug 2013 20:00:00",
         "image_url": "TODO: default image for events without images",
         "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
+        "tickets_url": "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
@@ -175,6 +178,7 @@ Feature: Artists API
               "start_time": "Sat, 13 Jul 2013 19:00:00",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3529118+Streetlight+Manifesto+at+Lupo%E2%80%99s+Heartbreak+Hotel+on+13+July+2013",
+              "tickets_url": null,
               "venue_name": "Lupo’s Heartbreak Hotel",
               "venue": {
                 "street": "79 Washington St.",
@@ -204,6 +208,7 @@ Feature: Artists API
               "start_time": "Fri, 12 Jul 2013 20:00:00",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3531564+Streetlight+Manifesto",
+              "tickets_url": null,
               "venue_name": "The Paramount Theater",
               "venue": {
                 "street": "370 New York Ave",
@@ -229,6 +234,7 @@ Feature: Artists API
               "start_time": "Tue, 01 Oct 2013 19:00:00",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3653885+Streetlight+Manifesto+at+Irving+Plaza+on+1+October+2013",
+              "tickets_url": null,
               "venue_name": "Irving Plaza",
               "venue": {
                 "street": "17 Irving Place",
@@ -258,6 +264,7 @@ Feature: Artists API
               "start_time": "Wed, 02 Oct 2013 19:00:00",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3653679+Streetlight+Manifesto+at+Theatre+of+Living+Arts+on+2+October+2013",
+              "tickets_url": null,
               "venue_name": "Theatre of Living Arts",
               "venue": {
                 "street": "",

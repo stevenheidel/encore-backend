@@ -37,4 +37,23 @@ describe Geo, :vcr do
 
     Timecop.return
   end
+
+  it "should return tickets URL in Today events list", vcr: { record: :once, re_record_interval: nil } do
+    Timecop.freeze(Time.local(2013,9,19,11,00,00))
+
+    event = Geo.new(43.670906, -79.393331).todays_events.to_a[7]
+    event.headliner.should == "Peter Hook And The Light"
+    event.tickets_url.should == "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace"
+
+    Timecop.return
+  end
+
+  it "should return tickets URL in Future events list", vcr: { record: :once, re_record_interval: nil } do
+    Timecop.freeze(Time.local(2013,9,19,11,00,00))
+    event = Geo.new(43.670906, -79.393331).future_events.to_a[7]
+
+    event.headliner.should == "Herbert Grönemeyer"
+    event.tickets_url.should == "http://ticketf.ly/11UbDtS"
+    Timecop.return
+  end
 end

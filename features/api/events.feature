@@ -22,6 +22,7 @@ Feature: Events API
         "start_time": "Tue, 23 Jul 2013 19:00:00 +0000",
         "image_url": "TODO: default image for events without images",
         "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
+        "tickets_url": "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
@@ -56,6 +57,7 @@ Feature: Events API
         "start_time": "Tue, 23 Jul 2013 19:00:00",
         "image_url": "TODO: default image for events without images",
         "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
+        "tickets_url": "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",
@@ -90,6 +92,7 @@ Feature: Events API
         "start_time": "Tue, 23 Jul 2013 19:00:00",
         "image_url": "TODO: default image for events without images",
         "lastfm_url": "http://www.last.fm/event/1559988+Justin+Bieber+at+Air+Canada+Centre+on+23+November+2010",
+        "tickets_url": "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace",
         "venue_name": "Venue name",
         "venue": {
           "street": "Street Name",

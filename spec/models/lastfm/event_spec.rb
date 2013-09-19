@@ -32,7 +32,7 @@ describe Lastfm::Event do
          "size"=>"mega"}]},
     "startDate"=>"Fri, 12 Jul 1963 18:00:00",
     "description"=>
-     "<div class=\"bbcode\">On 12 July 1962 the band played their first gig at the Marquee Club billed as &quot;The Rollin' Stones&quot;. The line-up was Jagger, Richards and Jones, along with Stewart on piano, Taylor on bass and Chapman on drums. Jones and Stewart wanted to play Chicago blues, but were agreeable to the Chuck Berry and Bo Diddley numbers of Jagger and Richards.[15] Bassist Bill Wyman joined in December 1962 and drummer Charlie Watts the following January 1963 to form the band's long-standing rhythm section.</div>",
+     "<div class=\"bbcode\">UNION EVENTS PROUDLY PRESENTS <br /><br />HERBERT GRÖNEMEYER<br /><a href=\"https://www.facebook.com/herbertgroenemeyer\" rel=\"nofollow\">https://www.facebook.com/herbertgroenemeyer</a><br /><br />FRIDAY SEPTEMBER 20, 2013<br />THE OPERA HOUSE<br />Doors 8:00 PM – 19+<br /><br />TICKETS ON SALE MONDAY JUNE 17<br /><a href=\"http://ticketf.ly/11UbDtS\" rel=\"nofollow\">http://ticketf.ly/11UbDtS</a><br />VIP Advance ticket (includes meet &amp; greet) $100.00 + S/C /<br /><br />GA Advance tickets $35.00 + S/C available online at Ticketfly.com, UnionEvents.com, Rotate This, Soundscapes</div>",
     "image"=>
      [{"#text"=>"http://userserve-ak.last.fm/serve/34/7596573.jpg",
        "size"=>"small"},
@@ -52,5 +52,10 @@ describe Lastfm::Event do
 
   it "should create a new object" do
     le = Lastfm::Event.new(sample)
+  end
+
+  it "should extract ticket sales URL from description string" do
+    le = Lastfm::Event.new(sample)
+    le.tickets_url.should == "http://ticketf.ly/11UbDtS" #prefer URL that has word 'ticket' in it
   end
 end
