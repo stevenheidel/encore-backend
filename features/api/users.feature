@@ -59,7 +59,7 @@ Feature: Users API
     When I send a GET request to "/api/v1/users/696955405/events.json" with the following:
       """
       {
-        "lastfm_id": 12345
+        "lastfm_id": 54321
       }
       """
     Then the JSON response should have "response" with the text "true"
@@ -79,6 +79,6 @@ Feature: Users API
 
   Scenario: Remove Event from Profile
     Given there is a user (with events) with the facebook_id "696955405"
-    When I send a DELETE request to "/api/v1/users/696955405/events/12345.json"
+    When I send a DELETE request to "/api/v1/users/696955405/events/54321.json"
     Then the JSON response should have "response" with the text "success"
     # TODO: check if the event was removed from the user
