@@ -46,6 +46,9 @@ pickle-email-*.html
 !spec/fixtures/vcr_cassettes/Artist
 !spec/fixtures/vcr_cassettes/Geo/should_return_tickets_URL_in_Today_events_list.yml
 !spec/fixtures/vcr_cassettes/Geo/should_return_tickets_URL_in_Future_events_list.yml
+!spec/fixtures/vcr_cassettes/User/should_save_a_list_of_friends_who_attended_an_event_with_user.yml
+!spec/fixtures/vcr_cassettes/Users_API/Retrieve_a_list_of_facebook_friends_who_attended_the_Event_with_User.yml
+
 spec/fixtures/vcr_cassettes/*
 
 .DS_Store

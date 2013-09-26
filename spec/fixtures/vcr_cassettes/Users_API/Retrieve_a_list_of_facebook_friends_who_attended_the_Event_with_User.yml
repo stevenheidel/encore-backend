@@ -1,0 +1,140 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://graph.facebook.com/100003794798865
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      access-control-allow-origin:
+      - '*'
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      content-type:
+      - application/json; charset=UTF-8
+      etag:
+      - '"643644ac9e0d54cb3221c7699f403fe611a59825"'
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      x-fb-rev:
+      - '948794'
+      x-fb-debug:
+      - t54QFKSmYB3T8XciVI6Iq+UZBrSZzAvmZ+hxuYrbwNE=
+      date:
+      - Thu, 26 Sep 2013 20:57:38 GMT
+      connection:
+      - close
+      content-length:
+      - '198'
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJpZCI6IjEwMDAwMzc5NDc5ODg2NSIsIm5hbWUiOiJMdWtlIEdydWJlciIs
+        ImZpcnN0X25hbWUiOiJMdWtlIiwibGFzdF9uYW1lIjoiR3J1YmVyIiwibGlu
+        ayI6Imh0dHA6XC9cL3d3dy5mYWNlYm9vay5jb21cL2x1a2UuZ3J1YmVyLjE4
+        IiwidXNlcm5hbWUiOiJsdWtlLmdydWJlci4xOCIsImdlbmRlciI6Im1hbGUi
+        LCJsb2NhbGUiOiJlbl9VUyJ9
+    http_version: 
+  recorded_at: Thu, 26 Sep 2013 20:57:38 GMT
+- request:
+    method: get
+    uri: http://graph.facebook.com/515605967
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      access-control-allow-origin:
+      - '*'
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      content-type:
+      - application/json; charset=UTF-8
+      etag:
+      - '"316d8b0119752ae38c3803a94c727eafd92890ad"'
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      x-fb-rev:
+      - '948794'
+      x-fb-debug:
+      - 4PtRws/Q8AsmbRxAv9NYwIvSlkf3ZeFJcGe0MmHDSTQ=
+      date:
+      - Thu, 26 Sep 2013 20:57:38 GMT
+      connection:
+      - close
+      content-length:
+      - '142'
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJpZCI6IjUxNTYwNTk2NyIsIm5hbWUiOiJOaWNrIFRyaWdhdHRpIiwiZmly
+        c3RfbmFtZSI6Ik5pY2siLCJsYXN0X25hbWUiOiJUcmlnYXR0aSIsInVzZXJu
+        YW1lIjoibmljay50cmlnZ3MiLCJnZW5kZXIiOiJtYWxlIiwibG9jYWxlIjoi
+        ZW5fVVMifQ==
+    http_version: 
+  recorded_at: Thu, 26 Sep 2013 20:57:38 GMT
+- request:
+    method: get
+    uri: http://graph.facebook.com/659574643
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      access-control-allow-origin:
+      - '*'
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      content-type:
+      - application/json; charset=UTF-8
+      etag:
+      - '"e922a55fa7ea1437dc31a36e22882a93ee39acda"'
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      x-fb-rev:
+      - '948794'
+      x-fb-debug:
+      - RdIE6qFYmwjZBny1IPi74W7CUuK3xdkqhqIEtjyiXnI=
+      date:
+      - Thu, 26 Sep 2013 20:57:38 GMT
+      connection:
+      - close
+      content-length:
+      - '194'
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJpZCI6IjY1OTU3NDY0MyIsIm5hbWUiOiJTbGF2aWsgRGVyZXZpYW5rbyIs
+        ImZpcnN0X25hbWUiOiJTbGF2aWsiLCJsYXN0X25hbWUiOiJEZXJldmlhbmtv
+        IiwibGluayI6Imh0dHA6XC9cL3d3dy5mYWNlYm9vay5jb21cL3NsYXZpay5k
+        ZXJldmlhbmtvIiwidXNlcm5hbWUiOiJzbGF2aWsuZGVyZXZpYW5rbyIsImxv
+        Y2FsZSI6ImVuX1VTIn0=
+    http_version: 
+  recorded_at: Thu, 26 Sep 2013 20:57:38 GMT
+recorded_with: VCR 2.5.0

@@ -83,7 +83,6 @@ Feature: Users API
     Then the JSON response should have "response" with the text "success"
     # TODO: check if the event was removed from the user
 
-  @vcr_record_once
   Scenario: Save a list of facebook friends who attended the Event with User
     Given there is a user (with events) with the facebook_id "696955405"
     When I send a POST request to "/api/v1/users/696955405/events/54321/add_facebook_friends" with the following:
