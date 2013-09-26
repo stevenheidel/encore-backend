@@ -13,6 +13,9 @@ class Event
   has_many :posts
   has_and_belongs_to_many :users, index: true, 
     after_add: :inc_user_count, after_remove: :dec_user_count
+
+  has_many :friend_visitors, class_name: "Event::FriendVisitor"
+
   belongs_to :venue, index: true
   validates_presence_of :artists
   validates_presence_of :start_date
@@ -99,6 +102,10 @@ class Event
   # Is the event currently taking place?
   def live?
     self.start_time < Time.now && Time.now < self.end_time
+  end
+
+  def friends_who_attended(user)
+    friend_visitors.where(user: user).to_a.map {|company| company.friend}
   end
 
   def to_json

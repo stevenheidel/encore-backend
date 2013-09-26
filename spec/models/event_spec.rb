@@ -71,4 +71,33 @@ describe Event, :vcr do
     event.valid?.should be_true
     event.errors[:start_date].should be_empty
   end
+
+  it "should provide a list of friends of a user, who attended an event" do
+    event = FactoryGirl.create :past_event
+    event2 = FactoryGirl.create :future_event
+
+    user1 = FactoryGirl.create :user, name: "Aldous Huxley",   facebook_id: 83614697
+    user2 = FactoryGirl.create :user, name: "George Orwell",   facebook_id: 9836592
+    user3 = FactoryGirl.create :user, name: "Rudyard Kipling", facebook_id: 83987321
+    user4 = FactoryGirl.create :user, name: "James Joyce",     facebook_id: 966548971
+
+    user1.events = [event, event2]
+    user1.save
+    user3.events << event
+    user3.save
+
+    Event::FriendVisitor.create user: user1, friend: user2, event: user1.events[0]
+    Event::FriendVisitor.create user: user3, friend: user4, event: user3.events[0]
+
+    friends_of_user1 = event.friends_who_attended(user1)
+    friends_of_user1.length.should == 1
+    friends_of_user1[0].name.should == "George Orwell"
+
+    friends_of_user3 = event.friends_who_attended(user3)
+    friends_of_user3.length.should == 1
+    friends_of_user3[0].name.should == "James Joyce"
+
+    event2.friends_who_attended(user1).should == []
+    event2.friends_who_attended(user3).should == []
+  end
 end

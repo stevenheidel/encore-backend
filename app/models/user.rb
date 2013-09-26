@@ -8,8 +8,8 @@ class User
   field :name, type: String
 
   has_and_belongs_to_many :events, index: true
-
   has_many :user_photos, class_name: "Post::UserPhoto"
+  has_many :event_friend_visitors, class_name: "Event::FriendVisitor", inverse_of: :user
 
   index({facebook_id: 1}, {unique: true})
 
@@ -22,5 +22,9 @@ class User
 
   def facebook_image_url
     "https://graph.facebook.com/#{self.facebook_id}/picture?type=large"
+  end
+
+  def friends_who_attended_event(event)
+    event_friend_visitors.where(event: event).to_a.map {|company| company.friend}
   end
 end
