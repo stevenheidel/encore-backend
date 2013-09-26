@@ -97,4 +97,26 @@ class Api::V1::EventsController < Api::V1::BaseController
 
     render 'api/v1/events/index.json'
   end
+
+  def add_facebook_friends
+    begin
+      event = Event.get(params[:id])
+      user = User.get(params[:user_id])
+      user.add_friends_who_attended_event(event, params[:facebook_friend_ids])
+      render 'api/v1/base/result.json', locals: {result: 'success'}
+    rescue Mongoid::Errors::DocumentNotFound
+        render 'api/v1/base/result.json', locals: {result: 'not found'}
+    end
+  end
+
+  def facebook_friends
+    begin
+      event = Event.get(params[:id])
+      user = User.get(params[:user_id])
+      friends = user.friends_who_attended_event(event)
+      render 'api/v1/users/friends.json', locals: {friends: friends}
+    rescue Mongoid::Errors::DocumentNotFound
+      render 'api/v1/users/friends.json', locals: {friends: nil}
+    end
+  end
 end

@@ -31,3 +31,7 @@ Then(/^the JSON response should have the following under "(.*?)":$/) do |json_pa
 
   result[0].should == expected
 end
+
+When(/^I wait for the worker "(.*?)" to process the job queue$/) do |worker|
+  worker.constantize.drain
+end

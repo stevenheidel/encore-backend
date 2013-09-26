@@ -9,7 +9,12 @@ EncoreBackend::Application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create, :show] do
-        resources :events, only: [:index, :create, :destroy]
+        resources :events, only: [:index, :create, :destroy] do
+          member {
+            post :add_facebook_friends
+            get :facebook_friends
+          }
+        end
       end
 
       resources :events, only: [:index, :show] do

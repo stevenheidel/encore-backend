@@ -1,0 +1,1 @@
+json.array! friends, :facebook_id, :name, :facebook_image_url

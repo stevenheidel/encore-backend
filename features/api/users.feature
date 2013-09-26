@@ -82,3 +82,46 @@ Feature: Users API
     When I send a DELETE request to "/api/v1/users/696955405/events/54321.json"
     Then the JSON response should have "response" with the text "success"
     # TODO: check if the event was removed from the user
+
+  @vcr_record_once
+  Scenario: Save a list of facebook friends who attended the Event with User
+    Given there is a user (with events) with the facebook_id "696955405"
+    When I send a POST request to "/api/v1/users/696955405/events/54321/add_facebook_friends" with the following:
+      """
+      {
+        "facebook_friend_ids": ["3196544", "123456", "65432196", "951623847"]
+      }
+      """
+    Then the JSON response should have "response" with the text "success"
+
+  @vcr_record_once
+  Scenario: Retrieve a list of facebook friends who attended the Event with User
+    Given there is a user (with events) with the facebook_id "696955405"
+    When I send a POST request to "/api/v1/users/696955405/events/54321/add_facebook_friends" with the following:
+      """
+      {
+        "facebook_friend_ids": ["100003794798865", "515605967", "659574643"]
+      }
+      """
+    And I wait for the worker "Saver::FriendVisitors" to process the job queue
+    And I send a GET request to "/api/v1/users/696955405/events/54321/facebook_friends"
+    Then the JSON response should be:
+      """
+        [
+          {
+            "facebook_id": 100003794798865,
+            "name": "Luke Gruber",
+            "facebook_image_url": "https://graph.facebook.com/100003794798865/picture?type=large"
+          },
+          {
+            "facebook_id": 515605967,
+            "name": "Nick Trigatti",
+            "facebook_image_url": "https://graph.facebook.com/515605967/picture?type=large"
+          },
+          {
+            "facebook_id": 659574643,
+            "name": "Slavik Derevianko",
+            "facebook_image_url": "https://graph.facebook.com/659574643/picture?type=large"
+          }
+        ]
+      """

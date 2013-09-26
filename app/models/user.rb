@@ -1,3 +1,5 @@
+require 'facebook_api'
+
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
@@ -26,5 +28,9 @@ class User
 
   def friends_who_attended_event(event)
     event_friend_visitors.where(event: event).to_a.map {|company| company.friend}
+  end
+
+  def add_friends_who_attended_event(event, facebook_ids)
+    Saver::FriendVisitors.perform_async(self.id.to_s, event.id.to_s, facebook_ids)
   end
 end
