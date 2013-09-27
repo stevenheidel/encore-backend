@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://graph.facebook.com/696955405
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      access-control-allow-origin:
+      - '*'
+      cache-control:
+      - private, no-cache, no-store, must-revalidate
+      content-type:
+      - application/json; charset=UTF-8
+      etag:
+      - '"174a4fd19261ffb1cc0facdd6195e09a46a06d36"'
+      expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      pragma:
+      - no-cache
+      x-fb-rev:
+      - '948794'
+      x-fb-debug:
+      - A+qhRZtgggtc42i+FZtqv68i/vLsnAwg213g4AguN0g=
+      date:
+      - Thu, 26 Sep 2013 18:50:20 GMT
+      connection:
+      - close
+      content-length:
+      - '192'
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJpZCI6IjY5Njk1NTQwNSIsIm5hbWUiOiJTdGV2ZW4gSGVpZGVsIiwiZmly
+        c3RfbmFtZSI6IlN0ZXZlbiIsImxhc3RfbmFtZSI6IkhlaWRlbCIsImxpbmsi
+        OiJodHRwOlwvXC93d3cuZmFjZWJvb2suY29tXC9zdGV2ZW5oZWlkZWwiLCJ1
+        c2VybmFtZSI6InN0ZXZlbmhlaWRlbCIsImdlbmRlciI6Im1hbGUiLCJsb2Nh
+        bGUiOiJlbl9VUyJ9
+    http_version: 
+  recorded_at: Thu, 26 Sep 2013 18:50:20 GMT
+recorded_with: VCR 2.5.0
