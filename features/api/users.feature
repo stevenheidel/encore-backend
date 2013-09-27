@@ -114,10 +114,10 @@ Feature: Users API
       {
         "friends":
         [
-          {"facebook_id": "3196544", "name": "Simon"},
-          {"facebook_id": "123456", "name": "Francis"},
-          {"facebook_id": "65432196", "name": "Eric"},
-          {"facebook_id": "951623847", "name": "Josh"}
+          {"facebook_id": "3196544", "name": "Aldous Huxley"},
+          {"facebook_id": "123456", "name": "George Orwell"},
+          {"facebook_id": "65432196", "name": "Rudyard Kipling"},
+          {"facebook_id": "951623847", "name": "James Joyce"}
         ]
       }
       """
@@ -126,25 +126,25 @@ Feature: Users API
         [
           {
             "facebook_id": 3196544,
-            "name": "Simon",
+            "name": "Aldous Huxley",
             "facebook_image_url": "https://graph.facebook.com/3196544/picture?type=large",
             "invite_sent": true
           },
           {
             "facebook_id": 123456,
-            "name": "Francis",
+            "name": "George Orwell",
             "facebook_image_url": "https://graph.facebook.com/123456/picture?type=large",
             "invite_sent": false
           },
           {
             "facebook_id": 65432196,
-            "name": "Eric",
+            "name": "Rudyard Kipling",
             "facebook_image_url": "https://graph.facebook.com/65432196/picture?type=large",
             "invite_sent": false
           },
           {
             "facebook_id": 951623847,
-            "name": "Josh",
+            "name": "James Joyce",
             "facebook_image_url": "https://graph.facebook.com/951623847/picture?type=large",
             "invite_sent": false
           }
@@ -158,10 +158,10 @@ Feature: Users API
       {
         "friends":
         [
-          {"facebook_id": "3196544", "name": "Simon"},
-          {"facebook_id": "123456", "name": "Francis"},
-          {"facebook_id": "65432196", "name": "Eric"},
-          {"facebook_id": "951623847", "name": "Josh"}
+          {"facebook_id": "3196544", "name": "Aldous Huxley"},
+          {"facebook_id": "123456", "name": "George Orwell"},
+          {"facebook_id": "65432196", "name": "Rudyard Kipling"},
+          {"facebook_id": "951623847", "name": "James Joyce"}
         ]
       }
       """
@@ -171,25 +171,25 @@ Feature: Users API
         [
           {
             "facebook_id": 3196544,
-            "name": "Simon",
+            "name": "Aldous Huxley",
             "facebook_image_url": "https://graph.facebook.com/3196544/picture?type=large",
             "invite_sent": false
           },
           {
             "facebook_id": 123456,
-            "name": "Francis",
+            "name": "George Orwell",
             "facebook_image_url": "https://graph.facebook.com/123456/picture?type=large",
             "invite_sent": false
           },
           {
             "facebook_id": 65432196,
-            "name": "Eric",
+            "name": "Rudyard Kipling",
             "facebook_image_url": "https://graph.facebook.com/65432196/picture?type=large",
             "invite_sent": false
           },
           {
             "facebook_id": 951623847,
-            "name": "Josh",
+            "name": "James Joyce",
             "facebook_image_url": "https://graph.facebook.com/951623847/picture?type=large",
             "invite_sent": false
           }
