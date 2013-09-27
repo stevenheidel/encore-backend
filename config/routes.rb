@@ -8,7 +8,7 @@ EncoreBackend::Application.routes.draw do
   # TODO: secure this with some sort of shared key
   namespace :api do
     namespace :v1 do
-      resources :users, only: [:create, :show] do
+      resources :users, only: [:create, :show, :update] do
         resources :events, only: [:index, :create, :destroy] do
           member {
             post :add_facebook_friends

@@ -8,6 +8,8 @@ class User
   field :oauth_string, type: String 
   field :oauth_expiry, type: DateTime 
   field :name, type: String
+  field :invite_sent, type: Boolean
+  field :invite_timestamp, type: DateTime
 
   has_and_belongs_to_many :events, index: true
   has_many :user_photos, class_name: "Post::UserPhoto"

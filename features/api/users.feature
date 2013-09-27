@@ -24,6 +24,29 @@ Feature: Users API
       """
     # TODO: add here to check for user
 
+  Scenario: Update the user
+  Given there is a user with the facebook_id "696955405"
+  When I send a PATCH request to "/api/v1/users/696955405" with the following:
+    """
+    {
+      "expiration_date": "2013-08-02T02:53:23Z",
+      "oauth": "CAACp5xj4c9sBAIeNLxb3204nzPOYmP......",
+      "facebook_id": 696955405,
+      "name": "Steven Heidel",
+      "invite_sent": true,
+      "invite_timestamp": "2013-09-27T14:53:23Z"
+    }
+    """
+  Then the JSON response should be:
+    """
+    {
+      "user": {
+        "name": "Steven Heidel",
+        "facebook_image_url": "https://graph.facebook.com/696955405/picture?type=large"
+      }
+    }
+    """
+
   @wip
   Scenario: List of User's Events
     Given there is a user (with events) with the facebook_id "696955405"

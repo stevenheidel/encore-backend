@@ -14,4 +14,17 @@ class Api::V1::UsersController < Api::V1::BaseController
   def show
     @user = User.get(params[:facebook_id])
   end
+
+  def update
+    @user = User.get(params[:facebook_id])
+    @user.update_attributes!(user_params)
+    @user.oauth_string = params[:oauth]
+    @user.oauth_expiry = params[:expiration_date]
+    render "api/v1/users/show.json"
+  end
+
+  private
+  def user_params
+    params.require(:user).permit(:name, :oauth_string, :oauth_expiry, :expiration_date, :invite_sent, :invite_timestamp)
+  end
 end
