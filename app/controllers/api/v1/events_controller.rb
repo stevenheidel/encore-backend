@@ -103,13 +103,12 @@ class Api::V1::EventsController < Api::V1::BaseController
       event = Event.get(params[:id])
       user = User.get(params[:user_id])
       user.delete_friends_who_attended_event(event)
-      user.add_friends_who_attended_event(event, params[:facebook_friend_ids])
+      user.add_friends_who_attended_event(event, params[:friends])
       @friends = user.friends_who_attended_event(event)
 
-      Populator::Facebook.perform_async(params[:facebook_friend_ids])
-      render 'api/v1/users/friends_invites.json'
+      render 'api/v1/users/friends.json'
     rescue Mongoid::Errors::DocumentNotFound
-      render 'api/v1/users/friends_invites.json'
+      render 'api/v1/users/friends.json'
     end
   end
 

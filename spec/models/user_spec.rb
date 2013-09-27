@@ -4,16 +4,18 @@ describe User, vcr: { record: :once, re_record_interval: nil } do
   it "should save a list of friends, who attended an event with user" do
     user1 = FactoryGirl.create :user, name: "Aldous Huxley",   facebook_id: 108533109171704
     event = FactoryGirl.create :past_event
-    facebook_ids = ["100003794798865", "515605967", "659574643"]
+    friends_json = [
+        {facebook_id: "100003794798865", name: "George Orwell"}, 
+        {facebook_id: "515605967",       name: "Rudyard Kipling"}, 
+        {facebook_id: "659574643",       name: "James Joyce"}
+    ]
     user1.events << event
     user1.save
 
-    user1.add_friends_who_attended_event(event, facebook_ids)
-    Populator::Facebook.perform_async(facebook_ids)
-    Populator::Facebook.drain
+    user1.add_friends_who_attended_event(event, friends_json)
     friends = user1.friends_who_attended_event(event)
     friends.length.should == 3
-    friends.map(&:name).should include("Luke Gruber", "Nick Trigatti", "Slavik Derevianko")
+    friends.map(&:name).should include("George Orwell", "Rudyard Kipling", "James Joyce")
 
 
     user1.delete_friends_who_attended_event(event)

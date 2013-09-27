@@ -32,10 +32,14 @@ class User
     event_friend_visitors.where(event: event).to_a.map {|company| company.friend}
   end
 
-  def add_friends_who_attended_event(event, friend_facebook_ids)
-    return if friend_facebook_ids.nil?
-    friend_facebook_ids.each do |facebook_id|
-      friend = User.find_or_create_by(facebook_id: facebook_id)
+  def add_friends_who_attended_event(event, friends)
+    return if friends.nil?
+    friends.each do |friend_json|
+      friend = User.find_or_create_by(facebook_id: friend_json[:facebook_id])
+      if friend_json[:name] and friend.name != friend_json[:name]
+        friend.name = friend_json[:name]
+        friend.save
+      end
       Event::FriendVisitor.create user: self, friend: friend, event: event
     end
   end
