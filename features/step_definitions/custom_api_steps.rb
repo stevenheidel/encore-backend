@@ -35,3 +35,7 @@ end
 When(/^I wait for the worker "(.*?)" to process the job queue$/) do |worker|
   worker.constantize.drain
 end
+
+Given(/^the "(.*?)" job queue is empty$/) do |worker|
+  worker.constantize.jobs.clear
+end

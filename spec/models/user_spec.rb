@@ -9,6 +9,8 @@ describe User, vcr: { record: :once, re_record_interval: nil } do
     user1.save
 
     user1.add_friends_who_attended_event(event, facebook_ids)
+    Populator::Facebook.perform_async(facebook_ids)
+    Populator::Facebook.drain
     friends = user1.friends_who_attended_event(event)
     friends.length.should == 3
     friends.map(&:name).should include("Luke Gruber", "Nick Trigatti", "Slavik Derevianko")

@@ -33,16 +33,18 @@ class User
   end
 
   def add_friends_who_attended_event(event, friend_facebook_ids)
+    return if friend_facebook_ids.nil?
     friend_facebook_ids.each do |facebook_id|
       friend = User.find_or_create_by(facebook_id: facebook_id)
-      facebook_user_info = FacebookAPI.get_public_info(facebook_id)
-      friend.name = facebook_user_info["name"] if facebook_user_info
-      friend.save
       Event::FriendVisitor.create user: self, friend: friend, event: event
     end
   end
 
   def delete_friends_who_attended_event(event)
     Event::FriendVisitor.destroy_all(user: self, event: event)
+  end
+
+  def invited?
+    (oauth_string or invite_sent) ? true : false
   end
 end

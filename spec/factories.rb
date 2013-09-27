@@ -61,6 +61,7 @@ FactoryGirl.define do
   factory :user do
     name "Steven Heidel"
     facebook_id 696955405
+    invite_sent false
 
     factory :with_events do
       events {[
