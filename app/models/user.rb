@@ -32,9 +32,14 @@ class User
     event_friend_visitors.where(event: event).to_a.map {|company| company.friend}
   end
 
-  def add_friends_who_attended_event(event, facebook_ids)
-    self.delete_friends_who_attended_event(event)
-    Saver::FriendVisitors.perform_async(self.id.to_s, event.id.to_s, facebook_ids)
+  def add_friends_who_attended_event(event, friend_facebook_ids)
+    friend_facebook_ids.each do |facebook_id|
+      friend = User.find_or_create_by(facebook_id: facebook_id)
+      facebook_user_info = FacebookAPI.get_public_info(facebook_id)
+      friend.name = facebook_user_info["name"] if facebook_user_info
+      friend.save
+      Event::FriendVisitor.create user: self, friend: friend, event: event
+    end
   end
 
   def delete_friends_who_attended_event(event)

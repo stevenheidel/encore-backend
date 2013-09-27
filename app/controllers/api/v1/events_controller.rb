@@ -102,7 +102,8 @@ class Api::V1::EventsController < Api::V1::BaseController
     begin
       event = Event.get(params[:id])
       user = User.get(params[:user_id])
-      user.add_friends_who_attended_event(event, params[:facebook_friend_ids])
+      user.delete_friends_who_attended_event(event)
+      Saver::FriendVisitors.perform_async(user.id.to_s, event.id.to_s, params[:facebook_friend_ids])
       render 'api/v1/base/result.json', locals: {result: 'success'}
     rescue Mongoid::Errors::DocumentNotFound
         render 'api/v1/base/result.json', locals: {result: 'not found'}
