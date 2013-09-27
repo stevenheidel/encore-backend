@@ -13,6 +13,13 @@ describe User, vcr: { record: :once, re_record_interval: nil } do
     friends = user1.friends_who_attended_event(event)
     friends.length.should == 3
     friends.map(&:name).should include("Luke Gruber", "Nick Trigatti", "Slavik Derevianko")
+
+    facebook_ids = ["515605967", "659574643"]
+    user1.add_friends_who_attended_event(event, facebook_ids)
+    Saver::FriendVisitors.drain
+    friends = user1.friends_who_attended_event(event)
+    friends.length.should == 2
+    friends.map(&:name).should include("Nick Trigatti", "Slavik Derevianko")
   end
 
   it "should provide a list of friends, who attended an event with user" do

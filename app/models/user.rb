@@ -31,6 +31,11 @@ class User
   end
 
   def add_friends_who_attended_event(event, facebook_ids)
+    self.delete_friends_who_attended_event(event)
     Saver::FriendVisitors.perform_async(self.id.to_s, event.id.to_s, facebook_ids)
+  end
+
+  def delete_friends_who_attended_event(event)
+    Event::FriendVisitor.destroy_all(user: self, event: event)
   end
 end
