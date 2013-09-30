@@ -55,11 +55,13 @@ class Lastfm::Event < Lastfm::Base
 
   private
   def extract_tickets_url
-    urls = @json["description"].scan(/https?:\/\/[-\w .\/?%&=;]+/)
-    if urls.present?
-      tickets_urls = urls.select{|url| url.match(/ticket|sale|buy|purchase/)}
-      @tickets_url = tickets_urls[0] if tickets_urls
-      @tickets_url = urls[0] unless @tickets_url
+    if(@json.is_a?(Hash) and @json["description"].present?)
+      urls = @json["description"].to_s.scan(/https?:\/\/[-\w .\/?%&=;]+/)
+      if urls.present?
+        tickets_urls = urls.select{|url| url.match(/ticket|sale|buy|purchase/)}
+        @tickets_url = tickets_urls[0] if tickets_urls
+        @tickets_url = urls[0] unless @tickets_url
+      end
     end
   end
 end

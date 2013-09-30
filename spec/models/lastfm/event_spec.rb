@@ -54,8 +54,35 @@ describe Lastfm::Event do
     le = Lastfm::Event.new(sample)
   end
 
-  it "should extract ticket sales URL from description string" do
-    le = Lastfm::Event.new(sample)
-    le.tickets_url.should == "http://ticketf.ly/11UbDtS" #prefer URL that has word 'ticket' in it
+  describe "extract_tickets_url" do
+    it "should extract ticket sales URL from description string" do
+      le = Lastfm::Event.new(sample)
+      le.tickets_url.should == "http://ticketf.ly/11UbDtS" #prefer URL that has word 'ticket' in it
+    end
+
+    it "should fail gracefully" do
+      le = Lastfm::Event.new({"description"=>nil})
+      le.tickets_url.should == nil
+
+      le = Lastfm::Event.new({"description"=>""})
+      le.tickets_url.should == nil
+
+      le = Lastfm::Event.new({"startDate"=>"Fri, 12 Jul 1963 18:00:00"})
+      le.tickets_url.should == nil
+
+      le = Lastfm::Event.new({"description"=>"<div class=\"bbcode\">General Admission<br />$15.00<br /><br />19+</div>"})
+      le.tickets_url.should == nil
+
+      le = Lastfm::Event.new({"description"=>15.00})
+      le.tickets_url.should == nil
+
+      le = Lastfm::Event.new("{startDate: Fri, 12 Jul 1963 18:00:00}")
+      le.tickets_url.should == nil
+
+      le = Lastfm::Event.new({1=> "some", 2=> "some", 3=> "some"})
+      le.tickets_url.should == nil
+      le = Lastfm::Event.new([1,2,3])
+      le.tickets_url.should == nil
+    end
   end
 end
