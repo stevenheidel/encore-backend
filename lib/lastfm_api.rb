@@ -52,7 +52,10 @@ class LastfmAPI
 
   # Search for an artist
   def self.artist_search(term)
-    get('artist.search', artist: term)["results"]["artistmatches"]["artist"]
+    return [] if term.nil? or term.empty?
+    result = get('artist.search', artist: term)["results"]["artistmatches"]["artist"]
+    return [] if result.nil?
+    result.is_a?(Array) ? result : [result]
   end
 
   # Event info

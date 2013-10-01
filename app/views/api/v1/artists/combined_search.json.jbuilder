@@ -1,5 +1,5 @@
 json.artist do
-  json.extract! @artist, :name, :lastfm_id, :image_url
+  json.extract! @artist, :name, :lastfm_id, :image_url if @artist.present?
 end
 
 json.others do
