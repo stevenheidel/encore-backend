@@ -1,7 +1,7 @@
 require 'lastfm_api'
 require 'spec_helper'
 
-describe LastfmAPI do
+describe LastfmAPI, :vcr do
   describe "artist.getPastEvents_all" do
     it "should retrieve all past events" do
       lastfm_response = LastfmAPI.artist_getPastEvents_all("Streetlight Manifesto")
