@@ -43,7 +43,7 @@ describe "/api/v1/users/:facebook_uuid/events/:id", type: :api, vcr: true do
   end
 end
 
-describe "Events", type: :api, vcr: { record: :once, re_record_interval: nil } do
+describe "Events", type: :api, vcr: true do
   it "should not show tomorrow's events in Today events list" do
     Timecop.freeze(Time.local(2013,8,30,22,8,00))
 
@@ -52,5 +52,14 @@ describe "Events", type: :api, vcr: { record: :once, re_record_interval: nil } d
     events.count.should == 7
 
     Timecop.return
+  end
+
+  describe "future" do
+    let(:url) { "/api/v1/events/future.json?latitude=40.2740925407026&longitude=-111.6763645239655&radius=0.5" }
+
+    it "should always return an array of events" do
+      get url
+      JSON.parse(last_response.body)["events"][0]["lastfm_id"].should == "3697666"
+    end
   end
 end

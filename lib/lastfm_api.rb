@@ -15,7 +15,6 @@ class LastfmAPI
 
   # Get all future events up to a limit
   def self.artist_getEvents_all(id, limit=nil)
-    return [] if id.nil? or id.empty?
     result = get('artist.getEvents', artist: id, limit: limit)["events"]["event"] rescue []
     return [] if result.nil?
     result.is_a?(Array) ? result : [result]
@@ -28,7 +27,6 @@ class LastfmAPI
 
   # Get all past events up to a limit
   def self.artist_getPastEvents_all(id, limit=nil)
-    return [] if id.nil? or id.empty?
     result = get('artist.getPastEvents', artist: id, limit: limit)["events"]["event"] rescue []
     return [] if result.nil?
     result.is_a?(Array) ? result : [result]
@@ -36,7 +34,7 @@ class LastfmAPI
 
   # Search for an artist
   def self.artist_search(term)
-    return [] if term.nil? or term.empty?
+    return [] if term.blank?
     result = get('artist.search', artist: term)["results"]["artistmatches"]["artist"]
     return [] if result.nil?
     result.is_a?(Array) ? result : [result]
@@ -50,7 +48,9 @@ class LastfmAPI
   # Get upcoming events for latitude and longitude
   # radius is in miles, gets converted to km for lastfm
   def self.geo_getEvents(latitude, longitude, radius)
-    get('geo.getEvents', lat: latitude, long: longitude, limit: 30, distance: 1.61*radius)["events"]["event"] rescue []
+    result = get('geo.getEvents', lat: latitude, long: longitude, limit: 30, distance: 1.61*radius)["events"]["event"] rescue []
+    return [] if result.nil?
+    result.is_a?(Array) ? result : [result]
   end
 
   private
