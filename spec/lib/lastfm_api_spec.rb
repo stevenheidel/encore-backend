@@ -1,14 +1,14 @@
 require 'lastfm_api'
 require 'spec_helper'
 
-describe LastfmAPI do
+describe LastfmAPI, :vcr do
   describe "artist.getPastEvents_all" do
-    it "should retrieve all past events", vcr: { record: :once, re_record_interval: nil } do
+    it "should retrieve all past events" do
       lastfm_response = LastfmAPI.artist_getPastEvents_all("Streetlight Manifesto")
       lastfm_response.size.should == 679
     end
 
-    it "should retrieve a limited amount of recent past events", vcr: { record: :once, re_record_interval: nil } do
+    it "should retrieve a limited amount of recent past events" do
       lastfm_response = LastfmAPI.artist_getPastEvents_all("Streetlight Manifesto", 10)
       
       lastfm_response.size.should == 10
@@ -18,12 +18,12 @@ describe LastfmAPI do
   end
 
   describe "artist.getEvents_all" do
-    it "should retrieve all upcoming events", vcr: { record: :once, re_record_interval: nil } do
+    it "should retrieve all upcoming events" do
       lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto")
       lastfm_response.size.should == 26
     end
 
-    it "should retrieve a limited amount of upcoming events", vcr: { record: :once, re_record_interval: nil } do
+    it "should retrieve a limited amount of upcoming events" do
       lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto", 10)
       
       lastfm_response.size.should == 10
@@ -36,7 +36,7 @@ describe LastfmAPI do
   end
 
   describe "artist.artist_search" do
-    it "should return an array, no matter the amount of artists found", vcr: { record: :once, re_record_interval: nil } do
+    it "should return an array, no matter the amount of artists found" do
       lastfm_response = LastfmAPI.artist_search("rolling")
       lastfm_response.is_a?(Array).should be_true
       lastfm_response.length.should == 30

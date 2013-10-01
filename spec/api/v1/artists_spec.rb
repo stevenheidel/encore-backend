@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Api::V1::ArtistsController do
+describe Api::V1::ArtistsController, :vcr do
   describe "/api/v1/artists/search?term=", :type => :api do
     let(:url) { "/api/v1/artists/search.json" }
 
