@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Artist, vcr: { record: :once, re_record_interval: nil } do
+describe Artist, :vcr do
   let(:artist) { FactoryGirl.create :artist }
   let(:latitude) { 43.670906 }
   let(:longitude) { -79.393331 }
@@ -21,7 +21,7 @@ describe Artist, vcr: { record: :once, re_record_interval: nil } do
     end
 
     it "should retrieve past events not limited by coordinates" do
-      artist.past_events.count.should == 224
+      artist.past_events.count.should == 225
     end
 
     it "should retrieve a limited amount of past events" do
@@ -32,7 +32,7 @@ describe Artist, vcr: { record: :once, re_record_interval: nil } do
   describe ".future_events" do
     it "should retrieve future events not limited by coordinates" do
       artist = FactoryGirl.create :streetlight_manifesto
-      artist.future_events.count.should == 22
+      artist.future_events.count.should == 26
     end
 
     it "should retrieve a limited amount of upcoming events" do

@@ -34,19 +34,9 @@ EncoreBackend::Application.routes.draw do
       end
 
       resources :artists, only: [] do
-        resources :events, only: [] do
-          collection do
-            get :past
-            get :future
-          end
-        end
-
         collection do
           get :search
           get :combined_search
-        end
-
-        member do
           get :picture
           get :info
         end

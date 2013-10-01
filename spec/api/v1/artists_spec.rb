@@ -25,12 +25,32 @@ describe Api::V1::ArtistsController, :vcr do
     end
   end
 
+  describe "picture", :type => :api do
+    it "should allow special characters in the artist id" do
+      get "/api/v1/artists/picture.json?artist_id=What%20Cheer?%20Brigade"
+      response = JSON.parse(last_response.body)
+      response["image_url"].should == "http://userserve-ak.last.fm/serve/500/70112782/What+Cheer+Brigade+whatcheer.jpg"
+
+      get "/api/v1/artists/picture.json?artist_id=Jenny%20O."
+      response = JSON.parse(last_response.body)
+      response["image_url"].should == "http://userserve-ak.last.fm/serve/500/68616562/Jenny+O+jennyo2.jpg"
+
+      get "/api/v1/artists/picture.json?artist_id=Mary%20J.%20Blige"
+      response = JSON.parse(last_response.body)
+      response["image_url"].should == "http://userserve-ak.last.fm/serve/_/49215123/Mary+J+Blige.png"
+    end
+  end
+  
+
   describe "info", :type => :api do
-    let(:url) { "/api/v1/artists/Death%20Cab%20for%20Cutie/info.json?limit_events=1" }
+    let(:url) { "/api/v1/artists/info.json?artist_id=Imagine%20Dragons&limit_events=1" }
 
     it "should return short info on Artist with a handful of events" do
       get url
-      last_response.body.should_not == "{\"artists\":[]}"
+      response = JSON.parse(last_response.body)
+      response["name"].should == "Imagine Dragons"
+      response["events"]["past"].length.should == 1
+      response["events"]["upcoming"].length.should == 1
     end
   end
 end

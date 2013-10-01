@@ -22,13 +22,13 @@ class Api::V1::ArtistsController < Api::V1::BaseController
   end
 
   def picture
-    @artist = Artist.find_or_create_from_lastfm(params[:id])
+    @artist = Artist.find_or_create_from_lastfm(params[:artist_id])
   end
 
   def info
     limit_events = params[:limit_events].to_i
     limit_events = 2 if limit_events<=0
-    @artist = Artist.find_or_create_from_lastfm(params[:id])
+    @artist = Artist.find_or_create_from_lastfm(params[:artist_id])
     @past_events     = @artist.past_events(nil, {limit: limit_events})
     @upcoming_events = @artist.future_events(nil, {limit: limit_events})
   end
