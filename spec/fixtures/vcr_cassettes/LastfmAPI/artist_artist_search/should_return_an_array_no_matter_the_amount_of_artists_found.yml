@@ -17,7 +17,7 @@ http_interactions:
       server:
       - Apache/2.2.22 (Unix)
       x-web-node:
-      - www95
+      - www213
       access-control-allow-origin:
       - '*'
       access-control-allow-methods:
@@ -27,7 +27,7 @@ http_interactions:
       cache-control:
       - max-age=86400
       expires:
-      - Wed, 02 Oct 2013 14:43:41 GMT
+      - Wed, 02 Oct 2013 14:48:50 GMT
       content-type:
       - application/json; charset=utf-8;
       content-length:
@@ -35,11 +35,11 @@ http_interactions:
       accept-ranges:
       - bytes
       date:
-      - Tue, 01 Oct 2013 14:53:29 GMT
+      - Tue, 01 Oct 2013 19:03:03 GMT
       x-varnish:
-      - 3251970584 3251793938
+      - 1519749366 1515539239
       age:
-      - '586'
+      - '15249'
       via:
       - 1.1 varnish
       connection:
@@ -47,7 +47,7 @@ http_interactions:
       x-cms:
       - '1'
       x-varnish-host:
-      - varnish8
+      - varnish7
     body:
       encoding: UTF-8
       base64_string: |
@@ -378,7 +378,7 @@ http_interactions:
         cy5qcGciLCJzaXplIjoibWVnYSJ9XX1dfSwiQGF0dHIiOnsiZm9yIjoicm9s
         bGluZyJ9fX0K
     http_version: 
-  recorded_at: Tue, 01 Oct 2013 14:53:29 GMT
+  recorded_at: Tue, 01 Oct 2013 19:03:03 GMT
 - request:
     method: get
     uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&artist=ROLLING+STONEA&method=artist.search
@@ -396,7 +396,7 @@ http_interactions:
       server:
       - Apache/2.2.22 (Unix)
       x-web-node:
-      - www195
+      - www220
       access-control-allow-origin:
       - '*'
       access-control-allow-methods:
@@ -406,7 +406,7 @@ http_interactions:
       cache-control:
       - max-age=86400
       expires:
-      - Wed, 02 Oct 2013 14:28:27 GMT
+      - Wed, 02 Oct 2013 14:06:27 GMT
       content-type:
       - application/json; charset=utf-8;
       content-length:
@@ -414,11 +414,11 @@ http_interactions:
       accept-ranges:
       - bytes
       date:
-      - Tue, 01 Oct 2013 14:53:29 GMT
+      - Tue, 01 Oct 2013 19:03:04 GMT
       x-varnish:
-      - 1515624848 1515180486
+      - 3494721446 3489702198
       age:
-      - '1502'
+      - '17796'
       via:
       - 1.1 varnish
       connection:
@@ -426,7 +426,7 @@ http_interactions:
       x-cms:
       - '1'
       x-varnish-host:
-      - varnish7
+      - varnish3
     body:
       encoding: UTF-8
       base64_string: |
@@ -443,7 +443,7 @@ http_interactions:
         c2l6ZSI6ImV4dHJhbGFyZ2UifSx7IiN0ZXh0IjoiIiwic2l6ZSI6Im1lZ2Ei
         fV19fSwiQGF0dHIiOnsiZm9yIjoiUk9MTElORyBTVE9ORUEifX19Cg==
     http_version: 
-  recorded_at: Tue, 01 Oct 2013 14:53:29 GMT
+  recorded_at: Tue, 01 Oct 2013 19:03:04 GMT
 - request:
     method: get
     uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&artist=a+plumber+dude+ain%27t+a+musician&method=artist.search
@@ -479,11 +479,11 @@ http_interactions:
       accept-ranges:
       - bytes
       date:
-      - Tue, 01 Oct 2013 14:53:29 GMT
+      - Tue, 01 Oct 2013 19:03:04 GMT
       x-varnish:
-      - 1515624924 1515362879
+      - 1519749491 1515362879
       age:
-      - '886'
+      - '15860'
       via:
       - 1.1 varnish
       connection:
@@ -503,5 +503,5 @@ http_interactions:
         aGVzIjoiXG4iLCJAYXR0ciI6eyJmb3IiOiJhIHBsdW1iZXIgZHVkZSBhaW4n
         dCBhIG11c2ljaWFuIn19fQo=
     http_version: 
-  recorded_at: Tue, 01 Oct 2013 14:53:29 GMT
+  recorded_at: Tue, 01 Oct 2013 19:03:04 GMT
 recorded_with: VCR 2.5.0

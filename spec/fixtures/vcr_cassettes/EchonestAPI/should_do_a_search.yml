@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://developer.echonest.com/api/v4/artist/suggest?api_key=PFAMHVK036M53HDVZ&name=rad
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Thu, 19 Sep 2013 18:03:46 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      vary:
+      - Accept-Encoding
+      x-request-id:
+      - rOs2dChMREyyDqIaVYiPBA
+      x-worker-node:
+      - 2d6ca:15431
+      x-ratelimit-remaining:
+      - '19'
+      server:
+      - TornadoServer/3.1
+      x-ratelimit-limit:
+      - '20'
+      x-api-key:
+      - PFAMHVK036M53HDVZ
+      cache-control:
+      - max-age=86400
+      access-control-allow-origin:
+      - '*'
+      x-ratelimit-used:
+      - '1'
+      connection:
+      - close
+      via:
+      - 1.1 ID-0000627501223666 uproxy-3
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJyZXNwb25zZSI6IHsic3RhdHVzIjogeyJ2ZXJzaW9uIjogIjQuMiIsICJj
+        b2RlIjogMCwgIm1lc3NhZ2UiOiAiU3VjY2VzcyJ9LCAiYXJ0aXN0cyI6IFt7
+        Im5hbWUiOiAiUmFkaW9oZWFkIiwgImlkIjogIkFSSDZXNFgxMTg3Qjk5Mjc0
+        RiJ9LCB7Im5hbWUiOiAiVFYgb24gdGhlIFJhZGlvIiwgImlkIjogIkFSMFBL
+        NTYxMTg3QjlCOUVGOSJ9LCB7Im5hbWUiOiAiUmFkaWNhbCBGYWNlIiwgImlk
+        IjogIkFSWUNXNU0xMTg3Qjk4REI2QSJ9LCB7Im5hbWUiOiAiUmFkaW8gRnV0
+        dXJhIiwgImlkIjogIkFSWVU4NDkxMTg3Qjk5NDVGNCJ9LCB7Im5hbWUiOiAi
+        UmFkaW9hY3RpdmUiLCAiaWQiOiAiQVJQWTc4NDExODdGQjQwQTRFIn0sIHsi
+        bmFtZSI6ICJKb3NodWEgUmFkaW4iLCAiaWQiOiAiQVJQQ1JZUTExODdGQjRF
+        Q0I4In0sIHsibmFtZSI6ICJSYWRpY2FsIFNvbWV0aGluZyIsICJpZCI6ICJB
+        UkdORVhUMTMzQjNGMTNFMEIifSwgeyJuYW1lIjogIkFsbCBJbmRpYSBSYWRp
+        byIsICJpZCI6ICJBUkE0MEkwMTE4N0I5OUNENzQifSwgeyJuYW1lIjogIkdv
+        IFJhZGlvIiwgImlkIjogIkFSUUNGWUMxMkExMDA0M0U1QiJ9LCB7Im5hbWUi
+        OiAiUmFkaW8gS2lsbGVyIiwgImlkIjogIkFSRkpJRkExMkVFMzc0Qjc2NSJ9
+        LCB7Im5hbWUiOiAiUmFkaW8gTW9zY293IiwgImlkIjogIkFSM08wMDIxMTg3
+        Qjk5OUJDOCJ9LCB7Im5hbWUiOiAiVGhlIFJhZGlvIERlcHQuIiwgImlkIjog
+        IkFSRUtPMUwxMTg3Qjk5N0VGRSJ9LCB7Im5hbWUiOiAiQnJvbnplIFJhZGlv
+        IFJldHVybiIsICJpZCI6ICJBUlVFQ1BYMTFFOEY1QzBFM0MifSwgeyJuYW1l
+        IjogIlJhZGlhdGlvbiBDaXR5IiwgImlkIjogIkFSS0xSR1AxMkZFMDg2NzQ3
+        NyJ9LCB7Im5hbWUiOiAiUkFEV0lNUFMiLCAiaWQiOiAiQVJOTElXSTExODdG
+        QjUwN0YxIn1dfX0=
+    http_version: 
+  recorded_at: Thu, 19 Sep 2013 18:03:46 GMT
+recorded_with: VCR 2.5.0
