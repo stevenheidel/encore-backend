@@ -15,17 +15,10 @@ class LastfmAPI
 
   # Get all future events up to a limit
   def self.artist_getEvents_all(id, limit=nil)
-    limit ||= self.artist_getEvents_count(id)
-    if limit == 0
-      []
-    else
-      result = get('artist.getEvents', artist: id, limit: limit)["events"]["event"]
-      if limit == 1
-        [result]
-      else
-        result
-      end
-    end
+    return [] if id.nil? or id.empty?
+    result = get('artist.getEvents', artist: id, limit: limit)["events"]["event"] rescue []
+    return [] if result.nil?
+    result.is_a?(Array) ? result : [result]
   end
 
   # Number of past events
@@ -35,19 +28,10 @@ class LastfmAPI
 
   # Get all past events up to a limit
   def self.artist_getPastEvents_all(id, limit=nil)
-    limit ||= self.artist_getPastEvents_count(id)
-
-    # Always return an array no matter how difficult
-    if limit == 0
-      []
-    else
-      result = get('artist.getPastEvents', artist: id, limit: limit)["events"]["event"]
-      if limit == 1
-        [result]
-      else
-        result
-      end
-    end
+    return [] if id.nil? or id.empty?
+    result = get('artist.getPastEvents', artist: id, limit: limit)["events"]["event"] rescue []
+    return [] if result.nil?
+    result.is_a?(Array) ? result : [result]
   end
 
   # Search for an artist

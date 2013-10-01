@@ -1,7 +1,7 @@
 require 'lastfm_api'
 require 'spec_helper'
 
-describe LastfmAPI, :vcr do
+describe LastfmAPI do
   describe "artist.getPastEvents_all" do
     it "should retrieve all past events" do
       lastfm_response = LastfmAPI.artist_getPastEvents_all("Streetlight Manifesto")
@@ -14,6 +14,16 @@ describe LastfmAPI, :vcr do
       lastfm_response.size.should == 10
       lastfm_response.first['startDate'].should == "Sat, 13 Jul 2013 19:00:00"
       lastfm_response.last['startDate'].should  == "Wed, 26 Jun 2013 19:00:00"
+    end
+
+    it "should always return an array" do
+      lastfm_response = LastfmAPI.artist_getPastEvents_all("some non-musician")
+      lastfm_response.is_a?(Array).should be_true
+      lastfm_response.length.should == 0
+
+      lastfm_response = LastfmAPI.artist_getPastEvents_all("Streetlight Manifesto", 1)
+      lastfm_response.is_a?(Array).should be_true
+      lastfm_response.length.should == 1
     end
   end
 
@@ -32,6 +42,16 @@ describe LastfmAPI, :vcr do
       lastfm_response[3]['startDate'].should                    == "Sat, 05 Oct 2013 19:00:00"
       lastfm_response[3]['venue']['name'].should                == "Métropolis"
       lastfm_response[3]['venue']['location']['country'].should == "Canada"
+    end
+
+    it "should always return an array" do
+      lastfm_response = LastfmAPI.artist_getEvents_all("some non-musician")
+      lastfm_response.is_a?(Array).should be_true
+      lastfm_response.length.should == 0
+
+      lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto", 1)
+      lastfm_response.is_a?(Array).should be_true
+      lastfm_response.length.should == 1
     end
   end
 
