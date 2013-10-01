@@ -8,7 +8,6 @@ class Api::V1::ArtistsController < Api::V1::BaseController
     search_results = Artist.search(params[:term])
 
     if(search_results[0].present?)
-      byebug
       @artist = Artist.find_or_create_from_lastfm(search_results[0].lastfm_id)
       @others = search_results[1..-1]
 
