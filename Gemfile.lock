@@ -480,6 +480,7 @@ DEPENDENCIES
   jquery-ui-rails
   koala
   metric_fu
+  minitest
   newrelic_rpm
   paperclip
   pg

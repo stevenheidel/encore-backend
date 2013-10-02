@@ -3,7 +3,7 @@
 # Table name: flickr_photos
 #
 #  id            :uuid             not null, primary key
-#  flickr_uuid   :integer
+#  flickr_uuid   :string(255)
 #  flickr_secret :string(255)
 #  link          :string(255)
 #  image_url     :string(255)

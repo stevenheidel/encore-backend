@@ -48,6 +48,7 @@ group :development, :test do
 
   # RSpec
   # TODO: this issue: https://github.com/rspec/rspec-rails/pull/772
+  gem 'minitest'
   gem 'rspec-rails', '~> 2.14'
 end
 

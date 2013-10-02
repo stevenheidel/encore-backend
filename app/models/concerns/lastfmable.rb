@@ -20,9 +20,9 @@ module Concerns::Lastfmable
     # Like find_or_create_by but calls its corresponding info API call
     # Doesn't work for venues
     def find_or_create_from_lastfm(lastfm_id)
-      begin
-        self.get(lastfm_id)
-      rescue Mongoid::Errors::DocumentNotFound
+      object = self.get(lastfm_id)
+      
+      unless object
         # Doesn't exist yet so make it and populate it
         object = self.new
         object.lastfm_id = lastfm_id
@@ -36,9 +36,9 @@ module Concerns::Lastfmable
           lastfm_object = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
           object.update_from_lastfm(lastfm_object)
         end
-        
-        object
       end
+
+      object
     end
   end
 
@@ -54,7 +54,7 @@ module Concerns::Lastfmable
     # Find all the image tags and put them in embeds_many images
     # TODO: this also causes a lot of errors in Sidekiq
     lastfm_object.images.each do |image|
-      self.images.find_or_create_by(size: image["size"], url: image["#text"])
+      self.images << Other::LastfmImage.new(size: image["size"], url: image["#text"])
     end
     self.save!
   end

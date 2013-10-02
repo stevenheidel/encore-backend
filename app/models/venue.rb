@@ -26,6 +26,10 @@ class Venue < ActiveRecord::Base
   validates_presence_of :name
   validate :validate_coordinates
 
+  def coordinates
+    [latitude, longitude]
+  end
+
   private
   def validate_coordinates
     invalid_coordinates = []

@@ -15,6 +15,7 @@
 #  venue_id         :uuid
 #  created_at       :datetime
 #  updated_at       :datetime
+#  sidekiq_workers  :string(255)      default([])
 #
 
 class Lastfm::Event < Lastfm::Base

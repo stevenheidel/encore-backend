@@ -1,6 +1,6 @@
 class Lastfm::Venue < Lastfm::Base
   def methods
-    super + [:city, :country, :street, :postalcode, :coordinates]
+    super + [:city, :country, :street, :postalcode, :latitude, :longitude]
   end
 
   def city
@@ -19,20 +19,12 @@ class Lastfm::Venue < Lastfm::Base
     @json["location"]["postalcode"]
   end
 
-  def coordinates
-    # MongoDB stores coordinates with longitude first
-    [ @json["location"]["geo:point"]["geo:long"], 
-      @json["location"]["geo:point"]["geo:lat"] ].map do |l|
-      l.to_f
-    end
-  end
-
   def latitude
-    coordinates[1]
+    @json["location"]["geo:point"]["geo:lat"].to_f
   end
 
   def longitude
-    coordinates[0]
+    @json["location"]["geo:point"]["geo:long"].to_f
   end
 
   # Check if venue is within a particular radius from a point

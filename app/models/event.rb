@@ -15,6 +15,7 @@
 #  venue_id         :uuid
 #  created_at       :datetime
 #  updated_at       :datetime
+#  sidekiq_workers  :string(255)      default([])
 #
 
 class Event < ActiveRecord::Base
@@ -23,7 +24,10 @@ class Event < ActiveRecord::Base
   has_and_belongs_to_many :artists
   has_and_belongs_to_many :users
 
-  has_many :posts
+  has_many :flickr_photos, class_name: "Post::FlickrPhoto"
+  has_many :instagram_photos, class_name: "Post::InstagramPhoto"
+  has_many :user_photos, class_name: "Post::UserPhoto"
+  has_many :youtube_videos, class_name: "Post::YoutubeVideo"
 
   has_many :friend_visitors, class_name: "Event::FriendVisitor"
 
@@ -89,7 +93,7 @@ class Event < ActiveRecord::Base
 
   def local_start_time
     self[:local_start_time] ||= self.start_time + 
-      GoogleTimezone.fetch(*self.venue.coordinates.reverse).raw_offset.seconds
+      GoogleTimezone.fetch(*self.venue.coordinates).raw_offset.seconds
     # GoogleTimezone needs latitude, longitude order
   end
 
