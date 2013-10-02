@@ -37,8 +37,8 @@ class Event < ActiveRecord::Base
   validates_presence_of :start_date
   before_save :normalize_start_date
 
-  scope :past, lambda{ where(:start_date.lt => Time.now).desc(:start_date) }
-  scope :future, lambda{ where(:start_date.gte => Time.now).asc(:start_date) }
+  scope :past, lambda{ where("start_date < ?", Time.now).order('start_date DESC') }
+  scope :future, lambda{ where("start_date >= ?", Time.now).order('start_date ASC') }
 
   scope :in_radius, ->(geo) {
     # 3959 is a magic number for miles

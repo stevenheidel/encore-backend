@@ -21,7 +21,7 @@ class Venue < ActiveRecord::Base
   include Concerns::Lastfmable
 
   has_many :events
-  has_many :instagram_locations
+  has_many :instagram_locations, class_name: "Other::InstagramLocation"
 
   validates_presence_of :name
   validate :validate_coordinates

@@ -22,15 +22,15 @@ describe Other::InstagramLocation, vcr: true do
 
   describe '.find_instagram_ids_for_venue' do
     it 'should get instagram ids for Air Canada Centre' do
-      InstagramLocation.find_instagram_ids_for_venue(aircanada1)
-      InstagramLocation.find_instagram_ids_for_venue(aircanada2)
+      Other::InstagramLocation.find_instagram_ids_for_venue(aircanada1)
+      Other::InstagramLocation.find_instagram_ids_for_venue(aircanada2)
 
       aircanada1.instagram_locations.map{|x|x.instagram_uuid}.sort.should ==
         aircanada2.instagram_locations.map{|x|x.instagram_uuid}.sort
     end
 
     it 'should get instagram ids for Rogers Centre' do
-      InstagramLocation.find_instagram_ids_for_venue(rogerscentre)
+      Other::InstagramLocation.find_instagram_ids_for_venue(rogerscentre)
 
       rogerscentre.instagram_locations.count.should > 0
     end

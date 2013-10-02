@@ -8,11 +8,13 @@ class Api::V1::EventsController < Api::V1::BaseController
       render 'api/v1/base/result.json', locals: {result: found}
     # Otherwise return all events on profile
     else
-      begin
-        @events = User.get(params[:user_id]).events.includes(:venue)
+      user = User.get(params[:user_id])
+
+      if user
+        @events = user.events.includes(:venue)
         @events_past = @events.past
         @events_future = @events.future
-      rescue Mongoid::Errors::DocumentNotFound
+      else
         # If the user hasn't been created yet then they have no events
         @events_past, @events_future = []
       end
@@ -50,7 +52,6 @@ class Api::V1::EventsController < Api::V1::BaseController
     if user.events.include?(event) # already been added to profile
       render 'api/v1/base/result.json', locals: {result: 'already added'}
     else
-      event.users << user # have to do this too so count updates
       user.events << event
 
       render 'api/v1/base/result.json', locals: {result: 'success'}

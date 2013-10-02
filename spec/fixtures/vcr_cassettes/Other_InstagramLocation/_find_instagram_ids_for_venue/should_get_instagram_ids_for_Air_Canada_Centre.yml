@@ -1,0 +1,2036 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/search?client_id=OANCCHMOA0UBCAISXWHIVEZE4QZWAPIZ5R3MB1UJ0CUEYC2W&client_secret=A54NI2GGMB0EOPPUS5HQCTWR55PU31JMKNILGADHFLB0FIJD&ll=43.6440859%2C-79.3783696&query=Air+Canada+Centre&intent=match
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby gem
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 02 Oct 2013 06:02:28 GMT
+      server:
+      - nginx/1.4.1
+      content-type:
+      - application/json; charset=utf-8
+      access-control-allow-origin:
+      - '*'
+      tracer-time:
+      - '311'
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4998'
+      strict-transport-security:
+      - max-age=864000
+      x-ex:
+      - fastly_cdn
+      accept-ranges:
+      - bytes
+      via:
+      - 1.1 varnish
+      age:
+      - '0'
+      x-served-by:
+      - cache-sv60-SJC3
+      x-cache:
+      - MISS
+      x-cache-hits:
+      - '0'
+      vary:
+      - Accept-Encoding,User-Agent,Accept-Language
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMCwiZXJyb3JUeXBlIjoiZGVwcmVjYXRlZCIs
+        ImVycm9yRGV0YWlsIjoiVGhpcyBlbmRwb2ludCB3aWxsIHN0b3AgcmV0dXJu
+        aW5nIGdyb3VwcyBpbiB0aGUgZnV0dXJlLiBQbGVhc2UgdXNlIGEgY3VycmVu
+        dCB2ZXJzaW9uLCBzZWUgaHR0cDpcL1wvYml0Lmx5XC92eXdDYXYuIn0sInJl
+        c3BvbnNlIjp7Imdyb3VwcyI6W3sidHlwZSI6InBsYWNlcyIsIm5hbWUiOiJQ
+        bGFjZXMiLCJpdGVtcyI6W3siaWQiOiI0YzA5MzJmY2JiYzY3NmIwZmRjMjQ3
+        ZDUiLCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUgT2ZmaWNlcyIsImNvbnRh
+        Y3QiOnt9LCJsb2NhdGlvbiI6eyJhZGRyZXNzIjoiNTAgQmF5IFN0IiwiY3Jv
+        c3NTdHJlZXQiOiJhdCBMYWtlc2hvcmUgQmx2ZC4iLCJsYXQiOjQzLjY0NDE2
+        NiwibG5nIjotNzkuMzc4Nzk2LCJkaXN0YW5jZSI6MzUsImNpdHkiOiJUb3Jv
+        bnRvIiwic3RhdGUiOiJPTiIsImNvdW50cnkiOiJDYW5hZGEiLCJjYyI6IkNB
+        In0sImNhdGVnb3JpZXMiOlt7ImlkIjoiNGJmNThkZDhkNDg5ODhkMTI0OTQx
+        NzM1IiwibmFtZSI6Ik9mZmljZSIsInBsdXJhbE5hbWUiOiJPZmZpY2VzIiwi
+        c2hvcnROYW1lIjoiT2ZmaWNlIiwiaWNvbiI6Imh0dHBzOlwvXC9mb3Vyc3F1
+        YXJlLmNvbVwvaW1nXC9jYXRlZ29yaWVzXC9idWlsZGluZ1wvZGVmYXVsdC5w
+        bmciLCJwYXJlbnRzIjpbIlByb2Zlc3Npb25hbCAmIE90aGVyIFBsYWNlcyJd
+        LCJwcmltYXJ5Ijp0cnVlfV0sInZlcmlmaWVkIjpmYWxzZSwicmVzdHJpY3Rl
+        ZCI6dHJ1ZSwic3RhdHMiOnsiY2hlY2tpbnNDb3VudCI6MTA2NSwidXNlcnND
+        b3VudCI6MTg4LCJ0aXBDb3VudCI6MH0sImxpa2VzIjp7ImNvdW50IjowLCJn
+        cm91cHMiOltdfX0seyJpZCI6IjUxNGY0YWQ1ZTRiMGExODM0ODg1NmQ3NyIs
+        Im5hbWUiOiJCb3ggT2ZmaWNlIiwiY29udGFjdCI6e30sImxvY2F0aW9uIjp7
+        ImFkZHJlc3MiOiJBaXIgQ2FuYWRhIENlbnRyZSIsImxhdCI6NDMuNjQzNzMy
+        NzQzODU2MzU0LCJsbmciOi03OS4zNzc1ODcxNzY0ODA3MiwiZGlzdGFuY2Ui
+        Ojc0LCJjb3VudHJ5IjoiQ2FuYWRhIiwiY2MiOiJDQSJ9LCJjYXRlZ29yaWVz
+        IjpbeyJpZCI6IjRiZjU4ZGQ4ZDQ4OTg4ZDFmMTkzMTczNSIsIm5hbWUiOiJH
+        ZW5lcmFsIEVudGVydGFpbm1lbnQiLCJwbHVyYWxOYW1lIjoiR2VuZXJhbCBF
+        bnRlcnRhaW5tZW50Iiwic2hvcnROYW1lIjoiRW50ZXJ0YWlubWVudCIsImlj
+        b24iOiJodHRwczpcL1wvZm91cnNxdWFyZS5jb21cL2ltZ1wvY2F0ZWdvcmll
+        c1wvYXJ0c19lbnRlcnRhaW5tZW50XC9kZWZhdWx0LnBuZyIsInBhcmVudHMi
+        OlsiQXJ0cyAmIEVudGVydGFpbm1lbnQiXSwicHJpbWFyeSI6dHJ1ZX1dLCJ2
+        ZXJpZmllZCI6ZmFsc2UsInJlc3RyaWN0ZWQiOnRydWUsInN0YXRzIjp7ImNo
+        ZWNraW5zQ291bnQiOjgsInVzZXJzQ291bnQiOjcsInRpcENvdW50IjowfSwi
+        bGlrZXMiOnsiY291bnQiOjAsImdyb3VwcyI6W119fSx7ImlkIjoiNGI2MGQ1
+        YjlmOTY0YTUyMDcxZmMyOWUzIiwibmFtZSI6IkFpciBDYW5hZGEgQ2x1YiIs
+        ImNvbnRhY3QiOnsidHdpdHRlciI6ImxpdmVhdGFjYyJ9LCJsb2NhdGlvbiI6
+        eyJhZGRyZXNzIjoiQWlyIENhbmFkYSBDZW50cmUiLCJsYXQiOjQzLjY0MzE5
+        MTQ5OTI5Mjg3LCJsbmciOi03OS4zNzkyMzY3NjYwMjc2LCJkaXN0YW5jZSI6
+        MTIxLCJwb3N0YWxDb2RlIjoiTTVKIDJMMiIsImNpdHkiOiJUb3JvbnRvIiwi
+        c3RhdGUiOiJPTiIsImNvdW50cnkiOiJDYW5hZGEiLCJjYyI6IkNBIn0sImNh
+        dGVnb3JpZXMiOlt7ImlkIjoiNGJmNThkZDhkNDg5ODhkMTIxOTQxNzM1Iiwi
+        bmFtZSI6IkxvdW5nZSIsInBsdXJhbE5hbWUiOiJMb3VuZ2VzIiwic2hvcnRO
+        YW1lIjoiTG91bmdlIiwiaWNvbiI6Imh0dHBzOlwvXC9mb3Vyc3F1YXJlLmNv
+        bVwvaW1nXC9jYXRlZ29yaWVzXC9uaWdodGxpZmVcL2xvdW5nZS5wbmciLCJw
+        YXJlbnRzIjpbIk5pZ2h0bGlmZSBTcG90Il0sInByaW1hcnkiOnRydWV9XSwi
+        dmVyaWZpZWQiOmZhbHNlLCJyZXN0cmljdGVkIjp0cnVlLCJzdGF0cyI6eyJj
+        aGVja2luc0NvdW50Ijo1ODksInVzZXJzQ291bnQiOjMyMywidGlwQ291bnQi
+        OjR9LCJ1cmwiOiJodHRwOlwvXC93d3cudGhlYWlyY2FuYWRhY2VudHJlLmNv
+        bSIsImxpa2VzIjp7ImNvdW50IjowLCJncm91cHMiOltdfSwibWVudSI6eyJ0
+        eXBlIjoiTWVudSIsImxhYmVsIjoiTWVudSIsImFuY2hvciI6IlNlZSBtZW51
+        IiwidXJsIjoiaHR0cHM6XC9cL2ZvdXJzcXVhcmUuY29tXC92XC9haXItY2Fu
+        YWRhLWNsdWJcLzRiNjBkNWI5Zjk2NGE1MjA3MWZjMjllM1wvbWVudSIsIm1v
+        YmlsZVVybCI6Imh0dHBzOlwvXC9mb3Vyc3F1YXJlLmNvbVwvdlwvNGI2MGQ1
+        YjlmOTY0YTUyMDcxZmMyOWUzXC9kZXZpY2VfbWVudSJ9fSx7ImlkIjoiNGI4
+        NDkwZWRmOTY0YTUyMDBjM2MzMWUzIiwibmFtZSI6IkdvbmRvbGFzIiwiY29u
+        dGFjdCI6e30sImxvY2F0aW9uIjp7ImFkZHJlc3MiOiI0MCBCYXkgU3QuIiwi
+        Y3Jvc3NTdHJlZXQiOiJBaXIgQ2FuYWRhIENlbnRyZSIsImxhdCI6NDMuNjQz
+        Mzg2LCJsbmciOi03OS4zNzkwNDMsImRpc3RhbmNlIjo5NCwicG9zdGFsQ29k
+        ZSI6Ik01TSIsImNpdHkiOiJUb3JvbnRvIiwic3RhdGUiOiJPTiIsImNvdW50
+        cnkiOiJDYW5hZGEiLCJjYyI6IkNBIn0sImNhdGVnb3JpZXMiOltdLCJ2ZXJp
+        ZmllZCI6ZmFsc2UsInJlc3RyaWN0ZWQiOnRydWUsInN0YXRzIjp7ImNoZWNr
+        aW5zQ291bnQiOjM1LCJ1c2Vyc0NvdW50IjoyMiwidGlwQ291bnQiOjB9LCJs
+        aWtlcyI6eyJjb3VudCI6MCwiZ3JvdXBzIjpbXX19LHsiaWQiOiI0YjE1NTA4
+        MWY5NjRhNTIwYjRiMDIzZTMiLCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUi
+        LCJjb250YWN0Ijp7InBob25lIjoiNDE2ODE1NTUwMCIsImZvcm1hdHRlZFBo
+        b25lIjoiKDQxNikgODE1LTU1MDAiLCJ0d2l0dGVyIjoiYWlyY2FuYWRhY2Vu
+        dHJlIn0sImxvY2F0aW9uIjp7ImFkZHJlc3MiOiI0MCBCYXkgU3QuIiwibGF0
+        Ijo0My42NDM0MTI1MDE3MDg3MjQsImxuZyI6LTc5LjM3OTE3MTEzMzA0MTM4
+        LCJkaXN0YW5jZSI6OTgsInBvc3RhbENvZGUiOiJNNUogMlgyIiwiY2l0eSI6
+        IlRvcm9udG8iLCJzdGF0ZSI6Ik9udGFyaW8iLCJjb3VudHJ5IjoiQ2FuYWRh
+        IiwiY2MiOiJDQSJ9LCJjYXRlZ29yaWVzIjpbeyJpZCI6IjRiZjU4ZGQ4ZDQ4
+        OTg4ZDE4NTk0MTczNSIsIm5hbWUiOiJIb2NrZXkgQXJlbmEiLCJwbHVyYWxO
+        YW1lIjoiSG9ja2V5IEFyZW5hcyIsInNob3J0TmFtZSI6IkhvY2tleSIsImlj
+        b24iOiJodHRwczpcL1wvZm91cnNxdWFyZS5jb21cL2ltZ1wvY2F0ZWdvcmll
+        c1wvYXJ0c19lbnRlcnRhaW5tZW50XC9zdGFkaXVtX2hvY2tleS5wbmciLCJw
+        YXJlbnRzIjpbIkFydHMgJiBFbnRlcnRhaW5tZW50IiwiU3RhZGl1bSJdLCJw
+        cmltYXJ5Ijp0cnVlfV0sInZlcmlmaWVkIjp0cnVlLCJyZXN0cmljdGVkIjp0
+        cnVlLCJzdGF0cyI6eyJjaGVja2luc0NvdW50Ijo0NDM3NSwidXNlcnNDb3Vu
+        dCI6MTYzNzEsInRpcENvdW50IjoxNzl9LCJ1cmwiOiJodHRwOlwvXC93d3cu
+        dGhlYWlyY2FuYWRhY2VudHJlLmNvbSIsImxpa2VzIjp7ImNvdW50IjowLCJn
+        cm91cHMiOltdfSwic3RvcmVJZCI6IiJ9XX1dfX0=
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:28 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4c0932fcbbc676b0fdc247d5
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:29 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=0596c8e84cda45f6221fb1f16710df23; expires=Wed, 01-Oct-2014 06:02:29
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4987'
+      content-length:
+      - '131'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6LTc5LjM3ODc5Niwi
+        bmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMifV19
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:29 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=514f4ad5e4b0a18348856d77
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:29 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=b94d7d75555fd2fa78b3e64c1e131318; expires=Wed, 01-Oct-2014 06:02:29
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4986'
+      content-length:
+      - '138'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM3MzI3NDQsImlkIjoiODMyODI1MDgiLCJsb25naXR1ZGUiOi03OS4zNzc1
+        ODcxNzYsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSBCb3ggT2ZmaWNlIn1d
+        fQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:29 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4b60d5b9f964a52071fc29e3
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:30 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=1ea22e37dcc86d0daddfe55e4e0245a8; expires=Wed, 01-Oct-2014 06:02:30
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4985'
+      content-length:
+      - '125'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMxOTE0OTksImlkIjoiNDQ1MzkyIiwibG9uZ2l0dWRlIjotNzkuMzc5MjM2
+        NzY2LCJuYW1lIjoiQWlyIENhbmFkYSBDbHViIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:30 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4b8490edf964a5200c3c31e3
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:30 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=315024f617606b4342bd7b54fe35d4b4; expires=Wed, 01-Oct-2014 06:02:30
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4984'
+      content-length:
+      - '131'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMzODYsImlkIjoiMTgwMjA4MiIsImxvbmdpdHVkZSI6LTc5LjM3OTA0Mywi
+        bmFtZSI6IkdvbmRvbGFzIGF0IEFpciBDYW5hZGEgQ2VudHJlIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:31 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4b155081f964a520b4b023e3
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:31 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=0215080cdf8e4e16050fa21e11e78092; expires=Wed, 01-Oct-2014 06:02:31
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4983'
+      content-length:
+      - '123'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM0MTI1MDIsImlkIjoiMzU5NDAiLCJsb25naXR1ZGUiOi03OS4zNzkxNzEx
+        MzMsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9XX0=
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:31 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.6440859&lng=-79.3783696
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:33 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=7bcdaacc2b7e4bcae40296bc21d06475; expires=Wed, 01-Oct-2014 06:02:33
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4982'
+      content-length:
+      - '712'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQwNjY1LCJpZCI6IjEyODY5MzYiLCJsb25naXR1ZGUiOi03OS4zNzg0MzI3
+        LCJuYW1lIjoiTGlua2luIFBhcmstIEFpciBDYW5hZGEgQ2VudHJlIn0seyJs
+        YXRpdHVkZSI6NDMuNjQ0MDYzMzYzLCJpZCI6Ijc4NTMwMDQiLCJsb25naXR1
+        ZGUiOi03OS4zNzg0Mzk0NjgsIm5hbWUiOiJQbGF0bml1bSBMb3VuZ2UgYXQg
+        QUNDIn0seyJsYXRpdHVkZSI6NDMuNjQzOTQyODY1LCJpZCI6Ijc2MDg4Njci
+        LCJsb25naXR1ZGUiOi03OS4zNzgzMTMsIm5hbWUiOiJIb3QgU3RvdmUgQ2x1
+        YiJ9LHsibGF0aXR1ZGUiOjQzLjY0NDI3LCJpZCI6IjE5MTI0NjQiLCJsb25n
+        aXR1ZGUiOi03OS4zNzg0NSwibmFtZSI6Ik1pbHRvbiBHTyBCdXMifSx7Imxh
+        dGl0dWRlIjo0My42NDM5NCwiaWQiOiIxMzg0MTc5OCIsImxvbmdpdHVkZSI6
+        LTc5LjM3ODAzLCJuYW1lIjoiVklBIFJhaWwgLSBUcmFpbiA0OCBUb3JvbnRv
+        IC0gT3R0YXdhIn0seyJsYXRpdHVkZSI6NDMuNjQzOTg3LCJpZCI6IjQ1NDI2
+        NzUiLCJsb25naXR1ZGUiOi03OS4zNzc5OSwibmFtZSI6Ik1MU0UifSx7Imxh
+        dGl0dWRlIjo0My42NDQzMDgsImlkIjoiNTE2MTE3ODYiLCJsb25naXR1ZGUi
+        Oi03OS4zNzg2NzUsIm5hbWUiOiJZb2dlbiBGclx1MDBmY3oifSx7ImxhdGl0
+        dWRlIjo0My42NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6LTc5
+        LjM3ODc5NiwibmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMifSx7
+        ImxhdGl0dWRlIjo0My42NDM5MDE2MjYsImlkIjoiNTE1MzUxNzgiLCJsb25n
+        aXR1ZGUiOi03OS4zNzg3NTI3MDgsIm5hbWUiOiJOSEwgSGVhZCBPZmZpY2Ui
+        fSx7ImxhdGl0dWRlIjo0My42NDM4MTQ2MywiaWQiOiI0ODM3MDE1IiwibG9u
+        Z2l0dWRlIjotNzkuMzc4NzkxMzgsIm5hbWUiOiJNYXBsZSBMZWFmIFNwb3J0
+        cyBcdTAwMjYgRW50ZXJ0YWlubWVudCJ9LHsibGF0aXR1ZGUiOjQzLjY0Mzcy
+        NiwiaWQiOiI5ODg1MDYzNyIsImxvbmdpdHVkZSI6LTc5LjM3ODA5NSwibmFt
+        ZSI6IlRIRSBGT1gifSx7ImxhdGl0dWRlIjo0My42NDM2OCwiaWQiOiIxMDk0
+        NjEyNDUiLCJsb25naXR1ZGUiOi03OS4zNzg0NywibmFtZSI6IlRpbSBIb3J0
+        b25zIn0seyJsYXRpdHVkZSI6NDMuNjQ0MjE1ODA4LCJpZCI6IjgwMzU5NDA4
+        IiwibG9uZ2l0dWRlIjotNzkuMzc4OTgzODMxLCJuYW1lIjoiR3JhbnQgVGhv
+        cm50b24gTExQIn0seyJsYXRpdHVkZSI6NDMuNjQ0Mjg3ODk2LCJpZCI6IjEw
+        ODc5Mjg0IiwibG9uZ2l0dWRlIjotNzkuMzc3Nzc0MTMxLCJuYW1lIjoiM3Jk
+        IEZsb29yIEJyZWFrIFJvb20ifSx7ImxhdGl0dWRlIjo0My42NDM2NTQsImlk
+        IjoiODE2MTYyMzMiLCJsb25naXR1ZGUiOi03OS4zNzg3NTYsIm5hbWUiOiJM
+        ZWFmcyBOYXRpb24ifSx7ImxhdGl0dWRlIjo0My42NDQ2MzgwNjIsImlkIjoi
+        MjkzMzg4NjMiLCJsb25naXR1ZGUiOi03OS4zNzg2MjM5NjIsIm5hbWUiOiJV
+        bmlvbiBTdGF0aW9uIFRyYWNrIEVpZ2h0ZWVuIn0seyJsYXRpdHVkZSI6NDMu
+        NjQ0MjkyNTQsImlkIjoiNTQwMDE2NCIsImxvbmdpdHVkZSI6LTc5LjM3OTEz
+        Nzc5MSwibmFtZSI6Ik1hcGxlIExlYWYgU3BvcnRzIFx1MDAyNiBFbnRlcnRh
+        aW5tZW50IEx0ZC4gN3RoIEZsb29yIEZpbmFuY2UgXHUwMDI2IEluZm9ybWF0
+        aW9uIFRlY2hub2xvZ3kifSx7ImxhdGl0dWRlIjo0My42NDQ3MTY4NzgsImlk
+        IjoiOTQ4MzE1MiIsImxvbmdpdHVkZSI6LTc5LjM3ODQ4MzQ1NywibmFtZSI6
+        Ik1hcGxlIExlYWYgU3BvcnRzIEFuZCBFbnRlcnRhaW5tZW50IDR0aCBGbG9v
+        ciJ9LHsibGF0aXR1ZGUiOjQzLjY0MzczMjc0NCwiaWQiOiI4MzI4MjUwOCIs
+        ImxvbmdpdHVkZSI6LTc5LjM3NzU4NzE3NiwibmFtZSI6IkFpciBDYW5hZGEg
+        Q2VudHJlIEJveCBPZmZpY2UifSx7ImxhdGl0dWRlIjo0My42NDQyNzcsImlk
+        IjoiMTA3NzY1MzMiLCJsb25naXR1ZGUiOi03OS4zNzc0NzAwMjksIm5hbWUi
+        OiJTSyBMb3VuZ2UifV19
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:33 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.644166&lng=-79.378796
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:35 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=b82ac736fd44e1dd20cd16d980a3ff27; expires=Wed, 01-Oct-2014 06:02:35
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4981'
+      content-length:
+      - '733'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6LTc5LjM3ODc5Niwi
+        bmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMifSx7ImxhdGl0dWRl
+        Ijo0My42NDQyMTU4MDgsImlkIjoiODAzNTk0MDgiLCJsb25naXR1ZGUiOi03
+        OS4zNzg5ODM4MzEsIm5hbWUiOiJHcmFudCBUaG9ybnRvbiBMTFAifSx7Imxh
+        dGl0dWRlIjo0My42NDQzMDgsImlkIjoiNTE2MTE3ODYiLCJsb25naXR1ZGUi
+        Oi03OS4zNzg2NzUsIm5hbWUiOiJZb2dlbiBGclx1MDBmY3oifSx7ImxhdGl0
+        dWRlIjo0My42NDM5MDE2MjYsImlkIjoiNTE1MzUxNzgiLCJsb25naXR1ZGUi
+        Oi03OS4zNzg3NTI3MDgsIm5hbWUiOiJOSEwgSGVhZCBPZmZpY2UifSx7Imxh
+        dGl0dWRlIjo0My42NDQyNywiaWQiOiIxOTEyNDY0IiwibG9uZ2l0dWRlIjot
+        NzkuMzc4NDUsIm5hbWUiOiJNaWx0b24gR08gQnVzIn0seyJsYXRpdHVkZSI6
+        NDMuNjQ0MDYzMzYzLCJpZCI6Ijc4NTMwMDQiLCJsb25naXR1ZGUiOi03OS4z
+        Nzg0Mzk0NjgsIm5hbWUiOiJQbGF0bml1bSBMb3VuZ2UgYXQgQUNDIn0seyJs
+        YXRpdHVkZSI6NDMuNjQ0MjkyNTQsImlkIjoiNTQwMDE2NCIsImxvbmdpdHVk
+        ZSI6LTc5LjM3OTEzNzc5MSwibmFtZSI6Ik1hcGxlIExlYWYgU3BvcnRzIFx1
+        MDAyNiBFbnRlcnRhaW5tZW50IEx0ZC4gN3RoIEZsb29yIEZpbmFuY2UgXHUw
+        MDI2IEluZm9ybWF0aW9uIFRlY2hub2xvZ3kifSx7ImxhdGl0dWRlIjo0My42
+        NDQwNjY1LCJpZCI6IjEyODY5MzYiLCJsb25naXR1ZGUiOi03OS4zNzg0MzI3
+        LCJuYW1lIjoiTGlua2luIFBhcmstIEFpciBDYW5hZGEgQ2VudHJlIn0seyJs
+        YXRpdHVkZSI6NDMuNjQzODE0NjMsImlkIjoiNDgzNzAxNSIsImxvbmdpdHVk
+        ZSI6LTc5LjM3ODc5MTM4LCJuYW1lIjoiTWFwbGUgTGVhZiBTcG9ydHMgXHUw
+        MDI2IEVudGVydGFpbm1lbnQifSx7ImxhdGl0dWRlIjo0My42NDM5NDI4NjUs
+        ImlkIjoiNzYwODg2NyIsImxvbmdpdHVkZSI6LTc5LjM3ODMxMywibmFtZSI6
+        IkhvdCBTdG92ZSBDbHViIn0seyJsYXRpdHVkZSI6NDMuNjQ0Mzc1NDUxLCJp
+        ZCI6IjczODAyOTkiLCJsb25naXR1ZGUiOi03OS4zNzkzNTIyMzYsIm5hbWUi
+        OiJWSUEgUmFpbCBUcmFpbiA1MCBUbyBPdHRhd2EifSx7ImxhdGl0dWRlIjo0
+        My42NDQ2MzgwNjIsImlkIjoiMjkzMzg4NjMiLCJsb25naXR1ZGUiOi03OS4z
+        Nzg2MjM5NjIsIm5hbWUiOiJVbmlvbiBTdGF0aW9uIFRyYWNrIEVpZ2h0ZWVu
+        In0seyJsYXRpdHVkZSI6NDMuNjQzNjU0LCJpZCI6IjgxNjE2MjMzIiwibG9u
+        Z2l0dWRlIjotNzkuMzc4NzU2LCJuYW1lIjoiTGVhZnMgTmF0aW9uIn0seyJs
+        YXRpdHVkZSI6NDMuNjQzNjgsImlkIjoiMTA5NDYxMjQ1IiwibG9uZ2l0dWRl
+        IjotNzkuMzc4NDcsIm5hbWUiOiJUaW0gSG9ydG9ucyJ9LHsibGF0aXR1ZGUi
+        OjQzLjY0NDY5OTI2NiwiaWQiOiIxOTEwMDQyNyIsImxvbmdpdHVkZSI6LTc5
+        LjM3OTAwMDMyNywibmFtZSI6IkVhdG9uIFRvd2VyIn0seyJsYXRpdHVkZSI6
+        NDMuNjQ0NzAyLCJpZCI6IjMwOTYwNjEwIiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MDQ5LCJuYW1lIjoiNDozMCBHbyBUcmFpbiBBbGwgU3RvcHMgVG8gT3NoYXdh
+        In0seyJsYXRpdHVkZSI6NDMuNjQ0NzE5OTcxLCJpZCI6IjEwNDcyNjgxMyIs
+        ImxvbmdpdHVkZSI6LTc5LjM3ODk3MjgzNCwibmFtZSI6IlVuaW9uIFN0YXRp
+        b24gUGxhdGZvcm0gMjEifSx7ImxhdGl0dWRlIjo0My42NDQ2NjMzMjQsImlk
+        IjoiMTAyMTc0MzYzIiwibG9uZ2l0dWRlIjotNzkuMzc5MjMxMjY3LCJuYW1l
+        IjoiVW5pb24gU3RhdGlvbiBQbGF0Zm9ybSAyNCJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0NDY0Njk1MSwiaWQiOiIzMDYwNDE4IiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MjY3NjkzLCJuYW1lIjoiR08gVHJhbnNpdCJ9LHsibGF0aXR1ZGUiOjQzLjY0
+        NDcxNjg3OCwiaWQiOiI5NDgzMTUyIiwibG9uZ2l0dWRlIjotNzkuMzc4NDgz
+        NDU3LCJuYW1lIjoiTWFwbGUgTGVhZiBTcG9ydHMgQW5kIEVudGVydGFpbm1l
+        bnQgNHRoIEZsb29yIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:36 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643732744&lng=-79.377587176
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:37 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=6a6728651128cd886f420feacad5a0de; expires=Wed, 01-Oct-2014 06:02:37
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4980'
+      content-length:
+      - '675'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM3MzI3NDQsImlkIjoiODMyODI1MDgiLCJsb25naXR1ZGUiOi03OS4zNzc1
+        ODcxNzYsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSBCb3ggT2ZmaWNlIn0s
+        eyJsYXRpdHVkZSI6NDMuNjQzNjI2MTQ0LCJpZCI6IjMxODUxNjA4IiwibG9u
+        Z2l0dWRlIjotNzkuMzc3Mzk0NzIyLCJuYW1lIjoiQml4aSBCaWtlIFN0YXRp
+        b24ifSx7ImxhdGl0dWRlIjo0My42NDM3MjYsImlkIjoiOTg4NTA2MzciLCJs
+        b25naXR1ZGUiOi03OS4zNzgwOTUsIm5hbWUiOiJUSEUgRk9YIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzOTQsImlkIjoiMTM4NDE3OTgiLCJsb25naXR1ZGUiOi03
+        OS4zNzgwMywibmFtZSI6IlZJQSBSYWlsIC0gVHJhaW4gNDggVG9yb250byAt
+        IE90dGF3YSJ9LHsibGF0aXR1ZGUiOjQzLjY0Mzk4NywiaWQiOiI0NTQyNjc1
+        IiwibG9uZ2l0dWRlIjotNzkuMzc3OTksIm5hbWUiOiJNTFNFIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzNDA3Nzc0LCJpZCI6IjI1NTcwODkzIiwibG9uZ2l0dWRl
+        IjotNzkuMzc3MTE5Nzg3LCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUifSx7
+        ImxhdGl0dWRlIjo0My42NDMzMzMsImlkIjoiMTQyMzg4OTc5IiwibG9uZ2l0
+        dWRlIjotNzkuMzc3OTk0LCJuYW1lIjoiUGxhdGludW0gQ2x1Yi0gTUxTRSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0NDI3NywiaWQiOiIxMDc3NjUzMyIsImxvbmdp
+        dHVkZSI6LTc5LjM3NzQ3MDAyOSwibmFtZSI6IlNLIExvdW5nZSJ9LHsibGF0
+        aXR1ZGUiOjQzLjY0Mzk0Mjg2NSwiaWQiOiI3NjA4ODY3IiwibG9uZ2l0dWRl
+        IjotNzkuMzc4MzEzLCJuYW1lIjoiSG90IFN0b3ZlIENsdWIifSx7ImxhdGl0
+        dWRlIjo0My42NDQyODc4OTYsImlkIjoiMTA4NzkyODQiLCJsb25naXR1ZGUi
+        Oi03OS4zNzc3NzQxMzEsIm5hbWUiOiIzcmQgRmxvb3IgQnJlYWsgUm9vbSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0MzE4NywiaWQiOiIxNjA1MzExIiwibG9uZ2l0
+        dWRlIjotNzkuMzc3ODk0LCJuYW1lIjoiTGFrZXNob3JlIFx1MDAyNiBCYXkg
+        U3RyZWV0In0seyJsYXRpdHVkZSI6NDMuNjQzMTczNDYyLCJpZCI6Ijk4ODc5
+        Nzg1IiwibG9uZ2l0dWRlIjotNzkuMzc3MzA2NzQzLCJuYW1lIjoiTUVUUk9C
+        QUxDIn0seyJsYXRpdHVkZSI6NDMuNjQzNTAzNTYsImlkIjoiMzg1ODEyMjMi
+        LCJsb25naXR1ZGUiOi03OS4zNzY4MDA4NjIsIm5hbWUiOiJQaW5uYWNsZSBD
+        ZW50cmUgUGFya2luZyJ9LHsibGF0aXR1ZGUiOjQzLjY0MzY4LCJpZCI6IjEw
+        OTQ2MTI0NSIsImxvbmdpdHVkZSI6LTc5LjM3ODQ3LCJuYW1lIjoiVGltIEhv
+        cnRvbnMifSx7ImxhdGl0dWRlIjo0My42NDQwNjY1LCJpZCI6IjEyODY5MzYi
+        LCJsb25naXR1ZGUiOi03OS4zNzg0MzI3LCJuYW1lIjoiTGlua2luIFBhcmst
+        IEFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQ0MDYzMzYz
+        LCJpZCI6Ijc4NTMwMDQiLCJsb25naXR1ZGUiOi03OS4zNzg0Mzk0NjgsIm5h
+        bWUiOiJQbGF0bml1bSBMb3VuZ2UgYXQgQUNDIn0seyJsYXRpdHVkZSI6NDMu
+        NjQzMDYzMTI1LCJpZCI6Ijc3MTAxNTUiLCJsb25naXR1ZGUiOi03OS4zNzcw
+        NTc1NTIsIm5hbWUiOiJFeGVyY2lzZSBSb29tIn0seyJsYXRpdHVkZSI6NDMu
+        NjQzMDM1OTU0LCJpZCI6IjEzODEwNjY1NiIsImxvbmdpdHVkZSI6LTc5LjM3
+        NzAwOTgxMywibmFtZSI6IkR5bGljaW91cyBIZWRnZWhvZyJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0NDI3LCJpZCI6IjE5MTI0NjQiLCJsb25naXR1ZGUiOi03OS4z
+        Nzg0NSwibmFtZSI6Ik1pbHRvbiBHTyBCdXMifSx7ImxhdGl0dWRlIjo0My42
+        NDI5NzQsImlkIjoiMTQ0NjQ2MDMyIiwibG9uZ2l0dWRlIjotNzkuMzc3MTQz
+        LCJuYW1lIjoiVURSIEAgQUNDIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:38 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643191499&lng=-79.379236766
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:40 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=556eb4f0a88b37688838fbbc1c3b5fb1; expires=Wed, 01-Oct-2014 06:02:40
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4979'
+      content-length:
+      - '598'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMxOTE0OTksImlkIjoiNDQ1MzkyIiwibG9uZ2l0dWRlIjotNzkuMzc5MjM2
+        NzY2LCJuYW1lIjoiQWlyIENhbmFkYSBDbHViIn0seyJsYXRpdHVkZSI6NDMu
+        NjQzMjA1OTE5LCJpZCI6IjM3MTA4ODQwIiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MTg3Mjc5LCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxNTgsImlkIjoiMjAwNjM4MiIsImxvbmdpdHVkZSI6LTc5LjM3
+        OTI3NywibmFtZSI6IlBsYXRpbnVtIENsdWIifSx7ImxhdGl0dWRlIjo0My42
+        NDMxOTgsImlkIjoiMTI3ODU5MDYiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUs
+        Im5hbWUiOiJUaGUgQ2hhaXJtYW4ncyBTdWl0ZSJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzIwOCwiaWQiOiIzODA1OTE2MSIsImxvbmdpdHVkZSI6LTc5LjM3OTE3
+        NSwibmFtZSI6IldlRGF5IFRvcm9udG8ifSx7ImxhdGl0dWRlIjo0My42NDMy
+        MzksImlkIjoiMzcxMjM3MjkiLCJsb25naXR1ZGUiOi03OS4zNzkyNjUsIm5h
+        bWUiOiJVRkMgMTUyIEFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6
+        NDMuNjQzMTQyMDQ5LCJpZCI6IjM0Nzg4NzU3IiwibG9uZ2l0dWRlIjotNzku
+        Mzc5MzA4MjQ4LCJuYW1lIjoiTW9sc29uIENhbmFkaWFuIEJyZXdob3VzZSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0MzE3NSwiaWQiOiI1MDI4NzIyNyIsImxvbmdp
+        dHVkZSI6LTc5LjM3OTM0LCJuYW1lIjoiU2FkZSBDb25jZXJ0In0seyJsYXRp
+        dHVkZSI6NDMuNjQzMTM5LCJpZCI6IjgzOTY3MjQ4IiwibG9uZ2l0dWRlIjot
+        NzkuMzc5MzU5LCJuYW1lIjoiQ3Jvd24gQ29ybmVyIn0seyJsYXRpdHVkZSI6
+        NDMuNjQzMTcyOTU5LCJpZCI6IjEwOTQ0ODczMyIsImxvbmdpdHVkZSI6LTc5
+        LjM3OTM3OTcyOSwibmFtZSI6Ik1MU0UgVG93biBIYWxsIDIwMTIifSx7Imxh
+        dGl0dWRlIjo0My42NDMxNzgsImlkIjoiNDg4Mjg2NTEiLCJsb25naXR1ZGUi
+        Oi03OS4zNzkwOTEsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0
+        aXR1ZGUiOjQzLjY0MzI4MDUxNSwiaWQiOiIxMDA1NzU1NyIsImxvbmdpdHVk
+        ZSI6LTc5LjM3OTA5NjAzMSwibmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIn0s
+        eyJsYXRpdHVkZSI6NDMuNjQzMTk3LCJpZCI6IjM4MDY5MjYzIiwibG9uZ2l0
+        dWRlIjotNzkuMzc5NDU3LCJuYW1lIjoiV2UgRGF5In0seyJsYXRpdHVkZSI6
+        NDMuNjQzMDMwODEzLCJpZCI6IjU4OTU1NTg4IiwibG9uZ2l0dWRlIjotNzku
+        Mzc5MjM2NzY2LCJuYW1lIjoiQnVya2llJ3MgRG9nIEhvdXNlIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzMTM3MDIyLCJpZCI6IjcwMDkyMzYiLCJsb25naXR1ZGUi
+        Oi03OS4zNzk0NjUsIm5hbWUiOiJBQ0MgU3RhbmQgMTgifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxMywiaWQiOiIxMTY2MTAyOCIsImxvbmdpdHVkZSI6LTc5LjM3
+        OTQ2OSwibmFtZSI6IkR1cmFuIER1cmFuIEAgQUNDIn0seyJsYXRpdHVkZSI6
+        NDMuNjQzMTI1LCJpZCI6IjQ5MDE1MDAiLCJsb25naXR1ZGUiOi03OS4zNzk0
+        NjksIm5hbWUiOiJQZWFybCBKYW1AQUNDIn0seyJsYXRpdHVkZSI6NDMuNjQz
+        MTM3LCJpZCI6IjEwNDMzNTAyIiwibG9uZ2l0dWRlIjotNzkuMzc5NDg3LCJu
+        YW1lIjoiU2VjdGlvbiAxMDggUm93IDI1IFNlYXQgMTAifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxMjcxMjEsImlkIjoiNzM1NzU3MyIsImxvbmdpdHVkZSI6LTc5
+        LjM3ODk1NjMzOCwibmFtZSI6IkJsb3dmaXNoIG9uIEJheSJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0MzQxMjUwMiwiaWQiOiIzNTk0MCIsImxvbmdpdHVkZSI6LTc5
+        LjM3OTE3MTEzMywibmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:41 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643386&lng=-79.379043
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:43 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=f2a46d63e7ce340456b6fe8193fe2751; expires=Wed, 01-Oct-2014 06:02:43
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4978'
+      content-length:
+      - '602'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMzODYsImlkIjoiMTgwMjA4MiIsImxvbmdpdHVkZSI6LTc5LjM3OTA0Mywi
+        bmFtZSI6IkdvbmRvbGFzIGF0IEFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzNDA0NzM4LCJpZCI6IjQ3MDkzODYiLCJsb25naXR1ZGUi
+        Oi03OS4zNzkxMTc0ODksIm5hbWUiOiJBaXIgQ2FuYWRhIFdhbGsgV2F5In0s
+        eyJsYXRpdHVkZSI6NDMuNjQzNDEyNTAyLCJpZCI6IjM1OTQwIiwibG9uZ2l0
+        dWRlIjotNzkuMzc5MTcxMTMzLCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUi
+        fSx7ImxhdGl0dWRlIjo0My42NDMyODA1MTUsImlkIjoiMTAwNTc1NTciLCJs
+        b25naXR1ZGUiOi03OS4zNzkwOTYwMzEsIm5hbWUiOiJBaXIgQ2FuYWRhIENl
+        bnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzQwNDczOCwiaWQiOiI0ODE4OTIi
+        LCJsb25naXR1ZGUiOi03OS4zNzg4Mzg1MzksIm5hbWUiOiJBaXIgQ2FuYWRh
+        IENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzIwOCwiaWQiOiIzODA1OTE2
+        MSIsImxvbmdpdHVkZSI6LTc5LjM3OTE3NSwibmFtZSI6IldlRGF5IFRvcm9u
+        dG8ifSx7ImxhdGl0dWRlIjo0My42NDMyMDU5MTksImlkIjoiMzcxMDg4NDAi
+        LCJsb25naXR1ZGUiOi03OS4zNzkxODcyNzksIm5hbWUiOiJBaXIgQ2FuYWRh
+        IENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE5OCwiaWQiOiIxMjc4NTkw
+        NiIsImxvbmdpdHVkZSI6LTc5LjM3OTE3NSwibmFtZSI6IlRoZSBDaGFpcm1h
+        bidzIFN1aXRlIn0seyJsYXRpdHVkZSI6NDMuNjQzMTc4LCJpZCI6IjQ4ODI4
+        NjUxIiwibG9uZ2l0dWRlIjotNzkuMzc5MDkxLCJuYW1lIjoiQWlyIENhbmFk
+        YSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMyMzksImlkIjoiMzcxMjM3
+        MjkiLCJsb25naXR1ZGUiOi03OS4zNzkyNjUsIm5hbWUiOiJVRkMgMTUyIEFp
+        ciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQzMTkxNDk5LCJp
+        ZCI6IjQ0NTM5MiIsImxvbmdpdHVkZSI6LTc5LjM3OTIzNjc2NiwibmFtZSI6
+        IkFpciBDYW5hZGEgQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzEyNzEyMSwi
+        aWQiOiI3MzU3NTczIiwibG9uZ2l0dWRlIjotNzkuMzc4OTU2MzM4LCJuYW1l
+        IjoiQmxvd2Zpc2ggb24gQmF5In0seyJsYXRpdHVkZSI6NDMuNjQzNDAxNjE2
+        LCJpZCI6IjExOTc3NDkyNyIsImxvbmdpdHVkZSI6LTc5LjM3ODY1MzkxNCwi
+        bmFtZSI6Ikp1c3RpbiBCaWViZXIgQ29uY2VydCJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzE1OCwiaWQiOiIyMDA2MzgyIiwibG9uZ2l0dWRlIjotNzkuMzc5Mjc3
+        LCJuYW1lIjoiUGxhdGludW0gQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE3
+        NSwiaWQiOiI1MDI4NzIyNyIsImxvbmdpdHVkZSI6LTc5LjM3OTM0LCJuYW1l
+        IjoiU2FkZSBDb25jZXJ0In0seyJsYXRpdHVkZSI6NDMuNjQzMTQyMDQ5LCJp
+        ZCI6IjM0Nzg4NzU3IiwibG9uZ2l0dWRlIjotNzkuMzc5MzA4MjQ4LCJuYW1l
+        IjoiTW9sc29uIENhbmFkaWFuIEJyZXdob3VzZSJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzI4MTA5LCJpZCI6IjQ0MTM0NjA2IiwibG9uZ2l0dWRlIjotNzkuMzc4
+        NjM3NDE5LCJuYW1lIjoiR2F0ZXdheS1vbi10aGUtR28ifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxNzI5NTksImlkIjoiMTA5NDQ4NzMzIiwibG9uZ2l0dWRlIjot
+        NzkuMzc5Mzc5NzI5LCJuYW1lIjoiTUxTRSBUb3duIEhhbGwgMjAxMiJ9LHsi
+        bGF0aXR1ZGUiOjQzLjY0MzEzOSwiaWQiOiI4Mzk2NzI0OCIsImxvbmdpdHVk
+        ZSI6LTc5LjM3OTM1OSwibmFtZSI6IkNyb3duIENvcm5lciJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0MzY1NCwiaWQiOiI4MTYxNjIzMyIsImxvbmdpdHVkZSI6LTc5
+        LjM3ODc1NiwibmFtZSI6IkxlYWZzIE5hdGlvbiJ9XX0=
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:43 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643412502&lng=-79.379171133
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:44 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=d05dadaa5ed43dfa01aeb82f6e24d3c1; expires=Wed, 01-Oct-2014 06:02:44
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4977'
+      content-length:
+      - '575'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM0MTI1MDIsImlkIjoiMzU5NDAiLCJsb25naXR1ZGUiOi03OS4zNzkxNzEx
+        MzMsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzQwNDczOCwiaWQiOiI0NzA5Mzg2IiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MTE3NDg5LCJuYW1lIjoiQWlyIENhbmFkYSBXYWxrIFdheSJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0MzM4NiwiaWQiOiIxODAyMDgyIiwibG9uZ2l0dWRlIjotNzku
+        Mzc5MDQzLCJuYW1lIjoiR29uZG9sYXMgYXQgQWlyIENhbmFkYSBDZW50cmUi
+        fSx7ImxhdGl0dWRlIjo0My42NDMyODA1MTUsImlkIjoiMTAwNTc1NTciLCJs
+        b25naXR1ZGUiOi03OS4zNzkwOTYwMzEsIm5hbWUiOiJBaXIgQ2FuYWRhIENl
+        bnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzIzOSwiaWQiOiIzNzEyMzcyOSIs
+        ImxvbmdpdHVkZSI6LTc5LjM3OTI2NSwibmFtZSI6IlVGQyAxNTIgQWlyIENh
+        bmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMyMDgsImlkIjoiMzgw
+        NTkxNjEiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUsIm5hbWUiOiJXZURheSBU
+        b3JvbnRvIn0seyJsYXRpdHVkZSI6NDMuNjQzMjA1OTE5LCJpZCI6IjM3MTA4
+        ODQwIiwibG9uZ2l0dWRlIjotNzkuMzc5MTg3Mjc5LCJuYW1lIjoiQWlyIENh
+        bmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMxOTgsImlkIjoiMTI3
+        ODU5MDYiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUsIm5hbWUiOiJUaGUgQ2hh
+        aXJtYW4ncyBTdWl0ZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE5MTQ5OSwiaWQi
+        OiI0NDUzOTIiLCJsb25naXR1ZGUiOi03OS4zNzkyMzY3NjYsIm5hbWUiOiJB
+        aXIgQ2FuYWRhIENsdWIifSx7ImxhdGl0dWRlIjo0My42NDM0MDQ3MzgsImlk
+        IjoiNDgxODkyIiwibG9uZ2l0dWRlIjotNzkuMzc4ODM4NTM5LCJuYW1lIjoi
+        QWlyIENhbmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMxNzgsImlk
+        IjoiNDg4Mjg2NTEiLCJsb25naXR1ZGUiOi03OS4zNzkwOTEsIm5hbWUiOiJB
+        aXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE1OCwiaWQi
+        OiIyMDA2MzgyIiwibG9uZ2l0dWRlIjotNzkuMzc5Mjc3LCJuYW1lIjoiUGxh
+        dGludW0gQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE3NSwiaWQiOiI1MDI4
+        NzIyNyIsImxvbmdpdHVkZSI6LTc5LjM3OTM0LCJuYW1lIjoiU2FkZSBDb25j
+        ZXJ0In0seyJsYXRpdHVkZSI6NDMuNjQzMTcyOTU5LCJpZCI6IjEwOTQ0ODcz
+        MyIsImxvbmdpdHVkZSI6LTc5LjM3OTM3OTcyOSwibmFtZSI6Ik1MU0UgVG93
+        biBIYWxsIDIwMTIifSx7ImxhdGl0dWRlIjo0My42NDMxNDIwNDksImlkIjoi
+        MzQ3ODg3NTciLCJsb25naXR1ZGUiOi03OS4zNzkzMDgyNDgsIm5hbWUiOiJN
+        b2xzb24gQ2FuYWRpYW4gQnJld2hvdXNlIn0seyJsYXRpdHVkZSI6NDMuNjQz
+        MTk3LCJpZCI6IjM4MDY5MjYzIiwibG9uZ2l0dWRlIjotNzkuMzc5NDU3LCJu
+        YW1lIjoiV2UgRGF5In0seyJsYXRpdHVkZSI6NDMuNjQzMTM5LCJpZCI6Ijgz
+        OTY3MjQ4IiwibG9uZ2l0dWRlIjotNzkuMzc5MzU5LCJuYW1lIjoiQ3Jvd24g
+        Q29ybmVyIn0seyJsYXRpdHVkZSI6NDMuNjQzMTI3MTIxLCJpZCI6IjczNTc1
+        NzMiLCJsb25naXR1ZGUiOi03OS4zNzg5NTYzMzgsIm5hbWUiOiJCbG93Zmlz
+        aCBvbiBCYXkifSx7ImxhdGl0dWRlIjo0My42NDMxMzcwMjIsImlkIjoiNzAw
+        OTIzNiIsImxvbmdpdHVkZSI6LTc5LjM3OTQ2NSwibmFtZSI6IkFDQyBTdGFu
+        ZCAxOCJ9LHsibGF0aXR1ZGUiOjQzLjY0MzEzLCJpZCI6IjExNjYxMDI4Iiwi
+        bG9uZ2l0dWRlIjotNzkuMzc5NDY5LCJuYW1lIjoiRHVyYW4gRHVyYW4gQCBB
+        Q0MifV19
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:44 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.6440665&lng=-79.3784327
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:46 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=367e86ab37e96df720a29cc92f84520d; expires=Wed, 01-Oct-2014 06:02:46
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4976'
+      content-length:
+      - '725'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQwNjY1LCJpZCI6IjEyODY5MzYiLCJsb25naXR1ZGUiOi03OS4zNzg0MzI3
+        LCJuYW1lIjoiTGlua2luIFBhcmstIEFpciBDYW5hZGEgQ2VudHJlIn0seyJs
+        YXRpdHVkZSI6NDMuNjQ0MDYzMzYzLCJpZCI6Ijc4NTMwMDQiLCJsb25naXR1
+        ZGUiOi03OS4zNzg0Mzk0NjgsIm5hbWUiOiJQbGF0bml1bSBMb3VuZ2UgYXQg
+        QUNDIn0seyJsYXRpdHVkZSI6NDMuNjQzOTQyODY1LCJpZCI6Ijc2MDg4Njci
+        LCJsb25naXR1ZGUiOi03OS4zNzgzMTMsIm5hbWUiOiJIb3QgU3RvdmUgQ2x1
+        YiJ9LHsibGF0aXR1ZGUiOjQzLjY0NDI3LCJpZCI6IjE5MTI0NjQiLCJsb25n
+        aXR1ZGUiOi03OS4zNzg0NSwibmFtZSI6Ik1pbHRvbiBHTyBCdXMifSx7Imxh
+        dGl0dWRlIjo0My42NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6
+        LTc5LjM3ODc5NiwibmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMi
+        fSx7ImxhdGl0dWRlIjo0My42NDM5MDE2MjYsImlkIjoiNTE1MzUxNzgiLCJs
+        b25naXR1ZGUiOi03OS4zNzg3NTI3MDgsIm5hbWUiOiJOSEwgSGVhZCBPZmZp
+        Y2UifSx7ImxhdGl0dWRlIjo0My42NDQzMDgsImlkIjoiNTE2MTE3ODYiLCJs
+        b25naXR1ZGUiOi03OS4zNzg2NzUsIm5hbWUiOiJZb2dlbiBGclx1MDBmY3oi
+        fSx7ImxhdGl0dWRlIjo0My42NDM5NCwiaWQiOiIxMzg0MTc5OCIsImxvbmdp
+        dHVkZSI6LTc5LjM3ODAzLCJuYW1lIjoiVklBIFJhaWwgLSBUcmFpbiA0OCBU
+        b3JvbnRvIC0gT3R0YXdhIn0seyJsYXRpdHVkZSI6NDMuNjQzOTg3LCJpZCI6
+        IjQ1NDI2NzUiLCJsb25naXR1ZGUiOi03OS4zNzc5OSwibmFtZSI6Ik1MU0Ui
+        fSx7ImxhdGl0dWRlIjo0My42NDM4MTQ2MywiaWQiOiI0ODM3MDE1IiwibG9u
+        Z2l0dWRlIjotNzkuMzc4NzkxMzgsIm5hbWUiOiJNYXBsZSBMZWFmIFNwb3J0
+        cyBcdTAwMjYgRW50ZXJ0YWlubWVudCJ9LHsibGF0aXR1ZGUiOjQzLjY0MzY4
+        LCJpZCI6IjEwOTQ2MTI0NSIsImxvbmdpdHVkZSI6LTc5LjM3ODQ3LCJuYW1l
+        IjoiVGltIEhvcnRvbnMifSx7ImxhdGl0dWRlIjo0My42NDM3MjYsImlkIjoi
+        OTg4NTA2MzciLCJsb25naXR1ZGUiOi03OS4zNzgwOTUsIm5hbWUiOiJUSEUg
+        Rk9YIn0seyJsYXRpdHVkZSI6NDMuNjQ0MjE1ODA4LCJpZCI6IjgwMzU5NDA4
+        IiwibG9uZ2l0dWRlIjotNzkuMzc4OTgzODMxLCJuYW1lIjoiR3JhbnQgVGhv
+        cm50b24gTExQIn0seyJsYXRpdHVkZSI6NDMuNjQzNjU0LCJpZCI6IjgxNjE2
+        MjMzIiwibG9uZ2l0dWRlIjotNzkuMzc4NzU2LCJuYW1lIjoiTGVhZnMgTmF0
+        aW9uIn0seyJsYXRpdHVkZSI6NDMuNjQ0Mjg3ODk2LCJpZCI6IjEwODc5Mjg0
+        IiwibG9uZ2l0dWRlIjotNzkuMzc3Nzc0MTMxLCJuYW1lIjoiM3JkIEZsb29y
+        IEJyZWFrIFJvb20ifSx7ImxhdGl0dWRlIjo0My42NDQyOTI1NCwiaWQiOiI1
+        NDAwMTY0IiwibG9uZ2l0dWRlIjotNzkuMzc5MTM3NzkxLCJuYW1lIjoiTWFw
+        bGUgTGVhZiBTcG9ydHMgXHUwMDI2IEVudGVydGFpbm1lbnQgTHRkLiA3dGgg
+        Rmxvb3IgRmluYW5jZSBcdTAwMjYgSW5mb3JtYXRpb24gVGVjaG5vbG9neSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0NDYzODA2MiwiaWQiOiIyOTMzODg2MyIsImxv
+        bmdpdHVkZSI6LTc5LjM3ODYyMzk2MiwibmFtZSI6IlVuaW9uIFN0YXRpb24g
+        VHJhY2sgRWlnaHRlZW4ifSx7ImxhdGl0dWRlIjo0My42NDQ3MTY4NzgsImlk
+        IjoiOTQ4MzE1MiIsImxvbmdpdHVkZSI6LTc5LjM3ODQ4MzQ1NywibmFtZSI6
+        Ik1hcGxlIExlYWYgU3BvcnRzIEFuZCBFbnRlcnRhaW5tZW50IDR0aCBGbG9v
+        ciJ9LHsibGF0aXR1ZGUiOjQzLjY0MzQwMTYxNiwiaWQiOiIxMTk3NzQ5Mjci
+        LCJsb25naXR1ZGUiOi03OS4zNzg2NTM5MTQsIm5hbWUiOiJKdXN0aW4gQmll
+        YmVyIENvbmNlcnQifSx7ImxhdGl0dWRlIjo0My42NDM3MzI3NDQsImlkIjoi
+        ODMyODI1MDgiLCJsb25naXR1ZGUiOi03OS4zNzc1ODcxNzYsIm5hbWUiOiJB
+        aXIgQ2FuYWRhIENlbnRyZSBCb3ggT2ZmaWNlIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:46 GMT
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/search?client_id=OANCCHMOA0UBCAISXWHIVEZE4QZWAPIZ5R3MB1UJ0CUEYC2W&client_secret=A54NI2GGMB0EOPPUS5HQCTWR55PU31JMKNILGADHFLB0FIJD&ll=43.6437852%2C-79.3784416&query=Air+Canada+Centre&intent=match
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby gem
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 02 Oct 2013 06:02:47 GMT
+      server:
+      - nginx/1.4.1
+      content-type:
+      - application/json; charset=utf-8
+      access-control-allow-origin:
+      - '*'
+      tracer-time:
+      - '433'
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4997'
+      strict-transport-security:
+      - max-age=864000
+      x-ex:
+      - fastly_cdn
+      accept-ranges:
+      - bytes
+      via:
+      - 1.1 varnish
+      age:
+      - '0'
+      x-served-by:
+      - cache-sv63-SJC3
+      x-cache:
+      - MISS
+      x-cache-hits:
+      - '0'
+      vary:
+      - Accept-Encoding,User-Agent,Accept-Language
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMCwiZXJyb3JUeXBlIjoiZGVwcmVjYXRlZCIs
+        ImVycm9yRGV0YWlsIjoiVGhpcyBlbmRwb2ludCB3aWxsIHN0b3AgcmV0dXJu
+        aW5nIGdyb3VwcyBpbiB0aGUgZnV0dXJlLiBQbGVhc2UgdXNlIGEgY3VycmVu
+        dCB2ZXJzaW9uLCBzZWUgaHR0cDpcL1wvYml0Lmx5XC92eXdDYXYuIn0sInJl
+        c3BvbnNlIjp7Imdyb3VwcyI6W3sidHlwZSI6InBsYWNlcyIsIm5hbWUiOiJQ
+        bGFjZXMiLCJpdGVtcyI6W3siaWQiOiI0YzA5MzJmY2JiYzY3NmIwZmRjMjQ3
+        ZDUiLCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUgT2ZmaWNlcyIsImNvbnRh
+        Y3QiOnt9LCJsb2NhdGlvbiI6eyJhZGRyZXNzIjoiNTAgQmF5IFN0IiwiY3Jv
+        c3NTdHJlZXQiOiJhdCBMYWtlc2hvcmUgQmx2ZC4iLCJsYXQiOjQzLjY0NDE2
+        NiwibG5nIjotNzkuMzc4Nzk2LCJkaXN0YW5jZSI6NTEsImNpdHkiOiJUb3Jv
+        bnRvIiwic3RhdGUiOiJPTiIsImNvdW50cnkiOiJDYW5hZGEiLCJjYyI6IkNB
+        In0sImNhdGVnb3JpZXMiOlt7ImlkIjoiNGJmNThkZDhkNDg5ODhkMTI0OTQx
+        NzM1IiwibmFtZSI6Ik9mZmljZSIsInBsdXJhbE5hbWUiOiJPZmZpY2VzIiwi
+        c2hvcnROYW1lIjoiT2ZmaWNlIiwiaWNvbiI6Imh0dHBzOlwvXC9mb3Vyc3F1
+        YXJlLmNvbVwvaW1nXC9jYXRlZ29yaWVzXC9idWlsZGluZ1wvZGVmYXVsdC5w
+        bmciLCJwYXJlbnRzIjpbIlByb2Zlc3Npb25hbCAmIE90aGVyIFBsYWNlcyJd
+        LCJwcmltYXJ5Ijp0cnVlfV0sInZlcmlmaWVkIjpmYWxzZSwicmVzdHJpY3Rl
+        ZCI6dHJ1ZSwic3RhdHMiOnsiY2hlY2tpbnNDb3VudCI6MTA2NSwidXNlcnND
+        b3VudCI6MTg4LCJ0aXBDb3VudCI6MH0sImxpa2VzIjp7ImNvdW50IjowLCJn
+        cm91cHMiOltdfX0seyJpZCI6IjUxNGY0YWQ1ZTRiMGExODM0ODg1NmQ3NyIs
+        Im5hbWUiOiJCb3ggT2ZmaWNlIiwiY29udGFjdCI6e30sImxvY2F0aW9uIjp7
+        ImFkZHJlc3MiOiJBaXIgQ2FuYWRhIENlbnRyZSIsImxhdCI6NDMuNjQzNzMy
+        NzQzODU2MzU0LCJsbmciOi03OS4zNzc1ODcxNzY0ODA3MiwiZGlzdGFuY2Ui
+        OjY5LCJjb3VudHJ5IjoiQ2FuYWRhIiwiY2MiOiJDQSJ9LCJjYXRlZ29yaWVz
+        IjpbeyJpZCI6IjRiZjU4ZGQ4ZDQ4OTg4ZDFmMTkzMTczNSIsIm5hbWUiOiJH
+        ZW5lcmFsIEVudGVydGFpbm1lbnQiLCJwbHVyYWxOYW1lIjoiR2VuZXJhbCBF
+        bnRlcnRhaW5tZW50Iiwic2hvcnROYW1lIjoiRW50ZXJ0YWlubWVudCIsImlj
+        b24iOiJodHRwczpcL1wvZm91cnNxdWFyZS5jb21cL2ltZ1wvY2F0ZWdvcmll
+        c1wvYXJ0c19lbnRlcnRhaW5tZW50XC9kZWZhdWx0LnBuZyIsInBhcmVudHMi
+        OlsiQXJ0cyAmIEVudGVydGFpbm1lbnQiXSwicHJpbWFyeSI6dHJ1ZX1dLCJ2
+        ZXJpZmllZCI6ZmFsc2UsInJlc3RyaWN0ZWQiOnRydWUsInN0YXRzIjp7ImNo
+        ZWNraW5zQ291bnQiOjgsInVzZXJzQ291bnQiOjcsInRpcENvdW50IjowfSwi
+        bGlrZXMiOnsiY291bnQiOjAsImdyb3VwcyI6W119fSx7ImlkIjoiNGI2MGQ1
+        YjlmOTY0YTUyMDcxZmMyOWUzIiwibmFtZSI6IkFpciBDYW5hZGEgQ2x1YiIs
+        ImNvbnRhY3QiOnsidHdpdHRlciI6ImxpdmVhdGFjYyJ9LCJsb2NhdGlvbiI6
+        eyJhZGRyZXNzIjoiQWlyIENhbmFkYSBDZW50cmUiLCJsYXQiOjQzLjY0MzE5
+        MTQ5OTI5Mjg3LCJsbmciOi03OS4zNzkyMzY3NjYwMjc2LCJkaXN0YW5jZSI6
+        OTIsInBvc3RhbENvZGUiOiJNNUogMkwyIiwiY2l0eSI6IlRvcm9udG8iLCJz
+        dGF0ZSI6Ik9OIiwiY291bnRyeSI6IkNhbmFkYSIsImNjIjoiQ0EifSwiY2F0
+        ZWdvcmllcyI6W3siaWQiOiI0YmY1OGRkOGQ0ODk4OGQxMjE5NDE3MzUiLCJu
+        YW1lIjoiTG91bmdlIiwicGx1cmFsTmFtZSI6IkxvdW5nZXMiLCJzaG9ydE5h
+        bWUiOiJMb3VuZ2UiLCJpY29uIjoiaHR0cHM6XC9cL2ZvdXJzcXVhcmUuY29t
+        XC9pbWdcL2NhdGVnb3JpZXNcL25pZ2h0bGlmZVwvbG91bmdlLnBuZyIsInBh
+        cmVudHMiOlsiTmlnaHRsaWZlIFNwb3QiXSwicHJpbWFyeSI6dHJ1ZX1dLCJ2
+        ZXJpZmllZCI6ZmFsc2UsInJlc3RyaWN0ZWQiOnRydWUsInN0YXRzIjp7ImNo
+        ZWNraW5zQ291bnQiOjU4OSwidXNlcnNDb3VudCI6MzIzLCJ0aXBDb3VudCI6
+        NH0sInVybCI6Imh0dHA6XC9cL3d3dy50aGVhaXJjYW5hZGFjZW50cmUuY29t
+        IiwibGlrZXMiOnsiY291bnQiOjAsImdyb3VwcyI6W119LCJtZW51Ijp7InR5
+        cGUiOiJNZW51IiwibGFiZWwiOiJNZW51IiwiYW5jaG9yIjoiU2VlIG1lbnUi
+        LCJ1cmwiOiJodHRwczpcL1wvZm91cnNxdWFyZS5jb21cL3ZcL2Fpci1jYW5h
+        ZGEtY2x1YlwvNGI2MGQ1YjlmOTY0YTUyMDcxZmMyOWUzXC9tZW51IiwibW9i
+        aWxlVXJsIjoiaHR0cHM6XC9cL2ZvdXJzcXVhcmUuY29tXC92XC80YjYwZDVi
+        OWY5NjRhNTIwNzFmYzI5ZTNcL2RldmljZV9tZW51In19LHsiaWQiOiI0Yjg0
+        OTBlZGY5NjRhNTIwMGMzYzMxZTMiLCJuYW1lIjoiR29uZG9sYXMiLCJjb250
+        YWN0Ijp7fSwibG9jYXRpb24iOnsiYWRkcmVzcyI6IjQwIEJheSBTdC4iLCJj
+        cm9zc1N0cmVldCI6IkFpciBDYW5hZGEgQ2VudHJlIiwibGF0Ijo0My42NDMz
+        ODYsImxuZyI6LTc5LjM3OTA0MywiZGlzdGFuY2UiOjY1LCJwb3N0YWxDb2Rl
+        IjoiTTVNIiwiY2l0eSI6IlRvcm9udG8iLCJzdGF0ZSI6Ik9OIiwiY291bnRy
+        eSI6IkNhbmFkYSIsImNjIjoiQ0EifSwiY2F0ZWdvcmllcyI6W10sInZlcmlm
+        aWVkIjpmYWxzZSwicmVzdHJpY3RlZCI6dHJ1ZSwic3RhdHMiOnsiY2hlY2tp
+        bnNDb3VudCI6MzUsInVzZXJzQ291bnQiOjIyLCJ0aXBDb3VudCI6MH0sImxp
+        a2VzIjp7ImNvdW50IjowLCJncm91cHMiOltdfX0seyJpZCI6IjRiMTU1MDgx
+        Zjk2NGE1MjBiNGIwMjNlMyIsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSIs
+        ImNvbnRhY3QiOnsicGhvbmUiOiI0MTY4MTU1NTAwIiwiZm9ybWF0dGVkUGhv
+        bmUiOiIoNDE2KSA4MTUtNTUwMCIsInR3aXR0ZXIiOiJhaXJjYW5hZGFjZW50
+        cmUifSwibG9jYXRpb24iOnsiYWRkcmVzcyI6IjQwIEJheSBTdC4iLCJsYXQi
+        OjQzLjY0MzQxMjUwMTcwODcyNCwibG5nIjotNzkuMzc5MTcxMTMzMDQxMzgs
+        ImRpc3RhbmNlIjo3MSwicG9zdGFsQ29kZSI6Ik01SiAyWDIiLCJjaXR5Ijoi
+        VG9yb250byIsInN0YXRlIjoiT250YXJpbyIsImNvdW50cnkiOiJDYW5hZGEi
+        LCJjYyI6IkNBIn0sImNhdGVnb3JpZXMiOlt7ImlkIjoiNGJmNThkZDhkNDg5
+        ODhkMTg1OTQxNzM1IiwibmFtZSI6IkhvY2tleSBBcmVuYSIsInBsdXJhbE5h
+        bWUiOiJIb2NrZXkgQXJlbmFzIiwic2hvcnROYW1lIjoiSG9ja2V5IiwiaWNv
+        biI6Imh0dHBzOlwvXC9mb3Vyc3F1YXJlLmNvbVwvaW1nXC9jYXRlZ29yaWVz
+        XC9hcnRzX2VudGVydGFpbm1lbnRcL3N0YWRpdW1faG9ja2V5LnBuZyIsInBh
+        cmVudHMiOlsiQXJ0cyAmIEVudGVydGFpbm1lbnQiLCJTdGFkaXVtIl0sInBy
+        aW1hcnkiOnRydWV9XSwidmVyaWZpZWQiOnRydWUsInJlc3RyaWN0ZWQiOnRy
+        dWUsInN0YXRzIjp7ImNoZWNraW5zQ291bnQiOjQ0Mzc1LCJ1c2Vyc0NvdW50
+        IjoxNjM3MSwidGlwQ291bnQiOjE3OX0sInVybCI6Imh0dHA6XC9cL3d3dy50
+        aGVhaXJjYW5hZGFjZW50cmUuY29tIiwibGlrZXMiOnsiY291bnQiOjAsImdy
+        b3VwcyI6W119LCJzdG9yZUlkIjoiIn1dfV19fQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:47 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4c0932fcbbc676b0fdc247d5
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:48 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=bbf326d3d34a6d6627e76f25f6f484ba; expires=Wed, 01-Oct-2014 06:02:48
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4975'
+      content-length:
+      - '131'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6LTc5LjM3ODc5Niwi
+        bmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMifV19
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:48 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=514f4ad5e4b0a18348856d77
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:48 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=f15af1b62e59067677b49558ef2fc335; expires=Wed, 01-Oct-2014 06:02:48
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4974'
+      content-length:
+      - '138'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM3MzI3NDQsImlkIjoiODMyODI1MDgiLCJsb25naXR1ZGUiOi03OS4zNzc1
+        ODcxNzYsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSBCb3ggT2ZmaWNlIn1d
+        fQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:48 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4b60d5b9f964a52071fc29e3
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:48 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=52ad9a60a57b9dbddb56c7f26838d0e0; expires=Wed, 01-Oct-2014 06:02:48
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4973'
+      content-length:
+      - '125'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMxOTE0OTksImlkIjoiNDQ1MzkyIiwibG9uZ2l0dWRlIjotNzkuMzc5MjM2
+        NzY2LCJuYW1lIjoiQWlyIENhbmFkYSBDbHViIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:49 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4b8490edf964a5200c3c31e3
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:49 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=80a11774756924fdcc9551542f2b9102; expires=Wed, 01-Oct-2014 06:02:49
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4972'
+      content-length:
+      - '131'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMzODYsImlkIjoiMTgwMjA4MiIsImxvbmdpdHVkZSI6LTc5LjM3OTA0Mywi
+        bmFtZSI6IkdvbmRvbGFzIGF0IEFpciBDYW5hZGEgQ2VudHJlIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:49 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&foursquare_v2_id=4b155081f964a520b4b023e3
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:49 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=52320037bda31732b01759f299188c75; expires=Wed, 01-Oct-2014 06:02:49
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4971'
+      content-length:
+      - '123'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM0MTI1MDIsImlkIjoiMzU5NDAiLCJsb25naXR1ZGUiOi03OS4zNzkxNzEx
+        MzMsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9XX0=
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:50 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.6437852&lng=-79.3784416
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:50 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=0fca54192b756aaa62fb6f67376a0d3a; expires=Wed, 01-Oct-2014 06:02:50
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4970'
+      content-length:
+      - '675'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM2OCwiaWQiOiIxMDk0NjEyNDUiLCJsb25naXR1ZGUiOi03OS4zNzg0Nywi
+        bmFtZSI6IlRpbSBIb3J0b25zIn0seyJsYXRpdHVkZSI6NDMuNjQzOTQyODY1
+        LCJpZCI6Ijc2MDg4NjciLCJsb25naXR1ZGUiOi03OS4zNzgzMTMsIm5hbWUi
+        OiJIb3QgU3RvdmUgQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzkwMTYyNiwi
+        aWQiOiI1MTUzNTE3OCIsImxvbmdpdHVkZSI6LTc5LjM3ODc1MjcwOCwibmFt
+        ZSI6Ik5ITCBIZWFkIE9mZmljZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzgxNDYz
+        LCJpZCI6IjQ4MzcwMTUiLCJsb25naXR1ZGUiOi03OS4zNzg3OTEzOCwibmFt
+        ZSI6Ik1hcGxlIExlYWYgU3BvcnRzIFx1MDAyNiBFbnRlcnRhaW5tZW50In0s
+        eyJsYXRpdHVkZSI6NDMuNjQzNzI2LCJpZCI6Ijk4ODUwNjM3IiwibG9uZ2l0
+        dWRlIjotNzkuMzc4MDk1LCJuYW1lIjoiVEhFIEZPWCJ9LHsibGF0aXR1ZGUi
+        OjQzLjY0MzY1NCwiaWQiOiI4MTYxNjIzMyIsImxvbmdpdHVkZSI6LTc5LjM3
+        ODc1NiwibmFtZSI6IkxlYWZzIE5hdGlvbiJ9LHsibGF0aXR1ZGUiOjQzLjY0
+        NDA2MzM2MywiaWQiOiI3ODUzMDA0IiwibG9uZ2l0dWRlIjotNzkuMzc4NDM5
+        NDY4LCJuYW1lIjoiUGxhdG5pdW0gTG91bmdlIGF0IEFDQyJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0NDA2NjUsImlkIjoiMTI4NjkzNiIsImxvbmdpdHVkZSI6LTc5
+        LjM3ODQzMjcsIm5hbWUiOiJMaW5raW4gUGFyay0gQWlyIENhbmFkYSBDZW50
+        cmUifSx7ImxhdGl0dWRlIjo0My42NDM5NCwiaWQiOiIxMzg0MTc5OCIsImxv
+        bmdpdHVkZSI6LTc5LjM3ODAzLCJuYW1lIjoiVklBIFJhaWwgLSBUcmFpbiA0
+        OCBUb3JvbnRvIC0gT3R0YXdhIn0seyJsYXRpdHVkZSI6NDMuNjQzOTg3LCJp
+        ZCI6IjQ1NDI2NzUiLCJsb25naXR1ZGUiOi03OS4zNzc5OSwibmFtZSI6Ik1M
+        U0UifSx7ImxhdGl0dWRlIjo0My42NDM0MDE2MTYsImlkIjoiMTE5Nzc0OTI3
+        IiwibG9uZ2l0dWRlIjotNzkuMzc4NjUzOTE0LCJuYW1lIjoiSnVzdGluIEJp
+        ZWJlciBDb25jZXJ0In0seyJsYXRpdHVkZSI6NDMuNjQ0MTY2LCJpZCI6IjMy
+        OTg1MjkiLCJsb25naXR1ZGUiOi03OS4zNzg3OTYsIm5hbWUiOiJBaXIgQ2Fu
+        YWRhIENlbnRyZSBPZmZpY2VzIn0seyJsYXRpdHVkZSI6NDMuNjQzNDA0NzM4
+        LCJpZCI6IjQ4MTg5MiIsImxvbmdpdHVkZSI6LTc5LjM3ODgzODUzOSwibmFt
+        ZSI6IkFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQ0Mjcs
+        ImlkIjoiMTkxMjQ2NCIsImxvbmdpdHVkZSI6LTc5LjM3ODQ1LCJuYW1lIjoi
+        TWlsdG9uIEdPIEJ1cyJ9LHsibGF0aXR1ZGUiOjQzLjY0MzI4MTA5LCJpZCI6
+        IjQ0MTM0NjA2IiwibG9uZ2l0dWRlIjotNzkuMzc4NjM3NDE5LCJuYW1lIjoi
+        R2F0ZXdheS1vbi10aGUtR28ifSx7ImxhdGl0dWRlIjo0My42NDQzMDgsImlk
+        IjoiNTE2MTE3ODYiLCJsb25naXR1ZGUiOi03OS4zNzg2NzUsIm5hbWUiOiJZ
+        b2dlbiBGclx1MDBmY3oifSx7ImxhdGl0dWRlIjo0My42NDMzMzMsImlkIjoi
+        MTQyMzg4OTc5IiwibG9uZ2l0dWRlIjotNzkuMzc3OTk0LCJuYW1lIjoiUGxh
+        dGludW0gQ2x1Yi0gTUxTRSJ9LHsibGF0aXR1ZGUiOjQzLjY0NDIxNTgwOCwi
+        aWQiOiI4MDM1OTQwOCIsImxvbmdpdHVkZSI6LTc5LjM3ODk4MzgzMSwibmFt
+        ZSI6IkdyYW50IFRob3JudG9uIExMUCJ9LHsibGF0aXR1ZGUiOjQzLjY0MzM4
+        NiwiaWQiOiIxODAyMDgyIiwibG9uZ2l0dWRlIjotNzkuMzc5MDQzLCJuYW1l
+        IjoiR29uZG9sYXMgYXQgQWlyIENhbmFkYSBDZW50cmUifSx7ImxhdGl0dWRl
+        Ijo0My42NDM0MDQ3MzgsImlkIjoiNDcwOTM4NiIsImxvbmdpdHVkZSI6LTc5
+        LjM3OTExNzQ4OSwibmFtZSI6IkFpciBDYW5hZGEgV2FsayBXYXkifV19
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:50 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.644166&lng=-79.378796
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:53 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=08f08e48f0b26ccc0fd651314ff6544b; expires=Wed, 01-Oct-2014 06:02:53
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4969'
+      content-length:
+      - '733'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6LTc5LjM3ODc5Niwi
+        bmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMifSx7ImxhdGl0dWRl
+        Ijo0My42NDQyMTU4MDgsImlkIjoiODAzNTk0MDgiLCJsb25naXR1ZGUiOi03
+        OS4zNzg5ODM4MzEsIm5hbWUiOiJHcmFudCBUaG9ybnRvbiBMTFAifSx7Imxh
+        dGl0dWRlIjo0My42NDQzMDgsImlkIjoiNTE2MTE3ODYiLCJsb25naXR1ZGUi
+        Oi03OS4zNzg2NzUsIm5hbWUiOiJZb2dlbiBGclx1MDBmY3oifSx7ImxhdGl0
+        dWRlIjo0My42NDM5MDE2MjYsImlkIjoiNTE1MzUxNzgiLCJsb25naXR1ZGUi
+        Oi03OS4zNzg3NTI3MDgsIm5hbWUiOiJOSEwgSGVhZCBPZmZpY2UifSx7Imxh
+        dGl0dWRlIjo0My42NDQyNywiaWQiOiIxOTEyNDY0IiwibG9uZ2l0dWRlIjot
+        NzkuMzc4NDUsIm5hbWUiOiJNaWx0b24gR08gQnVzIn0seyJsYXRpdHVkZSI6
+        NDMuNjQ0MDYzMzYzLCJpZCI6Ijc4NTMwMDQiLCJsb25naXR1ZGUiOi03OS4z
+        Nzg0Mzk0NjgsIm5hbWUiOiJQbGF0bml1bSBMb3VuZ2UgYXQgQUNDIn0seyJs
+        YXRpdHVkZSI6NDMuNjQ0MjkyNTQsImlkIjoiNTQwMDE2NCIsImxvbmdpdHVk
+        ZSI6LTc5LjM3OTEzNzc5MSwibmFtZSI6Ik1hcGxlIExlYWYgU3BvcnRzIFx1
+        MDAyNiBFbnRlcnRhaW5tZW50IEx0ZC4gN3RoIEZsb29yIEZpbmFuY2UgXHUw
+        MDI2IEluZm9ybWF0aW9uIFRlY2hub2xvZ3kifSx7ImxhdGl0dWRlIjo0My42
+        NDQwNjY1LCJpZCI6IjEyODY5MzYiLCJsb25naXR1ZGUiOi03OS4zNzg0MzI3
+        LCJuYW1lIjoiTGlua2luIFBhcmstIEFpciBDYW5hZGEgQ2VudHJlIn0seyJs
+        YXRpdHVkZSI6NDMuNjQzODE0NjMsImlkIjoiNDgzNzAxNSIsImxvbmdpdHVk
+        ZSI6LTc5LjM3ODc5MTM4LCJuYW1lIjoiTWFwbGUgTGVhZiBTcG9ydHMgXHUw
+        MDI2IEVudGVydGFpbm1lbnQifSx7ImxhdGl0dWRlIjo0My42NDM5NDI4NjUs
+        ImlkIjoiNzYwODg2NyIsImxvbmdpdHVkZSI6LTc5LjM3ODMxMywibmFtZSI6
+        IkhvdCBTdG92ZSBDbHViIn0seyJsYXRpdHVkZSI6NDMuNjQ0Mzc1NDUxLCJp
+        ZCI6IjczODAyOTkiLCJsb25naXR1ZGUiOi03OS4zNzkzNTIyMzYsIm5hbWUi
+        OiJWSUEgUmFpbCBUcmFpbiA1MCBUbyBPdHRhd2EifSx7ImxhdGl0dWRlIjo0
+        My42NDQ2MzgwNjIsImlkIjoiMjkzMzg4NjMiLCJsb25naXR1ZGUiOi03OS4z
+        Nzg2MjM5NjIsIm5hbWUiOiJVbmlvbiBTdGF0aW9uIFRyYWNrIEVpZ2h0ZWVu
+        In0seyJsYXRpdHVkZSI6NDMuNjQzNjU0LCJpZCI6IjgxNjE2MjMzIiwibG9u
+        Z2l0dWRlIjotNzkuMzc4NzU2LCJuYW1lIjoiTGVhZnMgTmF0aW9uIn0seyJs
+        YXRpdHVkZSI6NDMuNjQzNjgsImlkIjoiMTA5NDYxMjQ1IiwibG9uZ2l0dWRl
+        IjotNzkuMzc4NDcsIm5hbWUiOiJUaW0gSG9ydG9ucyJ9LHsibGF0aXR1ZGUi
+        OjQzLjY0NDY5OTI2NiwiaWQiOiIxOTEwMDQyNyIsImxvbmdpdHVkZSI6LTc5
+        LjM3OTAwMDMyNywibmFtZSI6IkVhdG9uIFRvd2VyIn0seyJsYXRpdHVkZSI6
+        NDMuNjQ0NzAyLCJpZCI6IjMwOTYwNjEwIiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MDQ5LCJuYW1lIjoiNDozMCBHbyBUcmFpbiBBbGwgU3RvcHMgVG8gT3NoYXdh
+        In0seyJsYXRpdHVkZSI6NDMuNjQ0NzE5OTcxLCJpZCI6IjEwNDcyNjgxMyIs
+        ImxvbmdpdHVkZSI6LTc5LjM3ODk3MjgzNCwibmFtZSI6IlVuaW9uIFN0YXRp
+        b24gUGxhdGZvcm0gMjEifSx7ImxhdGl0dWRlIjo0My42NDQ2NjMzMjQsImlk
+        IjoiMTAyMTc0MzYzIiwibG9uZ2l0dWRlIjotNzkuMzc5MjMxMjY3LCJuYW1l
+        IjoiVW5pb24gU3RhdGlvbiBQbGF0Zm9ybSAyNCJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0NDY0Njk1MSwiaWQiOiIzMDYwNDE4IiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MjY3NjkzLCJuYW1lIjoiR08gVHJhbnNpdCJ9LHsibGF0aXR1ZGUiOjQzLjY0
+        NDcxNjg3OCwiaWQiOiI5NDgzMTUyIiwibG9uZ2l0dWRlIjotNzkuMzc4NDgz
+        NDU3LCJuYW1lIjoiTWFwbGUgTGVhZiBTcG9ydHMgQW5kIEVudGVydGFpbm1l
+        bnQgNHRoIEZsb29yIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:53 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643732744&lng=-79.377587176
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:53 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=b30bed788658c92c6792cea4acecc60c; expires=Wed, 01-Oct-2014 06:02:53
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4968'
+      content-length:
+      - '675'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM3MzI3NDQsImlkIjoiODMyODI1MDgiLCJsb25naXR1ZGUiOi03OS4zNzc1
+        ODcxNzYsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSBCb3ggT2ZmaWNlIn0s
+        eyJsYXRpdHVkZSI6NDMuNjQzNjI2MTQ0LCJpZCI6IjMxODUxNjA4IiwibG9u
+        Z2l0dWRlIjotNzkuMzc3Mzk0NzIyLCJuYW1lIjoiQml4aSBCaWtlIFN0YXRp
+        b24ifSx7ImxhdGl0dWRlIjo0My42NDM3MjYsImlkIjoiOTg4NTA2MzciLCJs
+        b25naXR1ZGUiOi03OS4zNzgwOTUsIm5hbWUiOiJUSEUgRk9YIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzOTQsImlkIjoiMTM4NDE3OTgiLCJsb25naXR1ZGUiOi03
+        OS4zNzgwMywibmFtZSI6IlZJQSBSYWlsIC0gVHJhaW4gNDggVG9yb250byAt
+        IE90dGF3YSJ9LHsibGF0aXR1ZGUiOjQzLjY0Mzk4NywiaWQiOiI0NTQyNjc1
+        IiwibG9uZ2l0dWRlIjotNzkuMzc3OTksIm5hbWUiOiJNTFNFIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzNDA3Nzc0LCJpZCI6IjI1NTcwODkzIiwibG9uZ2l0dWRl
+        IjotNzkuMzc3MTE5Nzg3LCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUifSx7
+        ImxhdGl0dWRlIjo0My42NDMzMzMsImlkIjoiMTQyMzg4OTc5IiwibG9uZ2l0
+        dWRlIjotNzkuMzc3OTk0LCJuYW1lIjoiUGxhdGludW0gQ2x1Yi0gTUxTRSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0NDI3NywiaWQiOiIxMDc3NjUzMyIsImxvbmdp
+        dHVkZSI6LTc5LjM3NzQ3MDAyOSwibmFtZSI6IlNLIExvdW5nZSJ9LHsibGF0
+        aXR1ZGUiOjQzLjY0Mzk0Mjg2NSwiaWQiOiI3NjA4ODY3IiwibG9uZ2l0dWRl
+        IjotNzkuMzc4MzEzLCJuYW1lIjoiSG90IFN0b3ZlIENsdWIifSx7ImxhdGl0
+        dWRlIjo0My42NDQyODc4OTYsImlkIjoiMTA4NzkyODQiLCJsb25naXR1ZGUi
+        Oi03OS4zNzc3NzQxMzEsIm5hbWUiOiIzcmQgRmxvb3IgQnJlYWsgUm9vbSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0MzE4NywiaWQiOiIxNjA1MzExIiwibG9uZ2l0
+        dWRlIjotNzkuMzc3ODk0LCJuYW1lIjoiTGFrZXNob3JlIFx1MDAyNiBCYXkg
+        U3RyZWV0In0seyJsYXRpdHVkZSI6NDMuNjQzMTczNDYyLCJpZCI6Ijk4ODc5
+        Nzg1IiwibG9uZ2l0dWRlIjotNzkuMzc3MzA2NzQzLCJuYW1lIjoiTUVUUk9C
+        QUxDIn0seyJsYXRpdHVkZSI6NDMuNjQzNTAzNTYsImlkIjoiMzg1ODEyMjMi
+        LCJsb25naXR1ZGUiOi03OS4zNzY4MDA4NjIsIm5hbWUiOiJQaW5uYWNsZSBD
+        ZW50cmUgUGFya2luZyJ9LHsibGF0aXR1ZGUiOjQzLjY0MzY4LCJpZCI6IjEw
+        OTQ2MTI0NSIsImxvbmdpdHVkZSI6LTc5LjM3ODQ3LCJuYW1lIjoiVGltIEhv
+        cnRvbnMifSx7ImxhdGl0dWRlIjo0My42NDQwNjY1LCJpZCI6IjEyODY5MzYi
+        LCJsb25naXR1ZGUiOi03OS4zNzg0MzI3LCJuYW1lIjoiTGlua2luIFBhcmst
+        IEFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQ0MDYzMzYz
+        LCJpZCI6Ijc4NTMwMDQiLCJsb25naXR1ZGUiOi03OS4zNzg0Mzk0NjgsIm5h
+        bWUiOiJQbGF0bml1bSBMb3VuZ2UgYXQgQUNDIn0seyJsYXRpdHVkZSI6NDMu
+        NjQzMDYzMTI1LCJpZCI6Ijc3MTAxNTUiLCJsb25naXR1ZGUiOi03OS4zNzcw
+        NTc1NTIsIm5hbWUiOiJFeGVyY2lzZSBSb29tIn0seyJsYXRpdHVkZSI6NDMu
+        NjQzMDM1OTU0LCJpZCI6IjEzODEwNjY1NiIsImxvbmdpdHVkZSI6LTc5LjM3
+        NzAwOTgxMywibmFtZSI6IkR5bGljaW91cyBIZWRnZWhvZyJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0NDI3LCJpZCI6IjE5MTI0NjQiLCJsb25naXR1ZGUiOi03OS4z
+        Nzg0NSwibmFtZSI6Ik1pbHRvbiBHTyBCdXMifSx7ImxhdGl0dWRlIjo0My42
+        NDI5NzQsImlkIjoiMTQ0NjQ2MDMyIiwibG9uZ2l0dWRlIjotNzkuMzc3MTQz
+        LCJuYW1lIjoiVURSIEAgQUNDIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:54 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643191499&lng=-79.379236766
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:55 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=7a354ee4bfdd3b0d1acdb7ccb9250b93; expires=Wed, 01-Oct-2014 06:02:55
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4967'
+      content-length:
+      - '598'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMxOTE0OTksImlkIjoiNDQ1MzkyIiwibG9uZ2l0dWRlIjotNzkuMzc5MjM2
+        NzY2LCJuYW1lIjoiQWlyIENhbmFkYSBDbHViIn0seyJsYXRpdHVkZSI6NDMu
+        NjQzMjA1OTE5LCJpZCI6IjM3MTA4ODQwIiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MTg3Mjc5LCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxNTgsImlkIjoiMjAwNjM4MiIsImxvbmdpdHVkZSI6LTc5LjM3
+        OTI3NywibmFtZSI6IlBsYXRpbnVtIENsdWIifSx7ImxhdGl0dWRlIjo0My42
+        NDMxOTgsImlkIjoiMTI3ODU5MDYiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUs
+        Im5hbWUiOiJUaGUgQ2hhaXJtYW4ncyBTdWl0ZSJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzIwOCwiaWQiOiIzODA1OTE2MSIsImxvbmdpdHVkZSI6LTc5LjM3OTE3
+        NSwibmFtZSI6IldlRGF5IFRvcm9udG8ifSx7ImxhdGl0dWRlIjo0My42NDMy
+        MzksImlkIjoiMzcxMjM3MjkiLCJsb25naXR1ZGUiOi03OS4zNzkyNjUsIm5h
+        bWUiOiJVRkMgMTUyIEFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6
+        NDMuNjQzMTQyMDQ5LCJpZCI6IjM0Nzg4NzU3IiwibG9uZ2l0dWRlIjotNzku
+        Mzc5MzA4MjQ4LCJuYW1lIjoiTW9sc29uIENhbmFkaWFuIEJyZXdob3VzZSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0MzE3NSwiaWQiOiI1MDI4NzIyNyIsImxvbmdp
+        dHVkZSI6LTc5LjM3OTM0LCJuYW1lIjoiU2FkZSBDb25jZXJ0In0seyJsYXRp
+        dHVkZSI6NDMuNjQzMTM5LCJpZCI6IjgzOTY3MjQ4IiwibG9uZ2l0dWRlIjot
+        NzkuMzc5MzU5LCJuYW1lIjoiQ3Jvd24gQ29ybmVyIn0seyJsYXRpdHVkZSI6
+        NDMuNjQzMTcyOTU5LCJpZCI6IjEwOTQ0ODczMyIsImxvbmdpdHVkZSI6LTc5
+        LjM3OTM3OTcyOSwibmFtZSI6Ik1MU0UgVG93biBIYWxsIDIwMTIifSx7Imxh
+        dGl0dWRlIjo0My42NDMxNzgsImlkIjoiNDg4Mjg2NTEiLCJsb25naXR1ZGUi
+        Oi03OS4zNzkwOTEsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0
+        aXR1ZGUiOjQzLjY0MzI4MDUxNSwiaWQiOiIxMDA1NzU1NyIsImxvbmdpdHVk
+        ZSI6LTc5LjM3OTA5NjAzMSwibmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIn0s
+        eyJsYXRpdHVkZSI6NDMuNjQzMTk3LCJpZCI6IjM4MDY5MjYzIiwibG9uZ2l0
+        dWRlIjotNzkuMzc5NDU3LCJuYW1lIjoiV2UgRGF5In0seyJsYXRpdHVkZSI6
+        NDMuNjQzMDMwODEzLCJpZCI6IjU4OTU1NTg4IiwibG9uZ2l0dWRlIjotNzku
+        Mzc5MjM2NzY2LCJuYW1lIjoiQnVya2llJ3MgRG9nIEhvdXNlIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzMTM3MDIyLCJpZCI6IjcwMDkyMzYiLCJsb25naXR1ZGUi
+        Oi03OS4zNzk0NjUsIm5hbWUiOiJBQ0MgU3RhbmQgMTgifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxMywiaWQiOiIxMTY2MTAyOCIsImxvbmdpdHVkZSI6LTc5LjM3
+        OTQ2OSwibmFtZSI6IkR1cmFuIER1cmFuIEAgQUNDIn0seyJsYXRpdHVkZSI6
+        NDMuNjQzMTI1LCJpZCI6IjQ5MDE1MDAiLCJsb25naXR1ZGUiOi03OS4zNzk0
+        NjksIm5hbWUiOiJQZWFybCBKYW1AQUNDIn0seyJsYXRpdHVkZSI6NDMuNjQz
+        MTM3LCJpZCI6IjEwNDMzNTAyIiwibG9uZ2l0dWRlIjotNzkuMzc5NDg3LCJu
+        YW1lIjoiU2VjdGlvbiAxMDggUm93IDI1IFNlYXQgMTAifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxMjcxMjEsImlkIjoiNzM1NzU3MyIsImxvbmdpdHVkZSI6LTc5
+        LjM3ODk1NjMzOCwibmFtZSI6IkJsb3dmaXNoIG9uIEJheSJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0MzQxMjUwMiwiaWQiOiIzNTk0MCIsImxvbmdpdHVkZSI6LTc5
+        LjM3OTE3MTEzMywibmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:56 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643386&lng=-79.379043
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:57 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=17273ebb2ae0602d4583512a5f88f484; expires=Wed, 01-Oct-2014 06:02:57
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4966'
+      content-length:
+      - '602'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMzODYsImlkIjoiMTgwMjA4MiIsImxvbmdpdHVkZSI6LTc5LjM3OTA0Mywi
+        bmFtZSI6IkdvbmRvbGFzIGF0IEFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRp
+        dHVkZSI6NDMuNjQzNDA0NzM4LCJpZCI6IjQ3MDkzODYiLCJsb25naXR1ZGUi
+        Oi03OS4zNzkxMTc0ODksIm5hbWUiOiJBaXIgQ2FuYWRhIFdhbGsgV2F5In0s
+        eyJsYXRpdHVkZSI6NDMuNjQzNDEyNTAyLCJpZCI6IjM1OTQwIiwibG9uZ2l0
+        dWRlIjotNzkuMzc5MTcxMTMzLCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUi
+        fSx7ImxhdGl0dWRlIjo0My42NDMyODA1MTUsImlkIjoiMTAwNTc1NTciLCJs
+        b25naXR1ZGUiOi03OS4zNzkwOTYwMzEsIm5hbWUiOiJBaXIgQ2FuYWRhIENl
+        bnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzQwNDczOCwiaWQiOiI0ODE4OTIi
+        LCJsb25naXR1ZGUiOi03OS4zNzg4Mzg1MzksIm5hbWUiOiJBaXIgQ2FuYWRh
+        IENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzIwOCwiaWQiOiIzODA1OTE2
+        MSIsImxvbmdpdHVkZSI6LTc5LjM3OTE3NSwibmFtZSI6IldlRGF5IFRvcm9u
+        dG8ifSx7ImxhdGl0dWRlIjo0My42NDMyMDU5MTksImlkIjoiMzcxMDg4NDAi
+        LCJsb25naXR1ZGUiOi03OS4zNzkxODcyNzksIm5hbWUiOiJBaXIgQ2FuYWRh
+        IENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE5OCwiaWQiOiIxMjc4NTkw
+        NiIsImxvbmdpdHVkZSI6LTc5LjM3OTE3NSwibmFtZSI6IlRoZSBDaGFpcm1h
+        bidzIFN1aXRlIn0seyJsYXRpdHVkZSI6NDMuNjQzMTc4LCJpZCI6IjQ4ODI4
+        NjUxIiwibG9uZ2l0dWRlIjotNzkuMzc5MDkxLCJuYW1lIjoiQWlyIENhbmFk
+        YSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMyMzksImlkIjoiMzcxMjM3
+        MjkiLCJsb25naXR1ZGUiOi03OS4zNzkyNjUsIm5hbWUiOiJVRkMgMTUyIEFp
+        ciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQzMTkxNDk5LCJp
+        ZCI6IjQ0NTM5MiIsImxvbmdpdHVkZSI6LTc5LjM3OTIzNjc2NiwibmFtZSI6
+        IkFpciBDYW5hZGEgQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzEyNzEyMSwi
+        aWQiOiI3MzU3NTczIiwibG9uZ2l0dWRlIjotNzkuMzc4OTU2MzM4LCJuYW1l
+        IjoiQmxvd2Zpc2ggb24gQmF5In0seyJsYXRpdHVkZSI6NDMuNjQzNDAxNjE2
+        LCJpZCI6IjExOTc3NDkyNyIsImxvbmdpdHVkZSI6LTc5LjM3ODY1MzkxNCwi
+        bmFtZSI6Ikp1c3RpbiBCaWViZXIgQ29uY2VydCJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzE1OCwiaWQiOiIyMDA2MzgyIiwibG9uZ2l0dWRlIjotNzkuMzc5Mjc3
+        LCJuYW1lIjoiUGxhdGludW0gQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE3
+        NSwiaWQiOiI1MDI4NzIyNyIsImxvbmdpdHVkZSI6LTc5LjM3OTM0LCJuYW1l
+        IjoiU2FkZSBDb25jZXJ0In0seyJsYXRpdHVkZSI6NDMuNjQzMTQyMDQ5LCJp
+        ZCI6IjM0Nzg4NzU3IiwibG9uZ2l0dWRlIjotNzkuMzc5MzA4MjQ4LCJuYW1l
+        IjoiTW9sc29uIENhbmFkaWFuIEJyZXdob3VzZSJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzI4MTA5LCJpZCI6IjQ0MTM0NjA2IiwibG9uZ2l0dWRlIjotNzkuMzc4
+        NjM3NDE5LCJuYW1lIjoiR2F0ZXdheS1vbi10aGUtR28ifSx7ImxhdGl0dWRl
+        Ijo0My42NDMxNzI5NTksImlkIjoiMTA5NDQ4NzMzIiwibG9uZ2l0dWRlIjot
+        NzkuMzc5Mzc5NzI5LCJuYW1lIjoiTUxTRSBUb3duIEhhbGwgMjAxMiJ9LHsi
+        bGF0aXR1ZGUiOjQzLjY0MzEzOSwiaWQiOiI4Mzk2NzI0OCIsImxvbmdpdHVk
+        ZSI6LTc5LjM3OTM1OSwibmFtZSI6IkNyb3duIENvcm5lciJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0MzY1NCwiaWQiOiI4MTYxNjIzMyIsImxvbmdpdHVkZSI6LTc5
+        LjM3ODc1NiwibmFtZSI6IkxlYWZzIE5hdGlvbiJ9XX0=
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:57 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643412502&lng=-79.379171133
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:58 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=1d6623cf507dbf11ca93c35c3c4c0451; expires=Wed, 01-Oct-2014 06:02:58
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4965'
+      content-length:
+      - '575'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM0MTI1MDIsImlkIjoiMzU5NDAiLCJsb25naXR1ZGUiOi03OS4zNzkxNzEx
+        MzMsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQz
+        LjY0MzQwNDczOCwiaWQiOiI0NzA5Mzg2IiwibG9uZ2l0dWRlIjotNzkuMzc5
+        MTE3NDg5LCJuYW1lIjoiQWlyIENhbmFkYSBXYWxrIFdheSJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0MzM4NiwiaWQiOiIxODAyMDgyIiwibG9uZ2l0dWRlIjotNzku
+        Mzc5MDQzLCJuYW1lIjoiR29uZG9sYXMgYXQgQWlyIENhbmFkYSBDZW50cmUi
+        fSx7ImxhdGl0dWRlIjo0My42NDMyODA1MTUsImlkIjoiMTAwNTc1NTciLCJs
+        b25naXR1ZGUiOi03OS4zNzkwOTYwMzEsIm5hbWUiOiJBaXIgQ2FuYWRhIENl
+        bnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzIzOSwiaWQiOiIzNzEyMzcyOSIs
+        ImxvbmdpdHVkZSI6LTc5LjM3OTI2NSwibmFtZSI6IlVGQyAxNTIgQWlyIENh
+        bmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMyMDgsImlkIjoiMzgw
+        NTkxNjEiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUsIm5hbWUiOiJXZURheSBU
+        b3JvbnRvIn0seyJsYXRpdHVkZSI6NDMuNjQzMjA1OTE5LCJpZCI6IjM3MTA4
+        ODQwIiwibG9uZ2l0dWRlIjotNzkuMzc5MTg3Mjc5LCJuYW1lIjoiQWlyIENh
+        bmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMxOTgsImlkIjoiMTI3
+        ODU5MDYiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUsIm5hbWUiOiJUaGUgQ2hh
+        aXJtYW4ncyBTdWl0ZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE5MTQ5OSwiaWQi
+        OiI0NDUzOTIiLCJsb25naXR1ZGUiOi03OS4zNzkyMzY3NjYsIm5hbWUiOiJB
+        aXIgQ2FuYWRhIENsdWIifSx7ImxhdGl0dWRlIjo0My42NDM0MDQ3MzgsImlk
+        IjoiNDgxODkyIiwibG9uZ2l0dWRlIjotNzkuMzc4ODM4NTM5LCJuYW1lIjoi
+        QWlyIENhbmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMxNzgsImlk
+        IjoiNDg4Mjg2NTEiLCJsb25naXR1ZGUiOi03OS4zNzkwOTEsIm5hbWUiOiJB
+        aXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE1OCwiaWQi
+        OiIyMDA2MzgyIiwibG9uZ2l0dWRlIjotNzkuMzc5Mjc3LCJuYW1lIjoiUGxh
+        dGludW0gQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE3NSwiaWQiOiI1MDI4
+        NzIyNyIsImxvbmdpdHVkZSI6LTc5LjM3OTM0LCJuYW1lIjoiU2FkZSBDb25j
+        ZXJ0In0seyJsYXRpdHVkZSI6NDMuNjQzMTcyOTU5LCJpZCI6IjEwOTQ0ODcz
+        MyIsImxvbmdpdHVkZSI6LTc5LjM3OTM3OTcyOSwibmFtZSI6Ik1MU0UgVG93
+        biBIYWxsIDIwMTIifSx7ImxhdGl0dWRlIjo0My42NDMxNDIwNDksImlkIjoi
+        MzQ3ODg3NTciLCJsb25naXR1ZGUiOi03OS4zNzkzMDgyNDgsIm5hbWUiOiJN
+        b2xzb24gQ2FuYWRpYW4gQnJld2hvdXNlIn0seyJsYXRpdHVkZSI6NDMuNjQz
+        MTk3LCJpZCI6IjM4MDY5MjYzIiwibG9uZ2l0dWRlIjotNzkuMzc5NDU3LCJu
+        YW1lIjoiV2UgRGF5In0seyJsYXRpdHVkZSI6NDMuNjQzMTM5LCJpZCI6Ijgz
+        OTY3MjQ4IiwibG9uZ2l0dWRlIjotNzkuMzc5MzU5LCJuYW1lIjoiQ3Jvd24g
+        Q29ybmVyIn0seyJsYXRpdHVkZSI6NDMuNjQzMTI3MTIxLCJpZCI6IjczNTc1
+        NzMiLCJsb25naXR1ZGUiOi03OS4zNzg5NTYzMzgsIm5hbWUiOiJCbG93Zmlz
+        aCBvbiBCYXkifSx7ImxhdGl0dWRlIjo0My42NDMxMzcwMjIsImlkIjoiNzAw
+        OTIzNiIsImxvbmdpdHVkZSI6LTc5LjM3OTQ2NSwibmFtZSI6IkFDQyBTdGFu
+        ZCAxOCJ9LHsibGF0aXR1ZGUiOjQzLjY0MzEzLCJpZCI6IjExNjYxMDI4Iiwi
+        bG9uZ2l0dWRlIjotNzkuMzc5NDY5LCJuYW1lIjoiRHVyYW4gRHVyYW4gQCBB
+        Q0MifV19
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:58 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.6440665&lng=-79.3784327
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:58 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=d054fbf1d33afd9c2768b03f15e4ad8a; expires=Wed, 01-Oct-2014 06:02:58
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4964'
+      content-length:
+      - '725'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQwNjY1LCJpZCI6IjEyODY5MzYiLCJsb25naXR1ZGUiOi03OS4zNzg0MzI3
+        LCJuYW1lIjoiTGlua2luIFBhcmstIEFpciBDYW5hZGEgQ2VudHJlIn0seyJs
+        YXRpdHVkZSI6NDMuNjQ0MDYzMzYzLCJpZCI6Ijc4NTMwMDQiLCJsb25naXR1
+        ZGUiOi03OS4zNzg0Mzk0NjgsIm5hbWUiOiJQbGF0bml1bSBMb3VuZ2UgYXQg
+        QUNDIn0seyJsYXRpdHVkZSI6NDMuNjQzOTQyODY1LCJpZCI6Ijc2MDg4Njci
+        LCJsb25naXR1ZGUiOi03OS4zNzgzMTMsIm5hbWUiOiJIb3QgU3RvdmUgQ2x1
+        YiJ9LHsibGF0aXR1ZGUiOjQzLjY0NDI3LCJpZCI6IjE5MTI0NjQiLCJsb25n
+        aXR1ZGUiOi03OS4zNzg0NSwibmFtZSI6Ik1pbHRvbiBHTyBCdXMifSx7Imxh
+        dGl0dWRlIjo0My42NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6
+        LTc5LjM3ODc5NiwibmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMi
+        fSx7ImxhdGl0dWRlIjo0My42NDM5MDE2MjYsImlkIjoiNTE1MzUxNzgiLCJs
+        b25naXR1ZGUiOi03OS4zNzg3NTI3MDgsIm5hbWUiOiJOSEwgSGVhZCBPZmZp
+        Y2UifSx7ImxhdGl0dWRlIjo0My42NDQzMDgsImlkIjoiNTE2MTE3ODYiLCJs
+        b25naXR1ZGUiOi03OS4zNzg2NzUsIm5hbWUiOiJZb2dlbiBGclx1MDBmY3oi
+        fSx7ImxhdGl0dWRlIjo0My42NDM5NCwiaWQiOiIxMzg0MTc5OCIsImxvbmdp
+        dHVkZSI6LTc5LjM3ODAzLCJuYW1lIjoiVklBIFJhaWwgLSBUcmFpbiA0OCBU
+        b3JvbnRvIC0gT3R0YXdhIn0seyJsYXRpdHVkZSI6NDMuNjQzOTg3LCJpZCI6
+        IjQ1NDI2NzUiLCJsb25naXR1ZGUiOi03OS4zNzc5OSwibmFtZSI6Ik1MU0Ui
+        fSx7ImxhdGl0dWRlIjo0My42NDM4MTQ2MywiaWQiOiI0ODM3MDE1IiwibG9u
+        Z2l0dWRlIjotNzkuMzc4NzkxMzgsIm5hbWUiOiJNYXBsZSBMZWFmIFNwb3J0
+        cyBcdTAwMjYgRW50ZXJ0YWlubWVudCJ9LHsibGF0aXR1ZGUiOjQzLjY0MzY4
+        LCJpZCI6IjEwOTQ2MTI0NSIsImxvbmdpdHVkZSI6LTc5LjM3ODQ3LCJuYW1l
+        IjoiVGltIEhvcnRvbnMifSx7ImxhdGl0dWRlIjo0My42NDM3MjYsImlkIjoi
+        OTg4NTA2MzciLCJsb25naXR1ZGUiOi03OS4zNzgwOTUsIm5hbWUiOiJUSEUg
+        Rk9YIn0seyJsYXRpdHVkZSI6NDMuNjQ0MjE1ODA4LCJpZCI6IjgwMzU5NDA4
+        IiwibG9uZ2l0dWRlIjotNzkuMzc4OTgzODMxLCJuYW1lIjoiR3JhbnQgVGhv
+        cm50b24gTExQIn0seyJsYXRpdHVkZSI6NDMuNjQzNjU0LCJpZCI6IjgxNjE2
+        MjMzIiwibG9uZ2l0dWRlIjotNzkuMzc4NzU2LCJuYW1lIjoiTGVhZnMgTmF0
+        aW9uIn0seyJsYXRpdHVkZSI6NDMuNjQ0Mjg3ODk2LCJpZCI6IjEwODc5Mjg0
+        IiwibG9uZ2l0dWRlIjotNzkuMzc3Nzc0MTMxLCJuYW1lIjoiM3JkIEZsb29y
+        IEJyZWFrIFJvb20ifSx7ImxhdGl0dWRlIjo0My42NDQyOTI1NCwiaWQiOiI1
+        NDAwMTY0IiwibG9uZ2l0dWRlIjotNzkuMzc5MTM3NzkxLCJuYW1lIjoiTWFw
+        bGUgTGVhZiBTcG9ydHMgXHUwMDI2IEVudGVydGFpbm1lbnQgTHRkLiA3dGgg
+        Rmxvb3IgRmluYW5jZSBcdTAwMjYgSW5mb3JtYXRpb24gVGVjaG5vbG9neSJ9
+        LHsibGF0aXR1ZGUiOjQzLjY0NDYzODA2MiwiaWQiOiIyOTMzODg2MyIsImxv
+        bmdpdHVkZSI6LTc5LjM3ODYyMzk2MiwibmFtZSI6IlVuaW9uIFN0YXRpb24g
+        VHJhY2sgRWlnaHRlZW4ifSx7ImxhdGl0dWRlIjo0My42NDQ3MTY4NzgsImlk
+        IjoiOTQ4MzE1MiIsImxvbmdpdHVkZSI6LTc5LjM3ODQ4MzQ1NywibmFtZSI6
+        Ik1hcGxlIExlYWYgU3BvcnRzIEFuZCBFbnRlcnRhaW5tZW50IDR0aCBGbG9v
+        ciJ9LHsibGF0aXR1ZGUiOjQzLjY0MzQwMTYxNiwiaWQiOiIxMTk3NzQ5Mjci
+        LCJsb25naXR1ZGUiOi03OS4zNzg2NTM5MTQsIm5hbWUiOiJKdXN0aW4gQmll
+        YmVyIENvbmNlcnQifSx7ImxhdGl0dWRlIjo0My42NDM3MzI3NDQsImlkIjoi
+        ODMyODI1MDgiLCJsb25naXR1ZGUiOi03OS4zNzc1ODcxNzYsIm5hbWUiOiJB
+        aXIgQ2FuYWRhIENlbnRyZSBCb3ggT2ZmaWNlIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:58 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643404738&lng=-79.378838539
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:59 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=3bb7a921eaa28732f91afeb3bd8f90fc; expires=Wed, 01-Oct-2014 06:02:59
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4963'
+      content-length:
+      - '612'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM0MDQ3MzgsImlkIjoiNDgxODkyIiwibG9uZ2l0dWRlIjotNzkuMzc4ODM4
+        NTM5LCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0
+        My42NDM0MDE2MTYsImlkIjoiMTE5Nzc0OTI3IiwibG9uZ2l0dWRlIjotNzku
+        Mzc4NjUzOTE0LCJuYW1lIjoiSnVzdGluIEJpZWJlciBDb25jZXJ0In0seyJs
+        YXRpdHVkZSI6NDMuNjQzMzg2LCJpZCI6IjE4MDIwODIiLCJsb25naXR1ZGUi
+        Oi03OS4zNzkwNDMsIm5hbWUiOiJHb25kb2xhcyBhdCBBaXIgQ2FuYWRhIENl
+        bnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzI4MTA5LCJpZCI6IjQ0MTM0NjA2
+        IiwibG9uZ2l0dWRlIjotNzkuMzc4NjM3NDE5LCJuYW1lIjoiR2F0ZXdheS1v
+        bi10aGUtR28ifSx7ImxhdGl0dWRlIjo0My42NDM0MDQ3MzgsImlkIjoiNDcw
+        OTM4NiIsImxvbmdpdHVkZSI6LTc5LjM3OTExNzQ4OSwibmFtZSI6IkFpciBD
+        YW5hZGEgV2FsayBXYXkifSx7ImxhdGl0dWRlIjo0My42NDMyODA1MTUsImlk
+        IjoiMTAwNTc1NTciLCJsb25naXR1ZGUiOi03OS4zNzkwOTYwMzEsIm5hbWUi
+        OiJBaXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzQxMjUw
+        MiwiaWQiOiIzNTk0MCIsImxvbmdpdHVkZSI6LTc5LjM3OTE3MTEzMywibmFt
+        ZSI6IkFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQzNjU0
+        LCJpZCI6IjgxNjE2MjMzIiwibG9uZ2l0dWRlIjotNzkuMzc4NzU2LCJuYW1l
+        IjoiTGVhZnMgTmF0aW9uIn0seyJsYXRpdHVkZSI6NDMuNjQzMTI3MTIxLCJp
+        ZCI6IjczNTc1NzMiLCJsb25naXR1ZGUiOi03OS4zNzg5NTYzMzgsIm5hbWUi
+        OiJCbG93ZmlzaCBvbiBCYXkifSx7ImxhdGl0dWRlIjo0My42NDMxNzgsImlk
+        IjoiNDg4Mjg2NTEiLCJsb25naXR1ZGUiOi03OS4zNzkwOTEsIm5hbWUiOiJB
+        aXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzIwOCwiaWQi
+        OiIzODA1OTE2MSIsImxvbmdpdHVkZSI6LTc5LjM3OTE3NSwibmFtZSI6Ildl
+        RGF5IFRvcm9udG8ifSx7ImxhdGl0dWRlIjo0My42NDMxOTgsImlkIjoiMTI3
+        ODU5MDYiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUsIm5hbWUiOiJUaGUgQ2hh
+        aXJtYW4ncyBTdWl0ZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzIwNTkxOSwiaWQi
+        OiIzNzEwODg0MCIsImxvbmdpdHVkZSI6LTc5LjM3OTE4NzI3OSwibmFtZSI6
+        IkFpciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQzMjM5LCJp
+        ZCI6IjM3MTIzNzI5IiwibG9uZ2l0dWRlIjotNzkuMzc5MjY1LCJuYW1lIjoi
+        VUZDIDE1MiBBaXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0
+        MzE5MTQ5OSwiaWQiOiI0NDUzOTIiLCJsb25naXR1ZGUiOi03OS4zNzkyMzY3
+        NjYsIm5hbWUiOiJBaXIgQ2FuYWRhIENsdWIifSx7ImxhdGl0dWRlIjo0My42
+        NDM2OCwiaWQiOiIxMDk0NjEyNDUiLCJsb25naXR1ZGUiOi03OS4zNzg0Nywi
+        bmFtZSI6IlRpbSBIb3J0b25zIn0seyJsYXRpdHVkZSI6NDMuNjQzMDE4OTU4
+        LCJpZCI6Ijk0MDg3ODEiLCJsb25naXR1ZGUiOi03OS4zNzg3NzQ4ODQsIm5h
+        bWUiOiJSYXB0b3JzIFByYWN0aWNlIENvdXJ0In0seyJsYXRpdHVkZSI6NDMu
+        NjQzMTU4LCJpZCI6IjIwMDYzODIiLCJsb25naXR1ZGUiOi03OS4zNzkyNzcs
+        Im5hbWUiOiJQbGF0aW51bSBDbHViIn0seyJsYXRpdHVkZSI6NDMuNjQzODE0
+        NjMsImlkIjoiNDgzNzAxNSIsImxvbmdpdHVkZSI6LTc5LjM3ODc5MTM4LCJu
+        YW1lIjoiTWFwbGUgTGVhZiBTcG9ydHMgXHUwMDI2IEVudGVydGFpbm1lbnQi
+        fSx7ImxhdGl0dWRlIjo0My42NDMxNzUsImlkIjoiNTAyODcyMjciLCJsb25n
+        aXR1ZGUiOi03OS4zNzkzNCwibmFtZSI6IlNhZGUgQ29uY2VydCJ9XX0=
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:02:59 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search?client_id=36887e12ddbc416fa4b3e84e899da701&lat=43.643404738&lng=-79.379117489
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Wed, 02 Oct 2013 06:02:59 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=715c5066c3fe17a077513260166455b5; expires=Wed, 01-Oct-2014 06:02:59
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4962'
+      content-length:
+      - '586'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM0MDQ3MzgsImlkIjoiNDcwOTM4NiIsImxvbmdpdHVkZSI6LTc5LjM3OTEx
+        NzQ4OSwibmFtZSI6IkFpciBDYW5hZGEgV2FsayBXYXkifSx7ImxhdGl0dWRl
+        Ijo0My42NDM0MTI1MDIsImlkIjoiMzU5NDAiLCJsb25naXR1ZGUiOi03OS4z
+        NzkxNzExMzMsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9LHsibGF0aXR1
+        ZGUiOjQzLjY0MzM4NiwiaWQiOiIxODAyMDgyIiwibG9uZ2l0dWRlIjotNzku
+        Mzc5MDQzLCJuYW1lIjoiR29uZG9sYXMgYXQgQWlyIENhbmFkYSBDZW50cmUi
+        fSx7ImxhdGl0dWRlIjo0My42NDMyODA1MTUsImlkIjoiMTAwNTc1NTciLCJs
+        b25naXR1ZGUiOi03OS4zNzkwOTYwMzEsIm5hbWUiOiJBaXIgQ2FuYWRhIENl
+        bnRyZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzIzOSwiaWQiOiIzNzEyMzcyOSIs
+        ImxvbmdpdHVkZSI6LTc5LjM3OTI2NSwibmFtZSI6IlVGQyAxNTIgQWlyIENh
+        bmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMyMDgsImlkIjoiMzgw
+        NTkxNjEiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUsIm5hbWUiOiJXZURheSBU
+        b3JvbnRvIn0seyJsYXRpdHVkZSI6NDMuNjQzNDA0NzM4LCJpZCI6IjQ4MTg5
+        MiIsImxvbmdpdHVkZSI6LTc5LjM3ODgzODUzOSwibmFtZSI6IkFpciBDYW5h
+        ZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQzMjA1OTE5LCJpZCI6IjM3
+        MTA4ODQwIiwibG9uZ2l0dWRlIjotNzkuMzc5MTg3Mjc5LCJuYW1lIjoiQWly
+        IENhbmFkYSBDZW50cmUifSx7ImxhdGl0dWRlIjo0My42NDMxOTgsImlkIjoi
+        MTI3ODU5MDYiLCJsb25naXR1ZGUiOi03OS4zNzkxNzUsIm5hbWUiOiJUaGUg
+        Q2hhaXJtYW4ncyBTdWl0ZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE3OCwiaWQi
+        OiI0ODgyODY1MSIsImxvbmdpdHVkZSI6LTc5LjM3OTA5MSwibmFtZSI6IkFp
+        ciBDYW5hZGEgQ2VudHJlIn0seyJsYXRpdHVkZSI6NDMuNjQzMTkxNDk5LCJp
+        ZCI6IjQ0NTM5MiIsImxvbmdpdHVkZSI6LTc5LjM3OTIzNjc2NiwibmFtZSI6
+        IkFpciBDYW5hZGEgQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE1OCwiaWQi
+        OiIyMDA2MzgyIiwibG9uZ2l0dWRlIjotNzkuMzc5Mjc3LCJuYW1lIjoiUGxh
+        dGludW0gQ2x1YiJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE3NSwiaWQiOiI1MDI4
+        NzIyNyIsImxvbmdpdHVkZSI6LTc5LjM3OTM0LCJuYW1lIjoiU2FkZSBDb25j
+        ZXJ0In0seyJsYXRpdHVkZSI6NDMuNjQzMTQyMDQ5LCJpZCI6IjM0Nzg4NzU3
+        IiwibG9uZ2l0dWRlIjotNzkuMzc5MzA4MjQ4LCJuYW1lIjoiTW9sc29uIENh
+        bmFkaWFuIEJyZXdob3VzZSJ9LHsibGF0aXR1ZGUiOjQzLjY0MzE3Mjk1OSwi
+        aWQiOiIxMDk0NDg3MzMiLCJsb25naXR1ZGUiOi03OS4zNzkzNzk3MjksIm5h
+        bWUiOiJNTFNFIFRvd24gSGFsbCAyMDEyIn0seyJsYXRpdHVkZSI6NDMuNjQz
+        MTI3MTIxLCJpZCI6IjczNTc1NzMiLCJsb25naXR1ZGUiOi03OS4zNzg5NTYz
+        MzgsIm5hbWUiOiJCbG93ZmlzaCBvbiBCYXkifSx7ImxhdGl0dWRlIjo0My42
+        NDMxMzksImlkIjoiODM5NjcyNDgiLCJsb25naXR1ZGUiOi03OS4zNzkzNTks
+        Im5hbWUiOiJDcm93biBDb3JuZXIifSx7ImxhdGl0dWRlIjo0My42NDMxOTcs
+        ImlkIjoiMzgwNjkyNjMiLCJsb25naXR1ZGUiOi03OS4zNzk0NTcsIm5hbWUi
+        OiJXZSBEYXkifSx7ImxhdGl0dWRlIjo0My42NDM0MDE2MTYsImlkIjoiMTE5
+        Nzc0OTI3IiwibG9uZ2l0dWRlIjotNzkuMzc4NjUzOTE0LCJuYW1lIjoiSnVz
+        dGluIEJpZWJlciBDb25jZXJ0In0seyJsYXRpdHVkZSI6NDMuNjQzNjU0LCJp
+        ZCI6IjgxNjE2MjMzIiwibG9uZ2l0dWRlIjotNzkuMzc4NzU2LCJuYW1lIjoi
+        TGVhZnMgTmF0aW9uIn1dfQ==
+    http_version: 
+  recorded_at: Wed, 02 Oct 2013 06:03:00 GMT
+recorded_with: VCR 2.6.0
