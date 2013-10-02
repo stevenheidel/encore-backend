@@ -1,4 +1,4 @@
-class Post::YoutubeVideo < Post
+class Post::YoutubeVideo < ActiveRecord::Base
   def self.build_from_response(response)
     self.new(
       caption: response.title,

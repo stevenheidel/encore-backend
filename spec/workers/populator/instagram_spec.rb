@@ -11,7 +11,7 @@ describe Populator::Instagram, vcr: false do
     it 'should queue up the right sub-populators' do
       event.venue.instagram_locations.count.should > 0
 
-      InstagramLocationPopulator.jobs.size.should > 1
+      Populator::InstagramLocation.jobs.size.should > 1
       #InstagramSearchPopulator.jobs.size.should == 1 TODO disabled for now
     end
   end

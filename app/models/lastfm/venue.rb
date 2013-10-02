@@ -19,6 +19,10 @@ class Lastfm::Venue < Lastfm::Base
     @json["location"]["postalcode"]
   end
 
+  def coordinates
+    [self.latitude, self.longitude]
+  end
+
   def latitude
     @json["location"]["geo:point"]["geo:lat"].to_f
   end
@@ -31,6 +35,6 @@ class Lastfm::Venue < Lastfm::Base
   # Point should be [long, lat] and radius is in miles
   def in_radius?(geo)
     Geocoder::Calculations.distance_between(
-      geo.point.reverse, self.coordinates.reverse) < geo.radius
+      geo.point, self.coordinates) < geo.radius
   end
 end

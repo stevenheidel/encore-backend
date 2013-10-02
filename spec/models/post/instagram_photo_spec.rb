@@ -23,6 +23,6 @@ describe Post::InstagramPhoto do
     ip.caption = "MADONNA!!!!!!  Other: \xF0\x9F\x8E\xB6"
     ip.save
 
-    Post::InstagramPhoto.first.caption.should == "MADONNA!!!!!!  Other: "
+    Post::InstagramPhoto.first.caption.should == "MADONNA!!!!!!  Other: \xF0\x9F\x8E\xB6"
   end
 end

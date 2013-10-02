@@ -4,7 +4,7 @@ class Geo
   attr_reader :radius
 
   def point
-    [@long, @lat]
+    [@lat, @long]
   end
 
   # TODO: remember to delete request

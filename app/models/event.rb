@@ -41,10 +41,8 @@ class Event < ActiveRecord::Base
   scope :future, lambda{ where("start_date >= ?", Time.now).order('start_date ASC') }
 
   scope :in_radius, ->(geo) {
-    # 3959 is a magic number for miles
-    command = Venue.geo_near(geo.point).distance_multiplier(3959).max_distance(geo.radius/3959.0).spherical
-    venue_ids = command.map(&:_id)
-    where(:venue_id.in => venue_ids)
+    venue_ids = Venue.near(geo.point, geo.radius).ids
+    where('venue_id in (?)', venue_ids)
   }
 
   # Is the event currently waiting for photos and videos?

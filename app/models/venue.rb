@@ -20,6 +20,8 @@
 class Venue < ActiveRecord::Base
   include Concerns::Lastfmable
 
+  reverse_geocoded_by :latitude, :longitude
+
   has_many :events
   has_many :instagram_locations, class_name: "Other::InstagramLocation"
 

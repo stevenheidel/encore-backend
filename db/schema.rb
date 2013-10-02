@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002054129) do
+ActiveRecord::Schema.define(version: 20131002064300) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -141,6 +141,16 @@ ActiveRecord::Schema.define(version: 20131002054129) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+  end
+
+  create_table "youtube_videos", id: :uuid, force: true do |t|
+    t.string   "caption"
+    t.string   "link"
+    t.string   "image_url"
+    t.string   "user_name"
+    t.uuid     "event_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

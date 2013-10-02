@@ -16,7 +16,7 @@ class Populator::InstagramLocation < Populator::Base
     end
 
     result.data.each do |media|
-      event.posts << Post::InstagramPhoto.build_from_hashie(media)
+      event.instagram_photos << Post::InstagramPhoto.build_from_hashie(media)
     end
 
     event.save # TODO: causes major problems when you put save! here

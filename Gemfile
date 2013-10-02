@@ -4,13 +4,13 @@ source 'https://rubygems.org'
 gem 'rails', github: 'rails/rails'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
+gem 'sass-rails'
 
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier'
 
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
@@ -20,7 +20,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 1.4.2'
+gem 'jbuilder'
 
 group :development do
   gem 'better_errors'
@@ -49,21 +49,21 @@ group :development, :test do
   # RSpec
   # TODO: this issue: https://github.com/rspec/rspec-rails/pull/772
   gem 'minitest'
-  gem 'rspec-rails', '~> 2.14'
+  gem 'rspec-rails'
 end
 
 group :test do
   # RSpec friends
-  gem 'capybara', '2.0.2'
+  gem 'capybara'
   gem 'vcr'
-  gem 'factory_girl_rails', '~> 4.0'
+  gem 'factory_girl_rails'
   gem 'rack-test'
   gem 'database_cleaner'
   gem 'timecop'
 
   # Cucumber
-  gem 'cucumber-rails', github: 'cucumber/cucumber-rails', branch: 'master_rails4_test', require: false
-  gem 'cucumber', '= 1.3.2' # needs to be locked at 1.3.2 because https://github.com/cucumber/cucumber/issues/501
+  gem 'cucumber-rails', require: false
+  gem 'cucumber'
   gem 'cucumber-api-steps', require: false
   gem 'cucumber_factory'
   gem 'relish'
@@ -106,7 +106,7 @@ gem 'typhoeus'
 
 # Sidekiq
 gem 'sidekiq'
-gem 'sinatra', '>= 1.3.0', require: nil
+gem 'sinatra', require: nil
 gem 'sidekiq_status'
 
 # Paperclip
@@ -117,7 +117,7 @@ gem 'fog'
 gem 'newrelic_rpm'
 
 # Whenever
-gem 'whenever', github: 'iTakeshi/whenever', branch: 'rails4'
+gem 'whenever'
 
 gem 'google_timezone'
 gem 'geocoder'

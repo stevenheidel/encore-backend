@@ -6,7 +6,7 @@ class Populator::Instagram < Populator::Base
 
     # Populate with Instagram Photos by Locations
     if event.venue.instagram_locations.count == 0
-      InstagramLocation.find_instagram_ids_for_venue(event.venue)
+      Other::InstagramLocation.find_instagram_ids_for_venue(event.venue)
     end
     event.venue.instagram_locations.each do |location|
       event.sidekiq_workers << Populator::InstagramLocation.perform_async(

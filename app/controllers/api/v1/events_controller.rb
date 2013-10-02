@@ -3,7 +3,7 @@ class Api::V1::EventsController < Api::V1::BaseController
     # Check to see if event on profile
     if params[:lastfm_id]
       # SMELL: awfully complicated line
-      found = User.get(params[:user_id]).events.where(lastfm_id: params[:lastfm_id].to_i).exists?
+      found = User.get(params[:user_id]).events.where(lastfm_id: params[:lastfm_id]).exists?
 
       render 'api/v1/base/result.json', locals: {result: found}
     # Otherwise return all events on profile
