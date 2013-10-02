@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id               :uuid             not null, primary key
+#  lastfm_id        :string(255)
+#  name             :string(255)
+#  website          :string(255)
+#  url              :string(255)
+#  flickr_tag       :string(255)
+#  headliner        :string(255)
+#  start_date       :datetime
+#  local_start_time :datetime
+#  tickets_url      :string(255)
+#  venue_id         :uuid
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 require 'spec_helper'
 
 describe Event, :vcr do

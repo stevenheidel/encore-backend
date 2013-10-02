@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: instagram_locations
+#
+#  id             :uuid             not null, primary key
+#  name           :string(255)
+#  instagram_uuid :integer
+#  venue_id       :uuid
+#  created_at     :datetime
+#  updated_at     :datetime
+#
+
 require 'spec_helper'
 
 describe Other::InstagramLocation, vcr: true do

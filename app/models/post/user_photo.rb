@@ -1,3 +1,11 @@
+# == Schema Information
+#
+# Table name: user_photos
+#
+#  id      :uuid             not null, primary key
+#  user_id :uuid
+#
+
 class Post::UserPhoto < ActiveRecord::Base
   belongs_to :user
 

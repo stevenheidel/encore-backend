@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id               :uuid             not null, primary key
+#  facebook_id      :integer
+#  oauth_string     :string(255)
+#  oauth_expiry     :datetime
+#  name             :string(255)
+#  invite_sent      :boolean
+#  invite_timestamp :datetime
+#  created_at       :datetime
+#  updated_at       :datetime
+#
+
 require 'spec_helper'
 
 describe User, vcr: { record: :once, re_record_interval: nil } do

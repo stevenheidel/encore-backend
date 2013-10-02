@@ -1,3 +1,22 @@
+# == Schema Information
+#
+# Table name: venues
+#
+#  id         :uuid             not null, primary key
+#  lastfm_id  :string(255)
+#  name       :string(255)
+#  website    :string(255)
+#  url        :string(255)
+#  city       :string(255)
+#  country    :string(255)
+#  street     :string(255)
+#  postalcode :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#  latitude   :float
+#  longitude  :float
+#
+
 require 'spec_helper'
 
 describe Venue do
