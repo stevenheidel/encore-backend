@@ -5,8 +5,8 @@ common: &common
 local: &local
   <<: *common
   host: localhost
-  username:
-  password:
+  username: postgres
+  password: postgres
 
 development:
   <<: *local
