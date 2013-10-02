@@ -1,0 +1,331 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/search?client_id=OANCCHMOA0UBCAISXWHIVEZE4QZWAPIZ5R3MB1UJ0CUEYC2W&client_secret=A54NI2GGMB0EOPPUS5HQCTWR55PU31JMKNILGADHFLB0FIJD&ll=43.643929%2C-79.379305&query=Air+Canada+Centre&intent=match
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby gem
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      access-control-allow-origin:
+      - '*'
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Sun, 07 Jul 2013 20:01:58 GMT
+      server:
+      - nginx/1.4.1
+      strict-transport-security:
+      - max-age=864000
+      tracer-time:
+      - '479'
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4998'
+      content-length:
+      - '1098'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMCwiZXJyb3JUeXBlIjoiZGVwcmVjYXRlZCIs
+        ImVycm9yRGV0YWlsIjoiVGhpcyBlbmRwb2ludCB3aWxsIHN0b3AgcmV0dXJu
+        aW5nIGdyb3VwcyBpbiB0aGUgZnV0dXJlLiBQbGVhc2UgdXNlIGEgY3VycmVu
+        dCB2ZXJzaW9uLCBzZWUgaHR0cDpcL1wvYml0Lmx5XC92eXdDYXYuIn0sInJl
+        c3BvbnNlIjp7Imdyb3VwcyI6W3sidHlwZSI6InBsYWNlcyIsIm5hbWUiOiJQ
+        bGFjZXMiLCJpdGVtcyI6W3siaWQiOiI0YzA5MzJmY2JiYzY3NmIwZmRjMjQ3
+        ZDUiLCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUgT2ZmaWNlcyIsImNvbnRh
+        Y3QiOnt9LCJsb2NhdGlvbiI6eyJhZGRyZXNzIjoiNTAgQmF5IFN0IiwiY3Jv
+        c3NTdHJlZXQiOiJhdCBMYWtlc2hvcmUgQmx2ZC4iLCJsYXQiOjQzLjY0NDE2
+        NiwibG5nIjotNzkuMzc4Nzk2LCJkaXN0YW5jZSI6NDgsImNpdHkiOiJUb3Jv
+        bnRvIiwic3RhdGUiOiJPTiIsImNvdW50cnkiOiJDYW5hZGEiLCJjYyI6IkNB
+        In0sImNhbm9uaWNhbFVybCI6Imh0dHBzOlwvXC9mb3Vyc3F1YXJlLmNvbVwv
+        dlwvYWlyLWNhbmFkYS1jZW50cmUtb2ZmaWNlc1wvNGMwOTMyZmNiYmM2NzZi
+        MGZkYzI0N2Q1IiwiY2F0ZWdvcmllcyI6W3siaWQiOiI0YmY1OGRkOGQ0ODk4
+        OGQxMjQ5NDE3MzUiLCJuYW1lIjoiT2ZmaWNlIiwicGx1cmFsTmFtZSI6Ik9m
+        ZmljZXMiLCJzaG9ydE5hbWUiOiJPZmZpY2UiLCJpY29uIjoiaHR0cHM6XC9c
+        L2ZvdXJzcXVhcmUuY29tXC9pbWdcL2NhdGVnb3JpZXNcL2J1aWxkaW5nXC9k
+        ZWZhdWx0LnBuZyIsInBhcmVudHMiOlsiUHJvZmVzc2lvbmFsICYgT3RoZXIg
+        UGxhY2VzIl0sInByaW1hcnkiOnRydWV9XSwidmVyaWZpZWQiOmZhbHNlLCJy
+        ZXN0cmljdGVkIjp0cnVlLCJzdGF0cyI6eyJjaGVja2luc0NvdW50IjoxMDI4
+        LCJ1c2Vyc0NvdW50IjoxNzUsInRpcENvdW50IjowfSwibGlrZXMiOnsiY291
+        bnQiOjAsImdyb3VwcyI6W119fSx7ImlkIjoiNGI2MGQ1YjlmOTY0YTUyMDcx
+        ZmMyOWUzIiwibmFtZSI6IkFpciBDYW5hZGEgQ2x1YiIsImNvbnRhY3QiOnt9
+        LCJsb2NhdGlvbiI6eyJhZGRyZXNzIjoiQWlyIENhbmFkYSBDZW50cmUiLCJs
+        YXQiOjQzLjY0MzE5MTQ5OTI5Mjg3LCJsbmciOi03OS4zNzkyMzY3NjYwMjc2
+        LCJkaXN0YW5jZSI6ODIsImNpdHkiOiJUb3JvbnRvIiwic3RhdGUiOiJPTiIs
+        ImNvdW50cnkiOiJDYW5hZGEiLCJjYyI6IkNBIn0sImNhbm9uaWNhbFVybCI6
+        Imh0dHBzOlwvXC9mb3Vyc3F1YXJlLmNvbVwvdlwvYWlyLWNhbmFkYS1jbHVi
+        XC80YjYwZDViOWY5NjRhNTIwNzFmYzI5ZTMiLCJjYXRlZ29yaWVzIjpbeyJp
+        ZCI6IjRiZjU4ZGQ4ZDQ4OTg4ZDEyMTk0MTczNSIsIm5hbWUiOiJMb3VuZ2Ui
+        LCJwbHVyYWxOYW1lIjoiTG91bmdlcyIsInNob3J0TmFtZSI6IkxvdW5nZSIs
+        Imljb24iOiJodHRwczpcL1wvZm91cnNxdWFyZS5jb21cL2ltZ1wvY2F0ZWdv
+        cmllc1wvbmlnaHRsaWZlXC9sb3VuZ2UucG5nIiwicGFyZW50cyI6WyJOaWdo
+        dGxpZmUgU3BvdCJdLCJwcmltYXJ5Ijp0cnVlfV0sInZlcmlmaWVkIjpmYWxz
+        ZSwicmVzdHJpY3RlZCI6dHJ1ZSwic3RhdHMiOnsiY2hlY2tpbnNDb3VudCI6
+        NTc0LCJ1c2Vyc0NvdW50IjozMTAsInRpcENvdW50IjozfSwibGlrZXMiOnsi
+        Y291bnQiOjAsImdyb3VwcyI6W119fSx7ImlkIjoiNGI4NDkwZWRmOTY0YTUy
+        MDBjM2MzMWUzIiwibmFtZSI6IkdvbmRvbGFzIiwiY29udGFjdCI6e30sImxv
+        Y2F0aW9uIjp7ImFkZHJlc3MiOiI0MCBCYXkgU3QuIiwiY3Jvc3NTdHJlZXQi
+        OiJBaXIgQ2FuYWRhIENlbnRyZSIsImxhdCI6NDMuNjQzMzg2LCJsbmciOi03
+        OS4zNzkwNDMsImRpc3RhbmNlIjo2NCwicG9zdGFsQ29kZSI6Ik01TSIsImNp
+        dHkiOiJUb3JvbnRvIiwic3RhdGUiOiJPTiIsImNvdW50cnkiOiJDYW5hZGEi
+        LCJjYyI6IkNBIn0sImNhbm9uaWNhbFVybCI6Imh0dHBzOlwvXC9mb3Vyc3F1
+        YXJlLmNvbVwvdlwvZ29uZG9sYXNcLzRiODQ5MGVkZjk2NGE1MjAwYzNjMzFl
+        MyIsImNhdGVnb3JpZXMiOltdLCJ2ZXJpZmllZCI6ZmFsc2UsInJlc3RyaWN0
+        ZWQiOnRydWUsInN0YXRzIjp7ImNoZWNraW5zQ291bnQiOjM1LCJ1c2Vyc0Nv
+        dW50IjoyMiwidGlwQ291bnQiOjB9LCJsaWtlcyI6eyJjb3VudCI6MCwiZ3Jv
+        dXBzIjpbXX19LHsiaWQiOiI0YjE1NTA4MWY5NjRhNTIwYjRiMDIzZTMiLCJu
+        YW1lIjoiQWlyIENhbmFkYSBDZW50cmUiLCJjb250YWN0Ijp7InBob25lIjoi
+        NDE2ODE1NTUwMCIsImZvcm1hdHRlZFBob25lIjoiKDQxNikgODE1LTU1MDAi
+        LCJ0d2l0dGVyIjoibGl2ZWF0YWNjIn0sImxvY2F0aW9uIjp7ImFkZHJlc3Mi
+        OiI0MCBCYXkgU3QuIiwibGF0Ijo0My42NDM0MTI1MDE3MDg3MjQsImxuZyI6
+        LTc5LjM3OTE3MTEzMzA0MTM4LCJkaXN0YW5jZSI6NTgsInBvc3RhbENvZGUi
+        OiJNNUogMlgyIiwiY2l0eSI6IlRvcm9udG8iLCJzdGF0ZSI6Ik9udGFyaW8i
+        LCJjb3VudHJ5IjoiQ2FuYWRhIiwiY2MiOiJDQSJ9LCJjYW5vbmljYWxVcmwi
+        OiJodHRwczpcL1wvZm91cnNxdWFyZS5jb21cL3ZcL2Fpci1jYW5hZGEtY2Vu
+        dHJlXC80YjE1NTA4MWY5NjRhNTIwYjRiMDIzZTMiLCJjYXRlZ29yaWVzIjpb
+        eyJpZCI6IjRiZjU4ZGQ4ZDQ4OTg4ZDE4NTk0MTczNSIsIm5hbWUiOiJIb2Nr
+        ZXkgQXJlbmEiLCJwbHVyYWxOYW1lIjoiSG9ja2V5IEFyZW5hcyIsInNob3J0
+        TmFtZSI6IkhvY2tleSIsImljb24iOiJodHRwczpcL1wvZm91cnNxdWFyZS5j
+        b21cL2ltZ1wvY2F0ZWdvcmllc1wvYXJ0c19lbnRlcnRhaW5tZW50XC9zdGFk
+        aXVtX2hvY2tleS5wbmciLCJwYXJlbnRzIjpbIkFydHMgJiBFbnRlcnRhaW5t
+        ZW50IiwiU3RhZGl1bSJdLCJwcmltYXJ5Ijp0cnVlfV0sInZlcmlmaWVkIjp0
+        cnVlLCJyZXN0cmljdGVkIjp0cnVlLCJzdGF0cyI6eyJjaGVja2luc0NvdW50
+        Ijo0MjM1OCwidXNlcnNDb3VudCI6MTU3MjEsInRpcENvdW50IjoxNzl9LCJ1
+        cmwiOiJodHRwOlwvXC93d3cudGhlYWlyY2FuYWRhY2VudHJlLmNvbSIsImxp
+        a2VzIjp7ImNvdW50IjowLCJncm91cHMiOltdfSwic3RvcmVJZCI6IiJ9XX1d
+        fX0=
+    http_version: 
+  recorded_at: Sun, 07 Jul 2013 20:01:59 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search.json?foursquare_v2_id=4c0932fcbbc676b0fdc247d5&client_id=36887e12ddbc416fa4b3e84e899da701
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 0.10.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Sun, 07 Jul 2013 20:01:59 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=d1feb55b06474893a76075f42cde6e61; expires=Sun, 06-Jul-2014 20:01:59
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4994'
+      content-length:
+      - '131'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDQxNjYsImlkIjoiMzI5ODUyOSIsImxvbmdpdHVkZSI6LTc5LjM3ODc5Niwi
+        bmFtZSI6IkFpciBDYW5hZGEgQ2VudHJlIE9mZmljZXMifV19
+    http_version: 
+  recorded_at: Sun, 07 Jul 2013 20:01:59 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search.json?foursquare_v2_id=4b60d5b9f964a52071fc29e3&client_id=36887e12ddbc416fa4b3e84e899da701
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 0.10.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Sun, 07 Jul 2013 20:02:00 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=6a60fb870c775e45bc550147795001e6; expires=Sun, 06-Jul-2014 20:02:00
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4993'
+      content-length:
+      - '125'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMxOTE0OTksImlkIjoiNDQ1MzkyIiwibG9uZ2l0dWRlIjotNzkuMzc5MjM2
+        NzY2LCJuYW1lIjoiQWlyIENhbmFkYSBDbHViIn1dfQ==
+    http_version: 
+  recorded_at: Sun, 07 Jul 2013 20:02:00 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search.json?foursquare_v2_id=4b8490edf964a5200c3c31e3&client_id=36887e12ddbc416fa4b3e84e899da701
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 0.10.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Sun, 07 Jul 2013 20:02:00 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=433b8fbf51ebe3efbcb88a699fd98573; expires=Sun, 06-Jul-2014 20:02:00
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4992'
+      content-length:
+      - '131'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDMzODYsImlkIjoiMTgwMjA4MiIsImxvbmdpdHVkZSI6LTc5LjM3OTA0Mywi
+        bmFtZSI6IkdvbmRvbGFzIGF0IEFpciBDYW5hZGEgQ2VudHJlIn1dfQ==
+    http_version: 
+  recorded_at: Sun, 07 Jul 2013 20:02:00 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search.json?foursquare_v2_id=4b155081f964a520b4b023e3&client_id=36887e12ddbc416fa4b3e84e899da701
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 0.10.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Sun, 07 Jul 2013 20:02:16 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=835686b487e5c54a97c0f95d6ebdb7ac; expires=Sun, 06-Jul-2014 20:02:16
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4991'
+      content-length:
+      - '123'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NDM0MTI1MDIsImlkIjoiMzU5NDAiLCJsb25naXR1ZGUiOi03OS4zNzkxNzEx
+        MzMsIm5hbWUiOiJBaXIgQ2FuYWRhIENlbnRyZSJ9XX0=
+    http_version: 
+  recorded_at: Sun, 07 Jul 2013 20:02:16 GMT
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search.json?lat=43.643929&lng=-79.379305&client_id=36887e12ddbc416fa4b3e84e899da701
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 0.10.0
+  response:
+    status:
+      code: 500
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - text/html; charset=utf-8
+      date:
+      - Sun, 07 Jul 2013 20:02:20 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=ff9781099118040a5ba4532199591888; expires=Sun, 06-Jul-2014 20:02:20
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      content-length:
+      - '25'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        T29wcywgYW4gZXJyb3Igb2NjdXJyZWQuCg==
+    http_version: 
+  recorded_at: Sun, 07 Jul 2013 20:02:21 GMT
+recorded_with: VCR 2.5.0

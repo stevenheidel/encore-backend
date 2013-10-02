@@ -1,0 +1,132 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&event=14695959&method=event.getInfo
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Date:
+      - Tue, 02 Jul 2013 07:14:51 GMT
+      Server:
+      - Apache/2.2.22 (Unix)
+      X-Web-Node:
+      - www209
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - max-age=10
+      Expires:
+      - Tue, 02 Jul 2013 07:15:01 GMT
+      Content-Length:
+      - '61'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8;
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJlcnJvciI6NiwibWVzc2FnZSI6IkludmFsaWQgZXZlbnQgaWQgc3VwcGxp
+        ZWQiLCJsaW5rcyI6W119Cg==
+    http_version: 
+  recorded_at: Tue, 02 Jul 2013 07:14:51 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&event=51d27e83f0d3bd4d21000004&method=event.getInfo
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Date:
+      - Tue, 02 Jul 2013 07:17:24 GMT
+      Server:
+      - Apache/2.2.22 (Unix)
+      X-Web-Node:
+      - www202
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - max-age=10
+      Expires:
+      - Tue, 02 Jul 2013 07:17:34 GMT
+      Content-Length:
+      - '61'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8;
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJlcnJvciI6NiwibWVzc2FnZSI6IkludmFsaWQgZXZlbnQgaWQgc3VwcGxp
+        ZWQiLCJsaW5rcyI6W119Cg==
+    http_version: 
+  recorded_at: Tue, 02 Jul 2013 07:17:24 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&event=51d27ebbf0d3bdebd4000002&method=event.getInfo
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      Date:
+      - Tue, 02 Jul 2013 07:18:19 GMT
+      Server:
+      - Apache/2.2.22 (Unix)
+      X-Web-Node:
+      - www230
+      Access-Control-Allow-Origin:
+      - '*'
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Max-Age:
+      - '86400'
+      Cache-Control:
+      - max-age=10
+      Expires:
+      - Tue, 02 Jul 2013 07:18:29 GMT
+      Content-Length:
+      - '61'
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8;
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJlcnJvciI6NiwibWVzc2FnZSI6IkludmFsaWQgZXZlbnQgaWQgc3VwcGxp
+        ZWQiLCJsaW5rcyI6W119Cg==
+    http_version: 
+  recorded_at: Tue, 02 Jul 2013 07:18:19 GMT
+recorded_with: VCR 2.5.0

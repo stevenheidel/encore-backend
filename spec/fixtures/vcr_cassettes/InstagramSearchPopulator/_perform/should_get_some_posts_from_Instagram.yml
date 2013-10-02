@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/media/search.json?min_timestamp=1366905600&max_timestamp=1366927200&lat=43.6413958&lng=-79.35437210000001&client_id=36887e12ddbc416fa4b3e84e899da701
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 0.10.0
+  response:
+    status:
+      code: 400
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Tue, 11 Jun 2013 01:45:08 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=49875d22adb1eacd914f756e15e82e76; expires=Tue, 10-Jun-2014 01:45:08
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4922'
+      content-length:
+      - '108'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImVycm9yX3R5cGUiOiJBUElFcnJvciIsImNvZGUiOjQwMCwi
+        ZXJyb3JfbWVzc2FnZSI6Ik1lZGlhIHNlYXJjaCBlcnJvci4gUGxlYXNlIHRy
+        eSBhZ2FpbiBzaG9ydGx5In19
+    http_version: 
+  recorded_at: Tue, 11 Jun 2013 01:45:08 GMT
+recorded_with: VCR 2.5.0

@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.eventful.com/json/events/search?app_key=2J3KXtGbfVvkp3ZZ&keywords=How+To+Destroy+Angels&location=Toronto&date=2013042500-2013042500&category=concerts
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - text/javascript; charset=utf-8
+      content-length:
+      - '2120'
+      date:
+      - Fri, 07 Jun 2013 17:55:26 GMT
+      server:
+      - lighttpd/1.4.28
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJsYXN0X2l0ZW0iOm51bGwsInRvdGFsX2l0ZW1zIjoiMSIsImZpcnN0X2l0
+        ZW0iOm51bGwsInBhZ2VfbnVtYmVyIjoiMSIsInBhZ2Vfc2l6ZSI6IjEwIiwi
+        cGFnZV9pdGVtcyI6bnVsbCwic2VhcmNoX3RpbWUiOiIwLjAyNyIsInBhZ2Vf
+        Y291bnQiOiIxIiwiZXZlbnRzIjp7ImV2ZW50Ijp7IndhdGNoaW5nX2NvdW50
+        IjpudWxsLCJjYWxlbmRhcl9jb3VudCI6bnVsbCwiY29tbWVudF9jb3VudCI6
+        bnVsbCwicmVnaW9uX2FiYnIiOiJPTiIsInBvc3RhbF9jb2RlIjoiTTVBIDFB
+        NCIsImdvaW5nX2NvdW50IjpudWxsLCJhbGxfZGF5IjoiMCIsImxhdGl0dWRl
+        IjoiNDMuNjQxMzk1OCIsImdyb3VwcyI6bnVsbCwidXJsIjoiaHR0cDovL2V2
+        ZW50ZnVsLmNvbS90b3JvbnRvL2V2ZW50cy9kZXN0cm95LWFuZ2Vscy0vRTAt
+        MDAxLTA1NDgzNDQ0MS00P3V0bV9zb3VyY2U9YXBpcyZ1dG1fbWVkaXVtPWFw
+        aW0mdXRtX2NhbXBhaWduPWFwaWMiLCJpZCI6IkUwLTAwMS0wNTQ4MzQ0NDEt
+        NCIsInByaXZhY3kiOiIxIiwiY2l0eV9uYW1lIjoiVG9yb250byIsImxpbmtf
+        Y291bnQiOm51bGwsImxvbmdpdHVkZSI6Ii03OS4zNTQzNzIxIiwiY291bnRy
+        eV9uYW1lIjoiQ2FuYWRhIiwiY291bnRyeV9hYmJyIjoiQ0FOIiwicmVnaW9u
+        X25hbWUiOiJPbnRhcmlvIiwic3RhcnRfdGltZSI6IjIwMTMtMDQtMjUgMjA6
+        MDA6MDAiLCJ0el9pZCI6bnVsbCwiZGVzY3JpcHRpb24iOm51bGwsIm1vZGlm
+        aWVkIjoiMjAxMy0wMy0wOCAwMDoyNDoyNiIsInZlbnVlX2Rpc3BsYXkiOiIx
+        IiwidHpfY291bnRyeSI6bnVsbCwicGVyZm9ybWVycyI6eyJwZXJmb3JtZXIi
+        OnsiY3JlYXRvciI6InNwb25nZWJvYmFuZG1lODciLCJsaW5rZXIiOiJldmRi
+        IiwibmFtZSI6IkhvdyBUbyBEZXN0cm95IEFuZ2VscyIsInVybCI6Imh0dHA6
+        Ly9ldmVudGZ1bC5jb20vcGVyZm9ybWVycy9ob3ctdG8tZGVzdHJveS1hbmdl
+        bHMtL1AwLTAwMS0wMDAyMjcwNjItMD91dG1fc291cmNlPWFwaXMmdXRtX21l
+        ZGl1bT1hcGltJnV0bV9jYW1wYWlnbj1hcGljIiwiaWQiOiJQMC0wMDEtMDAw
+        MjI3MDYyLTAiLCJzaG9ydF9iaW8iOiJJbmRpZSAvIEFsdGVybmF0aXZlIC8g
+        RWxlY3Ryb25pY2EifX0sInRpdGxlIjoiSG93IFRvIERlc3Ryb3kgQW5nZWxz
+        IiwidmVudWVfYWRkcmVzcyI6IjExIFBvbHNvbiBTdHJlZXQiLCJnZW9jb2Rl
+        X3R5cGUiOiJFVkRCIEdlb2NvZGVyIiwidHpfb2xzb25fcGF0aCI6bnVsbCwi
+        cmVjdXJfc3RyaW5nIjpudWxsLCJjYWxlbmRhcnMiOm51bGwsIm93bmVyIjoi
+        ZXZkYiIsImdvaW5nIjpudWxsLCJjb3VudHJ5X2FiYnIyIjoiQ0EiLCJpbWFn
+        ZSI6eyJzbWFsbCI6eyJ3aWR0aCI6IjQ4IiwidXJsIjoiaHR0cDovL3MxLmV2
+        Y2RuLmNvbS9pbWFnZXMvc21hbGwvSTAtMDAxLzAwMy8xODUvODI0LTIuanBl
+        Z18vaG93LXRvLWRlc3Ryb3ktYW5nZWxzLTI0LmpwZWciLCJoZWlnaHQiOiI0
+        OCJ9LCJ3aWR0aCI6IjQ4IiwiY2FwdGlvbiI6bnVsbCwibWVkaXVtIjp7Indp
+        ZHRoIjoiMTI4IiwidXJsIjoiaHR0cDovL3MxLmV2Y2RuLmNvbS9pbWFnZXMv
+        bWVkaXVtL0kwLTAwMS8wMDMvMTg1LzgyNC0yLmpwZWdfL2hvdy10by1kZXN0
+        cm95LWFuZ2Vscy0yNC5qcGVnIiwiaGVpZ2h0IjoiMTI4In0sInVybCI6Imh0
+        dHA6Ly9zMS5ldmNkbi5jb20vaW1hZ2VzL3NtYWxsL0kwLTAwMS8wMDMvMTg1
+        LzgyNC0yLmpwZWdfL2hvdy10by1kZXN0cm95LWFuZ2Vscy0yNC5qcGVnIiwi
+        dGh1bWIiOnsid2lkdGgiOiI0OCIsInVybCI6Imh0dHA6Ly9zMS5ldmNkbi5j
+        b20vaW1hZ2VzL3RodW1iL0kwLTAwMS8wMDMvMTg1LzgyNC0yLmpwZWdfL2hv
+        dy10by1kZXN0cm95LWFuZ2Vscy0yNC5qcGVnIiwiaGVpZ2h0IjoiNDgifSwi
+        aGVpZ2h0IjoiNDgifSwiY3JlYXRlZCI6IjIwMTMtMDItMjcgMTU6MTM6NTMi
+        LCJ2ZW51ZV9pZCI6IlYwLTAwMS0wMDA4NTMyODQtMSIsInR6X2NpdHkiOm51
+        bGwsInN0b3BfdGltZSI6bnVsbCwidmVudWVfbmFtZSI6IlNvdW5kIEFjYWRl
+        bXkiLCJ2ZW51ZV91cmwiOiJodHRwOi8vZXZlbnRmdWwuY29tL3Rvcm9udG8v
+        dmVudWVzL3NvdW5kLWFjYWRlbXktL1YwLTAwMS0wMDA4NTMyODQtMT91dG1f
+        c291cmNlPWFwaXMmdXRtX21lZGl1bT1hcGltJnV0bV9jYW1wYWlnbj1hcGlj
+        In19fQo=
+    http_version: 
+  recorded_at: Fri, 07 Jun 2013 17:55:28 GMT
+recorded_with: VCR 2.5.0

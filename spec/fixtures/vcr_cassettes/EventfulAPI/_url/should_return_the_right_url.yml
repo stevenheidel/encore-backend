@@ -1,0 +1,35 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.eventful.com/json/events/search?app_key=2J3KXtGbfVvkp3ZZ
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-type:
+      - text/javascript; charset=utf-8
+      content-length:
+      - '126'
+      date:
+      - Fri, 07 Jun 2013 17:55:25 GMT
+      server:
+      - lighttpd/1.4.28
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJzdHJpbmciOiJNaXNzaW5nIHBhcmFtZXRlciIsImRlc2NyaXB0aW9uIjoi
+        RWl0aGVyIHRoZSAna2V5d29yZHMnLCAnbG9jYXRpb24nLCAnY2F0ZWdvcnkn
+        IG9yICdkYXRlJyBwYXJhbWV0ZXIgaXMgcmVxdWlyZWQuIn0K
+    http_version: 
+  recorded_at: Fri, 07 Jun 2013 17:55:26 GMT
+recorded_with: VCR 2.5.0

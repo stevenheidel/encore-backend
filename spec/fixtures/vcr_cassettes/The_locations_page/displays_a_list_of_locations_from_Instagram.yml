@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.instagram.com/v1/locations/search.json?lat=43.653226&lng=-79.383184&client_id=36887e12ddbc416fa4b3e84e899da701
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Instagram Ruby Gem 0.10.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      content-language:
+      - en
+      content-type:
+      - application/json; charset=utf-8
+      date:
+      - Thu, 13 Jun 2013 16:17:09 GMT
+      server:
+      - nginx
+      set-cookie:
+      - csrftoken=0ac7572255f426fdc93255df8138c2a0; expires=Thu, 12-Jun-2014 16:17:09
+        GMT; Max-Age=31449600; Path=/
+      vary:
+      - Cookie, Accept-Language, Accept-Encoding
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4999'
+      content-length:
+      - '729'
+      connection:
+      - Close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sImRhdGEiOlt7ImxhdGl0dWRlIjo0My42
+        NTMyMjYsImlkIjoiNzE2MzcwMTMiLCJsb25naXR1ZGUiOi03OS4zODMxODQs
+        Im5hbWUiOiJOZXN0bFx1MDBlOSBUb2xsIEhvdXNlIENhZlx1MDBlOSBieSBD
+        aGlwIn0seyJsYXRpdHVkZSI6NDMuNjUzMjI2LCJpZCI6IjIzOTc2ODQxIiwi
+        bG9uZ2l0dWRlIjotNzkuMzgzMTg0LCJuYW1lIjoiVGhlIFBsYWNlIFRvIEJl
+        In0seyJsYXRpdHVkZSI6NDMuNjUzMjI2LCJpZCI6IjM3MzcyNzE4IiwibG9u
+        Z2l0dWRlIjotNzkuMzgzMTg0MywibmFtZSI6IlN1c2hpIEthamkifSx7Imxh
+        dGl0dWRlIjo0My42NTMyMjYsImlkIjoiMjQ0MDg2ODUiLCJsb25naXR1ZGUi
+        Oi03OS4zODMxODQzLCJuYW1lIjoiVGhlIERhbmZvcnRoIEV4cGVyaWVuY2Ug
+        LSBUaHJpbGwgb2YgdGhlIEdyaWxsIDNyZCBBbm51YWwifSx7ImxhdGl0dWRl
+        Ijo0My42NTMyMjYsImlkIjoiMzA0NDUwNjYiLCJsb25naXR1ZGUiOi03OS4z
+        ODMxODQzLCJuYW1lIjoiUG9ydGVyIEFpcnBvcnQifSx7ImxhdGl0dWRlIjo0
+        My42NTMyMjYsImlkIjoiNDY1NDIwMTAiLCJsb25naXR1ZGUiOi03OS4zODMx
+        ODQzLCJuYW1lIjoiTGVzbGlldmlsbGUgUHVtcHMifSx7ImxhdGl0dWRlIjo0
+        My42NTMzMzM5NjMsImlkIjoiNjUyMjE2NSIsImxvbmdpdHVkZSI6LTc5LjM4
+        MzMxMjQ2NCwibmFtZSI6IlRvcm9udG8gUHVibGljIExpYnJhcnkifSx7Imxh
+        dGl0dWRlIjo0My42NTI5NDUsImlkIjoiNDg1MzI4NyIsImxvbmdpdHVkZSI6
+        LTc5LjM4MzI1MjQ0NiwibmFtZSI6IkZhcm1lcnMgTWFya2V0In0seyJsYXRp
+        dHVkZSI6NDMuNjUyODYwNDQxLCJpZCI6IjIwMDc5Nzc2IiwibG9uZ2l0dWRl
+        IjotNzkuMzgzMjU4ODIsIm5hbWUiOiJUb3JvbnRvIEphenogRmVzdCJ9LHsi
+        bGF0aXR1ZGUiOjQzLjY1MzQ5ODQ3NSwiaWQiOiIzNDI0MDE3OSIsImxvbmdp
+        dHVkZSI6LTc5LjM4MzUzNjU1OCwibmFtZSI6IkdsYW1vdXIgYW5kIEdsaXR6
+        IFBhcnR5In0seyJsYXRpdHVkZSI6NDMuNjUzMjY1MjQxLCJpZCI6IjM3NDIy
+        NTIiLCJsb25naXR1ZGUiOi03OS4zODM3MTI1MDQsIm5hbWUiOiJDaXR5IEhh
+        bGwgUG9kaXVtIEdyZWVuIFJvb2YifSx7ImxhdGl0dWRlIjo0My42NTI4MjI5
+        NzEsImlkIjoiMzA3NzM2MzgiLCJsb25naXR1ZGUiOi03OS4zODMyODUsIm5h
+        bWUiOiJKYWNrIExheXRvbiBNZW1vcmlhbCJ9LHsibGF0aXR1ZGUiOjQzLjY1
+        MzM0NTA2LCJpZCI6IjQyNjc2NDMxIiwibG9uZ2l0dWRlIjotNzkuMzgyNjQw
+        MzI2LCJuYW1lIjoiR29vZGxpZmUgRml0bmVzcyJ9LHsibGF0aXR1ZGUiOjQz
+        LjY1MzIzMzA0OSwiaWQiOiI0MDMxNTkwOSIsImxvbmdpdHVkZSI6LTc5LjM4
+        MjUyOTI1OSwibmFtZSI6IkJpeGkgQmlrZSBTdGFuZCJ9LHsibGF0aXR1ZGUi
+        OjQzLjY1Mjc4Mzc5OSwiaWQiOiIzNzgxNjI0NSIsImxvbmdpdHVkZSI6LTc5
+        LjM4MjgwNTI3OCwibmFtZSI6IlRvcm9udG8gQnVpbGRpbmcgKERlcHQuKSwg
+        Q2l0eSBIYWxsIn0seyJsYXRpdHVkZSI6NDMuNjUyNzAwOTAzLCJpZCI6IjI3
+        MTI2OTYyIiwibG9uZ2l0dWRlIjotNzkuMzgzMjM5NjQ4LCJuYW1lIjoiSXJp
+        ZSBNdXNpYyBGZXN0aXZhbCJ9LHsibGF0aXR1ZGUiOjQzLjY1MzI3NjA2NSwi
+        aWQiOiI2MjMyNTY5NiIsImxvbmdpdHVkZSI6LTc5LjM4MjQ1MzM4MSwibmFt
+        ZSI6Ikdvb2RMaWZlIGZpdG5lc3MifSx7ImxhdGl0dWRlIjo0My42NTI4MDcw
+        MTMsImlkIjoiODc2NTYxMyIsImxvbmdpdHVkZSI6LTc5LjM4MjY3MzMxNywi
+        bmFtZSI6Ik9udGFyaW8gQ291cnQgb2YgSnVzdGljZSJ9LHsibGF0aXR1ZGUi
+        OjQzLjY1MjY3NTY4MSwiaWQiOiIyNTkzNjIxMyIsImxvbmdpdHVkZSI6LTc5
+        LjM4MzM2MDYxMSwibmFtZSI6IkNhZmUgT24gVGhlIFNxdWFyZSJ9LHsibGF0
+        aXR1ZGUiOjQzLjY1MzEzOTg5NywiaWQiOiIzMzkxMCIsImxvbmdpdHVkZSI6
+        LTc5LjM4Mzk2NjkyMywibmFtZSI6IlRvcm9udG8gQ2l0eSBIYWxsIn1dfQ==
+    http_version: 
+  recorded_at: Thu, 13 Jun 2013 16:17:10 GMT
+recorded_with: VCR 2.5.0
