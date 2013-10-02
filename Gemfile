@@ -71,9 +71,8 @@ group :profile do
   gem 'ruby-prof'
 end
 
-# Use MongoDB as the database
-gem 'mongoid', github: 'mongoid/mongoid'
-gem 'mongoid-paranoia', github: 'simi/mongoid-paranoia'
+# Use PostgreSQL as the database
+gem 'pg'
 
 # Use Unicorn as the app server
 gem 'unicorn'
@@ -105,13 +104,11 @@ gem 'typhoeus'
 # Sidekiq
 gem 'sidekiq'
 gem 'sinatra', '>= 1.3.0', require: nil
-gem 'kiqstand', github: 'mongoid/kiqstand' # to make it work nicely with Mongoid
 gem 'sidekiq_status'
 
 # Paperclip
 gem 'paperclip'
 gem 'fog'
-gem 'mongoid-paperclip', require: 'mongoid_paperclip'
 
 # New Relic
 gem 'newrelic_rpm'
@@ -123,6 +120,6 @@ gem 'google_timezone'
 gem 'geocoder'
 
 # Paginate 
-gem 'will_paginate_mongoid'
+gem 'will_paginate'
 
 gem "twitter-bootstrap-rails"
