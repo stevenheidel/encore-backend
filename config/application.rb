@@ -6,6 +6,9 @@ require "rails/all"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+# HACK: see http://stackoverflow.com/questions/16998253/called-load-without-the-safe-option-defaulting-to-safe-mode
+SafeYAML::OPTIONS[:default_mode] = :safe
+
 module EncoreBackend
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

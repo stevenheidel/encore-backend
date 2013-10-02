@@ -1,6 +1,6 @@
 require 'flickr_api'
 
-describe FlickrAPI, :vcr do
+describe FlickrAPI, vcr: true do
   let(:event) { FactoryGirl.create :rolling_stones }
 
   it "should test some methods" do

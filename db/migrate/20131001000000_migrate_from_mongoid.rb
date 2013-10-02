@@ -1,7 +1,7 @@
 class MigrateFromMongoid < ActiveRecord::Migration
-  enable_extension 'uuid-ossp'
-
   def change
+    enable_extension 'uuid-ossp'
+
     create_table :instagram_locations, id: :uuid do |t|
       t.string :name
       t.integer :instagram_uuid
@@ -41,6 +41,8 @@ class MigrateFromMongoid < ActiveRecord::Migration
       t.uuid :user_id
       t.uuid :friend_id
       t.uuid :event_id
+
+      t.timestamps
     end
 
     create_table :flags, id: :uuid do |t|
@@ -48,6 +50,8 @@ class MigrateFromMongoid < ActiveRecord::Migration
 
       t.uuid :user_id
       t.uuid :post_id
+
+      t.timestamps
     end
 
     create_table :flickr_photos, id: :uuid do |t|
@@ -61,6 +65,8 @@ class MigrateFromMongoid < ActiveRecord::Migration
       t.string :user_uuid
 
       t.uuid :event_id
+
+      t.timestamps
     end
 
     create_table :instagram_photos, id: :uuid do |t|
@@ -73,6 +79,8 @@ class MigrateFromMongoid < ActiveRecord::Migration
       t.string :user_uuid
 
       t.uuid :event_id
+
+      t.timestamps
     end
 
     create_table :user_photos, id: :uuid do |t|
@@ -86,6 +94,8 @@ class MigrateFromMongoid < ActiveRecord::Migration
       t.string :url
 
       t.string :mbid
+
+      t.timestamps
     end
 
     create_table :events, id: :uuid do |t|
@@ -101,6 +111,8 @@ class MigrateFromMongoid < ActiveRecord::Migration
       t.string :tickets_url
 
       t.uuid :venue_id
+
+      t.timestamps
     end
 
     create_table :venues, id: :uuid do |t|
@@ -113,6 +125,8 @@ class MigrateFromMongoid < ActiveRecord::Migration
       t.string :country
       t.string :street
       t.string :postalcode
+
+      t.timestamps
     end
 
     create_table :artists_events, id: :uuid do |t|

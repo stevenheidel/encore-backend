@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.0'
+gem 'rails', github: 'rails/rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -43,11 +43,12 @@ group :development do
 end
 
 group :development, :test do
-  gem 'bullet'
+  #gem 'bullet'
   gem 'debugger'
 
   # RSpec
-  gem 'rspec-rails', '~> 2.13'
+  # TODO: this issue: https://github.com/rspec/rspec-rails/pull/772
+  gem 'rspec-rails', '~> 2.14'
 end
 
 group :test do
@@ -92,9 +93,9 @@ gem 'flickraw', require: false
 gem 'youtube_it'
 
 # Rails Admin
-gem 'rails_admin', github: 'sferik/rails_admin'
-gem 'devise', '~> 3.0.0.rc'
-gem 'safe_yaml', github: 'dtao/safe_yaml' # see: http://codedecoder.wordpress.com/2013/05/31/cannot-load-such-file-safe_yaml-rails_admin/
+#gem 'rails_admin', github: 'sferik/rails_admin'
+#gem 'devise', '~> 3.0.0.rc'
+gem 'safe_yaml'
 
 # Faraday
 gem 'faraday'
@@ -121,6 +122,6 @@ gem 'google_timezone'
 gem 'geocoder'
 
 # Paginate 
-gem 'will_paginate'
+#gem 'will_paginate'
 
 gem "twitter-bootstrap-rails"

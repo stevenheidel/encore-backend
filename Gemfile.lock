@@ -10,12 +10,6 @@ GIT
       rails (>= 3.0.0)
 
 GIT
-  remote: git://github.com/dtao/safe_yaml.git
-  revision: 1f70d3773f361c17049501a77650ed196effe99c
-  specs:
-    safe_yaml (0.9.7)
-
-GIT
   remote: git://github.com/iTakeshi/whenever.git
   revision: 04e96f765af3a0761294fd888bc1fc728b5bfb1d
   branch: rails4
@@ -25,52 +19,53 @@ GIT
       chronic (>= 0.6.3)
 
 GIT
-  remote: git://github.com/sferik/rails_admin.git
-  revision: 6aed4e4d85cccd8a575b14ecbc03b467c3d05a5c
+  remote: git://github.com/rails/rails.git
+  revision: 18ca3cbe12af1464f2991ced0e891ec372c8a449
   specs:
-    rails_admin (0.5.0)
-      bootstrap-sass (~> 2.3)
-      builder (~> 3.1)
-      coffee-rails (~> 4.0)
-      font-awesome-rails (~> 3.0)
-      haml (~> 4.0)
-      jquery-rails (~> 3.0)
-      jquery-ui-rails (~> 4.0)
-      kaminari (~> 0.14)
-      nested_form (~> 0.3)
-      rack-pjax (~> 0.7)
-      rails (~> 4.0.0)
-      remotipart (~> 1.0)
-      safe_yaml (~> 0.9)
-      sass-rails (~> 4.0)
+    actionmailer (4.1.0.beta)
+      actionpack (= 4.1.0.beta)
+      actionview (= 4.1.0.beta)
+      mail (~> 2.5.4)
+    actionpack (4.1.0.beta)
+      activesupport (= 4.1.0.beta)
+      rack (~> 1.5.2)
+      rack-test (~> 0.6.2)
+    actionview (4.1.0.beta)
+      activemodel (= 4.1.0.beta)
+      activesupport (= 4.1.0.beta)
+      builder (~> 3.1.0)
+      erubis (~> 2.7.0)
+    activemodel (4.1.0.beta)
+      activesupport (= 4.1.0.beta)
+      builder (~> 3.1.0)
+    activerecord (4.1.0.beta)
+      activemodel (= 4.1.0.beta)
+      activesupport (= 4.1.0.beta)
+      arel (~> 4.0.0)
+    activesupport (4.1.0.beta)
+      i18n (~> 0.6, >= 0.6.4)
+      json (~> 1.7)
+      minitest (~> 5.0)
+      thread_safe (~> 0.1)
+      tzinfo (~> 0.3.37)
+    rails (4.1.0.beta)
+      actionmailer (= 4.1.0.beta)
+      actionpack (= 4.1.0.beta)
+      actionview (= 4.1.0.beta)
+      activerecord (= 4.1.0.beta)
+      activesupport (= 4.1.0.beta)
+      bundler (>= 1.3.0, < 2.0)
+      railties (= 4.1.0.beta)
+      sprockets-rails (~> 2.0.0)
+    railties (4.1.0.beta)
+      actionpack (= 4.1.0.beta)
+      activesupport (= 4.1.0.beta)
+      rake (>= 0.8.7)
+      thor (>= 0.18.1, < 2.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    actionmailer (4.0.0)
-      actionpack (= 4.0.0)
-      mail (~> 2.5.3)
-    actionpack (4.0.0)
-      activesupport (= 4.0.0)
-      builder (~> 3.1.0)
-      erubis (~> 2.7.0)
-      rack (~> 1.5.2)
-      rack-test (~> 0.6.2)
-    activemodel (4.0.0)
-      activesupport (= 4.0.0)
-      builder (~> 3.1.0)
-    activerecord (4.0.0)
-      activemodel (= 4.0.0)
-      activerecord-deprecated_finders (~> 1.0.2)
-      activesupport (= 4.0.0)
-      arel (~> 4.0.0)
-    activerecord-deprecated_finders (1.0.3)
-    activesupport (4.0.0)
-      i18n (~> 0.6, >= 0.6.4)
-      minitest (~> 4.2)
-      multi_json (~> 1.3)
-      thread_safe (~> 0.1)
-      tzinfo (~> 0.3.37)
     addressable (2.3.5)
     annotate (2.5.0)
       rake
@@ -79,18 +74,13 @@ GEM
     arrayfields (4.9.0)
     atomic (1.1.14)
     awesome_print (1.2.0)
-    bcrypt-ruby (3.1.2)
     better_errors (1.0.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     bluff (0.1.0)
-    bootstrap-sass (2.3.2.2)
-      sass (~> 3.2)
     builder (3.1.4)
-    bullet (4.6.0)
-      uniform_notifier
     cane (2.6.0)
       parallel
     capybara (2.0.2)
@@ -149,11 +139,6 @@ GEM
       debugger-ruby_core_source (~> 1.2.3)
     debugger-linecache (1.2.0)
     debugger-ruby_core_source (1.2.3)
-    devise (3.0.3)
-      bcrypt-ruby (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      warden (~> 1.2.3)
     diff-lcs (1.2.4)
     erubis (2.7.0)
     ethon (0.6.1)
@@ -189,8 +174,6 @@ GEM
       net-ssh (>= 2.1.3)
       nokogiri (~> 1.5)
       ruby-hmac
-    font-awesome-rails (3.2.1.3)
-      railties (>= 3.2, < 5.0)
     formatador (0.2.4)
     foursquare2 (1.9.7)
       faraday (~> 0.8)
@@ -222,8 +205,6 @@ GEM
     guard-zeus (0.0.1)
       guard
       zeus
-    haml (4.0.3)
-      tilt
     hashie (2.0.5)
     heroku-api (0.3.15)
       excon (~> 0.25.1)
@@ -246,9 +227,6 @@ GEM
     json_pure (1.8.0)
     jsonpath (0.5.4)
       multi_json
-    kaminari (0.14.1)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     kgio (2.8.1)
     koala (1.6.0)
       addressable (~> 2.2)
@@ -286,10 +264,9 @@ GEM
     metric_fu-Saikuro (1.1.1.0)
     mime-types (1.25)
     mini_portile (0.5.1)
-    minitest (4.7.5)
+    minitest (5.0.8)
     multi_json (1.8.0)
     multipart-post (1.2.0)
-    nested_form (0.3.2)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
@@ -297,7 +274,6 @@ GEM
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
-    orm_adapter (0.4.0)
     paperclip (3.5.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -307,21 +283,10 @@ GEM
     pg (0.17.0)
     polyglot (0.3.3)
     rack (1.5.2)
-    rack-pjax (0.7.0)
-      nokogiri (~> 1.5)
-      rack (~> 1.3)
     rack-protection (1.5.0)
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
-    rails (4.0.0)
-      actionmailer (= 4.0.0)
-      actionpack (= 4.0.0)
-      activerecord (= 4.0.0)
-      activesupport (= 4.0.0)
-      bundler (>= 1.3.0, < 2.0)
-      railties (= 4.0.0)
-      sprockets-rails (~> 2.0.0)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -336,11 +301,6 @@ GEM
       ruby-progressbar
     rails_serve_static_assets (0.0.1)
     rails_stdout_logging (0.0.2)
-    railties (4.0.0)
-      actionpack (= 4.0.0)
-      activesupport (= 4.0.0)
-      rake (>= 0.8.7)
-      thor (>= 0.18.1, < 2.0)
     raindrops (0.12.0)
     rake (10.1.0)
     rb-fsevent (0.9.3)
@@ -361,7 +321,6 @@ GEM
       archive-tar-minitar (>= 0.5.2)
       json (>= 1.4.6)
       rest-client (>= 1.6.1)
-    remotipart (1.2.1)
     require_all (1.3.1)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -391,6 +350,7 @@ GEM
     ruby_parser (3.2.2)
       sexp_processor (~> 4.1)
     rubyzip (0.9.9)
+    safe_yaml (0.9.7)
     sass (3.2.11)
     sass-rails (4.0.0)
       railties (>= 4.0.0.beta, < 5.0)
@@ -464,12 +424,8 @@ GEM
     unicorn-rails (1.1.0)
       rack
       unicorn
-    uniform_notifier (1.3.0)
     vcr (2.6.0)
-    warden (1.2.3)
-      rack (>= 1.0)
     websocket (1.0.7)
-    will_paginate (3.0.5)
     xpath (1.0.0)
       nokogiri (~> 1.3)
     youtube_it (2.1.1)
@@ -492,7 +448,6 @@ DEPENDENCIES
   annotate
   better_errors
   binding_of_caller
-  bullet
   capybara (= 2.0.2)
   coffee-rails (~> 4.0.0)
   cucumber (= 1.3.2)
@@ -501,7 +456,6 @@ DEPENDENCIES
   cucumber_factory
   database_cleaner
   debugger
-  devise (~> 3.0.0.rc)
   factory_girl_rails (~> 4.0)
   faraday
   faraday_middleware
@@ -530,13 +484,12 @@ DEPENDENCIES
   paperclip
   pg
   rack-test
-  rails (~> 4.0.0)
+  rails!
   rails_12factor
-  rails_admin!
   relish
-  rspec-rails (~> 2.13)
+  rspec-rails (~> 2.14)
   ruby-prof
-  safe_yaml!
+  safe_yaml
   sass-rails (~> 4.0.0)
   sidekiq
   sidekiq_status
@@ -551,5 +504,4 @@ DEPENDENCIES
   unicorn-rails
   vcr
   whenever!
-  will_paginate
   youtube_it
