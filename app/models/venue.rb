@@ -1,4 +1,4 @@
-class Venue
+class Venue < ActiveRecord::Base
   include Concerns::Lastfmable
 
   #TODO: field :coordinates, type: Array, default: [0,0]

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe InstagramLocation, vcr: true do
+describe Other::InstagramLocation, vcr: true do
   let(:aircanada1) { FactoryGirl.create :air_canada_centre, lastfm_id: 11,
     latitude: 43.6440859, longitude: -79.3783696 }
   let(:aircanada2) { FactoryGirl.create :air_canada_centre, lastfm_id: 22,

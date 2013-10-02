@@ -1,4 +1,4 @@
-class Artist
+class Artist < ActiveRecord::Base
   include Concerns::Lastfmable
 
   has_and_belongs_to_many :events

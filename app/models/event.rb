@@ -1,4 +1,4 @@
-class Event
+class Event < ActiveRecord::Base
   include Concerns::Lastfmable
   
   # TODO: field :sidekiq_workers, type: Array, default: []

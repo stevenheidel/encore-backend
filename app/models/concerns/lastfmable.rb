@@ -4,9 +4,6 @@ module Concerns::Lastfmable
   extend ActiveSupport::Concern
 
   included do
-    include Mongoid::Document
-    include Mongoid::Timestamps
-
     has_many :images, class_name: "Other::LastfmImage", as: :lastfm_imageable
 
     #TODO: index({lastfm_id: 1}, {unique: true})

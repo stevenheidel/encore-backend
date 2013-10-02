@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe Lastfm::Image do
+describe Other::LastfmImage do
   pending "add some examples to (or delete) #{__FILE__}"
 end
