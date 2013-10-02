@@ -1,10 +1,6 @@
-# TODO: this is different from others in post folder, doesn't inherit from post
-
-class Post::Flag
-  include Mongoid::Document
-
+class Other::Flag < ActiveRecord::Base
   field :type, type: String
-  field :user_id, type: Integer
 
-  embedded_in :post
+  belongs_to :user
+  belongs_to :post
 end

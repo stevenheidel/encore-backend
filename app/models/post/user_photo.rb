@@ -1,9 +1,7 @@
-class Post::UserPhoto < Post
-  include Mongoid::Paperclip
-
+class Post::UserPhoto < ActiveRecord::Base
   belongs_to :user
 
-  has_mongoid_attached_file :photo
+  has_attached_file :photo
 
   def caption
     "Uploaded to Encore"

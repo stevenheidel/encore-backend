@@ -1,35 +1,20 @@
 class Event
   include Concerns::Lastfmable
   
-  field :flickr_tag, type: String
-  field :headliner, type: String
-  field :start_date, type: DateTime
-  field :local_start_time, type: DateTime
-  field :tickets_url, type: String
+  # TODO: field :sidekiq_workers, type: Array, default: []
 
-  field :sidekiq_workers, type: Array, default: []
+  has_and_belongs_to_many :artists
+  has_and_belongs_to_many :users
 
-  has_and_belongs_to_many :artists, index: true
   has_many :posts
-  has_and_belongs_to_many :users, index: true, 
-    after_add: :inc_user_count, after_remove: :dec_user_count
 
   has_many :friend_visitors, class_name: "Event::FriendVisitor"
 
-  belongs_to :venue, index: true
+  belongs_to :venue
+
   validates_presence_of :artists
   validates_presence_of :start_date
   before_save :normalize_start_date
-
-  # Keep an updated count of users
-  # TODO: this will obviously fail if user already added event
-  field :user_count, type: Integer, default: 0
-  def inc_user_count(user)
-    self.inc(user_count: 1)
-  end
-  def dec_user_count(user)
-    self.inc(user_count: -1)
-  end
 
   scope :past, lambda{ where(:start_date.lt => Time.now).desc(:start_date) }
   scope :future, lambda{ where(:start_date.gte => Time.now).asc(:start_date) }

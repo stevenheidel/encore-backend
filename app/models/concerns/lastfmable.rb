@@ -7,15 +7,9 @@ module Concerns::Lastfmable
     include Mongoid::Document
     include Mongoid::Timestamps
 
-    field :lastfm_id, type: String
-    field :name, type: String
-    field :website, type: String
-    field :url, type: String
-
     has_many :images, class_name: "Other::LastfmImage", as: :lastfm_imageable
-    accepts_nested_attributes_for :images # for RailsAdmin
 
-    index({lastfm_id: 1}, {unique: true})
+    #TODO: index({lastfm_id: 1}, {unique: true})
 
     validates_uniqueness_of :lastfm_id
   end

@@ -1,17 +1,12 @@
 class Venue
   include Concerns::Lastfmable
 
-  field :city, type: String
-  field :country, type: String
-  field :street, type: String
-  field :postalcode, type: String
-  field :coordinates, type: Array, default: [0,0]
+  #TODO: field :coordinates, type: Array, default: [0,0]
 
   has_many :events
-  embeds_many :instagram_locations
-  accepts_nested_attributes_for :instagram_locations # for RailsAdmin
+  has_many :instagram_locations
 
-  index({coordinates: '2d'}, {min: -180, max: 180})
+  #TODO: index({coordinates: '2d'}, {min: -180, max: 180})
 
   validates_presence_of :name
   validate :validate_coordinates

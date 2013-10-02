@@ -72,6 +72,8 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     addressable (2.3.5)
+    annotate (2.5.0)
+      rake
     archive-tar-minitar (0.5.2)
     arel (4.0.0)
     arrayfields (4.9.0)
@@ -487,6 +489,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  annotate
   better_errors
   binding_of_caller
   bullet

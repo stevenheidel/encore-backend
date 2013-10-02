@@ -1,10 +1,4 @@
-class Post::FlickrPhoto < Post
-  field :flickr_uuid, type: Integer 
-  field :flickr_secret, type: String 
-  field :title, type: String
-  field :description, type: String
-  field :user_uuid, type: String
-
+class Post::FlickrPhoto < ActiveRecord::Base
   # Builds an object from JSON returned by Flickr
   def self.build_from_hashie(hashie)
     self.new(

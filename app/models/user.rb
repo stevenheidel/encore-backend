@@ -1,21 +1,11 @@
 require 'facebook_api'
 
-class User
-  include Mongoid::Document
-  include Mongoid::Timestamps
-
-  field :facebook_id, type: Integer 
-  field :oauth_string, type: String 
-  field :oauth_expiry, type: DateTime 
-  field :name, type: String
-  field :invite_sent, type: Boolean
-  field :invite_timestamp, type: DateTime
-
-  has_and_belongs_to_many :events, index: true
+class User < ActiveRecord::Base
+  has_and_belongs_to_many :events
   has_many :user_photos, class_name: "Post::UserPhoto"
   has_many :event_friend_visitors, class_name: "Event::FriendVisitor", inverse_of: :user
 
-  index({facebook_id: 1}, {unique: true})
+  #TODO: index({facebook_id: 1}, {unique: true})
 
   validates_uniqueness_of :facebook_id
 
