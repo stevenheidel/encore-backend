@@ -21,7 +21,6 @@ module EncoreBackend
     # config.i18n.default_locale = :de
 
     config.generators do |g|
-      g.orm :mongoid
       g.test_framework :rspec
       g.template_engine :slim
     end

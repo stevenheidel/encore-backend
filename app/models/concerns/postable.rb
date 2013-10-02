@@ -1,4 +1,4 @@
-class Post
+module Concerns::Postable
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Paranoia

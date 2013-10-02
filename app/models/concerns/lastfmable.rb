@@ -12,7 +12,7 @@ module Concerns::Lastfmable
     field :website, type: String
     field :url, type: String
 
-    embeds_many :images, class_name: "Lastfm::Image"
+    has_many :images, class_name: "Other::LastfmImage", as: :lastfm_imageable
     accepts_nested_attributes_for :images # for RailsAdmin
 
     index({lastfm_id: 1}, {unique: true})

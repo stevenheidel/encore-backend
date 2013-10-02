@@ -73,6 +73,7 @@ end
 
 # Use PostgreSQL as the database
 gem 'pg'
+gem 'annotate'
 
 # Use Unicorn as the app server
 gem 'unicorn'
