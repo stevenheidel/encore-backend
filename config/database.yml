@@ -1,0 +1,17 @@
+common: &common
+  adapter: postgresql
+  encoding: utf8
+
+local: &local
+  <<: *common
+  host: localhost
+  username:
+  password:
+
+development:
+  <<: *local
+  database: encore_backend_development
+
+test:
+  <<: *local
+  database: encore_backend_test
