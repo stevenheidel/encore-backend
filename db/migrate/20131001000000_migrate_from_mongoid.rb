@@ -1,4 +1,4 @@
-class CreateConcerts < ActiveRecord::Migration
+class MigrateFromMongoid < ActiveRecord::Migration
   enable_extension 'uuid-ossp'
 
   def change
@@ -118,11 +118,6 @@ class CreateConcerts < ActiveRecord::Migration
     create_table :artists_events, id: :uuid do |t|
       t.uuid :artist_id
       t.uuid :event_id
-    end
-
-    create_table :events_users, id: :uuid do |t|
-      t.uuid :event_id
-      t.uuid :user_id
     end
   end
 
