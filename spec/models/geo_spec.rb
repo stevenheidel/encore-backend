@@ -38,22 +38,40 @@ describe Geo, :vcr do
     Timecop.return
   end
 
-  it "should return tickets URL in Today events list", vcr: { record: :once, re_record_interval: nil } do
-    Timecop.freeze(Time.local(2013,9,19,11,00,00))
-
-    event = Geo.new(43.670906, -79.393331).todays_events.to_a[7]
-    event.headliner.should == "Peter Hook And The Light"
-    event.tickets_url.should == "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace"
-
-    Timecop.return
+  it "should return tickets URL in Today events list" do
+    events = Geo.new(43.670906, -79.393331).todays_events.to_a
+    events[1].headliner.should == "Soulfly"
+    events[1].tickets_url.should == "http://www.ticketmaster.ca/event/10004B23C3BB8DC6"
   end
 
-  it "should return tickets URL in Future events list", vcr: { record: :once, re_record_interval: nil } do
-    Timecop.freeze(Time.local(2013,9,19,11,00,00))
-    event = Geo.new(43.670906, -79.393331).future_events.to_a[7]
+  it "should paginate the Future events list" do
+    events = Geo.new(43.670906, -79.393331).future_events({limit: 5}).to_a
+    events.length.should == 5
+    events[0].headliner.should == "Hatebreed"
+    events[4].headliner.should == "Joe Satriani"
 
-    event.headliner.should == "Herbert Grönemeyer"
-    event.tickets_url.should == "http://ticketf.ly/11UbDtS"
-    Timecop.return
+    events = Geo.new(43.670906, -79.393331).future_events({page: 2, limit: 5}).to_a
+    events.length.should == 5
+    events[0].headliner.should == "UFO"
+    events[4].headliner.should == "Eric Andersen"
+
+    # no pagination provided
+    events = Geo.new(43.670906, -79.393331).future_events.to_a
+    events.length.should == 30
+    events[0].headliner.should == "Hatebreed"
+    events[29].headliner.should == "Paper Lions"
+
+    # pagination exceeds max value of retrieved = 200,
+    # should return everything retrieved approx 200 (except the Today's events)
+    events = Geo.new(43.670906, -79.393331).future_events({page: 15, limit: 20}).to_a
+    events.length.should == 189
+    events[0].headliner.should == "Hatebreed"
+    events[188].headliner.should == "Melt-Banana"
+  end
+
+  it "should return tickets URL in Future events list" do
+    events = Geo.new(43.670906, -79.393331).future_events({limit: 30, page: 2}).to_a
+    events[1].headliner.should == "Guy J"
+    events[1].tickets_url.should == "http://wantickets.com/Events/140183/Lost-Found-with-GUY-J/"
   end
 end

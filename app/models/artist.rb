@@ -41,11 +41,10 @@ class Artist
   end
 
   def future_events(geo=nil, options={})
-    events = LastfmAPI.artist_getEvents_all(self.lastfm_id).map do |e|
+    events = LastfmAPI.artist_getEvents_all(self.lastfm_id, options).map do |e|
       Lastfm::Event.new(e)
     end
     events.keep_if { |e| e.venue.try(:in_radius?, geo) } if geo.present?
-    events = events.first(options[:limit]) if options[:limit].present?
     events
   end
 end

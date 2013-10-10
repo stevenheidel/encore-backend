@@ -88,11 +88,12 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def future
     geo = Geo.new(params[:latitude], params[:longitude], params[:radius], request)
+    pagination_options = {page: params[:page], limit: params[:limit]}
 
     if params[:artist_id] # get future for artist
-      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(geo)
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(geo, pagination_options)
     else # get popular future for location
-      @events = geo.future_events
+      @events = geo.future_events(pagination_options)
     end
 
     render 'api/v1/events/index.json'

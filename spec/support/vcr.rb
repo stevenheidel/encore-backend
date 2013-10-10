@@ -11,7 +11,7 @@ VCR.configure do |config|
   config.preserve_exact_body_bytes { true }
   config.default_cassette_options = {
     re_record_interval: nil,
-    record: :once
+    record: :new_episodes
   }
 
   config.allow_http_connections_when_no_cassette = true

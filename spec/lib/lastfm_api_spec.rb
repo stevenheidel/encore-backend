@@ -30,18 +30,17 @@ describe LastfmAPI, :vcr do
   describe "artist.getEvents_all" do
     it "should retrieve all upcoming events" do
       lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto")
-      lastfm_response.size.should == 26
+      lastfm_response.size.should == 22
     end
 
     it "should retrieve a limited amount of upcoming events" do
-      lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto", 10)
+      lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto", {page: 2, limit: 10})
       
       lastfm_response.size.should == 10
-      lastfm_response.first['startDate'].should                 == "Tue, 01 Oct 2013 19:00:00"
-      lastfm_response.first['venue']['location']['city'].should == "New York"
-      lastfm_response[3]['startDate'].should                    == "Sat, 05 Oct 2013 19:00:00"
-      lastfm_response[3]['venue']['name'].should                == "Métropolis"
-      lastfm_response[3]['venue']['location']['country'].should == "Canada"
+      lastfm_response.first['startDate'].should                 == "Fri, 01 Nov 2013 20:00:00"
+      lastfm_response.first['venue']['location']['city'].should == "Dallas"
+      lastfm_response[3]['startDate'].should                    == "Wed, 06 Nov 2013 19:30:00"
+      lastfm_response[3]['venue']['location']['city'].should    == "Fort Lauderdale"
     end
 
     it "should always return an array" do
@@ -49,7 +48,7 @@ describe LastfmAPI, :vcr do
       lastfm_response.is_a?(Array).should be_true
       lastfm_response.length.should == 0
 
-      lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto", 1)
+      lastfm_response = LastfmAPI.artist_getEvents_all("Streetlight Manifesto", {limit: 1})
       lastfm_response.is_a?(Array).should be_true
       lastfm_response.length.should == 1
     end

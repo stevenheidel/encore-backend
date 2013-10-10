@@ -14,8 +14,9 @@ class LastfmAPI
   end
 
   # Get all future events up to a limit
-  def self.artist_getEvents_all(id, limit=nil)
-    result = get('artist.getEvents', artist: id, limit: limit)["events"]["event"] rescue []
+  def self.artist_getEvents_all(id, options={})
+    options[:artist] = id
+    result = get('artist.getEvents', options)["events"]["event"] rescue []
     return [] if result.nil?
     result.is_a?(Array) ? result : [result]
   end
@@ -47,8 +48,9 @@ class LastfmAPI
 
   # Get upcoming events for latitude and longitude
   # radius is in miles, gets converted to km for lastfm
-  def self.geo_getEvents(latitude, longitude, radius)
-    result = get('geo.getEvents', lat: latitude, long: longitude, limit: 30, distance: 1.61*radius)["events"]["event"] rescue []
+  def self.geo_getEvents(latitude, longitude, radius, options={})
+    options.merge!({lat: latitude, long: longitude, distance: 1.61*radius})
+    result = get('geo.getEvents', options)["events"]["event"] rescue []
     return [] if result.nil?
     result.is_a?(Array) ? result : [result]
   end
