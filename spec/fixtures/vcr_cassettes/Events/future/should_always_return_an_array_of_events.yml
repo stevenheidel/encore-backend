@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&lat=40.2740925407026&long=-111.6763645239655&limit=30&distance=40.25&method=geo.getEvents
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&page&limit=200&lat=40.2740925407026&long=-111.6763645239655&distance=40.25&method=geo.getEvents
     body:
       encoding: US-ASCII
       base64_string: ''
@@ -17,7 +17,7 @@ http_interactions:
       server:
       - Apache/2.2.22 (Unix)
       x-web-node:
-      - www233
+      - www164
       access-control-allow-origin:
       - '*'
       access-control-allow-methods:
@@ -27,27 +27,25 @@ http_interactions:
       cache-control:
       - max-age=3600
       expires:
-      - Tue, 01 Oct 2013 20:34:01 GMT
+      - Thu, 10 Oct 2013 16:06:51 GMT
       content-type:
       - application/json; charset=utf-8;
-      content-length:
-      - '623'
-      accept-ranges:
-      - bytes
       date:
-      - Tue, 01 Oct 2013 19:38:06 GMT
+      - Thu, 10 Oct 2013 15:17:41 GMT
       x-varnish:
-      - 1434582766 1434516518
+      - '2166474595'
       age:
-      - '246'
-      via:
-      - 1.1 varnish
-      connection:
-      - close
+      - '0'
       x-cms:
       - '1'
-      x-varnish-host:
-      - varnish4
+      x-cache:
+      - MISS from localhost
+      x-cache-lookup:
+      - MISS from localhost:3128
+      via:
+      - 1.1 varnish, 1.0 localhost (squid/3.1.20)
+      connection:
+      - close
     body:
       encoding: UTF-8
       base64_string: |
@@ -78,10 +76,11 @@ http_interactions:
         K09jdG9iZXIrMjAxMyIsIndlYnNpdGUiOiJodHRwOlwvXC93d3cuZW5kb2Z0
         aGV3ZXN0LmNvbSIsInRpY2tldHMiOiJcbiAgIiwiY2FuY2VsbGVkIjoiMCIs
         InRhZ3MiOnsidGFnIjpbImZvbGsiLCJoYXJkY29yZSIsImJsdWVzIiwibWVs
-        b2RpYyBoYXJkY29yZSJdfX0sIkBhdHRyIjp7ImxvY2F0aW9uIjoiKC0xMTEu
-        Njc2MzY0NTIzOTY1NSw0MC4yNzQwOTI1NDA3MDI2KSIsInBhZ2UiOiIxIiwi
-        cGVyUGFnZSI6IjMwIiwidG90YWxQYWdlcyI6IjEiLCJ0b3RhbCI6IjEiLCJm
-        ZXN0aXZhbHNvbmx5IjoiMCIsInRhZyI6IiJ9fX0K
+        b2RpYyBoYXJkY29yZSIsIm9uZSBtYW4gYmFuZCJdfX0sIkBhdHRyIjp7Imxv
+        Y2F0aW9uIjoiKC0xMTEuNjc2MzY0NTIzOTY1NSw0MC4yNzQwOTI1NDA3MDI2
+        KSIsInBhZ2UiOiIwIiwicGVyUGFnZSI6IjIwMCIsInRvdGFsUGFnZXMiOiIx
+        IiwidG90YWwiOiIxIiwiZmVzdGl2YWxzb25seSI6IjAiLCJ0YWciOiIifX19
+        Cg==
     http_version: 
-  recorded_at: Tue, 01 Oct 2013 19:38:06 GMT
+  recorded_at: Thu, 10 Oct 2013 15:06:51 GMT
 recorded_with: VCR 2.5.0
