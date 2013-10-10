@@ -1,0 +1,133 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&event=12345&method=event.getInfo
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 10 Jul 2013 03:23:40 GMT
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www208
+      access-control-allow-origin:
+      - '*'
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=10
+      expires:
+      - Wed, 10 Jul 2013 03:23:50 GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '86'
+      connection:
+      - close
+      content-type:
+      - application/json; charset=utf-8;
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJlcnJvciI6NiwibWVzc2FnZSI6IkludmFsaWQgZXZlbnQgaWQgc3VwcGxp
+        ZWQiLCJsaW5rcyI6W119Cg==
+    http_version: 
+  recorded_at: Wed, 10 Jul 2013 03:23:41 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&event=3196544&method=event.getInfo
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Wed, 17 Jul 2013 21:05:29 GMT
+      x-web-node:
+      - www160
+      access-control-allow-origin:
+      - '*'
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=86400
+      expires:
+      - Thu, 18 Jul 2013 21:05:29 GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '730'
+      content-type:
+      - application/json; charset=utf-8;
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJldmVudCI6eyJpZCI6IjMxOTY1NDQiLCJ0aXRsZSI6Ik1hZG9ubmEiLCJh
+        cnRpc3RzIjp7ImFydGlzdCI6WyJNYWRvbm5hIiwiUGF1bCBPYWtlbmZvbGQi
+        XSwiaGVhZGxpbmVyIjoiTWFkb25uYSJ9LCJ2ZW51ZSI6eyJpZCI6Ijg3ODE3
+        NTMiLCJuYW1lIjoiQWlyIENhbmFkYSBDZW50cmUiLCJsb2NhdGlvbiI6eyJn
+        ZW86cG9pbnQiOnsiZ2VvOmxhdCI6IjQzLjY0MzkyOSIsImdlbzpsb25nIjoi
+        LTc5LjM3OTMwNSJ9LCJjaXR5IjoiVG9yb250byIsImNvdW50cnkiOiJDYW5h
+        ZGEiLCJzdHJlZXQiOiI0MCBCYXkgU3QiLCJwb3N0YWxjb2RlIjoiTTVKIDJY
+        MiJ9LCJ1cmwiOiJodHRwOlwvXC93d3cubGFzdC5mbVwvdmVudWVcLzg3ODE3
+        NTMrQWlyK0NhbmFkYStDZW50cmUiLCJ3ZWJzaXRlIjoiaHR0cDpcL1wvdGhl
+        YWlyY2FuYWRhY2VudHJlLmNvbVwvIiwicGhvbmVudW1iZXIiOiI0MTYtODE1
+        LTU1MDAiLCJpbWFnZSI6W3siI3RleHQiOiJodHRwOlwvXC91c2Vyc2VydmUt
+        YWsubGFzdC5mbVwvc2VydmVcLzM0XC8yMDYwNTcuanBnIiwic2l6ZSI6InNt
+        YWxsIn0seyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZt
+        XC9zZXJ2ZVwvNjRcLzIwNjA1Ny5qcGciLCJzaXplIjoibWVkaXVtIn0seyIj
+        dGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwv
+        MTI2XC8yMDYwNTcuanBnIiwic2l6ZSI6ImxhcmdlIn0seyIjdGV4dCI6Imh0
+        dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvMjUyXC8yMDYw
+        NTcuanBnIiwic2l6ZSI6ImV4dHJhbGFyZ2UifSx7IiN0ZXh0IjoiaHR0cDpc
+        L1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC9fXC8yMDYwNTdcL0Fp
+        citDYW5hZGErQ2VudHJlLmpwZyIsInNpemUiOiJtZWdhIn1dfSwic3RhcnRE
+        YXRlIjoiVGh1LCAxMyBTZXAgMjAxMiAyMDowMDowMCIsImRlc2NyaXB0aW9u
+        IjoiPGRpdiBjbGFzcz1cImJiY29kZVwiPlJlc2VydmVkIExvd2VyIExldmVs
+        IFNlYXRpbmc8YnIgXC8+Q0EgJDE4Mi43NSAoQ0EgJDE2NS4wMCBUaWNrZXQg
+        KyBDQSAkMTcuNzUgRmVlcyk8YnIgXC8+Q0EgJDM3NC4wMCAoQ0EgJDM1MC4w
+        MCBUaWNrZXQgKyBDQSAkMjQuMDAgRmVlcyk8YnIgXC8+PGJyIFwvPlJlc2Vy
+        dmVkIEZsb29yIFNlYXRpbmc8YnIgXC8+Q0EgJDM3NC4wMDxiciBcLz5DQSAk
+        Mzc0LjAwIChDQSAkMzUwLjAwIFRpY2tldCArIENBICQyNC4wMCBGZWVzKTxi
+        ciBcLz48YnIgXC8+UmVzZXJ2ZWQgVXBwZXIgTGV2ZWwgU2VhdGluZzxiciBc
+        Lz5DQSAkNjIuNzUgKENBICQ0NS4wMCBUaWNrZXQgKyBDQSAkMTcuNzUgRmVl
+        cyk8YnIgXC8+Q0EgJDE4Mi43NSAoQ0EgJDE2NS4wMCBUaWNrZXQgKyBDQSAk
+        MTcuNzUgRmVlcyk8XC9kaXY+IiwiaW1hZ2UiOlt7IiN0ZXh0IjoiaHR0cDpc
+        L1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8zNFwvOTA2Njc4Mzku
+        cG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJz
+        ZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvNjRcLzkwNjY3ODM5LnBuZyIsInNp
+        emUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0cDpcL1wvdXNlcnNlcnZlLWFr
+        Lmxhc3QuZm1cL3NlcnZlXC8xMjZcLzkwNjY3ODM5LnBuZyIsInNpemUiOiJs
+        YXJnZSJ9LHsiI3RleHQiOiJodHRwOlwvXC91c2Vyc2VydmUtYWsubGFzdC5m
+        bVwvc2VydmVcLzI1MlwvOTA2Njc4MzkucG5nIiwic2l6ZSI6ImV4dHJhbGFy
+        Z2UifV0sImF0dGVuZGFuY2UiOiIxMCIsInJldmlld3MiOiIwIiwidGFnIjoi
+        bGFzdGZtOmV2ZW50PTMxOTY1NDQiLCJ1cmwiOiJodHRwOlwvXC93d3cubGFz
+        dC5mbVwvZXZlbnRcLzMxOTY1NDQrTWFkb25uYSthdCtBaXIrQ2FuYWRhK0Nl
+        bnRyZStvbisxMytTZXB0ZW1iZXIrMjAxMiIsIndlYnNpdGUiOiJodHRwOlwv
+        XC93d3cudGlja2V0bWFzdGVyLmNhXC9ldmVudFwvMTAwMDQ4NDMwOTU2QTRC
+        RSIsInRpY2tldHMiOiJcbiAgIiwiY2FuY2VsbGVkIjoiMCJ9fQo=
+    http_version: 
+  recorded_at: Wed, 17 Jul 2013 21:05:30 GMT
+recorded_with: VCR 2.5.0

@@ -1,0 +1,87 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.songkick.com/api/3.0/search/artists?apikey=0Zpbq2MQoAmjobgY&query=Radiohead
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 404
+      message: 
+    headers:
+      date:
+      - Tue, 11 Jun 2013 14:54:26 GMT
+      status:
+      - 404 Not Found
+      content-type:
+      - application/json; charset=utf-8
+      x-cascade:
+      - pass
+      vary:
+      - Accept-Encoding
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJyZXN1bHRzUGFnZSI6eyJzdGF0dXMiOiJlcnJvciIsImVycm9yIjp7Im1l
+        c3NhZ2UiOiJSZXNvdXJjZSBub3QgZm91bmQifX19
+    http_version: 
+  recorded_at: Tue, 11 Jun 2013 14:54:26 GMT
+- request:
+    method: get
+    uri: http://api.songkick.com/api/3.0/search/artists.json?apikey=0Zpbq2MQoAmjobgY&query=Radiohead
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Tue, 11 Jun 2013 14:54:54 GMT
+      status:
+      - 200 OK
+      content-type:
+      - application/json; charset=utf-8
+      cache-control:
+      - private, max-age=3600
+      expires:
+      - Tue, 11 Jun 2013 15:54:54 GMT
+      vary:
+      - Accept-Encoding
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJyZXN1bHRzUGFnZSI6eyJzdGF0dXMiOiJvayIsInJlc3VsdHMiOnsiYXJ0
+        aXN0IjpbeyJ1cmkiOiJodHRwOi8vd3d3LnNvbmdraWNrLmNvbS9hcnRpc3Rz
+        LzI1Mzg0Ni1yYWRpb2hlYWQ/dXRtX3NvdXJjZT0yMDg4OSZ1dG1fbWVkaXVt
+        PXBhcnRuZXIiLCJkaXNwbGF5TmFtZSI6IlJhZGlvaGVhZCIsIm9uVG91clVu
+        dGlsIjpudWxsLCJpZGVudGlmaWVyIjpbeyJtYmlkIjoiYTc0YjFiN2YtNzFh
+        NS00MDExLTk0NDEtZDBiNWU0MTIyNzExIiwiaHJlZiI6Imh0dHA6Ly9hcGku
+        c29uZ2tpY2suY29tL2FwaS8zLjAvYXJ0aXN0cy9tYmlkOmE3NGIxYjdmLTcx
+        YTUtNDAxMS05NDQxLWQwYjVlNDEyMjcxMS5qc29uIiwiZXZlbnRzSHJlZiI6
+        Imh0dHA6Ly9hcGkuc29uZ2tpY2suY29tL2FwaS8zLjAvYXJ0aXN0cy9tYmlk
+        OmE3NGIxYjdmLTcxYTUtNDAxMS05NDQxLWQwYjVlNDEyMjcxMS9jYWxlbmRh
+        ci5qc29uIiwic2V0bGlzdHNIcmVmIjoiaHR0cDovL2FwaS5zb25na2ljay5j
+        b20vYXBpLzMuMC9hcnRpc3RzL21iaWQ6YTc0YjFiN2YtNzFhNS00MDExLTk0
+        NDEtZDBiNWU0MTIyNzExL3NldGxpc3RzLmpzb24ifV0sImlkIjoyNTM4NDZ9
+        XX0sInBlclBhZ2UiOjUwLCJwYWdlIjoxLCJ0b3RhbEVudHJpZXMiOjF9fQ==
+    http_version: 
+  recorded_at: Tue, 11 Jun 2013 14:54:54 GMT
+recorded_with: VCR 2.5.0
