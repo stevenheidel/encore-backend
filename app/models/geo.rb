@@ -63,9 +63,11 @@ class Geo
   def paginate_events(events, pagination)
     pagination[:page]  ||= 1
     pagination[:limit] ||= 30
-    starting_index = (pagination[:page]-1) * pagination[:limit]
+    page = pagination[:page].to_i
+    limit = pagination[:limit].to_i
+    starting_index = (page-1) * limit
     starting_index = 0 if starting_index < 0 or starting_index > events.length-1
-    ending_index = (pagination[:page] * pagination[:limit])-1
+    ending_index = (page * limit)-1
     ending_index = events.length-1 if ending_index > events.length-1
 
     events[starting_index..ending_index]

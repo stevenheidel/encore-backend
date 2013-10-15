@@ -69,6 +69,13 @@ describe Geo, :vcr do
     events[188].headliner.should == "Melt-Banana"
   end
 
+  it "should accept string-values for pagination" do
+    events = Geo.new(43.670906, -79.393331).future_events({page: '2', limit: '5'}).to_a
+    events.length.should == 5
+    events[0].headliner.should == "Deltron 3030"
+    events[4].headliner.should == "Zachary Lucky"
+  end
+
   it "should return tickets URL in Future events list" do
     events = Geo.new(43.670906, -79.393331).future_events({limit: 30, page: 2}).to_a
     events[1].headliner.should == "Guy J"
