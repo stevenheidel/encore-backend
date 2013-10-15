@@ -72,4 +72,11 @@ describe LastfmAPI, :vcr do
       lastfm_response.length.should == 0
     end
   end
+
+  describe "geo.geo_getEvents_count" do
+    it "should return total count of upcoming (today and future) events filtered by geolocation" do
+      count = LastfmAPI.geo_getEvents_count(43.670906, -79.393331, 30)
+      count.should == 577
+    end
+  end
 end

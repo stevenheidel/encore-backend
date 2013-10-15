@@ -55,6 +55,13 @@ class LastfmAPI
     result.is_a?(Array) ? result : [result]
   end
 
+  # Get upcoming events count for latitude and longitude
+  # radius is in miles, gets converted to km for lastfm
+  def self.geo_getEvents_count(latitude, longitude, radius, options={})
+    options.merge!({lat: latitude, long: longitude, distance: 1.61*radius, limit: 1})
+    get('geo.getEvents', options)["events"]["@attr"]["total"].to_i rescue 0
+  end
+
   private
 
     def self.get(method, params=nil)
