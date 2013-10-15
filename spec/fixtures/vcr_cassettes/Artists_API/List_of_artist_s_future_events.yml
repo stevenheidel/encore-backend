@@ -4341,4 +4341,86 @@ http_interactions:
         IjoiNTYifX19Cg==
     http_version: 
   recorded_at: Thu, 10 Oct 2013 15:26:31 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&artist=Imagine+Dragons&limit=1&method=artist.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Tue, 15 Oct 2013 17:10:53 GMT
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www231
+      access-control-allow-origin:
+      - '*'
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=3600
+      expires:
+      - Tue, 15 Oct 2013 18:10:53 GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '636'
+      connection:
+      - close
+      content-type:
+      - application/json; charset=utf-8;
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJldmVudHMiOnsiZXZlbnQiOnsiaWQiOiIzNjUzMDEwIiwidGl0bGUiOiJJ
+        bWFnaW5lIERyYWdvbnMiLCJhcnRpc3RzIjp7ImFydGlzdCI6IkltYWdpbmUg
+        RHJhZ29ucyIsImhlYWRsaW5lciI6IkltYWdpbmUgRHJhZ29ucyJ9LCJ2ZW51
+        ZSI6eyJpZCI6IjEwMjg0NDAzIiwibmFtZSI6IlRoZSBQb3dlcnN0YXRpb24i
+        LCJsb2NhdGlvbiI6eyJnZW86cG9pbnQiOnsiZ2VvOmxhdCI6Ii0zNi44NjYw
+        NzUiLCJnZW86bG9uZyI6IjE3NC43NjEyOTQifSwiY2l0eSI6IkF1Y2tsYW5k
+        IiwiY291bnRyeSI6Ik5ldyBaZWFsYW5kIiwic3RyZWV0IjoiMzMgTW91bnQg
+        RWRlbiBSb2FkIiwicG9zdGFsY29kZSI6IjEwMjMifSwidXJsIjoiaHR0cDpc
+        L1wvd3d3Lmxhc3QuZm1cL3ZlbnVlXC8xMDI4NDQwMytUaGUrUG93ZXJzdGF0
+        aW9uIiwid2Vic2l0ZSI6Imh0dHA6XC9cL3d3dy5wb3dlcnN0YXRpb24ubmV0
+        Lm56IiwicGhvbmVudW1iZXIiOiIiLCJpbWFnZSI6W3siI3RleHQiOiJodHRw
+        OlwvXC91c2Vyc2VydmUtYWsubGFzdC5mbVwvc2VydmVcLzM0XC84NDI5MTIz
+        OS5wbmciLCJzaXplIjoic21hbGwifSx7IiN0ZXh0IjoiaHR0cDpcL1wvdXNl
+        cnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC82NFwvODQyOTEyMzkucG5nIiwi
+        c2l6ZSI6Im1lZGl1bSJ9LHsiI3RleHQiOiJodHRwOlwvXC91c2Vyc2VydmUt
+        YWsubGFzdC5mbVwvc2VydmVcLzEyNlwvODQyOTEyMzkucG5nIiwic2l6ZSI6
+        ImxhcmdlIn0seyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0
+        LmZtXC9zZXJ2ZVwvMjUyXC84NDI5MTIzOS5wbmciLCJzaXplIjoiZXh0cmFs
+        YXJnZSJ9LHsiI3RleHQiOiJodHRwOlwvXC91c2Vyc2VydmUtYWsubGFzdC5m
+        bVwvc2VydmVcL19cLzg0MjkxMjM5XC9UaGUrUG93ZXJzdGF0aW9uK1Bvd2Vy
+        c3RhdGlvbi5wbmciLCJzaXplIjoibWVnYSJ9XX0sInN0YXJ0RGF0ZSI6IlR1
+        ZSwgMTUgT2N0IDIwMTMgMjA6MTc6MDEiLCJkZXNjcmlwdGlvbiI6IiIsImlt
+        YWdlIjpbeyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZt
+        XC9zZXJ2ZVwvMzRcLzkyNjY3MzUzLnBuZyIsInNpemUiOiJzbWFsbCJ9LHsi
+        I3RleHQiOiJodHRwOlwvXC91c2Vyc2VydmUtYWsubGFzdC5mbVwvc2VydmVc
+        LzY0XC85MjY2NzM1My5wbmciLCJzaXplIjoibWVkaXVtIn0seyIjdGV4dCI6
+        Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvMTI2XC85
+        MjY2NzM1My5wbmciLCJzaXplIjoibGFyZ2UifSx7IiN0ZXh0IjoiaHR0cDpc
+        L1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8yNTJcLzkyNjY3MzUz
+        LnBuZyIsInNpemUiOiJleHRyYWxhcmdlIn1dLCJhdHRlbmRhbmNlIjoiNyIs
+        InJldmlld3MiOiIwIiwidGFnIjoibGFzdGZtOmV2ZW50PTM2NTMwMTAiLCJ1
+        cmwiOiJodHRwOlwvXC93d3cubGFzdC5mbVwvZXZlbnRcLzM2NTMwMTArSW1h
+        Z2luZStEcmFnb25zK2F0K1RoZStQb3dlcnN0YXRpb24rb24rMTUrT2N0b2Jl
+        cisyMDEzIiwid2Vic2l0ZSI6IiIsInRpY2tldHMiOiJcbiAgIiwiY2FuY2Vs
+        bGVkIjoiMCIsInRhZ3MiOnsidGFnIjpbImluZGllIHJvY2siLCJhbHRlcm5h
+        dGl2ZSIsImluZGllIiwicm9jayJdfX0sIkBhdHRyIjp7ImFydGlzdCI6Iklt
+        YWdpbmUgRHJhZ29ucyIsImZlc3RpdmFsc29ubHkiOiIwIiwicGFnZSI6IjEi
+        LCJwZXJQYWdlIjoiMSIsInRvdGFsUGFnZXMiOiI1NSIsInRvdGFsIjoiNTUi
+        fX19Cg==
+    http_version: 
+  recorded_at: Tue, 15 Oct 2013 17:10:53 GMT
 recorded_with: VCR 2.5.0
