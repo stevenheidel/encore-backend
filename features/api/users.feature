@@ -114,8 +114,8 @@ Feature: Users API
       {
         "friends":
         [
-          {"facebook_id": "3196544", "name": "Aldous Huxley"},
-          {"facebook_id": "123456", "name": "George Orwell"},
+          {"facebook_id": "3196544", "name": "Aldous Huxley", "invite_sent": false},
+          {"facebook_id": "123456", "name": "George Orwell", "invite_sent": true},
           {"facebook_id": "65432196", "name": "Rudyard Kipling"},
           {"facebook_id": "951623847", "name": "James Joyce"}
         ]
@@ -128,13 +128,13 @@ Feature: Users API
             "facebook_id": 3196544,
             "name": "Aldous Huxley",
             "facebook_image_url": "https://graph.facebook.com/3196544/picture?type=large",
-            "invite_sent": true
+            "invite_sent": false
           },
           {
             "facebook_id": 123456,
             "name": "George Orwell",
             "facebook_image_url": "https://graph.facebook.com/123456/picture?type=large",
-            "invite_sent": false
+            "invite_sent": true
           },
           {
             "facebook_id": 65432196,
