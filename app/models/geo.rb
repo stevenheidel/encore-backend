@@ -47,29 +47,13 @@ class Geo
 
   def future_events(options={})
     pagination = {page: options[:page], limit: options[:limit]}
-    options[:page] = nil ; options[:limit] = 200
+    pagination[:exclude_todays_events] = true
+    options[:limit] = Event::lastfm_events_total_page_size(pagination)
+    options[:page] = nil
     events = LastfmAPI.geo_getEvents(@lat, @long, @radius, options).map do |e| 
       Lastfm::Event.new(e)
     end
     events.keep_if { |e| e.date > Date.today }
-    events = paginate_events(events, pagination)
-  end
-
-  private
-
-  # As there is a need to filter out the events happening today, the lastfmAPI pagination 
-  # cannot be used. Instead, pagination is applied after the events are retrieved from lastfmAPI.
-  # Pages start from 1
-  def paginate_events(events, pagination)
-    pagination[:page]  ||= 1
-    pagination[:limit] ||= 30
-    page = pagination[:page].to_i
-    limit = pagination[:limit].to_i
-    starting_index = (page-1) * limit
-    starting_index = 0 if starting_index < 0 or starting_index > events.length-1
-    ending_index = (page * limit)-1
-    ending_index = events.length-1 if ending_index > events.length-1
-
-    events[starting_index..ending_index]
+    events = Event::paginate_events(events, pagination)
   end
 end
