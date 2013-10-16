@@ -78,5 +78,12 @@ describe LastfmAPI, :vcr do
       count = LastfmAPI.geo_getEvents_count(43.670906, -79.393331, 30)
       count.should == 577
     end
+
+    it "should return total count of future events (excluding today) filtered by geolocation" do
+      Timecop.freeze(Time.local(2013,10,16,13,57,00))
+      count = LastfmAPI.geo_getEvents_count(43.670906, -79.393331, 30, {exclude_todays_events: true})
+      count.should == 564
+      Timecop.return
+    end
   end
 end
