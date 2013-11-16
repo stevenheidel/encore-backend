@@ -75,6 +75,18 @@ describe Geo, :vcr do
     Timecop.return
   end
 
+  it "should not return Events after the last Events page" do
+    Timecop.freeze(Time.local(2013,11,15,18,37,00))
+
+    events_total_count = LastfmAPI.geo_getEvents_count(43.670906, -79.393331, 30, {exclude_todays_events: true}) #422
+    events = Geo.new(43.670906, -79.393331).future_events({page: 5, limit: 100}).to_a #400-500
+    events.length.should == 22
+    events = Geo.new(43.670906, -79.393331).future_events({page: 6, limit: 100}).to_a #500-600
+    events.length.should == 0
+
+    Timecop.return
+  end
+
   it "should accept string-values for pagination" do
     Timecop.freeze(Time.local(2013,10,10,15,00,00))
     events = Geo.new(43.670906, -79.393331).future_events({page: '2', limit: '5'}).to_a

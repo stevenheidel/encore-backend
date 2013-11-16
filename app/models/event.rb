@@ -155,7 +155,8 @@ class Event
     page = pagination[:page].to_i
     limit = pagination[:limit].to_i
     starting_index = (page-1) * limit
-    starting_index = 0 if starting_index < 0 or starting_index > events.length-1
+    starting_index = 0 if starting_index < 0
+    return [] if starting_index > events.length-1
     ending_index = (page * limit)-1
     ending_index = events.length-1 if ending_index > events.length-1
 
