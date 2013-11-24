@@ -10,6 +10,14 @@
 #     - <Heroku config:var name>: <Heroku config:var value>
 #
 
+production:
+  app: encore-backend-production
+  config:
+    RACK_ENV: production
+    RAILS_ENV: production
+  addons:
+    - redistogo:nano
+
 staging:
   app: encore-backend-staging
   config:
