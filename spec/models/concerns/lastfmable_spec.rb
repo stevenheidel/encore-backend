@@ -3,7 +3,7 @@ shared_examples "lastfmable" do
 
   describe "#get" do
     it "should return it if it exists" do
-      pp described_class.all.entries
+      #pp described_class.all.entries
       described_class.get(model.lastfm_id).should == model
     end
   end

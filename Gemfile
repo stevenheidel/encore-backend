@@ -29,14 +29,14 @@ group :development do
   gem 'metric_fu'
 
   # Guard
-  gem 'guard'
-  gem 'guard-bundler'
-  gem 'guard-cucumber'
-  gem 'guard-rails'
-  gem 'guard-rspec'
-  gem 'guard-shell'
-  gem 'guard-spin'
-  gem 'guard-zeus'
+  #gem 'guard'
+  #gem 'guard-bundler'
+  #gem 'guard-cucumber'
+  #gem 'guard-rails'
+  #gem 'guard-rspec'
+  #gem 'guard-shell'
+  #gem 'guard-spin'
+  #gem 'guard-zeus'
 
   gem 'heroku_san'
   gem 'rails_12factor'

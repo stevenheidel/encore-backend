@@ -83,4 +83,160 @@ http_interactions:
         Cg==
     http_version: 
   recorded_at: Thu, 10 Oct 2013 15:06:51 GMT
-recorded_with: VCR 2.5.0
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&page&limit=50&lat=40.2740925407026&long=-111.6763645239655&distance=40.25&method=geo.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www216
+      access-control-allow-origin:
+      - '*'
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=10
+      expires:
+      - Sun, 24 Nov 2013 04:22:30 GMT
+      content-type:
+      - application/json; charset=utf-8;
+      date:
+      - Sun, 24 Nov 2013 04:22:20 GMT
+      x-varnish:
+      - '1898917671'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - close
+      x-cms:
+      - '1'
+      x-varnish-host:
+      - varnish7
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJlcnJvciI6OCwibWVzc2FnZSI6IldlIGNvdWxkIG5vdCBmaW5kIGFueSB1
+        cGNvbWluZyBldmVudHMgYmFzZWQgb24geW91ciBzcGVjaWZpZWQgbG9jYXRp
+        b24uIiwibGlua3MiOltdfQo=
+    http_version: 
+  recorded_at: Sun, 24 Nov 2013 04:22:20 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=-111.6763645239655&long=40.2740925407026&distance=40.25&limit=1&method=geo.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www219
+      access-control-allow-origin:
+      - '*'
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=10
+      expires:
+      - Sun, 24 Nov 2013 04:22:31 GMT
+      content-type:
+      - application/json; charset=utf-8;
+      date:
+      - Sun, 24 Nov 2013 04:22:21 GMT
+      x-varnish:
+      - '1898917918'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - close
+      x-cms:
+      - '1'
+      x-varnish-host:
+      - varnish7
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJlcnJvciI6OCwibWVzc2FnZSI6IldlIGNvdWxkIG5vdCBmaW5kIGFueSB1
+        cGNvbWluZyBldmVudHMgYmFzZWQgb24geW91ciBzcGVjaWZpZWQgbG9jYXRp
+        b24uIiwibGlua3MiOltdfQo=
+    http_version: 
+  recorded_at: Sun, 24 Nov 2013 04:22:22 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=-111.6763645239655&long=40.2740925407026&distance=40.25&limit=50&method=geo.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www207
+      access-control-allow-origin:
+      - '*'
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=10
+      expires:
+      - Sun, 24 Nov 2013 04:22:33 GMT
+      content-type:
+      - application/json; charset=utf-8;
+      date:
+      - Sun, 24 Nov 2013 04:22:23 GMT
+      x-varnish:
+      - '20311139'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - close
+      x-cms:
+      - '1'
+      x-varnish-host:
+      - varnish8
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJlcnJvciI6OCwibWVzc2FnZSI6IldlIGNvdWxkIG5vdCBmaW5kIGFueSB1
+        cGNvbWluZyBldmVudHMgYmFzZWQgb24geW91ciBzcGVjaWZpZWQgbG9jYXRp
+        b24uIiwibGlua3MiOltdfQo=
+    http_version: 
+  recorded_at: Sun, 24 Nov 2013 04:22:23 GMT
+recorded_with: VCR 2.7.0

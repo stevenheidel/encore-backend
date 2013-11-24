@@ -1457,4 +1457,50 @@ http_interactions:
         IiwidG90YWwiOiIyNiJ9fX0K
     http_version: 
   recorded_at: Tue, 01 Oct 2013 16:41:45 GMT
-recorded_with: VCR 2.5.0
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&artist=Streetlight+Manifesto&method=artist.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Sun, 24 Nov 2013 04:11:26 GMT
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www208
+      access-control-allow-origin:
+      - '*'
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=3600
+      expires:
+      - Sun, 24 Nov 2013 05:11:26 GMT
+      vary:
+      - Accept-Encoding
+      content-length:
+      - '124'
+      connection:
+      - close
+      content-type:
+      - application/json; charset=utf-8;
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJldmVudHMiOnsiI3RleHQiOiJcbiIsImFydGlzdCI6IlN0cmVldGxpZ2h0
+        IE1hbmlmZXN0byIsImZlc3RpdmFsc29ubHkiOiIwIiwicGFnZSI6IjAiLCJw
+        ZXJQYWdlIjoiNTAiLCJ0b3RhbFBhZ2VzIjoiMCIsInRvdGFsIjoiMCJ9fQo=
+    http_version: 
+  recorded_at: Sun, 24 Nov 2013 04:11:26 GMT
+recorded_with: VCR 2.7.0

@@ -33,7 +33,7 @@ describe Venue do
     venue.errors[:name].should be_empty
   end
 
-  it "should have numeric coordinates" do
+  pending "should have numeric coordinates" do
     venue = FactoryGirl.build :venue
     venue.longitude = -79.379305
     venue.latitude = 43.643929
