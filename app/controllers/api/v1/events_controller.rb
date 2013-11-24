@@ -89,14 +89,17 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def future
     geo = Geo.new(params[:latitude], params[:longitude], params[:radius], request)
+    pagination_options = {page: params[:page], limit: params[:limit]}
 
     if params[:artist_id] # get future for artist
-      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(geo)
+      @events = Artist.find_or_create_from_lastfm(params[:artist_id]).future_events(geo, pagination_options)
+      @events_total_count = LastfmAPI.artist_getEvents_count(params[:artist_id])
     else # get popular future for location
-      @events = geo.future_events
+      @events = geo.future_events(pagination_options)
+      @events_total_count = LastfmAPI.geo_getEvents_count(geo.point[1], geo.point[0], geo.radius, {exclude_todays_events: true})
     end
 
-    render 'api/v1/events/index.json'
+    render 'api/v1/events/future.json'
   end
 
   def add_facebook_friends

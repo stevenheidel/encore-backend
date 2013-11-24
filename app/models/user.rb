@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
       friend = User.find_or_create_by(facebook_id: friend_json[:facebook_id])
       if friend_json[:name] and friend.name != friend_json[:name]
         friend.name = friend_json[:name]
+        friend.invite_sent = friend_json[:invite_sent] if friend_json.has_key?(:invite_sent)
         friend.save
       end
       Event::FriendVisitor.create user: self, friend: friend, event: event

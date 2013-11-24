@@ -46,15 +46,15 @@ describe Artist, :vcr do
   describe ".future_events" do
     it "should retrieve future events not limited by coordinates" do
       artist = FactoryGirl.create :streetlight_manifesto
-      artist.future_events.count.should == 26
+      artist.future_events.count.should == 22
     end
 
     it "should retrieve a limited amount of upcoming events" do
       artist = FactoryGirl.create :streetlight_manifesto
-      events = artist.future_events(nil, {limit: 5})
-      events.count.should == 5
-      events[0].start_date.should == "Tue, 01 Oct 2013 19:00:00"
-      events[4].start_date.should == "Tue, 08 Oct 2013 20:00:00"
+      events = artist.future_events(nil, {page: 2, limit: 10})
+      events.count.should == 10
+      events[0].start_date.should == "Fri, 01 Nov 2013 20:00:00"
+      events[3].start_date.should == "Wed, 06 Nov 2013 19:30:00"
     end
   end
 end

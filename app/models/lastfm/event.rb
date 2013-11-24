@@ -81,8 +81,8 @@ class Lastfm::Event < Lastfm::Base
       urls.concat(@json["website"].to_s.scan(url_regexp))
       urls.concat(@json["tickets"].to_s.scan(url_regexp))
       if urls.present?
-        tickets_urls = urls.select{|url| url.match(/ticket|sale|buy|purchase/)}
-        @tickets_url = tickets_urls[0] if tickets_urls
+        tickets_urls = urls.select{|url| url.match(/ticket|sale|buy|purchase|eventbrite/)}
+        @tickets_url = tickets_urls.sort_by(&:length).last if tickets_urls.length > 0
       end
     end
   end

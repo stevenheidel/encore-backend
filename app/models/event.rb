@@ -44,6 +44,8 @@ class Event < ActiveRecord::Base
     # TODO: write this
   }
 
+  AMOUNT_OF_TODAYS_EVENTS = 20
+
   scope :in_radius, ->(geo) {
     # This is actual magic. See https://github.com/alexreisner/geocoder#known-issue
     venue_ids = Venue.near(geo.point, geo.radius).joins(:events).preload(:events).map(&:id)
@@ -136,6 +138,38 @@ class Event < ActiveRecord::Base
       venue_id: venue_id,
       user_count: users.count
     }.to_json
+  end
+
+  # retrieve a large enough amount of events to ensure that 
+  # the requested events page will be found (as the pagination is happening on backend and not LastfmAPI) 
+  def self.lastfm_events_total_page_size(options={})
+    todays_events = options[:exclude_todays_events] ? self::AMOUNT_OF_TODAYS_EVENTS : 0
+    if(   options[:page].nil?     and options[:limit].present?)
+      return options[:limit] + todays_events
+    elsif(options[:page].present? and options[:limit].present?)
+      page  = options[:page].to_i
+      limit = options[:limit].to_i
+      return (page * limit) + limit + todays_events
+    else
+      return 30 + todays_events
+    end
+  end
+
+  # As there is a need to filter out the events happening today for Geo#future_events, 
+  # the lastfmAPI pagination cannot be used. Instead, pagination is applied after 
+  # the events are retrieved from lastfmAPI. Pages start from 1, not 0
+  def self.paginate_events(events, pagination)
+    pagination[:page]  ||= 1
+    pagination[:limit] ||= 30
+    page = pagination[:page].to_i
+    limit = pagination[:limit].to_i
+    starting_index = (page-1) * limit
+    starting_index = 0 if starting_index < 0
+    return [] if starting_index > events.length-1
+    ending_index = (page * limit)-1
+    ending_index = events.length-1 if ending_index > events.length-1
+
+    events[starting_index..ending_index]
   end
 
   private

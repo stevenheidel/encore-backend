@@ -80,10 +80,19 @@ Feature: Events API
       {
         "latitude": 43.670906,
         "longitude": -79.393331,
-        "radius": 0.5
+        "radius": 0.5,
+        "page": 2,
+        "limit": 50
       }
       """
-    Then the JSON response should have more than 2 copies similar to this under "events":
+    Then the JSON response should have something similar to the following under "$":
+      """
+        {
+          "total": 573,
+          "events": "null"
+        }
+      """
+    And the JSON response should have more than 2 copies similar to this under "events":
       """
       {
         "lastfm_id": "12345",

@@ -35,22 +35,69 @@ describe Geo, :vcr do
     Timecop.return
   end
 
-  it "should return tickets URL in Today events list", vcr: { record: :once, re_record_interval: nil } do
-    Timecop.freeze(Time.local(2013,9,19,11,00,00))
+  it "should return tickets URL in Today events list" do
+    Timecop.freeze(Time.local(2013,10,10,15,00,00))
 
-    event = Geo.new(43.670906, -79.393331).todays_events.to_a[7]
-    event.headliner.should == "Peter Hook And The Light"
-    event.tickets_url.should == "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&amp;eventId=3602664&amp;pl=embrace"
+    events = Geo.new(43.670906, -79.393331).todays_events.to_a
+    events[1].headliner.should == "Soulfly"
+    events[1].tickets_url.should == "http://www.ticketmaster.ca/event/10004B23C3BB8DC6"
 
     Timecop.return
   end
 
-  it "should return tickets URL in Future events list", vcr: { record: :once, re_record_interval: nil } do
-    Timecop.freeze(Time.local(2013,9,19,11,00,00))
-    event = Geo.new(43.670906, -79.393331).future_events.to_a[7]
+  it "should paginate the Future events list" do
+    Timecop.freeze(Time.local(2013,10,16,15,00,00))
 
-    event.headliner.should == "Herbert Grönemeyer"
-    event.tickets_url.should == "http://ticketf.ly/11UbDtS"
+    events = Geo.new(43.670906, -79.393331).future_events({limit: 5}).to_a
+    events.length.should == 5
+    events[0].headliner.should == "Zachary Lucky"
+    events[4].headliner.should == "Fiona Apple"
+
+    events = Geo.new(43.670906, -79.393331).future_events({page: 2, limit: 5}).to_a
+    events.length.should == 5
+    events[0].headliner.should == "Frightened Rabbit"
+    events[4].headliner.should == "Delorean"
+
+    # no pagination provided
+    events = Geo.new(43.670906, -79.393331).future_events.to_a
+    events.length.should == 30
+    events[0].headliner.should == "Zachary Lucky"
+    events[29].headliner.should == "Senses Fail"
+
+    events = Geo.new(43.670906, -79.393331).future_events({page: 15, limit: 20}).to_a
+    events.length.should == 20
+    events[0].headliner.should == "Sepultura"
+    events[19].headliner.should == "Limp Wrist"
+
+    Timecop.return
+  end
+
+  it "should not return Events after the last Events page" do
+    Timecop.freeze(Time.local(2013,11,15,18,37,00))
+
+    events_total_count = LastfmAPI.geo_getEvents_count(43.670906, -79.393331, 30, {exclude_todays_events: true}) #422
+    events = Geo.new(43.670906, -79.393331).future_events({page: 5, limit: 100}).to_a #400-500
+    events.length.should == 22
+    events = Geo.new(43.670906, -79.393331).future_events({page: 6, limit: 100}).to_a #500-600
+    events.length.should == 0
+
+    Timecop.return
+  end
+
+  it "should accept string-values for pagination" do
+    Timecop.freeze(Time.local(2013,10,10,15,00,00))
+    events = Geo.new(43.670906, -79.393331).future_events({page: '2', limit: '5'}).to_a
+    events.length.should == 5
+    events[0].headliner.should == "Deltron 3030"
+    events[4].headliner.should == "Zachary Lucky"
+    Timecop.return
+  end
+
+  it "should return tickets URL in Future events list" do
+    Timecop.freeze(Time.local(2013,10,16,13,57,00))
+    events = Geo.new(43.670906, -79.393331).future_events({limit: 30, page: 2}).to_a
+    events[0].headliner.should == "Big D and the Kids Table"
+    events[0].tickets_url.should == "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&eventId=3730004"
     Timecop.return
   end
 end
