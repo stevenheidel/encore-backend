@@ -119,7 +119,7 @@ class Event < ActiveRecord::Base
 
   def to_json
     {
-      _id: _id,
+      _id: id,
       created_at: format_datetime(created_at.utc),
       updated_at: format_datetime(updated_at.utc),
       lastfm_id: lastfm_id,
@@ -134,7 +134,7 @@ class Event < ActiveRecord::Base
       artist_ids: artist_ids,
       user_ids: user_ids,
       venue_id: venue_id,
-      user_count: user_count
+      user_count: users.count
     }.to_json
   end
 
