@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if [ "$RAILS_ENV" == "development" ]; then
-  # DEVELOPMENT
-  ./bin/unicorn -c config/unicorn.rb -E "development"
-else
-  # PRODUCTION
-  ./bin/unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
-fi
