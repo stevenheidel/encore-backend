@@ -1,2 +1,2 @@
-web: ./bin/unicorn_rails -c config/unicorn.rb -E $RAILS_ENV -D
+web: ./bin/unicorn -p $PORT -c ./config/unicorn.rb
 worker: ./bin/sidekiq -q default -q saver
