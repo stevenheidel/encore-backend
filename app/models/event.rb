@@ -39,9 +39,14 @@ class Event < ActiveRecord::Base
 
   scope :past, lambda{ where("start_date < ?", Time.now).order('start_date DESC') }
   scope :future, lambda{ where("start_date >= ?", Time.now).order('start_date ASC') }
+  
+  scope :popular, ->(limit) {
+    # TODO: write this
+  }
 
   scope :in_radius, ->(geo) {
-    venue_ids = Venue.near(geo.point, geo.radius).ids
+    # This is actual magic. See https://github.com/alexreisner/geocoder#known-issue
+    venue_ids = Venue.near(geo.point, geo.radius).joins(:events).preload(:events).map(&:id)
     where('venue_id in (?)', venue_ids)
   }
 

@@ -20,17 +20,14 @@ describe Geo, :vcr do
     today_event = FactoryGirl.build :event
     today_event.start_date = Time.now
     today_event.venue = venue
-    today_event.user_count = 1
     today_event.save
 
     past_event = FactoryGirl.build :past_event
     past_event.venue = venue
-    past_event.user_count = 1
     past_event.save
 
     future_event = FactoryGirl.build :future_event
     future_event.venue = venue
-    future_event.user_count = 1
     future_event.save
 
     Geo.new(43.670906, -79.393331).past_events.to_a.length.should == 1

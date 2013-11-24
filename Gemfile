@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 4.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
@@ -64,7 +64,7 @@ group :test do
   # Cucumber
   gem 'cucumber-rails', require: false
   gem 'cucumber'
-  gem 'cucumber-api-steps', require: false
+  #gem 'cucumber-api-steps', require: false
   gem 'cucumber_factory'
   gem 'relish'
 end
