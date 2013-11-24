@@ -2,89 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&page&limit=200&lat=40.2740925407026&long=-111.6763645239655&distance=40.25&method=geo.getEvents
-    body:
-      encoding: US-ASCII
-      base64_string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.7
-  response:
-    status:
-      code: 200
-      message: 
-    headers:
-      server:
-      - Apache/2.2.22 (Unix)
-      x-web-node:
-      - www164
-      access-control-allow-origin:
-      - '*'
-      access-control-allow-methods:
-      - POST, GET, OPTIONS
-      access-control-max-age:
-      - '86400'
-      cache-control:
-      - max-age=3600
-      expires:
-      - Thu, 10 Oct 2013 16:06:51 GMT
-      content-type:
-      - application/json; charset=utf-8;
-      date:
-      - Thu, 10 Oct 2013 15:17:41 GMT
-      x-varnish:
-      - '2166474595'
-      age:
-      - '0'
-      x-cms:
-      - '1'
-      x-cache:
-      - MISS from localhost
-      x-cache-lookup:
-      - MISS from localhost:3128
-      via:
-      - 1.1 varnish, 1.0 localhost (squid/3.1.20)
-      connection:
-      - close
-    body:
-      encoding: UTF-8
-      base64_string: |
-        eyJldmVudHMiOnsiZXZlbnQiOnsiaWQiOiIzNjk3NjY2IiwidGl0bGUiOiJH
-        aG9zdHdyaXRlciIsImFydGlzdHMiOnsiYXJ0aXN0IjoiR2hvc3R3cml0ZXIi
-        LCJoZWFkbGluZXIiOiJHaG9zdHdyaXRlciJ9LCJ2ZW51ZSI6eyJpZCI6Ijkw
-        NDQ0NjIiLCJuYW1lIjoiQUJHJ3MiLCJsb2NhdGlvbiI6eyJnZW86cG9pbnQi
-        OnsiZ2VvOmxhdCI6IjQwLjIzNDA0NiIsImdlbzpsb25nIjoiLTExMS42NjE5
-        NTIifSwiY2l0eSI6IlByb3ZvLCBVdGFoIiwiY291bnRyeSI6IlVuaXRlZCBT
-        dGF0ZXMiLCJzdHJlZXQiOiIiLCJwb3N0YWxjb2RlIjoiIn0sInVybCI6Imh0
-        dHA6XC9cL3d3dy5sYXN0LmZtXC92ZW51ZVwvOTA0NDQ2MitBQkclMjdzIiwi
-        d2Vic2l0ZSI6IiIsInBob25lbnVtYmVyIjoiIiwiaW1hZ2UiOlt7IiN0ZXh0
-        IjoiIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4dCI6IiIsInNpemUiOiJtZWRp
-        dW0ifSx7IiN0ZXh0IjoiIiwic2l6ZSI6ImxhcmdlIn0seyIjdGV4dCI6IiIs
-        InNpemUiOiJleHRyYWxhcmdlIn0seyIjdGV4dCI6IiIsInNpemUiOiJtZWdh
-        In1dfSwic3RhcnREYXRlIjoiRnJpLCAyNSBPY3QgMjAxMyAxODozMDowMSIs
-        ImRlc2NyaXB0aW9uIjoiIiwiaW1hZ2UiOlt7IiN0ZXh0IjoiaHR0cDpcL1wv
-        dXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8zNFwvNjk4Njk0NTAuanBn
-        Iiwic2l6ZSI6InNtYWxsIn0seyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2
-        ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvNjRcLzY5ODY5NDUwLmpwZyIsInNpemUi
-        OiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0cDpcL1wvdXNlcnNlcnZlLWFrLmxh
-        c3QuZm1cL3NlcnZlXC8xMjZcLzY5ODY5NDUwLmpwZyIsInNpemUiOiJsYXJn
-        ZSJ9LHsiI3RleHQiOiJodHRwOlwvXC91c2Vyc2VydmUtYWsubGFzdC5mbVwv
-        c2VydmVcLzI1MlwvNjk4Njk0NTAuanBnIiwic2l6ZSI6ImV4dHJhbGFyZ2Ui
-        fV0sImF0dGVuZGFuY2UiOiIwIiwicmV2aWV3cyI6IjAiLCJ0YWciOiJsYXN0
-        Zm06ZXZlbnQ9MzY5NzY2NiIsInVybCI6Imh0dHA6XC9cL3d3dy5sYXN0LmZt
-        XC9ldmVudFwvMzY5NzY2NitHaG9zdHdyaXRlcithdCtBQkclMjdzK29uKzI1
-        K09jdG9iZXIrMjAxMyIsIndlYnNpdGUiOiJodHRwOlwvXC93d3cuZW5kb2Z0
-        aGV3ZXN0LmNvbSIsInRpY2tldHMiOiJcbiAgIiwiY2FuY2VsbGVkIjoiMCIs
-        InRhZ3MiOnsidGFnIjpbImZvbGsiLCJoYXJkY29yZSIsImJsdWVzIiwibWVs
-        b2RpYyBoYXJkY29yZSIsIm9uZSBtYW4gYmFuZCJdfX0sIkBhdHRyIjp7Imxv
-        Y2F0aW9uIjoiKC0xMTEuNjc2MzY0NTIzOTY1NSw0MC4yNzQwOTI1NDA3MDI2
-        KSIsInBhZ2UiOiIwIiwicGVyUGFnZSI6IjIwMCIsInRvdGFsUGFnZXMiOiIx
-        IiwidG90YWwiOiIxIiwiZmVzdGl2YWxzb25seSI6IjAiLCJ0YWciOiIifX19
-        Cg==
-    http_version: 
-  recorded_at: Thu, 10 Oct 2013 15:06:51 GMT
-- request:
-    method: get
     uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&page&limit=50&lat=40.2740925407026&long=-111.6763645239655&distance=40.25&method=geo.getEvents
     body:
       encoding: US-ASCII
@@ -100,7 +17,7 @@ http_interactions:
       server:
       - Apache/2.2.22 (Unix)
       x-web-node:
-      - www216
+      - www211
       access-control-allow-origin:
       - '*'
       access-control-allow-methods:
@@ -110,13 +27,13 @@ http_interactions:
       cache-control:
       - max-age=10
       expires:
-      - Sun, 24 Nov 2013 04:22:30 GMT
+      - Sun, 24 Nov 2013 04:45:25 GMT
       content-type:
       - application/json; charset=utf-8;
       date:
-      - Sun, 24 Nov 2013 04:22:20 GMT
+      - Sun, 24 Nov 2013 04:45:15 GMT
       x-varnish:
-      - '1898917671'
+      - '732422474'
       age:
       - '0'
       via:
@@ -126,7 +43,7 @@ http_interactions:
       x-cms:
       - '1'
       x-varnish-host:
-      - varnish7
+      - varnish3
     body:
       encoding: UTF-8
       base64_string: |
@@ -134,7 +51,7 @@ http_interactions:
         cGNvbWluZyBldmVudHMgYmFzZWQgb24geW91ciBzcGVjaWZpZWQgbG9jYXRp
         b24uIiwibGlua3MiOltdfQo=
     http_version: 
-  recorded_at: Sun, 24 Nov 2013 04:22:20 GMT
+  recorded_at: Sun, 24 Nov 2013 04:45:15 GMT
 - request:
     method: get
     uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=-111.6763645239655&long=40.2740925407026&distance=40.25&limit=1&method=geo.getEvents
@@ -152,7 +69,7 @@ http_interactions:
       server:
       - Apache/2.2.22 (Unix)
       x-web-node:
-      - www219
+      - www233
       access-control-allow-origin:
       - '*'
       access-control-allow-methods:
@@ -162,13 +79,13 @@ http_interactions:
       cache-control:
       - max-age=10
       expires:
-      - Sun, 24 Nov 2013 04:22:31 GMT
+      - Sun, 24 Nov 2013 04:45:26 GMT
       content-type:
       - application/json; charset=utf-8;
       date:
-      - Sun, 24 Nov 2013 04:22:21 GMT
+      - Sun, 24 Nov 2013 04:56:39 GMT
       x-varnish:
-      - '1898917918'
+      - '3073795220'
       age:
       - '0'
       via:
@@ -177,8 +94,6 @@ http_interactions:
       - close
       x-cms:
       - '1'
-      x-varnish-host:
-      - varnish7
     body:
       encoding: UTF-8
       base64_string: |
@@ -186,7 +101,7 @@ http_interactions:
         cGNvbWluZyBldmVudHMgYmFzZWQgb24geW91ciBzcGVjaWZpZWQgbG9jYXRp
         b24uIiwibGlua3MiOltdfQo=
     http_version: 
-  recorded_at: Sun, 24 Nov 2013 04:22:22 GMT
+  recorded_at: Sun, 24 Nov 2013 04:45:16 GMT
 - request:
     method: get
     uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=-111.6763645239655&long=40.2740925407026&distance=40.25&limit=50&method=geo.getEvents
@@ -204,7 +119,7 @@ http_interactions:
       server:
       - Apache/2.2.22 (Unix)
       x-web-node:
-      - www207
+      - www230
       access-control-allow-origin:
       - '*'
       access-control-allow-methods:
@@ -214,13 +129,13 @@ http_interactions:
       cache-control:
       - max-age=10
       expires:
-      - Sun, 24 Nov 2013 04:22:33 GMT
+      - Sun, 24 Nov 2013 04:45:28 GMT
       content-type:
       - application/json; charset=utf-8;
       date:
-      - Sun, 24 Nov 2013 04:22:23 GMT
+      - Sun, 24 Nov 2013 04:45:18 GMT
       x-varnish:
-      - '20311139'
+      - '1899178756'
       age:
       - '0'
       via:
@@ -230,7 +145,7 @@ http_interactions:
       x-cms:
       - '1'
       x-varnish-host:
-      - varnish8
+      - varnish7
     body:
       encoding: UTF-8
       base64_string: |
@@ -238,5 +153,5 @@ http_interactions:
         cGNvbWluZyBldmVudHMgYmFzZWQgb24geW91ciBzcGVjaWZpZWQgbG9jYXRp
         b24uIiwibGlua3MiOltdfQo=
     http_version: 
-  recorded_at: Sun, 24 Nov 2013 04:22:23 GMT
+  recorded_at: Sun, 24 Nov 2013 04:45:18 GMT
 recorded_with: VCR 2.7.0
