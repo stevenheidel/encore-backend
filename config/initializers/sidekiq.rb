@@ -1,14 +1,13 @@
-# Set up Redis connection on Cloud 66
-if Rails.env.production?
-  redis_address = "redis://#{ENV['REDIS_ADDRESS']}:6379/"
-else
-  redis_address = nil
+require 'sidekiq'
+
+Sidekiq.configure_client do |config|
+  config.redis = { :size => 1 }
 end
 
 Sidekiq.configure_server do |config|
-  config.redis = { url: redis_address }
-end
-
-Sidekiq.configure_client do |config|
-  config.redis = { url: redis_address }
+  # The config.redis is calculated by the 
+  # concurrency value so you do not need to 
+  # specify this. For this demo I do 
+  # show it to understand the numbers
+  config.redis = { :size => 4 }
 end
