@@ -115,6 +115,11 @@ class Event < ActiveRecord::Base
     self.start_time < Time.now && Time.now < self.end_time
   end
 
+  # Get all types of posts
+  def posts
+    Post.all_for_event(self.id)
+  end
+
   def friends_who_attended(user)
     friend_visitors.where(user: user).to_a.map {|company| company.friend}
   end

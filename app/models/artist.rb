@@ -30,6 +30,8 @@ class Artist < ActiveRecord::Base
     events = self.events.past
     lastfm_count = LastfmAPI.artist_getPastEvents_count(self.lastfm_id)
 
+    logger.debug events.count
+    logger.debug lastfm_count
     # Check if database is current
     if events.count == lastfm_count # TODO: && the first event itself matches entirely
       # TODO: extract above comparison to method

@@ -47,6 +47,7 @@ Feature: Posts API
     When I send a GET request to "/api/v1/events/12345/populating.json"
     Then the JSON response should have "response" with the text "false"
 
+  @wip
   Scenario: Flag a Post
     Given there is a post with the _id "51e6dafd05ac8299110147fc"
     When I send a POST request to "/api/v1/posts/51e6dafd05ac8299110147fc/flag.json" with the following:

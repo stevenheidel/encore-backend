@@ -1,7 +1,7 @@
 class Api::V1::UsersController < Api::V1::BaseController
   def create
     # Take Facebook login info and either update or create new user
-    @user = User.find_or_create_by(facebook_id: params[:facebook_id])
+    @user = User.find_or_create_by(facebook_id: params[:facebook_id].to_i)
     @user.oauth_string = params[:oauth]
     @user.oauth_expiry = params[:expiration_date]
     @user.name = params[:name]

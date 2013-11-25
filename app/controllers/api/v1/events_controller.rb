@@ -111,7 +111,7 @@ class Api::V1::EventsController < Api::V1::BaseController
       @friends = user.friends_who_attended_event(event)
 
       render 'api/v1/users/friends.json'
-    rescue Mongoid::Errors::DocumentNotFound
+    rescue #Mongoid::Errors::DocumentNotFound
       render 'api/v1/users/friends.json'
     end
   end
@@ -122,7 +122,7 @@ class Api::V1::EventsController < Api::V1::BaseController
       user = User.get(params[:user_id])
       @friends = user.friends_who_attended_event(event)
       render 'api/v1/users/friends.json'
-    rescue Mongoid::Errors::DocumentNotFound
+    rescue #Mongoid::Errors::DocumentNotFound
       render 'api/v1/users/friends.json'
     end
   end

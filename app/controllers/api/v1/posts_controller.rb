@@ -8,7 +8,7 @@ class Api::V1::PostsController < Api::V1::BaseController
   def create
     @event = Event.get(params[:event_id])
 
-    @user_photo = @concert.user_photos.new
+    @user_photo = @event.user_photos.new
     @user_photo.photo = params[:image]
     @user_photo.user = User.get(params[:facebook_id])
     @user_photo.save

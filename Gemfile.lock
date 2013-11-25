@@ -162,6 +162,8 @@ GEM
       railties (>= 3.1.0)
     json (1.8.1)
     json_pure (1.8.1)
+    jsonpath (0.5.5)
+      multi_json
     kgio (2.8.1)
     koala (1.6.0)
       addressable (~> 2.2)
@@ -396,10 +398,12 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jquery-ui-rails
+  jsonpath
   koala
   metric_fu
   minitest
   newrelic_rpm
+  nokogiri
   paperclip
   pg
   rack-test

@@ -82,7 +82,7 @@ Feature: Users API
     When I send a GET request to "/api/v1/users/696955405/events.json" with the following:
       """
       {
-        "lastfm_id": 54321
+        "lastfm_id": "54321"
       }
       """
     Then the JSON response should have "response" with the text "true"
