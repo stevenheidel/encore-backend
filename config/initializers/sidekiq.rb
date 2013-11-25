@@ -9,5 +9,5 @@ Sidekiq.configure_server do |config|
   # concurrency value so you do not need to 
   # specify this. For this demo I do 
   # show it to understand the numbers
-  config.redis = { :size => 4 }
+  config.redis = { :size => 44 }
 end
