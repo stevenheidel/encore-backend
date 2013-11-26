@@ -110,6 +110,7 @@ gem 'faraday'
 gem 'faraday_middleware'
 gem 'hashie'
 gem 'typhoeus'
+gem 'multi_xml'
 
 # Sidekiq
 gem 'sidekiq'

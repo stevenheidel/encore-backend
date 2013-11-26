@@ -1,0 +1,87 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+<lfm status="ok">
+<events artist="Mumford &amp; Sons" festivalsonly="0" url="http://www.last.fm/music/Mumford+&+Sons/+events" xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" page="1" perPage="2" totalPages="244" total="488">
+    <event xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" >
+  <id>3549664</id>
+  <title>Mumford &amp; Sons</title>
+  <artists>
+    <artist>Mumford &amp; Sons</artist>
+    <artist>Mystery Jets</artist>
+    <artist>Johnny Flynn</artist>
+    <headliner>Mumford &amp; Sons</headliner>
+  </artists>
+    <venue>
+    <id>10285996</id>
+    <name>Cricket Wireless Amphitheater</name>
+    <location>
+      <city>Bonner Springs KS</city>
+      <country>United States</country>
+      <street>633 N 130th St</street>
+      <postalcode>66012</postalcode>
+      <geo:point>
+         <geo:lat>39.113725</geo:lat>
+         <geo:long>-94.876841</geo:long>
+      </geo:point>
+    </location>
+    <url>http://www.last.fm/venue/10285996+Cricket+Wireless+Amphitheater</url>
+    <website>http://cricketwirelessamp.com</website>
+    <phonenumber>(913) 721-3400</phonenumber>
+    <image size="small"></image>
+	<image size="medium"></image>
+	<image size="large"></image>
+	<image size="extralarge"></image>
+	<image size="mega"></image>
+  </venue>    <startDate>Fri, 20 Sep 2013 15:15:01</startDate>
+  <description><![CDATA[<div class="bbcode">Dear friends,<br /><br />It is with great joy that we can announce that Ted has been discharged from hospital and is on the road to a full recovery. The surgery went well, and the excellent medical team helping him are very pleased with his progress. He has been nothing short of heroic in how he has handled the whole ordeal, and now it has been medically proved that he does indeed have a brain.<br /><br />Today, however, also marks the end of our Summer Stampede Tour. We were hoping to have made it out by Bonnaroo this weekend. But it is with sadness that we have to announce the cancellation of our scheduled performances at both Bonnaroo and Telluride Festivals, and our show at Cricket Wireless Amphitheater in Bonner Springs, KS. If we could've we would've, you know that about us. We trust that you can respect our collective desire to encourage Ted to make a full recovery, and that this is based purely on the medical advice we have received.<br /><br />On behalf of Ted, and all of us really, we would like to thank every one for their compassion and support at this time and we are very excited to get back out on tour as soon as we can.<br /><br />Ted, Ben, Marcus and Win</div>]]></description>
+  <image size="small">http://userserve-ak.last.fm/serve/34/61492581.png</image>
+  <image size="medium">http://userserve-ak.last.fm/serve/64/61492581.png</image>
+  <image size="large">http://userserve-ak.last.fm/serve/126/61492581.png</image>
+  <image size="extralarge">http://userserve-ak.last.fm/serve/252/61492581.png</image>
+  <attendance>14</attendance>
+  <reviews>0</reviews>
+  <tag>lastfm:event=3549664</tag>    
+  <url>http://www.last.fm/event/3549664+Mumford+-+Sons+at+Cricket+Wireless+Amphitheater+on+20+September+2013</url>
+  <website></website>
+    <cancelled>0</cancelled>
+    </event>    <event xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#" >
+  <id>3603006</id>
+  <title>Mumford &amp; Sons</title>
+  <artists>
+    <artist>Mumford &amp; Sons</artist>
+    <headliner>Mumford &amp; Sons</headliner>
+  </artists>
+    <venue>
+    <id>9217323</id>
+    <name>Gexa Energy Pavilion</name>
+    <location>
+      <city>Dallas</city>
+      <country>United States</country>
+      <street>1818 1st Ave</street>
+      <postalcode>TX 75210</postalcode>
+      <geo:point>
+         <geo:lat>32.774007</geo:lat>
+         <geo:long>-96.757116</geo:long>
+      </geo:point>
+    </location>
+    <url>http://www.last.fm/venue/9217323+Gexa+Energy+Pavilion</url>
+    <website>http://www.gexaenergypavilion.net/</website>
+    <phonenumber>214-421-1111</phonenumber>
+    <image size="small">http://userserve-ak.last.fm/serve/34/69128970.jpg</image>
+	<image size="medium">http://userserve-ak.last.fm/serve/64/69128970.jpg</image>
+	<image size="large">http://userserve-ak.last.fm/serve/126/69128970.jpg</image>
+	<image size="extralarge">http://userserve-ak.last.fm/serve/252/69128970.jpg</image>
+	<image size="mega">http://userserve-ak.last.fm/serve/_/69128970/Gexa+Energy+Pavilion+12420v.jpg</image>
+  </venue>    <startDate>Wed, 18 Sep 2013 19:00:00</startDate>
+  <description></description>
+  <image size="small">http://userserve-ak.last.fm/serve/34/61492581.png</image>
+  <image size="medium">http://userserve-ak.last.fm/serve/64/61492581.png</image>
+  <image size="large">http://userserve-ak.last.fm/serve/126/61492581.png</image>
+  <image size="extralarge">http://userserve-ak.last.fm/serve/252/61492581.png</image>
+  <attendance>5</attendance>
+  <reviews>0</reviews>
+  <tag>lastfm:event=3603006</tag>    
+  <url>http://www.last.fm/event/3603006+Mumford+-+Sons+at+Gexa+Energy+Pavilion+on+18+September+2013</url>
+  <website></website>
+    <cancelled>0</cancelled>
+    </event></events></lfm>

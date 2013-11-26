@@ -1,5 +1,7 @@
 # TODO: this class could use some refactoring
 
+require 'lastfm_xml'
+
 class LastfmAPI
   API_KEY = "89fba2b42503c2bedb38d545a8d462fa"
 
@@ -23,12 +25,12 @@ class LastfmAPI
 
   # Number of past events
   def self.artist_getPastEvents_count(id)
-    get('artist.getPastEvents', artist: id, limit: 1)["events"]["@attr"]["total"].to_i rescue 0
+    resp = get('artist.getPastEvents', artist: id, limit: 1)["events"]["@attr"]["total"].to_i rescue 0
   end
 
   # Get all past events up to a limit
   def self.artist_getPastEvents_all(id, limit=nil)
-    result = get('artist.getPastEvents', artist: id, limit: limit)["events"]["event"] rescue []
+    result = get('artist.getPastEvents', artist: id, limit: limit)["events"]["event"] #rescue []
     return [] if result.nil?
     result.is_a?(Array) ? result : [result]
   end
@@ -75,7 +77,18 @@ class LastfmAPI
     def self.get(method, params=nil)
       params ||= {}
       params[:method] = method
-      conn.get('2.0', params).body
+
+      # If the artist name includes an ampersand, then compensate for Lastfm's API failure to send
+      # back a valid JSON file or a valid XML file (although at least it sends fix-able XML)
+      # Issue only appears when getting past events
+      if method == 'artist.getPastEvents' && params[:artist].include?('&')
+        params[:api_key] = API_KEY
+        response = Faraday.get 'http://ws.audioscrobbler.com/2.0', params
+
+        LastfmXML.new(response.body, params[:artist]).convert
+      else
+        conn.get('2.0', params).body
+      end
     end
 
     def self.conn
