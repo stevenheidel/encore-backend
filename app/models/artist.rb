@@ -15,7 +15,7 @@
 class Artist < ActiveRecord::Base
   include Concerns::Lastfmable
 
-  has_and_belongs_to_many :events
+  has_and_belongs_to_many :events, -> { uniq }
 
   def self.search(term)
     LastfmAPI.artist_search(term).map { |a| Lastfm::Artist.new(a) }

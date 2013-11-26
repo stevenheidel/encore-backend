@@ -21,8 +21,8 @@
 class Event < ActiveRecord::Base
   include Concerns::Lastfmable
 
-  has_and_belongs_to_many :artists
-  has_and_belongs_to_many :users
+  has_and_belongs_to_many :artists, -> { uniq }
+  has_and_belongs_to_many :users, -> { uniq }
 
   has_many :flickr_photos, class_name: "Post::FlickrPhoto"
   has_many :instagram_photos, class_name: "Post::InstagramPhoto"

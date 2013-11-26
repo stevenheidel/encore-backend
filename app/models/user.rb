@@ -16,7 +16,7 @@
 require 'facebook_api'
 
 class User < ActiveRecord::Base
-  has_and_belongs_to_many :events
+  has_and_belongs_to_many :events, -> { uniq }
   has_many :user_photos, class_name: "Post::UserPhoto"
   has_many :event_friend_visitors, class_name: "Event::FriendVisitor", inverse_of: :user
 

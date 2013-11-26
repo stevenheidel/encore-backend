@@ -11,49 +11,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131002064300) do
+ActiveRecord::Schema.define(version: 20131126011417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "uuid-ossp"
 
-  create_table "artists", id: :uuid, force: true do |t|
+  create_table "artists", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "lastfm_id"
     t.string   "name"
-    t.string   "website"
+    t.text     "website"
     t.string   "url"
     t.string   "mbid"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "artists_events", id: :uuid, force: true do |t|
+  create_table "artists_events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid "artist_id"
     t.uuid "event_id"
   end
 
-  create_table "events", id: :uuid, force: true do |t|
+  create_table "events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "lastfm_id"
     t.string   "name"
-    t.string   "website"
+    t.text     "website"
     t.string   "url"
     t.string   "flickr_tag"
     t.string   "headliner"
     t.datetime "start_date"
     t.datetime "local_start_time"
-    t.string   "tickets_url"
+    t.text     "tickets_url"
     t.uuid     "venue_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "sidekiq_workers",  default: [], array: true
   end
 
-  create_table "events_users", id: :uuid, force: true do |t|
+  create_table "events_users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid "event_id"
     t.uuid "user_id"
   end
 
-  create_table "flags", id: :uuid, force: true do |t|
+  create_table "flags", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "type"
     t.uuid     "user_id"
     t.uuid     "post_id"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.datetime "updated_at"
   end
 
-  create_table "flickr_photos", id: :uuid, force: true do |t|
+  create_table "flickr_photos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "flickr_uuid"
     t.string   "flickr_secret"
     t.string   "link"
@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.datetime "updated_at"
   end
 
-  create_table "friend_visitors", id: :uuid, force: true do |t|
+  create_table "friend_visitors", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid     "user_id"
     t.uuid     "friend_id"
     t.uuid     "event_id"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.datetime "updated_at"
   end
 
-  create_table "instagram_locations", id: :uuid, force: true do |t|
+  create_table "instagram_locations", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "name"
     t.integer  "instagram_uuid"
     t.uuid     "venue_id"
@@ -91,7 +91,7 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.datetime "updated_at"
   end
 
-  create_table "instagram_photos", id: :uuid, force: true do |t|
+  create_table "instagram_photos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "instagram_uuid"
     t.string   "caption"
     t.string   "link"
@@ -104,7 +104,7 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.datetime "updated_at"
   end
 
-  create_table "lastfm_images", id: :uuid, force: true do |t|
+  create_table "lastfm_images", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "size"
     t.string   "url"
     t.uuid     "lastfm_imageable_id"
@@ -113,11 +113,11 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.datetime "updated_at"
   end
 
-  create_table "user_photos", id: :uuid, force: true do |t|
+  create_table "user_photos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid "user_id"
   end
 
-  create_table "users", id: :uuid, force: true do |t|
+  create_table "users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.integer  "facebook_id"
     t.string   "oauth_string"
     t.datetime "oauth_expiry"
@@ -128,10 +128,10 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.datetime "updated_at"
   end
 
-  create_table "venues", id: :uuid, force: true do |t|
+  create_table "venues", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "lastfm_id"
     t.string   "name"
-    t.string   "website"
+    t.text     "website"
     t.string   "url"
     t.string   "city"
     t.string   "country"
@@ -143,7 +143,7 @@ ActiveRecord::Schema.define(version: 20131002064300) do
     t.float    "longitude"
   end
 
-  create_table "youtube_videos", id: :uuid, force: true do |t|
+  create_table "youtube_videos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "caption"
     t.string   "link"
     t.string   "image_url"
