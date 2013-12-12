@@ -20,8 +20,6 @@ class User < ActiveRecord::Base
   has_many :user_photos, class_name: "Post::UserPhoto"
   has_many :event_friend_visitors, class_name: "Event::FriendVisitor", inverse_of: :user
 
-  #TODO: index({facebook_id: 1}, {unique: true})
-
   validates_uniqueness_of :facebook_id
 
   # Get a user by the facebook id

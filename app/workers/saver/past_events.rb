@@ -11,7 +11,7 @@ class Saver::PastEvents
       event = Event.find_or_create_then_update_from_lastfm(lastfm_event)
 
       # Not all events have venues on lastfm
-      if event.venue.nil? && lastfm_event.venue
+      if lastfm_event.venue
         venue = Venue.find_or_create_then_update_from_lastfm(lastfm_event.venue)
         event.venue = venue
         event.save!

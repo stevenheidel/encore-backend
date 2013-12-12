@@ -6,8 +6,6 @@ module Concerns::Lastfmable
   included do
     has_many :images, class_name: "Other::LastfmImage", as: :lastfm_imageable
 
-    #TODO: index({lastfm_id: 1}, {unique: true})
-
     validates_uniqueness_of :lastfm_id
   end
 
@@ -41,7 +39,7 @@ module Concerns::Lastfmable
     end
 
     def find_or_create_then_update_from_lastfm(lastfm_object)
-      object = self.find_or_create_by(lastfm_id: lastfm_object.lastfm_id)
+      object = self.find_or_initialize_by(lastfm_id: lastfm_object.lastfm_id)
       object.update_from_lastfm(lastfm_object)
       object
     end

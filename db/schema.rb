@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131212031720) do
+ActiveRecord::Schema.define(version: 20131212064520) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20131212031720) do
     t.datetime "updated_at"
     t.datetime "past_event_freshness"
   end
+
+  add_index "artists", ["lastfm_id"], name: "index_artists_on_lastfm_id", unique: true, using: :btree
 
   create_table "artists_events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid "artist_id"
@@ -48,6 +50,8 @@ ActiveRecord::Schema.define(version: 20131212031720) do
     t.datetime "updated_at"
     t.string   "sidekiq_workers",  default: [], array: true
   end
+
+  add_index "events", ["lastfm_id"], name: "index_events_on_lastfm_id", unique: true, using: :btree
 
   create_table "events_users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid "event_id"
@@ -129,6 +133,8 @@ ActiveRecord::Schema.define(version: 20131212031720) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["facebook_id"], name: "index_users_on_facebook_id", unique: true, using: :btree
+
   create_table "venues", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "lastfm_id"
     t.string   "name"
@@ -143,6 +149,8 @@ ActiveRecord::Schema.define(version: 20131212031720) do
     t.float    "latitude"
     t.float    "longitude"
   end
+
+  add_index "venues", ["lastfm_id"], name: "index_venues_on_lastfm_id", unique: true, using: :btree
 
   create_table "youtube_videos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "caption"

@@ -22,7 +22,7 @@ class Venue < ActiveRecord::Base
 
   reverse_geocoded_by :latitude, :longitude
 
-  has_many :events
+  has_many :events, -> { distinct }
   has_many :instagram_locations, class_name: "Other::InstagramLocation"
 
   validates_presence_of :name
