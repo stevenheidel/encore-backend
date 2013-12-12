@@ -8,16 +8,15 @@ class Saver::PastEvents
 
     # Loop through each event and save
     events.map! do |lastfm_event|
-      event = Event.find_or_initialize_then_update_from_lastfm(lastfm_event)
+      event = Event.find_or_create_then_update_from_lastfm(lastfm_event)
 
       # Not all events have venues on lastfm
-      if lastfm_event.venue
-        venue = Venue.find_or_initialize_then_update_from_lastfm(lastfm_event.venue)
-        venue.save!
+      if event.venue.nil? && lastfm_event.venue
+        venue = Venue.find_or_create_then_update_from_lastfm(lastfm_event.venue)
         event.venue = venue
+        event.save!
       end
 
-      event.save!
       event
     end
 

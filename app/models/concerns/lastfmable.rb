@@ -40,8 +40,8 @@ module Concerns::Lastfmable
       object
     end
 
-    def find_or_initialize_then_update_from_lastfm(lastfm_object)
-      object = self.find_or_initialize_by(lastfm_id: lastfm_object.lastfm_id)
+    def find_or_create_then_update_from_lastfm(lastfm_object)
+      object = self.find_or_create_by(lastfm_id: lastfm_object.lastfm_id)
       object.update_from_lastfm(lastfm_object)
     end
   end
