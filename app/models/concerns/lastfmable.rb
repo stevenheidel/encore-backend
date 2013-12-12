@@ -34,7 +34,7 @@ module Concerns::Lastfmable
           lastfm_object = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
         end
 
-        object.update_from_lastfm(lastfm_object)
+        object.update_from_lastfm(lastfm_object).save!
       end
 
       object
