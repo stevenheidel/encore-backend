@@ -29,7 +29,7 @@ class Artist < ActiveRecord::Base
 
   def past_events(geo=nil, options={})
     # Check if database is current
-    if past_event_freshness && (DateTime.now - self.past_event_freshness.to_datetime).days < 7
+    if self.past_event_freshness && (DateTime.now - self.past_event_freshness.to_datetime).to_i < 7
       # return only those in the correct radius
       events = self.events.past.in_radius(geo) if geo.present?
     else

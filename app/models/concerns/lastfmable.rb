@@ -34,7 +34,7 @@ module Concerns::Lastfmable
           lastfm_object = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
         end
 
-        object.update_from_lastfm(lastfm_object).save!
+        object.update_from_lastfm(lastfm_object)
       end
 
       object
@@ -43,6 +43,7 @@ module Concerns::Lastfmable
     def find_or_create_then_update_from_lastfm(lastfm_object)
       object = self.find_or_create_by(lastfm_id: lastfm_object.lastfm_id)
       object.update_from_lastfm(lastfm_object)
+      object
     end
   end
 
@@ -59,7 +60,7 @@ module Concerns::Lastfmable
       Other::LastfmImage.new(size: image["size"], url: image["#text"])
     end
 
-    self
+    self.save!
   end
 
   # Get the largest of the images
