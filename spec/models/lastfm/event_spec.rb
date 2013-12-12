@@ -1,3 +1,23 @@
+# == Schema Information
+#
+# Table name: events
+#
+#  id               :uuid             not null, primary key
+#  lastfm_id        :string(255)
+#  name             :string(255)
+#  website          :text
+#  url              :string(255)
+#  flickr_tag       :string(255)
+#  headliner        :string(255)
+#  start_date       :datetime
+#  local_start_time :datetime
+#  tickets_url      :text
+#  venue_id         :uuid
+#  created_at       :datetime
+#  updated_at       :datetime
+#  sidekiq_workers  :string(255)      default([])
+#
+
 require 'spec_helper'
 
 describe Lastfm::Event do

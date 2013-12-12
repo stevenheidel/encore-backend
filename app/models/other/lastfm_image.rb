@@ -12,7 +12,7 @@
 #
 
 class Other::LastfmImage < ActiveRecord::Base
-  belongs_to :lastfm_imageable
+  belongs_to :lastfm_imageable, polymorphic: true
 
-  #TODO: validates_uniqueness_of :url, scope: :size
+  #validates_uniqueness_of :url, scope: :size
 end

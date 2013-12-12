@@ -1,7 +1,7 @@
 require 'lastfm_api'
 
 class Geo
-  attr_reader :radius
+  attr_accessor :radius
 
   def point
     [@lat, @long]

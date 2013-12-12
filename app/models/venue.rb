@@ -5,7 +5,7 @@
 #  id         :uuid             not null, primary key
 #  lastfm_id  :string(255)
 #  name       :string(255)
-#  website    :string(255)
+#  website    :text
 #  url        :string(255)
 #  city       :string(255)
 #  country    :string(255)

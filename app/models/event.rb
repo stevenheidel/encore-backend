@@ -5,13 +5,13 @@
 #  id               :uuid             not null, primary key
 #  lastfm_id        :string(255)
 #  name             :string(255)
-#  website          :string(255)
+#  website          :text
 #  url              :string(255)
 #  flickr_tag       :string(255)
 #  headliner        :string(255)
 #  start_date       :datetime
 #  local_start_time :datetime
-#  tickets_url      :string(255)
+#  tickets_url      :text
 #  venue_id         :uuid
 #  created_at       :datetime
 #  updated_at       :datetime
@@ -33,7 +33,6 @@ class Event < ActiveRecord::Base
 
   belongs_to :venue
 
-  validates_presence_of :artists
   validates_presence_of :start_date
   before_save :normalize_start_date
 
@@ -49,7 +48,7 @@ class Event < ActiveRecord::Base
   scope :in_radius, ->(geo) {
     # This is actual magic. See https://github.com/alexreisner/geocoder#known-issue
     venue_ids = Venue.near(geo.point, geo.radius).joins(:events).preload(:events).map(&:id)
-    where('venue_id in (?)', venue_ids)
+    where(venue_id: venue_ids)
   }
 
   # Is the event currently waiting for photos and videos?

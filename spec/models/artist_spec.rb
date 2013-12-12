@@ -2,14 +2,15 @@
 #
 # Table name: artists
 #
-#  id         :uuid             not null, primary key
-#  lastfm_id  :string(255)
-#  name       :string(255)
-#  website    :string(255)
-#  url        :string(255)
-#  mbid       :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                   :uuid             not null, primary key
+#  lastfm_id            :string(255)
+#  name                 :string(255)
+#  website              :text
+#  url                  :string(255)
+#  mbid                 :string(255)
+#  created_at           :datetime
+#  updated_at           :datetime
+#  past_event_freshness :datetime
 #
 
 require 'spec_helper'
@@ -25,9 +26,9 @@ describe Artist, :vcr do
       artist.past_events(geo).count.should == 1
     end
 
-    pending "should get past events from database" do
+    it "should get past events from database" do
       lastfm_events = artist.past_events(geo)
-      Saver::Events.drain # run the cache creator
+      Saver::PastEvents.drain # run the cache creator
       artist.reload
       database_events = artist.past_events(geo)
 

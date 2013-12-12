@@ -29,16 +29,20 @@ module Concerns::Lastfmable
 
         case self.name
         when "Event"
-          lastfm_json = LastfmAPI.event_getInfo(lastfm_id)
-          Saver::Events.new.perform(lastfm_json)
-          object = self.get(lastfm_id)
+          lastfm_object = Lastfm::Event.new(LastfmAPI.event_getInfo(lastfm_id))
         when "Artist"
           lastfm_object = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
-          object.update_from_lastfm(lastfm_object)
         end
+
+        object.update_from_lastfm(lastfm_object)
       end
 
       object
+    end
+
+    def find_or_initialize_then_update_from_lastfm(lastfm_object)
+      object = self.find_or_initialize_by(lastfm_id: lastfm_object.lastfm_id)
+      object.update_from_lastfm(lastfm_object)
     end
   end
 
@@ -49,14 +53,13 @@ module Concerns::Lastfmable
     lastfm_object.methods.each { |m| params[m] = lastfm_object.send(m) }
 
     self.update_attributes(params)
-    self.save!
 
     # Find all the image tags and put them in embeds_many images
-    # TODO: this also causes a lot of errors in Sidekiq
-    lastfm_object.images.each do |image|
-      self.images << Other::LastfmImage.new(size: image["size"], url: image["#text"])
+    self.images = lastfm_object.images.map do |image|
+      Other::LastfmImage.new(size: image["size"], url: image["#text"])
     end
-    self.save!
+
+    self
   end
 
   # Get the largest of the images
