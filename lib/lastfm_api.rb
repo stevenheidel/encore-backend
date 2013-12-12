@@ -30,7 +30,7 @@ class LastfmAPI
 
   # Get all past events up to a limit
   def self.artist_getPastEvents_all(id, limit=nil)
-    result = get('artist.getPastEvents', artist: id, limit: limit)["events"]["event"] #rescue []
+    result = get('artist.getPastEvents', artist: id, limit: limit)["events"]["event"] rescue []
     return [] if result.nil?
     result.is_a?(Array) ? result : [result]
   end
