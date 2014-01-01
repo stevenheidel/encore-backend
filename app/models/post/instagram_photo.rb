@@ -30,4 +30,8 @@ class Post::InstagramPhoto < ActiveRecord::Base
       user_uuid: hashie.user.id
     )
   end
+
+  def type
+    :instagram_photo
+  end
 end

@@ -26,4 +26,8 @@ class Post::UserPhoto < ActiveRecord::Base
   def user_profile_picture
     "https://graph.facebook.com/#{self.user.facebook_uuid}/picture"
   end
+
+  def type
+    :user_photo
+  end
 end

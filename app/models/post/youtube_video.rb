@@ -21,4 +21,8 @@ class Post::YoutubeVideo < ActiveRecord::Base
       user_name: response.author.name
     )
   end
+
+  def type
+    :youtube_video
+  end
 end

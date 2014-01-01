@@ -15,7 +15,6 @@ class Populator::Youtube < Populator::Base
   end
   
   def self.valid_date?(date, string)
-    
     date_formats = [:long, :long_ordinal, :number, :db, :rfc822]
     date_formats.each {|date_format| #to_s
       return true if string.downcase.include?( date.to_s(date_format).downcase )

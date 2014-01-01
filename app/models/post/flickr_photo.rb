@@ -30,4 +30,8 @@ class Post::FlickrPhoto < ActiveRecord::Base
       user_uuid: hashie.owner.nsid
     )
   end
+
+  def type
+    :flickr_photo
+  end
 end
