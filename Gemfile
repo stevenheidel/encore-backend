@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.0.0'
+gem 'rails', '~> 4.0.2'
 
 # Use SCSS for stylesheets
 gem 'sass-rails'
@@ -30,20 +30,20 @@ group :development do
   gem 'metric_fu'
 
   # Guard
-  #gem 'guard'
-  #gem 'guard-bundler'
-  #gem 'guard-cucumber'
-  #gem 'guard-rails'
-  #gem 'guard-rspec'
-  #gem 'guard-shell'
-  #gem 'guard-spin'
-  #gem 'guard-zeus'
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-cucumber'
+  gem 'guard-rails'
+  gem 'guard-rspec'
+  gem 'guard-shell'
+  gem 'guard-spin'
+  gem 'guard-zeus'
 
   gem 'heroku_san'
 end
 
 group :development, :test do
-  #gem 'bullet'
+  gem 'bullet'
   gem 'debugger'
 
   # RSpec
@@ -101,8 +101,8 @@ gem 'flickraw', require: false
 gem 'youtube_it'
 
 # Rails Admin
-#gem 'rails_admin', github: 'sferik/rails_admin'
-#gem 'devise', '~> 3.0.0.rc'
+gem 'rails_admin'
+gem 'devise'
 gem 'safe_yaml'
 
 # Faraday
@@ -131,6 +131,6 @@ gem 'google_timezone'
 gem 'geocoder'
 
 # Paginate 
-#gem 'will_paginate'
+gem 'will_paginate'
 
 gem "twitter-bootstrap-rails"
