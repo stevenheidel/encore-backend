@@ -20,9 +20,9 @@ class Saver::Migrater
     events_to_add.each do |e|
       event = Event.find_or_create_from_lastfm(e)
 
-      event.populate!
-
+      before_count = user.events.count
       user.events << event
+      event.populate! unless user.events.count == before_count
     end
   end
 end
