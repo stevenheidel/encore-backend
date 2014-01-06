@@ -39,8 +39,8 @@ class Event < ActiveRecord::Base
   scope :past, lambda{ where("start_date < ?", Time.now).order('start_date DESC') }
   scope :future, lambda{ where("start_date >= ?", Time.now).order('start_date ASC') }
   
-  scope :popular, ->(limit) {
-    # TODO: write this
+  scope :popular, ->(num) {
+    order('users_count DESC').limit(num)
   }
 
   AMOUNT_OF_TODAYS_EVENTS = 20
