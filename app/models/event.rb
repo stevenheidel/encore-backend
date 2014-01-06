@@ -53,7 +53,6 @@ class Event < ActiveRecord::Base
 
   # Is the event currently waiting for photos and videos?
   def populating?
-    pp self.sidekiq_workers
     self.sidekiq_workers.each do |job_id|
       status = Sidekiq::Status::status(job_id)
       
