@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id               :uuid             not null, primary key
-#  facebook_id      :integer
+#  facebook_id      :string(255)
 #  oauth_string     :string(255)
 #  oauth_expiry     :datetime
 #  name             :string(255)

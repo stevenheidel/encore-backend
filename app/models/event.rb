@@ -16,6 +16,7 @@
 #  created_at       :datetime
 #  updated_at       :datetime
 #  sidekiq_workers  :string(255)      default([])
+#  users_count      :integer          default(0)
 #
 
 class Event < ActiveRecord::Base

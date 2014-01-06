@@ -3,8 +3,26 @@ class Saver::Migrater
   sidekiq_options :queue => :saver, :backtrace => true
 
   def perform(facebook_id)
-    user = User.find_or_create_by!(facebook_id: facebook_id.to_i)
+    user = User.find_or_create_by!(facebook_id: facebook_id)
 
+    migration_filename = File.join(File.expand_path(File.dirname(__FILE__)), 'migration.txt')
+    contents = File.read(migration_filename)
+
+    result = {}
+    contents.split("\n\n").each do |u|
+      x = u.split("\n")
+      key = x.shift
+      result[key] = x
+    end
     
+    events_to_add = result[facebook_id.to_s]
+
+    events_to_add.each do |e|
+      event = Event.find_or_create_from_lastfm(e)
+
+      event.populate!
+
+      user.events << event
+    end
   end
 end

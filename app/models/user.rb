@@ -3,7 +3,7 @@
 # Table name: users
 #
 #  id               :uuid             not null, primary key
-#  facebook_id      :integer
+#  facebook_id      :string(255)
 #  oauth_string     :string(255)
 #  oauth_expiry     :datetime
 #  name             :string(255)
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   # Get a user by the facebook id
   def self.get(facebook_id)
-    self.find_by(facebook_id: facebook_id.to_i)
+    self.find_by(facebook_id: facebook_id)
   end
 
   def facebook_image_url
