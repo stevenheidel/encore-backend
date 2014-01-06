@@ -27,14 +27,18 @@ module Concerns::Lastfmable
 
         case self.name
         when "Event"
-          lastfm_object = Lastfm::Event.new(LastfmAPI.event_getInfo(lastfm_id))
-        when "Artist"
-          lastfm_object = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
-        end
+          lastfm_event = Lastfm::Event.new(LastfmAPI.event_getInfo(lastfm_id))
+          object.update_from_lastfm(lastfm_event)
 
-        object.update_from_lastfm(lastfm_object)
+          venue_object = Venue.find_or_create_then_update_from_lastfm(lastfm_event.venue)
+          object.venue = venue_object
+        when "Artist"
+          lastfm_artist = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
+          object.update_from_lastfm(lastfm_artist)
+        end
       end
 
+      object.save!
       object
     end
 

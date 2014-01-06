@@ -22,7 +22,7 @@ class Post::InstagramPhoto < ActiveRecord::Base
   def self.build_from_hashie(hashie)
     self.new(
       instagram_uuid: hashie.id,
-      caption: hashie.caption.try(:text),
+      caption: hashie.caption.try(:text).try(:truncate, 255),
       link: hashie.link,
       image_url: hashie.images.standard_resolution.url,
       user_name: hashie.user.username,

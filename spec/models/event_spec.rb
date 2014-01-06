@@ -25,18 +25,18 @@ describe Event, :vcr do
     event = FactoryGirl.create :rolling_stones
     event.populating?.should be_false
     event.populate!
-    event.reload.populating?.should be_true
+    event.populating?.should be_true
 
     Populator::Start.drain
-    event.reload.populating?.should be_true
+    event.populating?.should be_true
 
     Populator::Instagram.drain
     Populator::InstagramLocation.drain
-    event.reload.populating?.should be_true
+    event.populating?.should be_true
 
     Populator::Flickr.drain
     Populator::Youtube.drain
-    event.reload.populating?.should be_false
+    event.populating?.should be_false
   end
 
   it "should format timestamps when exported as JSON" do

@@ -53,19 +53,14 @@ class Event < ActiveRecord::Base
 
   # Is the event currently waiting for photos and videos?
   def populating?
+    pp self.sidekiq_workers
     self.sidekiq_workers.each do |job_id|
-      begin
-        status = SidekiqStatus::Container.load(job_id).status
-      rescue SidekiqStatus::Container::StatusNotFound
-        self.sidekiq_workers.delete(job_id)
-        self.save
-        next
-      end
-
-      if status == 'waiting' || status == 'working'
+      status = Sidekiq::Status::status(job_id)
+      
+      if status == :queued || status == :working
         return true
       else # status either :complete, :failed, or nil
-        self.sidekiq_workers.delete(status)
+        self.sidekiq_workers.delete(job_id)
         self.save
       end
     end

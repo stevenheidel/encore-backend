@@ -1,5 +1,4 @@
 require 'sidekiq/web'
-require 'sidekiq_status/web'
 
 EncoreBackend::Application.routes.draw do
   root to: redirect("http://encore.fm/")

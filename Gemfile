@@ -115,7 +115,7 @@ gem 'multi_xml'
 # Sidekiq
 gem 'sidekiq'
 gem 'sinatra', require: nil
-gem 'sidekiq_status'
+gem 'sidekiq-status'
 
 # Paperclip
 gem 'paperclip'
