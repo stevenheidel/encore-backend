@@ -1,6 +1,6 @@
 class Populator::Facebook
   include Sidekiq::Worker
-  sidekiq_options :queue => :saver, :backtrace => true
+  sidekiq_options :queue => :default, :backtrace => true
 
   def perform(facebook_ids)
     facebook_ids.each do |facebook_id|

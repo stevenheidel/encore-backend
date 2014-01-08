@@ -1,6 +1,6 @@
 class Saver::Migrater
   include Sidekiq::Worker
-  sidekiq_options :queue => :saver, :backtrace => true
+  sidekiq_options :queue => :default, :backtrace => true
 
   def perform(facebook_id)
     user = User.find_or_create_by!(facebook_id: facebook_id)

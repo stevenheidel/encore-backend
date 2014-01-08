@@ -1,6 +1,6 @@
 class Saver::PastEvents
   include Sidekiq::Worker
-  sidekiq_options :queue => :saver, :backtrace => true
+  sidekiq_options :queue => :default, :backtrace => true
 
   def perform(artist_id)
     artist = Artist.find_or_create_from_lastfm(artist_id)
