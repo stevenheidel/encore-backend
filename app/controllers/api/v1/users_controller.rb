@@ -7,9 +7,6 @@ class Api::V1::UsersController < Api::V1::BaseController
     @user.name = params[:name]
     @user.save!
 
-    # Check if they had old concerts
-    Saver::Migrater.perform_async(@user.facebook_id)
-
     # SMELL: should just redirect to the show action
     render "api/v1/users/show.json"
   end
