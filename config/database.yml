@@ -15,3 +15,7 @@ development:
 test:
   <<: *local
   database: encore_backend_test
+
+# Dummy because Heroku will replace
+production:
+  <<: *common
