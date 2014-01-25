@@ -125,25 +125,25 @@ Feature: Users API
       """
         [
           {
-            "facebook_id": 3196544,
+            "facebook_id": "3196544",
             "name": "Aldous Huxley",
             "facebook_image_url": "https://graph.facebook.com/3196544/picture?type=large",
             "invite_sent": false
           },
           {
-            "facebook_id": 123456,
+            "facebook_id": "123456",
             "name": "George Orwell",
             "facebook_image_url": "https://graph.facebook.com/123456/picture?type=large",
             "invite_sent": true
           },
           {
-            "facebook_id": 65432196,
+            "facebook_id": "65432196",
             "name": "Rudyard Kipling",
             "facebook_image_url": "https://graph.facebook.com/65432196/picture?type=large",
             "invite_sent": false
           },
           {
-            "facebook_id": 951623847,
+            "facebook_id": "951623847",
             "name": "James Joyce",
             "facebook_image_url": "https://graph.facebook.com/951623847/picture?type=large",
             "invite_sent": false
@@ -170,25 +170,25 @@ Feature: Users API
       """
         [
           {
-            "facebook_id": 3196544,
+            "facebook_id": "3196544",
             "name": "Aldous Huxley",
             "facebook_image_url": "https://graph.facebook.com/3196544/picture?type=large",
             "invite_sent": false
           },
           {
-            "facebook_id": 123456,
+            "facebook_id": "123456",
             "name": "George Orwell",
             "facebook_image_url": "https://graph.facebook.com/123456/picture?type=large",
             "invite_sent": false
           },
           {
-            "facebook_id": 65432196,
+            "facebook_id": "65432196",
             "name": "Rudyard Kipling",
             "facebook_image_url": "https://graph.facebook.com/65432196/picture?type=large",
             "invite_sent": false
           },
           {
-            "facebook_id": 951623847,
+            "facebook_id": "951623847",
             "name": "James Joyce",
             "facebook_image_url": "https://graph.facebook.com/951623847/picture?type=large",
             "invite_sent": false
