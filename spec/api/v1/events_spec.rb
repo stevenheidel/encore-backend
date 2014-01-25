@@ -45,17 +45,25 @@ end
 
 describe "Events", type: :api, vcr: true do
   it "should not show tomorrow's events in Today events list" do
+    Timecop.freeze(Time.local(2013,11,23,19,00,00))
+
     events_response = get "/api/v1/events/today?latitude=43.670906&longitude=-79.393331"
     events = JSON.parse(events_response.body)['events']
     events.count.should == 10
+    
+    Timecop.return
   end
 
   describe "future" do
     let(:url) { "/api/v1/events/future.json?latitude=40.2740925407026&longitude=-111.6763645239655&radius=0.5" }
 
     it "should always return an array of events" do
-      get url
-      JSON.parse(last_response.body)["events"][0]["lastfm_id"].should == "3697666"
+      Timecop.freeze(Time.local(2014,01,24,19,00,00))
+
+      get url # has only one upcoming event, and has to be returned in "events" array
+      JSON.parse(last_response.body)["events"][0]["lastfm_id"].should == "3776354"
+      
+      Timecop.return
     end
   end
 end
