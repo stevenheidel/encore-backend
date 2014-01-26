@@ -19,7 +19,7 @@ http_interactions:
       x-web-node:
       - www198
       access-control-allow-origin:
-      - '*'
+      - "*"
       access-control-allow-methods:
       - POST, GET, OPTIONS
       access-control-max-age:
@@ -106,7 +106,7 @@ http_interactions:
       x-web-node:
       - www158
       access-control-allow-origin:
-      - '*'
+      - "*"
       access-control-allow-methods:
       - POST, GET, OPTIONS
       access-control-max-age:
@@ -23447,7 +23447,7 @@ http_interactions:
       x-web-node:
       - www235
       access-control-allow-origin:
-      - '*'
+      - "*"
       access-control-allow-methods:
       - POST, GET, OPTIONS
       access-control-max-age:
@@ -25604,4 +25604,114 @@ http_interactions:
         In19fQo=
     http_version: 
   recorded_at: Wed, 16 Oct 2013 17:57:00 GMT
-recorded_with: VCR 2.5.0
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=43.670906&long=-79.393331&distance=48.300000000000004&limit=1&method=geo.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www198
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=3600
+      expires:
+      - Sun, 26 Jan 2014 03:09:37 GMT
+      content-type:
+      - application/json; charset=utf-8;
+      date:
+      - Sun, 26 Jan 2014 02:09:37 GMT
+      x-varnish:
+      - '1413059796'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - close
+      x-cms:
+      - '1'
+      x-varnish-host:
+      - varnish8
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJldmVudHMiOnsiZXZlbnQiOnsiaWQiOiIzNzc2OTQyIiwidGl0bGUiOiJI
+        b25leSBDb2NhaW5lIiwiYXJ0aXN0cyI6eyJhcnRpc3QiOlsiSG9uZXkgQ29j
+        YWluZSIsIkpEIEVyYSJdLCJoZWFkbGluZXIiOiJIb25leSBDb2NhaW5lIn0s
+        InZlbnVlIjp7ImlkIjoiODkzODk5MiIsIm5hbWUiOiJJc2FiZWwgQmFkZXIg
+        VGhlYXRyZSIsImxvY2F0aW9uIjp7Imdlbzpwb2ludCI6eyJnZW86bGF0Ijoi
+        NDMuNjY3NTciLCJnZW86bG9uZyI6Ii03OS4zOTE5MjcifSwiY2l0eSI6IlRv
+        cm9udG8iLCJjb3VudHJ5IjoiQ2FuYWRhIiwic3RyZWV0IjoiVmljdG9yaWEg
+        VW5pdmVyc2l0eSBpbiB0aGUgVW5pdmVyc2l0eSBvZiBUb3JvbnRvLCA5MyBD
+        aGFybGVzIFN0IFciLCJwb3N0YWxjb2RlIjoiIn0sInVybCI6Imh0dHA6XC9c
+        L3d3dy5sYXN0LmZtXC92ZW51ZVwvODkzODk5MitJc2FiZWwrQmFkZXIrVGhl
+        YXRyZSIsIndlYnNpdGUiOiIiLCJwaG9uZW51bWJlciI6IjQxNi41ODUuNDUy
+        MiIsImltYWdlIjpbeyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5s
+        YXN0LmZtXC9zZXJ2ZVwvMzRcLzY1NzgwMzEuanBnIiwic2l6ZSI6InNtYWxs
+        In0seyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9z
+        ZXJ2ZVwvNjRcLzY1NzgwMzEuanBnIiwic2l6ZSI6Im1lZGl1bSJ9LHsiI3Rl
+        eHQiOiJodHRwOlwvXC91c2Vyc2VydmUtYWsubGFzdC5mbVwvc2VydmVcLzEy
+        NlwvNjU3ODAzMS5qcGciLCJzaXplIjoibGFyZ2UifSx7IiN0ZXh0IjoiaHR0
+        cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8yNTJcLzY1Nzgw
+        MzEuanBnIiwic2l6ZSI6ImV4dHJhbGFyZ2UifSx7IiN0ZXh0IjoiaHR0cDpc
+        L1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC81MDBcLzY1NzgwMzFc
+        L0lzYWJlbCtCYWRlcitUaGVhdHJlK1RoZSsraW4rVG8uanBnIiwic2l6ZSI6
+        Im1lZ2EifV19LCJzdGFydERhdGUiOiJTYXQsIDI1IEphbiAyMDE0IDE5OjAw
+        OjAwIiwiZGVzY3JpcHRpb24iOiI8ZGl2IGNsYXNzPVwiYmJjb2RlXCI+R2Vu
+        ZXJhbCBBZG1pc3Npb248YnIgXC8+JDM1LjAwPGJyIFwvPjxiciBcLz5BIFNw
+        ZWNpYWwgaGlwLSBob3AgcGVyZm9ybWFuY2UgYnkgSE9ORVkgQ09DQUlORSwg
+        ZmVhdHVyaW5nIEpEIEVyYSAmYW1wOyBSZWFsIFN3aXNoZXIgd2lsbCBjb25j
+        bHVkZSBhIGZ1biBmaWxsZWQgbmlnaHQgb2YgU3RhbmQgVXAgQ29tZWR5IGZy
+        b20gc29tZSBvZiBUb3JvbnRvJ3MgZnVubmllc3QgY29tZWRpYW5zISBIb3N0
+        ZWQgYnkgQnJhbXB0b24ncyBZb3VUdWJlIHNlbnNhdGlvbiBncm91cCA0WWFs
+        bEVOVCwgY29tZSBzZWUgTXIuIExld2luLCBNYXJjLUFudGhvbnkgU2luYWdv
+        Z2EsIFJhbXkgSGFrZWVtICZhbXA7IENocmlzIFJvYmluc29uIGJyaW5nIHlv
+        dSB0byB0ZWFycyB3aXRoIHRoZWlyIGNvbWVkeS48YnIgXC8+PGJyIFwvPiA8
+        YnIgXC8+PGJyIFwvPjxhIGhyZWY9XCJodHRwOlwvXC93d3cueW91dHViZS5j
+        b21cL3VzZXJcL1F1ZWVuSG9uZXlDXCIgcmVsPVwibm9mb2xsb3dcIj5odHRw
+        OlwvXC93d3cueW91dHViZS5jb21cL3VzZXJcL1F1ZWVuSG9uZXlDPFwvYT4g
+        PGJyIFwvPjxiciBcLz48YSBocmVmPVwiaHR0cDpcL1wvd3d3LnlvdXR1YmUu
+        Y29tXC91c2VyXC9FUkFFUkFUVj9mZWF0dXJlPXdhdGNoXCIgcmVsPVwibm9m
+        b2xsb3dcIj5odHRwOlwvXC93d3cueW91dHViZS5jb21cL3VzZXJcL0VSQUVS
+        QVRWP2ZlYXR1cmU9d2F0Y2g8XC9hPjxiciBcLz48YnIgXC8+PGEgaHJlZj1c
+        Imh0dHA6XC9cL3d3dy55b3V0dWJlLmNvbVwvdXNlclwvNFlhbGxFbnRlcnRh
+        aW5tZW50XCIgcmVsPVwibm9mb2xsb3dcIj5odHRwOlwvXC93d3cueW91dHVi
+        ZS5jb21cL3VzZXJcLzRZYWxsRW50ZXJ0YWlubWVudDxcL2E+PFwvZGl2PiIs
+        ImltYWdlIjpbeyIjdGV4dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0
+        LmZtXC9zZXJ2ZVwvMzRcLzg4MjEzOTIzLnBuZyIsInNpemUiOiJzbWFsbCJ9
+        LHsiI3RleHQiOiJodHRwOlwvXC91c2Vyc2VydmUtYWsubGFzdC5mbVwvc2Vy
+        dmVcLzY0XC84ODIxMzkyMy5wbmciLCJzaXplIjoibWVkaXVtIn0seyIjdGV4
+        dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvMTI2
+        XC84ODIxMzkyMy5wbmciLCJzaXplIjoibGFyZ2UifSx7IiN0ZXh0IjoiaHR0
+        cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8yNTJcLzg4MjEz
+        OTIzLnBuZyIsInNpemUiOiJleHRyYWxhcmdlIn1dLCJhdHRlbmRhbmNlIjoi
+        MCIsInJldmlld3MiOiIwIiwidGFnIjoibGFzdGZtOmV2ZW50PTM3NzY5NDIi
+        LCJ1cmwiOiJodHRwOlwvXC93d3cubGFzdC5mbVwvZXZlbnRcLzM3NzY5NDIr
+        SG9uZXkrQ29jYWluZSthdCtJc2FiZWwrQmFkZXIrVGhlYXRyZStvbisyNStK
+        YW51YXJ5KzIwMTQiLCJ3ZWJzaXRlIjoiaHR0cDpcL1wvd3d3LnRpY2tldHdl
+        Yi5jYVwvdDNcL3NhbGVcL1NhbGVFdmVudERldGFpbD9kaXNwYXRjaD1sb2Fk
+        U2VsZWN0aW9uRGF0YSZldmVudElkPTQwMDY4NzQiLCJ0aWNrZXRzIjoiXG4g
+        ICIsImNhbmNlbGxlZCI6IjAiLCJ0YWdzIjp7InRhZyI6WyJoaXAtaG9wIiwi
+        cmFwIiwidG9yb250byIsImNhbmFkaWFuIiwiaGlwIGhvcCJdfX0sIkBhdHRy
+        Ijp7ImxvY2F0aW9uIjoiKC03OS4zOTMzMzEsNDMuNjcwOTA2KSIsInBhZ2Ui
+        OiIxIiwicGVyUGFnZSI6IjEiLCJ0b3RhbFBhZ2VzIjoiNDMwIiwidG90YWwi
+        OiI0MzAiLCJmZXN0aXZhbHNvbmx5IjoiMCIsInRhZyI6IiJ9fX0K
+    http_version: 
+  recorded_at: Wed, 16 Oct 2013 19:57:00 GMT
+recorded_with: VCR 2.8.0

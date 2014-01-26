@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   # Get a user by the facebook id
   def self.get(facebook_id)
-    self.find_by(facebook_id: facebook_id)
+    self.find_by(facebook_id: facebook_id.to_s)
   end
 
   def facebook_image_url
@@ -38,7 +38,7 @@ class User < ActiveRecord::Base
   def add_friends_who_attended_event(event, friends)
     return if friends.nil?
     friends.each do |friend_json|
-      friend = User.find_or_create_by(facebook_id: friend_json[:facebook_id])
+      friend = User.find_or_create_by(facebook_id: friend_json[:facebook_id].to_s)
       if friend_json[:name] and friend.name != friend_json[:name]
         friend.name = friend_json[:name]
         friend.invite_sent = friend_json[:invite_sent] if friend_json.has_key?(:invite_sent)

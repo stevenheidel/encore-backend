@@ -187,4 +187,245 @@ http_interactions:
         b24uIiwibGlua3MiOltdfQo=
     http_version: 
   recorded_at: Fri, 24 Jan 2014 23:59:17 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=40.2740925407026&long=-111.6763645239655&distance=40.25&limit=1&method=geo.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www221
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=3600
+      expires:
+      - Sun, 26 Jan 2014 03:09:38 GMT
+      content-type:
+      - application/json; charset=utf-8;
+      date:
+      - Sun, 26 Jan 2014 02:09:38 GMT
+      x-varnish:
+      - '2111262842'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - close
+      x-cms:
+      - '1'
+      x-varnish-host:
+      - varnish4
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJldmVudHMiOnsiZXZlbnQiOnsiaWQiOiIzNzc2MzU0IiwidGl0bGUiOiJN
+        b251bWVudG91ciIsImFydGlzdHMiOnsiYXJ0aXN0IjpbIkZhbGwgT3V0IEJv
+        eSIsIlBhcmFtb3JlIiwiTmV3IFBvbGl0aWNzIl0sImhlYWRsaW5lciI6IkZh
+        bGwgT3V0IEJveSJ9LCJ2ZW51ZSI6eyJpZCI6IjEwMjg1MDEwIiwibmFtZSI6
+        IlVDQ1UgQ2VudGVyIiwibG9jYXRpb24iOnsiZ2VvOnBvaW50Ijp7Imdlbzps
+        YXQiOiI0MC4yNzcwMTQiLCJnZW86bG9uZyI6Ii0xMTEuNzEzMDE1In0sImNp
+        dHkiOiJPcmVtIiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJzdHJlZXQi
+        OiI4MDAgVyBVbml2ZXJzaXR5IFBrd3kiLCJwb3N0YWxjb2RlIjoiODQwNTgi
+        fSwidXJsIjoiaHR0cDpcL1wvd3d3Lmxhc3QuZm1cL3ZlbnVlXC8xMDI4NTAx
+        MCtVQ0NVK0NlbnRlciIsIndlYnNpdGUiOiJodHRwOlwvXC93d3cubWNrYXll
+        dmVudHNjZW50ZXIuY29tXC8iLCJwaG9uZW51bWJlciI6IjEtODAwLTg4OC1U
+        SVhYIiwiaW1hZ2UiOlt7IiN0ZXh0IjoiIiwic2l6ZSI6InNtYWxsIn0seyIj
+        dGV4dCI6IiIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiIiwic2l6ZSI6
+        ImxhcmdlIn0seyIjdGV4dCI6IiIsInNpemUiOiJleHRyYWxhcmdlIn0seyIj
+        dGV4dCI6IiIsInNpemUiOiJtZWdhIn1dfSwic3RhcnREYXRlIjoiV2VkLCAx
+        MyBBdWcgMjAxNCAxNzowNTowMSIsImRlc2NyaXB0aW9uIjoiIiwiaW1hZ2Ui
+        Olt7IiN0ZXh0IjoiaHR0cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3Nl
+        cnZlXC8zNFwvOTI0NzkyNzUucG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4
+        dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvNjRc
+        LzkyNDc5Mjc1LnBuZyIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0
+        cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8xMjZcLzkyNDc5
+        Mjc1LnBuZyIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiJodHRwOlwvXC91
+        c2Vyc2VydmUtYWsubGFzdC5mbVwvc2VydmVcLzI1MlwvOTI0NzkyNzUucG5n
+        Iiwic2l6ZSI6ImV4dHJhbGFyZ2UifV0sImF0dGVuZGFuY2UiOiIxIiwicmV2
+        aWV3cyI6IjAiLCJ0YWciOiJsYXN0Zm06ZXZlbnQ9Mzc3NjM1NCIsInVybCI6
+        Imh0dHA6XC9cL3d3dy5sYXN0LmZtXC9ldmVudFwvMzc3NjM1NCtNb251bWVu
+        dG91ciIsIndlYnNpdGUiOiIiLCJ0aWNrZXRzIjoiXG4gICIsImNhbmNlbGxl
+        ZCI6IjAiLCJ0YWdzIjp7InRhZyI6WyJhbHRlcm5hdGl2ZSIsInJvY2siLCJh
+        bHRlcm5hdGl2ZSByb2NrIiwicG9wIHB1bmsiXX19LCJAYXR0ciI6eyJsb2Nh
+        dGlvbiI6IigtMTExLjY3NjM2NDUyMzk2NTUsNDAuMjc0MDkyNTQwNzAyNiki
+        LCJwYWdlIjoiMSIsInBlclBhZ2UiOiIxIiwidG90YWxQYWdlcyI6IjEiLCJ0
+        b3RhbCI6IjEiLCJmZXN0aXZhbHNvbmx5IjoiMCIsInRhZyI6IiJ9fX0K
+    http_version: 
+  recorded_at: Sat, 25 Jan 2014 01:00:00 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=40.2740925407026&long=-111.6763645239655&distance=40.25&limit=1&method=geo.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www204
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=3600
+      expires:
+      - Sun, 26 Jan 2014 03:09:38 GMT
+      content-type:
+      - application/json; charset=utf-8;
+      date:
+      - Sun, 26 Jan 2014 02:21:47 GMT
+      x-varnish:
+      - '186505857'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - close
+      x-cms:
+      - '1'
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJldmVudHMiOnsiZXZlbnQiOnsiaWQiOiIzNzc2MzU0IiwidGl0bGUiOiJN
+        b251bWVudG91ciIsImFydGlzdHMiOnsiYXJ0aXN0IjpbIkZhbGwgT3V0IEJv
+        eSIsIlBhcmFtb3JlIiwiTmV3IFBvbGl0aWNzIl0sImhlYWRsaW5lciI6IkZh
+        bGwgT3V0IEJveSJ9LCJ2ZW51ZSI6eyJpZCI6IjEwMjg1MDEwIiwibmFtZSI6
+        IlVDQ1UgQ2VudGVyIiwibG9jYXRpb24iOnsiZ2VvOnBvaW50Ijp7Imdlbzps
+        YXQiOiI0MC4yNzcwMTQiLCJnZW86bG9uZyI6Ii0xMTEuNzEzMDE1In0sImNp
+        dHkiOiJPcmVtIiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJzdHJlZXQi
+        OiI4MDAgVyBVbml2ZXJzaXR5IFBrd3kiLCJwb3N0YWxjb2RlIjoiODQwNTgi
+        fSwidXJsIjoiaHR0cDpcL1wvd3d3Lmxhc3QuZm1cL3ZlbnVlXC8xMDI4NTAx
+        MCtVQ0NVK0NlbnRlciIsIndlYnNpdGUiOiJodHRwOlwvXC93d3cubWNrYXll
+        dmVudHNjZW50ZXIuY29tXC8iLCJwaG9uZW51bWJlciI6IjEtODAwLTg4OC1U
+        SVhYIiwiaW1hZ2UiOlt7IiN0ZXh0IjoiIiwic2l6ZSI6InNtYWxsIn0seyIj
+        dGV4dCI6IiIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiIiwic2l6ZSI6
+        ImxhcmdlIn0seyIjdGV4dCI6IiIsInNpemUiOiJleHRyYWxhcmdlIn0seyIj
+        dGV4dCI6IiIsInNpemUiOiJtZWdhIn1dfSwic3RhcnREYXRlIjoiV2VkLCAx
+        MyBBdWcgMjAxNCAxNzowNTowMSIsImRlc2NyaXB0aW9uIjoiIiwiaW1hZ2Ui
+        Olt7IiN0ZXh0IjoiaHR0cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3Nl
+        cnZlXC8zNFwvOTI0NzkyNzUucG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4
+        dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvNjRc
+        LzkyNDc5Mjc1LnBuZyIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0
+        cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8xMjZcLzkyNDc5
+        Mjc1LnBuZyIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiJodHRwOlwvXC91
+        c2Vyc2VydmUtYWsubGFzdC5mbVwvc2VydmVcLzI1MlwvOTI0NzkyNzUucG5n
+        Iiwic2l6ZSI6ImV4dHJhbGFyZ2UifV0sImF0dGVuZGFuY2UiOiIxIiwicmV2
+        aWV3cyI6IjAiLCJ0YWciOiJsYXN0Zm06ZXZlbnQ9Mzc3NjM1NCIsInVybCI6
+        Imh0dHA6XC9cL3d3dy5sYXN0LmZtXC9ldmVudFwvMzc3NjM1NCtNb251bWVu
+        dG91ciIsIndlYnNpdGUiOiIiLCJ0aWNrZXRzIjoiXG4gICIsImNhbmNlbGxl
+        ZCI6IjAiLCJ0YWdzIjp7InRhZyI6WyJhbHRlcm5hdGl2ZSIsInJvY2siLCJh
+        bHRlcm5hdGl2ZSByb2NrIiwicG9wIHB1bmsiXX19LCJAYXR0ciI6eyJsb2Nh
+        dGlvbiI6IigtMTExLjY3NjM2NDUyMzk2NTUsNDAuMjc0MDkyNTQwNzAyNiki
+        LCJwYWdlIjoiMSIsInBlclBhZ2UiOiIxIiwidG90YWxQYWdlcyI6IjEiLCJ0
+        b3RhbCI6IjEiLCJmZXN0aXZhbHNvbmx5IjoiMCIsInRhZyI6IiJ9fX0K
+    http_version: 
+  recorded_at: Sat, 25 Jan 2014 01:00:00 GMT
+- request:
+    method: get
+    uri: http://ws.audioscrobbler.com/2.0?api_key=89fba2b42503c2bedb38d545a8d462fa&format=json&exclude_todays_events=true&lat=40.2740925407026&long=-111.6763645239655&distance=40.25&limit=50&method=geo.getEvents
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      server:
+      - Apache/2.2.22 (Unix)
+      x-web-node:
+      - www243
+      access-control-allow-origin:
+      - "*"
+      access-control-allow-methods:
+      - POST, GET, OPTIONS
+      access-control-max-age:
+      - '86400'
+      cache-control:
+      - max-age=3600
+      expires:
+      - Sun, 26 Jan 2014 03:09:38 GMT
+      content-type:
+      - application/json; charset=utf-8;
+      date:
+      - Sun, 26 Jan 2014 02:09:38 GMT
+      x-varnish:
+      - '1944231251'
+      age:
+      - '0'
+      via:
+      - 1.1 varnish
+      connection:
+      - close
+      x-cms:
+      - '1'
+      x-varnish-host:
+      - varnish3
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJldmVudHMiOnsiZXZlbnQiOnsiaWQiOiIzNzc2MzU0IiwidGl0bGUiOiJN
+        b251bWVudG91ciIsImFydGlzdHMiOnsiYXJ0aXN0IjpbIkZhbGwgT3V0IEJv
+        eSIsIlBhcmFtb3JlIiwiTmV3IFBvbGl0aWNzIl0sImhlYWRsaW5lciI6IkZh
+        bGwgT3V0IEJveSJ9LCJ2ZW51ZSI6eyJpZCI6IjEwMjg1MDEwIiwibmFtZSI6
+        IlVDQ1UgQ2VudGVyIiwibG9jYXRpb24iOnsiZ2VvOnBvaW50Ijp7Imdlbzps
+        YXQiOiI0MC4yNzcwMTQiLCJnZW86bG9uZyI6Ii0xMTEuNzEzMDE1In0sImNp
+        dHkiOiJPcmVtIiwiY291bnRyeSI6IlVuaXRlZCBTdGF0ZXMiLCJzdHJlZXQi
+        OiI4MDAgVyBVbml2ZXJzaXR5IFBrd3kiLCJwb3N0YWxjb2RlIjoiODQwNTgi
+        fSwidXJsIjoiaHR0cDpcL1wvd3d3Lmxhc3QuZm1cL3ZlbnVlXC8xMDI4NTAx
+        MCtVQ0NVK0NlbnRlciIsIndlYnNpdGUiOiJodHRwOlwvXC93d3cubWNrYXll
+        dmVudHNjZW50ZXIuY29tXC8iLCJwaG9uZW51bWJlciI6IjEtODAwLTg4OC1U
+        SVhYIiwiaW1hZ2UiOlt7IiN0ZXh0IjoiIiwic2l6ZSI6InNtYWxsIn0seyIj
+        dGV4dCI6IiIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiIiwic2l6ZSI6
+        ImxhcmdlIn0seyIjdGV4dCI6IiIsInNpemUiOiJleHRyYWxhcmdlIn0seyIj
+        dGV4dCI6IiIsInNpemUiOiJtZWdhIn1dfSwic3RhcnREYXRlIjoiV2VkLCAx
+        MyBBdWcgMjAxNCAxNzowNTowMSIsImRlc2NyaXB0aW9uIjoiIiwiaW1hZ2Ui
+        Olt7IiN0ZXh0IjoiaHR0cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3Nl
+        cnZlXC8zNFwvOTI0NzkyNzUucG5nIiwic2l6ZSI6InNtYWxsIn0seyIjdGV4
+        dCI6Imh0dHA6XC9cL3VzZXJzZXJ2ZS1hay5sYXN0LmZtXC9zZXJ2ZVwvNjRc
+        LzkyNDc5Mjc1LnBuZyIsInNpemUiOiJtZWRpdW0ifSx7IiN0ZXh0IjoiaHR0
+        cDpcL1wvdXNlcnNlcnZlLWFrLmxhc3QuZm1cL3NlcnZlXC8xMjZcLzkyNDc5
+        Mjc1LnBuZyIsInNpemUiOiJsYXJnZSJ9LHsiI3RleHQiOiJodHRwOlwvXC91
+        c2Vyc2VydmUtYWsubGFzdC5mbVwvc2VydmVcLzI1MlwvOTI0NzkyNzUucG5n
+        Iiwic2l6ZSI6ImV4dHJhbGFyZ2UifV0sImF0dGVuZGFuY2UiOiIxIiwicmV2
+        aWV3cyI6IjAiLCJ0YWciOiJsYXN0Zm06ZXZlbnQ9Mzc3NjM1NCIsInVybCI6
+        Imh0dHA6XC9cL3d3dy5sYXN0LmZtXC9ldmVudFwvMzc3NjM1NCtNb251bWVu
+        dG91ciIsIndlYnNpdGUiOiIiLCJ0aWNrZXRzIjoiXG4gICIsImNhbmNlbGxl
+        ZCI6IjAiLCJ0YWdzIjp7InRhZyI6WyJhbHRlcm5hdGl2ZSIsInJvY2siLCJh
+        bHRlcm5hdGl2ZSByb2NrIiwicG9wIHB1bmsiXX19LCJAYXR0ciI6eyJsb2Nh
+        dGlvbiI6IigtMTExLjY3NjM2NDUyMzk2NTUsNDAuMjc0MDkyNTQwNzAyNiki
+        LCJwYWdlIjoiMSIsInBlclBhZ2UiOiI1MCIsInRvdGFsUGFnZXMiOiIxIiwi
+        dG90YWwiOiIxIiwiZmVzdGl2YWxzb25seSI6IjAiLCJ0YWciOiIifX19Cg==
+    http_version: 
+  recorded_at: Sat, 25 Jan 2014 01:00:00 GMT
 recorded_with: VCR 2.8.0

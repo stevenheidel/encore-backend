@@ -9,7 +9,7 @@ Feature: Users API
       {
         "expiration_date": "2013-08-02T02:53:23Z",
         "oauth": "CAACp5xj4c9sBAIeNLxb3204nzPOYmP......",
-        "facebook_id": 696955405,
+        "facebook_id": "696955405",
         "name": "Steven Heidel"
       }
       """
@@ -31,7 +31,7 @@ Feature: Users API
     {
       "expiration_date": "2013-08-02T02:53:23Z",
       "oauth": "CAACp5xj4c9sBAIeNLxb3204nzPOYmP......",
-      "facebook_id": 696955405,
+      "facebook_id": "696955405",
       "name": "Steven Heidel",
       "invite_sent": true,
       "invite_timestamp": "2013-09-27T14:53:23Z"
@@ -114,7 +114,7 @@ Feature: Users API
       {
         "friends":
         [
-          {"facebook_id": "3196544", "name": "Aldous Huxley", "invite_sent": false},
+          {"facebook_id": 3196544, "name": "Aldous Huxley", "invite_sent": false},
           {"facebook_id": "123456", "name": "George Orwell", "invite_sent": true},
           {"facebook_id": "65432196", "name": "Rudyard Kipling"},
           {"facebook_id": "951623847", "name": "James Joyce"}
@@ -158,7 +158,7 @@ Feature: Users API
       {
         "friends":
         [
-          {"facebook_id": "3196544", "name": "Aldous Huxley"},
+          {"facebook_id": 3196544, "name": "Aldous Huxley"},
           {"facebook_id": "123456", "name": "George Orwell"},
           {"facebook_id": "65432196", "name": "Rudyard Kipling"},
           {"facebook_id": "951623847", "name": "James Joyce"}
