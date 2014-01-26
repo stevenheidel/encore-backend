@@ -96,7 +96,7 @@ class Api::V1::EventsController < Api::V1::BaseController
       @events_total_count = LastfmAPI.artist_getEvents_count(params[:artist_id])
     else # get popular future for location
       @events = geo.future_events(pagination_options)
-      @events_total_count = LastfmAPI.geo_getEvents_count(geo.point[1], geo.point[0], geo.radius, {exclude_todays_events: true})
+      @events_total_count = LastfmAPI.geo_getEvents_count(geo.point[0], geo.point[1], geo.radius, {exclude_todays_events: true})
     end
 
     render 'api/v1/events/future.json'
