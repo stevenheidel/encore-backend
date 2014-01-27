@@ -13,7 +13,7 @@ describe "/api/v1/users", :type => :api do
 
       assert last_response.ok?
 
-      (u = User.where(:facebook_id => 1651770074)).count.should == 1
+      (u = User.where(:facebook_id => '1651770074')).count.should == 1
       u.first.oauth_expiry.should == DateTime.parse(params["expiration_date"])
     end
 
@@ -22,7 +22,7 @@ describe "/api/v1/users", :type => :api do
 
       assert last_response.ok?
 
-      (u = User.where(:facebook_id => 1651770074)).count.should == 1
+      (u = User.where(:facebook_id => '1651770074')).count.should == 1
     end
   end
 end
