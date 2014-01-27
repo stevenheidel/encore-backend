@@ -61,7 +61,6 @@ class LastfmAPI
   # radius is in miles, gets converted to km for lastfm
   def self.geo_getEvents_count(latitude, longitude, radius, options={})
     options.merge!({lat: latitude, long: longitude, distance: 1.61*radius, limit: 1})
-    events = get('geo.getEvents', options)
     events_count = get('geo.getEvents', options)["events"]["@attr"]["total"].to_i rescue 0
 
     if options[:exclude_todays_events]
