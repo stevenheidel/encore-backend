@@ -39,3 +39,7 @@ end
 Given(/^the "(.*?)" job queue is empty$/) do |worker|
   worker.constantize.jobs.clear
 end
+
+Given 'the time is $time' do |time|
+  Timecop.freeze Time.parse(time)
+end

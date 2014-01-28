@@ -39,7 +39,9 @@ Feature: Events API
       }
       """
 
+  @vcr_record_once
   Scenario: Today List
+    Given the time is Jan 29 2014, 15:00 UTC
     When I send a GET request to "/api/v1/events/today.json" with the following:
       """
       {
