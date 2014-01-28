@@ -15,7 +15,7 @@
 #  venue_id         :uuid
 #  created_at       :datetime
 #  updated_at       :datetime
-#  sidekiq_workers  :string(255)      default([])
+#  sidekiq_workers  :text
 #  users_count      :integer          default(0)
 #
 
@@ -44,6 +44,8 @@ class Event < ActiveRecord::Base
   scope :popular, ->(num) {
     order('users_count DESC').limit(num)
   }
+
+  serialize :sidekiq_workers, Array
 
   AMOUNT_OF_TODAYS_EVENTS = 20
 

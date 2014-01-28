@@ -15,7 +15,7 @@
 #  venue_id         :uuid
 #  created_at       :datetime
 #  updated_at       :datetime
-#  sidekiq_workers  :string(255)      default([])
+#  sidekiq_workers  :text
 #
 
 require 'spec_helper'
@@ -28,6 +28,7 @@ describe Event, :vcr do
     event.populating?.should be_true
 
     Populator::Start.drain
+    event.reload
     event.populating?.should be_true
 
     Populator::Instagram.drain
@@ -36,7 +37,9 @@ describe Event, :vcr do
 
     Populator::Flickr.drain
     Populator::Youtube.drain
-    event.populating?.should be_false
+
+    Sidekiq::Worker.drain_all
+    event.populating?.should be_true
   end
 
   it "should format timestamps when exported as JSON" do
