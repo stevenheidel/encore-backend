@@ -35,7 +35,7 @@ class Event < ActiveRecord::Base
   belongs_to :venue
 
   validates_presence_of :start_date
-  validates :artists, :length => { :minimum => 1 }
+  # validates :artists, :length => { :minimum => 1 }
   before_save :normalize_start_date
 
   scope :past, lambda{ where("start_date < ?", Time.now).order('start_date DESC') }
