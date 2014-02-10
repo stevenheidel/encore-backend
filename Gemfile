@@ -101,6 +101,7 @@ gem 'youtube_it'
 
 # Rails Admin
 gem 'rails_admin'
+gem 'rails_admin_uuid_field', github: 'icflix/rails_admin_uuid_field'
 gem 'devise'
 gem 'safe_yaml'
 

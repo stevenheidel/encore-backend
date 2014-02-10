@@ -4,6 +4,13 @@ GIT
   specs:
     flickraw (0.9.7)
 
+GIT
+  remote: git://github.com/icflix/rails_admin_uuid_field.git
+  revision: 2155c5db8122530666dc7dfba69f6c6d0c5f8c64
+  specs:
+    rails_admin_uuid_field (0.0.1)
+      rails_admin (> 0.4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -521,6 +528,7 @@ DEPENDENCIES
   rails (~> 4.0.2)
   rails_12factor
   rails_admin
+  rails_admin_uuid_field!
   relish
   rspec-rails
   ruby-prof
