@@ -15,7 +15,7 @@
 #  venue_id         :uuid
 #  created_at       :datetime
 #  updated_at       :datetime
-#  sidekiq_workers  :string(255)      default([])
+#  sidekiq_workers  :text
 #  users_count      :integer          default(0)
 #
 

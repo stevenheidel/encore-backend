@@ -1,4 +1,4 @@
-class Populator::Facebook
+class Saver::Facebook
   include Sidekiq::Worker
   sidekiq_options :queue => :default, :backtrace => true
 

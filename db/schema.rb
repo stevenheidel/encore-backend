@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140127213223) do
+ActiveRecord::Schema.define(version: 20140210023950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,7 @@ ActiveRecord::Schema.define(version: 20140127213223) do
     t.datetime "invite_timestamp"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "events_count",     default: 0
   end
 
   add_index "users", ["facebook_id"], name: "index_users_on_facebook_id", unique: true, using: :btree

@@ -11,6 +11,7 @@
 #  invite_timestamp :datetime
 #  created_at       :datetime
 #  updated_at       :datetime
+#  event_count      :integer
 #
 
 require 'facebook_api'
