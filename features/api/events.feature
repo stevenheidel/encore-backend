@@ -83,7 +83,7 @@ Feature: Events API
         "latitude": 43.670906,
         "longitude": -79.393331,
         "radius": 0.5,
-        "page": 2,
+        "page": 1,
         "limit": 50
       }
       """
