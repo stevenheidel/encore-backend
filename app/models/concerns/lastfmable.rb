@@ -17,7 +17,7 @@ module Concerns::Lastfmable
 
     # Like find_or_create_by but calls its corresponding info API call
     # Doesn't work for venues
-    def find_or_create_from_lastfm(lastfm_id)
+    def find_or_create_from_lastfm(lastfm_id, lastfm_object=nil)
       object = self.get(lastfm_id)
       
       unless object
@@ -27,24 +27,23 @@ module Concerns::Lastfmable
 
         case self.name
         when "Event"
-          lastfm_event = Lastfm::Event.new(LastfmAPI.event_getInfo(lastfm_id))
+          lastfm_event = lastfm_object || Lastfm::Event.new(LastfmAPI.event_getInfo(lastfm_id))
           object.update_from_lastfm(lastfm_event)
 
-          venue_object = Venue.find_or_create_then_update_from_lastfm(lastfm_event.venue)
+          venue_object = Venue.new.update_from_lastfm(lastfm_event.venue)
           object.venue = venue_object
+
+          # Get all the artists
+          lastfm_event.artists.each do |artist|
+            object.artists << Artist.find_or_create_from_lastfm(artist)
+          end
         when "Artist"
-          lastfm_artist = Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
+          lastfm_artist = lastfm_object || Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
           object.update_from_lastfm(lastfm_artist)
         end
       end
 
       object.save!
-      object
-    end
-
-    def find_or_create_then_update_from_lastfm(lastfm_object)
-      object = self.find_or_initialize_by(lastfm_id: lastfm_object.lastfm_id)
-      object.update_from_lastfm(lastfm_object)
       object
     end
   end
@@ -62,7 +61,7 @@ module Concerns::Lastfmable
       Other::LastfmImage.new(size: image["size"], url: image["#text"])
     end
 
-    self.save!
+    self
   end
 
   # Get the largest of the images
