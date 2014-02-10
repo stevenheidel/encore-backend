@@ -47,7 +47,6 @@ group :development, :test do
   gem 'debugger'
 
   # RSpec
-  # TODO: this issue: https://github.com/rspec/rspec-rails/pull/772
   gem 'minitest'
   gem 'rspec-rails'
 end

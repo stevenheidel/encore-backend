@@ -72,8 +72,8 @@ EncoreBackend::Application.routes.draw do
     end
 
     # Rails Admin
-    #TODO: devise_for :admins, :path_prefix => '/private'
-    #mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
+    devise_for :admins, :path_prefix => '/private'
+    mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
     # Sidekiq
     mount Sidekiq::Web => '/sidekiq'
