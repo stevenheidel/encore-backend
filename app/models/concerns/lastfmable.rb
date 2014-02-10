@@ -30,7 +30,7 @@ module Concerns::Lastfmable
           lastfm_event = lastfm_object || Lastfm::Event.new(LastfmAPI.event_getInfo(lastfm_id))
           object.update_from_lastfm(lastfm_event)
 
-          venue_object = Venue.new.update_from_lastfm(lastfm_event.venue)
+          venue_object = Venue.find_or_create_by(lastfm_id: lastfm_event.venue.lastfm_id).update_from_lastfm(lastfm_event.venue)
           object.venue = venue_object
 
           # Get all the artists
