@@ -12,7 +12,7 @@ module Concerns::Lastfmable
   module ClassMethods
     # Search for an entity by lastfm_id
     def get(lastfm_id)
-      self.find_by(lastfm_id: lastfm_id)
+      self.find_by(lastfm_id: lastfm_id.to_s)
     end
 
     # Like find_or_create_by but calls its corresponding info API call
