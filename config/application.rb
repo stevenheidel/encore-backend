@@ -27,5 +27,8 @@ module EncoreBackend
       g.test_framework :rspec
       g.template_engine :slim
     end
+
+    # Remove validation warning: https://stackoverflow.com/questions/20361428/rails-i18n-validation-deprecation-warning
+    config.i18n.enforce_available_locales = false
   end
 end

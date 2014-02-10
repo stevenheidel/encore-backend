@@ -3,7 +3,7 @@ class FoursquareAPI
   CLIENT_SECRET = "A54NI2GGMB0EOPPUS5HQCTWR55PU31JMKNILGADHFLB0FIJD"
 
   def self.search_venues(venue_name, latitude, longitude)
-    client.search_venues(ll: "#{latitude},#{longitude}", query: venue_name, intent: 'match').groups.first.items
+    client.search_venues(v: 20140101, ll: "#{latitude},#{longitude}", query: venue_name, intent: 'match').venues
   end
 
   private

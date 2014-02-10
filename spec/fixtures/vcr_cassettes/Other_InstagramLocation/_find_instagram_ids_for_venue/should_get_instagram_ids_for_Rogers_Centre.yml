@@ -23,7 +23,7 @@ http_interactions:
       content-type:
       - application/json; charset=utf-8
       access-control-allow-origin:
-      - '*'
+      - "*"
       tracer-time:
       - '208'
       x-ratelimit-limit:
@@ -914,4 +914,110 @@ http_interactions:
         bmdlb24ifV19
     http_version: 
   recorded_at: Wed, 02 Oct 2013 06:01:22 GMT
-recorded_with: VCR 2.6.0
+- request:
+    method: get
+    uri: https://api.foursquare.com/v2/venues/search?client_id=OANCCHMOA0UBCAISXWHIVEZE4QZWAPIZ5R3MB1UJ0CUEYC2W&client_secret=A54NI2GGMB0EOPPUS5HQCTWR55PU31JMKNILGADHFLB0FIJD&v=20140101&ll=43.641658%2C-79.3918064&query=Rogers+Centre&intent=match
+    body:
+      encoding: US-ASCII
+      base64_string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Ruby gem
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      date:
+      - Mon, 10 Feb 2014 04:02:54 GMT
+      server:
+      - nginx
+      content-type:
+      - application/json; charset=utf-8
+      access-control-allow-origin:
+      - "*"
+      tracer-time:
+      - '175'
+      x-ratelimit-limit:
+      - '5000'
+      x-ratelimit-remaining:
+      - '4977'
+      strict-transport-security:
+      - max-age=864000
+      x-ex:
+      - fastly_cdn
+      accept-ranges:
+      - bytes
+      via:
+      - 1.1 varnish
+      age:
+      - '0'
+      x-served-by:
+      - cache-lax1422-LAX
+      x-cache:
+      - MISS
+      x-cache-hits:
+      - '0'
+      vary:
+      - Accept-Encoding,User-Agent,Accept-Language
+      connection:
+      - close
+      transfer-encoding:
+      - chunked
+    body:
+      encoding: UTF-8
+      base64_string: |
+        eyJtZXRhIjp7ImNvZGUiOjIwMH0sInJlc3BvbnNlIjp7InZlbnVlcyI6W3si
+        aWQiOiI0ZWE2YzZlMThiODE0YzY4YWQwN2VlNTkiLCJuYW1lIjoiUm9nZXIn
+        cyBSb29tIiwiY29udGFjdCI6eyJ0d2l0dGVyIjoiYXJ0ZnVsX3JvZ2VyIn0s
+        ImxvY2F0aW9uIjp7ImlzRnV6emVkIjp0cnVlLCJsYXQiOjQzLjY0NTgyMzk3
+        ODU1OTgyNSwibG5nIjotNzkuMzk3MjM0NjI2OTQzMzksImRpc3RhbmNlIjo2
+        MzcsImNjIjoiQ0EiLCJjaXR5IjoiVG9yb250byIsInN0YXRlIjoiT250Iiwi
+        Y291bnRyeSI6IkNhbmFkYSJ9LCJjYXRlZ29yaWVzIjpbeyJpZCI6IjRiZjU4
+        ZGQ4ZDQ4OTg4ZDEwMzk0MTczNSIsIm5hbWUiOiJIb21lIChwcml2YXRlKSIs
+        InBsdXJhbE5hbWUiOiJIb21lcyAocHJpdmF0ZSkiLCJzaG9ydE5hbWUiOiJI
+        b21lIiwiaWNvbiI6eyJwcmVmaXgiOiJodHRwczpcL1wvc3MxLjRzcWkubmV0
+        XC9pbWdcL2NhdGVnb3JpZXNfdjJcL2J1aWxkaW5nXC9ob21lXyIsInN1ZmZp
+        eCI6Ii5wbmcifSwicHJpbWFyeSI6dHJ1ZX1dLCJ2ZXJpZmllZCI6ZmFsc2Us
+        InJlc3RyaWN0ZWQiOnRydWUsInN0YXRzIjp7ImNoZWNraW5zQ291bnQiOjMs
+        InVzZXJzQ291bnQiOjIsInRpcENvdW50IjowfSwiaGVyZU5vdyI6eyJjb3Vu
+        dCI6MCwiZ3JvdXBzIjpbXX0sInJlZmVycmFsSWQiOiJ2LTEzOTIwMDQ5NzQi
+        fSx7ImlkIjoiNGZmMjIwNGRlNGIwMjBjMjg3OWRkNzFlIiwibmFtZSI6IlNl
+        Y3Rpb24gMjIwIiwiY29udGFjdCI6e30sImxvY2F0aW9uIjp7ImFkZHJlc3Mi
+        OiJSb2dlcnMgQ2VudHJlIiwibGF0Ijo0My42NDE4MzM5MDI0MTE5OCwibG5n
+        IjotNzkuMzg5MTk0MTY0MDY0OTUsImRpc3RhbmNlIjoyMTEsImNjIjoiQ0Ei
+        LCJjaXR5IjoiVG9yb250byIsInN0YXRlIjoiT04iLCJjb3VudHJ5IjoiQ2Fu
+        YWRhIn0sImNhdGVnb3JpZXMiOlt7ImlkIjoiNGJmNThkZDhkNDg5ODhkMTE3
+        OTQxNzM1IiwibmFtZSI6IkJlZXIgR2FyZGVuIiwicGx1cmFsTmFtZSI6IkJl
+        ZXIgR2FyZGVucyIsInNob3J0TmFtZSI6IkJlZXIgR2FyZGVuIiwiaWNvbiI6
+        eyJwcmVmaXgiOiJodHRwczpcL1wvc3MxLjRzcWkubmV0XC9pbWdcL2NhdGVn
+        b3JpZXNfdjJcL25pZ2h0bGlmZVwvYmVlcmdhcmRlbl8iLCJzdWZmaXgiOiIu
+        cG5nIn0sInByaW1hcnkiOnRydWV9XSwidmVyaWZpZWQiOmZhbHNlLCJyZXN0
+        cmljdGVkIjp0cnVlLCJzdGF0cyI6eyJjaGVja2luc0NvdW50IjoyOSwidXNl
+        cnNDb3VudCI6MTIsInRpcENvdW50IjowfSwiaGVyZU5vdyI6eyJjb3VudCI6
+        MCwiZ3JvdXBzIjpbXX0sInJlZmVycmFsSWQiOiJ2LTEzOTIwMDQ5NzQifSx7
+        ImlkIjoiNGFkNGMwNjFmOTY0YTUyMGFkZjcyMGUzIiwibmFtZSI6IlJvZ2Vy
+        cyBDZW50cmUiLCJjb250YWN0Ijp7InBob25lIjoiNDE2MzQxMzY2MyIsImZv
+        cm1hdHRlZFBob25lIjoiKDQxNikgMzQxLTM2NjMiLCJ0d2l0dGVyIjoicm9n
+        ZXJzaGVscHMiLCJmYWNlYm9vayI6IjE3NTc3MjMzOTI3MCJ9LCJsb2NhdGlv
+        biI6eyJhZGRyZXNzIjoiMSBCbHVlIEpheXMgV2F5IiwiY3Jvc3NTdHJlZXQi
+        OiJhdCBGcm9udCBTdCIsImxhdCI6NDMuNjQxMTk1ODYzNjczMTMsImxuZyI6
+        LTc5LjM4ODk4ODAxODAzNTg5LCJkaXN0YW5jZSI6MjMyLCJwb3N0YWxDb2Rl
+        IjoiTTVWIDFKMSIsImNjIjoiQ0EiLCJjaXR5IjoiVG9yb250byIsInN0YXRl
+        IjoiT04iLCJjb3VudHJ5IjoiQ2FuYWRhIn0sImNhdGVnb3JpZXMiOlt7Imlk
+        IjoiNGJmNThkZDhkNDg5ODhkMThjOTQxNzM1IiwibmFtZSI6IkJhc2ViYWxs
+        IFN0YWRpdW0iLCJwbHVyYWxOYW1lIjoiQmFzZWJhbGwgU3RhZGl1bXMiLCJz
+        aG9ydE5hbWUiOiJCYXNlYmFsbCIsImljb24iOnsicHJlZml4IjoiaHR0cHM6
+        XC9cL3NzMS40c3FpLm5ldFwvaW1nXC9jYXRlZ29yaWVzX3YyXC9hcnRzX2Vu
+        dGVydGFpbm1lbnRcL3N0YWRpdW1fYmFzZWJhbGxfIiwic3VmZml4IjoiLnBu
+        ZyJ9LCJwcmltYXJ5Ijp0cnVlfV0sInZlcmlmaWVkIjp0cnVlLCJyZXN0cmlj
+        dGVkIjp0cnVlLCJzdGF0cyI6eyJjaGVja2luc0NvdW50Ijo1NDI4NiwidXNl
+        cnNDb3VudCI6MjAxNDAsInRpcENvdW50IjoyMDZ9LCJ1cmwiOiJodHRwOlwv
+        XC93d3cucm9nZXJzY2VudHJlLmNvbSIsImhlcmVOb3ciOnsiY291bnQiOjAs
+        Imdyb3VwcyI6W119LCJzdG9yZUlkIjoiNTQ5MyIsInJlZmVycmFsSWQiOiJ2
+        LTEzOTIwMDQ5NzQifV19fQ==
+    http_version: 
+  recorded_at: Mon, 10 Feb 2014 04:02:57 GMT
+recorded_with: VCR 2.8.0

@@ -97,7 +97,7 @@ gem 'htmlkickstart'
 # Social APIs
 gem 'koala' # for Facebook
 gem 'foursquare2'
-gem 'flickraw', require: false
+gem 'flickraw', github: 'hanklords/flickraw', require: false
 gem 'youtube_it'
 
 # Rails Admin

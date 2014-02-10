@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Populator::Instagram, vcr: false do
+describe Populator::Instagram, vcr: true do
   let(:event) { FactoryGirl.create :rolling_stones }
 
   before do
