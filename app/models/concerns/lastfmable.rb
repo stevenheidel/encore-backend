@@ -43,7 +43,7 @@ module Concerns::Lastfmable
         end
       end
 
-      object.save!
+      object.save
       object
     end
   end
