@@ -17,12 +17,12 @@ module Concerns::Lastfmable
 
     # Like find_or_create_by but calls its corresponding info API call
     # Doesn't work for venues
-    def find_or_create_from_lastfm(lastfm_id, lastfm_object=nil)
+    def find_or_create_from_lastfm(lastfm_id, lastfm_object=nil, force=false)
       object = self.get(lastfm_id)
       
-      unless object
+      if force || object.nil?
         # Doesn't exist yet so make it and populate it
-        object = self.new
+        object = self.new if object.nil?
         object.lastfm_id = lastfm_id
 
         case self.name
