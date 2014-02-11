@@ -77,6 +77,6 @@ module Concerns::Lastfmable
       query = self.images.where(size: size)
       return query.first.url if query.exists?
     end
-    return nil
+    return "http://on.encore.fm/assets/public/applogo.png"
   end
 end
