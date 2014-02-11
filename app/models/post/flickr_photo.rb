@@ -31,6 +31,10 @@ class Post::FlickrPhoto < ActiveRecord::Base
     )
   end
 
+  def caption
+    self.title
+  end
+
   def type
     :flickr_photo
   end
