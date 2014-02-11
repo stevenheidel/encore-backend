@@ -35,6 +35,11 @@ class Post::FlickrPhoto < ActiveRecord::Base
     self.title
   end
 
+  # Default picture
+  def user_profile_picture
+    "http://on.encore.fm/assets/public/applogo.png"
+  end
+
   def type
     :flickr_photo
   end
