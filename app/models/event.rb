@@ -38,6 +38,8 @@ class Event < ActiveRecord::Base
   validates :artists, :length => { :minimum => 1 }
   before_save :normalize_start_date
 
+  default_scope includes(:artists).includes(:venue)
+
   scope :past, lambda{ where("start_date < ?", Time.now).order('start_date DESC') }
   scope :future, lambda{ where("start_date >= ?", Time.now).order('start_date ASC') }
   

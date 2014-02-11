@@ -11,7 +11,7 @@ class Api::V1::EventsController < Api::V1::BaseController
       user = User.get(params[:user_id])
 
       if user
-        @events = user.events.includes(:venue)
+        @events = user.events
         @events_past = @events.past
         @events_future = @events.future
       else
