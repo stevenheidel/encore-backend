@@ -9,7 +9,7 @@ class Populator::Youtube < Populator::Base
     YoutubeAPI.search(query).each do |result|
       if valid_video?(result.title, result.description, 
           event.name, event.venue.name, event.venue.city, event.local_date)
-        event.posts << Post::YoutubeVideo.build_from_response(result)
+        event.youtube_videos << Post::YoutubeVideo.build_from_response(result)
       end
     end
   end
