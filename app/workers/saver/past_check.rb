@@ -1,4 +1,4 @@
-class Saver::UpdateCounts
+class Saver::PastCheck
   include Sidekiq::Worker
   include Sidetiq::Schedulable
   sidekiq_options :queue => :default, :backtrace => true
