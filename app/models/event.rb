@@ -17,6 +17,7 @@
 #  updated_at       :datetime
 #  sidekiq_workers  :text
 #  users_count      :integer          default(0)
+#  image_url_cached :string(255)
 #
 
 class Event < ActiveRecord::Base

@@ -60,12 +60,19 @@ module Concerns::Lastfmable
     self.images = lastfm_object.images.map do |image|
       Other::LastfmImage.new(size: image["size"], url: image["#text"])
     end
+    self.image_url_cached = get_image_url
 
     self
   end
 
-  # Get the largest of the images
   def image_url
+    self.update(image_url_cached: get_image_url) unless self.image_url_cached
+
+    self.image_url_cached
+  end
+
+  # Get the largest of the images
+  def get_image_url
     %w[small medium large extralarge mega].reverse.each do |size|
       query = self.images.where(size: size)
       return query.first.url if query.exists?

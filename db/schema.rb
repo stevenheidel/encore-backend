@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211074810) do
+ActiveRecord::Schema.define(version: 20140211081446) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 20140211074810) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.datetime "past_event_freshness"
+    t.string   "image_url_cached"
   end
 
   add_index "artists", ["lastfm_id"], name: "index_artists_on_lastfm_id", unique: true, using: :btree
@@ -53,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140211074810) do
     t.uuid "event_id"
   end
 
-  add_index "artists_events", ["artist_id", "event_id"], name: "index_artists_events_on_artist_id_and_event_id", unique: true, using: :btree
+  add_index "artists_events", ["artist_id", "event_id"], name: "index_artists_events_on_artist_id_and_event_id", using: :btree
   add_index "artists_events", ["event_id"], name: "index_artists_events_on_event_id", using: :btree
 
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
@@ -71,6 +72,7 @@ ActiveRecord::Schema.define(version: 20140211074810) do
     t.datetime "updated_at"
     t.text     "sidekiq_workers"
     t.integer  "users_count",      default: 0
+    t.string   "image_url_cached"
   end
 
   add_index "events", ["lastfm_id"], name: "index_events_on_lastfm_id", unique: true, using: :btree
@@ -190,6 +192,7 @@ ActiveRecord::Schema.define(version: 20140211074810) do
     t.datetime "updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "image_url_cached"
   end
 
   add_index "venues", ["lastfm_id"], name: "index_venues_on_lastfm_id", unique: true, using: :btree
