@@ -60,7 +60,7 @@ module Concerns::Lastfmable
     self.images = lastfm_object.images.map do |image|
       Other::LastfmImage.new(size: image["size"], url: image["#text"])
     end
-    self.image_url_cached = get_image_url
+    self.image_url_cached = lastfm_object.image_url
 
     self
   end
@@ -77,6 +77,6 @@ module Concerns::Lastfmable
       query = self.images.where(size: size)
       return query.first.url if query.exists?
     end
-    return "TODO: default image for events without images"
+    return nil
   end
 end

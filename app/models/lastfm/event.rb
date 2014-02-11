@@ -71,10 +71,6 @@ class Lastfm::Event < Lastfm::Base
     start_date.to_date
   end
 
-  def image_url
-    @json["image"].last["#text"]
-  end
-
   private
   def extract_tickets_url
     if(@json.is_a?(Hash))

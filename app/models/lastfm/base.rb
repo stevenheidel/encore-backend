@@ -29,4 +29,8 @@ class Lastfm::Base
   def images
     @json["image"]
   end
+
+  def image_url
+    self.images.last["#text"]
+  end
 end
