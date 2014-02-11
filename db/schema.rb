@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140210041912) do
+ActiveRecord::Schema.define(version: 20140211074810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,6 +53,9 @@ ActiveRecord::Schema.define(version: 20140210041912) do
     t.uuid "event_id"
   end
 
+  add_index "artists_events", ["artist_id", "event_id"], name: "index_artists_events_on_artist_id_and_event_id", unique: true, using: :btree
+  add_index "artists_events", ["event_id"], name: "index_artists_events_on_event_id", using: :btree
+
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "lastfm_id"
     t.string   "name"
@@ -71,11 +74,17 @@ ActiveRecord::Schema.define(version: 20140210041912) do
   end
 
   add_index "events", ["lastfm_id"], name: "index_events_on_lastfm_id", unique: true, using: :btree
+  add_index "events", ["start_date"], name: "index_events_on_start_date", using: :btree
+  add_index "events", ["users_count"], name: "index_events_on_users_count", using: :btree
+  add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
 
   create_table "events_users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid "event_id"
     t.uuid "user_id"
   end
+
+  add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
+  add_index "events_users", ["user_id"], name: "index_events_users_on_user_id", using: :btree
 
   create_table "flags", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "type"
@@ -99,6 +108,8 @@ ActiveRecord::Schema.define(version: 20140210041912) do
     t.datetime "updated_at"
   end
 
+  add_index "flickr_photos", ["event_id"], name: "index_flickr_photos_on_event_id", using: :btree
+
   create_table "friend_visitors", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid     "user_id"
     t.uuid     "friend_id"
@@ -107,6 +118,10 @@ ActiveRecord::Schema.define(version: 20140210041912) do
     t.datetime "updated_at"
   end
 
+  add_index "friend_visitors", ["event_id"], name: "index_friend_visitors_on_event_id", using: :btree
+  add_index "friend_visitors", ["friend_id"], name: "index_friend_visitors_on_friend_id", using: :btree
+  add_index "friend_visitors", ["user_id"], name: "index_friend_visitors_on_user_id", using: :btree
+
   create_table "instagram_locations", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "name"
     t.integer  "instagram_uuid"
@@ -114,6 +129,8 @@ ActiveRecord::Schema.define(version: 20140210041912) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "instagram_locations", ["venue_id"], name: "index_instagram_locations_on_venue_id", using: :btree
 
   create_table "instagram_photos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "instagram_uuid"
@@ -128,6 +145,8 @@ ActiveRecord::Schema.define(version: 20140210041912) do
     t.datetime "updated_at"
   end
 
+  add_index "instagram_photos", ["event_id"], name: "index_instagram_photos_on_event_id", using: :btree
+
   create_table "lastfm_images", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "size"
     t.string   "url"
@@ -136,6 +155,8 @@ ActiveRecord::Schema.define(version: 20140210041912) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "lastfm_images", ["lastfm_imageable_id", "lastfm_imageable_type"], name: "index_lastfm_images_on_imageable_id_and_imageable_type", using: :btree
 
   create_table "user_photos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.uuid "user_id"
@@ -153,6 +174,7 @@ ActiveRecord::Schema.define(version: 20140210041912) do
     t.integer  "events_count",     default: 0
   end
 
+  add_index "users", ["events_count"], name: "index_users_on_events_count", using: :btree
   add_index "users", ["facebook_id"], name: "index_users_on_facebook_id", unique: true, using: :btree
 
   create_table "venues", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
@@ -171,6 +193,8 @@ ActiveRecord::Schema.define(version: 20140210041912) do
   end
 
   add_index "venues", ["lastfm_id"], name: "index_venues_on_lastfm_id", unique: true, using: :btree
+  add_index "venues", ["latitude"], name: "index_venues_on_latitude", using: :btree
+  add_index "venues", ["longitude"], name: "index_venues_on_longitude", using: :btree
 
   create_table "youtube_videos", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "caption"
