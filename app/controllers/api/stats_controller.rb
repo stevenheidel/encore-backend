@@ -5,7 +5,7 @@ class Api::StatsController < ActionController::Base
 
       20.downto(0) do |x|
         date = Date.today - x.days
-        user_count = User.where(:created_at.lte => date + 1.days).count
+        user_count = User.where("created_at <= ?", date + 1.days).count
 
         csv << [date.strftime("%Y%m%d"), user_count]
       end

@@ -9,4 +9,16 @@ class Post
 
     event.flickr_photos + event.instagram_photos + event.youtube_videos
   end
+
+  def self.flickr
+    Post::FlickrPhoto
+  end
+
+  def self.instagram
+    Post::InstagramPhoto
+  end
+
+  def self.youtube 
+    Post::YoutubeVideo
+  end
 end
