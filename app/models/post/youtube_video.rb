@@ -22,6 +22,11 @@ class Post::YoutubeVideo < ActiveRecord::Base
     )
   end
 
+  # Default picture
+  def user_profile_picture
+    "http://on.encore.fm/assets/public/applogo.png"
+  end
+
   def type
     :youtube_video
   end
