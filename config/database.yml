@@ -10,7 +10,7 @@ local: &local
 
 development:
   <<: *local
-  database: encore_backend_mirror
+  database: encore_backend_development
 
 test:
   <<: *local

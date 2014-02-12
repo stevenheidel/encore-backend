@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20140212000017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "pg_stat_statements"
   enable_extension "uuid-ossp"
 
   create_table "admins", force: true do |t|
@@ -49,7 +50,7 @@ ActiveRecord::Schema.define(version: 20140212000017) do
 
   add_index "artists", ["lastfm_id"], name: "index_artists_on_lastfm_id", unique: true, using: :btree
 
-  create_table "artists_events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+  create_table "artists_events", id: false, force: true do |t|
     t.uuid "artist_id"
     t.uuid "event_id"
   end
@@ -80,7 +81,7 @@ ActiveRecord::Schema.define(version: 20140212000017) do
   add_index "events", ["users_count"], name: "index_events_on_users_count", using: :btree
   add_index "events", ["venue_id"], name: "index_events_on_venue_id", using: :btree
 
-  create_table "events_users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
+  create_table "events_users", id: false, force: true do |t|
     t.uuid "event_id"
     t.uuid "user_id"
   end
