@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140211081446) do
+ActiveRecord::Schema.define(version: 20140212000017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20140211081446) do
     t.uuid "event_id"
   end
 
-  add_index "artists_events", ["artist_id", "event_id"], name: "index_artists_events_on_artist_id_and_event_id", using: :btree
+  add_index "artists_events", ["artist_id", "event_id"], name: "index_artists_events_on_artist_id_and_event_id", unique: true, using: :btree
   add_index "artists_events", ["event_id"], name: "index_artists_events_on_event_id", using: :btree
 
   create_table "events", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
@@ -85,7 +85,7 @@ ActiveRecord::Schema.define(version: 20140211081446) do
     t.uuid "user_id"
   end
 
-  add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", using: :btree
+  add_index "events_users", ["event_id", "user_id"], name: "index_events_users_on_event_id_and_user_id", unique: true, using: :btree
   add_index "events_users", ["user_id"], name: "index_events_users_on_user_id", using: :btree
 
   create_table "flags", id: :uuid, default: "uuid_generate_v4()", force: true do |t|

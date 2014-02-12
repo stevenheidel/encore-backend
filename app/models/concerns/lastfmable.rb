@@ -34,8 +34,8 @@ module Concerns::Lastfmable
           object.venue = venue_object
 
           # Get all the artists
-          lastfm_event.artists.each do |artist|
-            object.artists << Artist.find_or_create_from_lastfm(artist)
+          object.artists = lastfm_event.artists.map do |artist|
+             Artist.find_or_create_from_lastfm(artist)
           end
         when "Artist"
           lastfm_artist = lastfm_object || Lastfm::Artist.new(LastfmAPI.artist_getInfo(lastfm_id))
@@ -43,7 +43,7 @@ module Concerns::Lastfmable
         end
       end
 
-      object.save
+      object.save!
       object
     end
   end
