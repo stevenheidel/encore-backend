@@ -3,7 +3,11 @@
 require 'lastfm_xml'
 
 class LastfmAPI
-  API_KEY = "89fba2b42503c2bedb38d545a8d462fa"
+  if Rails.env.test?
+    API_KEY = "89fba2b42503c2bedb38d545a8d462fa"
+  else
+    API_KEY = "36093bc7bc023ce4896c3326a1ee2137"
+  end
 
   # Artist info
   def self.artist_getInfo(id)
