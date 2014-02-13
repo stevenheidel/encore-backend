@@ -80,5 +80,11 @@ EncoreBackend::Application.routes.draw do
 
     # Documentation
     get '/api', to: redirect('https://relishapp.com/encore/backend/docs/api?token=EVAxzeK6EqNFbhsX3s7C')
+
+    # Nick user list
+    namespace :dashboard do
+      root to: redirect('/private/dashboard/facebook_users')
+      get :facebook_users
+    end
   end
 end

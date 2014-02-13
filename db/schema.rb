@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140212000017) do
+ActiveRecord::Schema.define(version: 20140213054943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -175,6 +175,7 @@ ActiveRecord::Schema.define(version: 20140212000017) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "events_count",     default: 0
+    t.string   "email_cache"
   end
 
   add_index "users", ["events_count"], name: "index_users_on_events_count", using: :btree

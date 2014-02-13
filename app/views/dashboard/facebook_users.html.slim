@@ -1,0 +1,23 @@
+h1 List of Facebook Users
+
+p Note that number of events, created at, and last updated are approximate
+p Default sorting is by updated_at descending
+
+table.sortable.striped
+  thead
+    tr
+      th Name
+      th Email
+      th Facebook Profile
+      th Number of Events
+      th Created At
+      th Last Updated
+  tbody
+  - @users.each do |u|
+    tr
+      td= u.name
+      td= u.email
+      td= link_to u.facebook_id, "http://facebook.com/#{u.facebook_id}"
+      td= u.events_count.to_s.rjust(4, '.')
+      td= u.created_at
+      td= u.updated_at

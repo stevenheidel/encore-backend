@@ -56,4 +56,16 @@ class User < ActiveRecord::Base
   def invited?
     (oauth_string or invite_sent) ? true : false
   end
+
+  def email
+    if self.email_cache.blank? && self.oauth_string.present?
+      # 7cd8b15f2dcc57e8033744930052ef2e is app_secret
+      graph = Koala::Facebook::API.new(oauth_string, "7cd8b15f2dcc57e8033744930052ef2e")
+      fb_email = graph.get_object("me")["email"]
+
+      self.update(email_cache: fb_email)
+    end
+
+    self.email_cache
+  end
 end
