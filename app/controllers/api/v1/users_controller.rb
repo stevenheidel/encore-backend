@@ -20,6 +20,8 @@ class Api::V1::UsersController < Api::V1::BaseController
     @user.update_attributes!(user_params)
     @user.oauth_string = params[:oauth]
     @user.oauth_expiry = params[:expiration_date]
+    @user.save!
+    
     render "api/v1/users/show.json"
   end
 
