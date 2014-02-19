@@ -3,6 +3,20 @@ h1 List of Facebook Users
 p Note that number of events, created at, and last updated are approximate
 p Default sorting is by created_at descending
 
+h4 Statistics
+
+p 
+  |  Total number of users: 
+  b= @num_users
+p 
+  |  Total number of events added: 
+  b= @num_events
+p
+  |  Events per user: 
+  b= @events_per_user.round(2)
+  |  Excluding those with zero: 
+  b= @excluding_zero.round(2)
+
 table.sortable.striped
   thead
     tr
