@@ -73,14 +73,26 @@ class Lastfm::Event < Lastfm::Base
 
   private
   def extract_tickets_url
-    if(@json.is_a?(Hash))
+    if @json.is_a?(Hash)
       url_regexp = /https?:\/\/[-\w .\/?%&=;]+/
       urls = @json["description"].to_s.scan(url_regexp)
-      urls.concat(@json["website"].to_s.scan(url_regexp))
-      urls.concat(@json["tickets"].to_s.scan(url_regexp))
-      if urls.present?
+
+      # Algorithm documented here: https://github.com/stevenheidel/encore-backend/issues/65
+      if @json["website"].present?
+        @tickets_url = @json["website"]
+      elsif @json["tickets"].present?
+        @tickets_url = @json["tickets"]
+      elsif urls.present?
         tickets_urls = urls.select{|url| url.match(/ticket|sale|buy|purchase|eventbrite/)}
-        @tickets_url = tickets_urls.sort_by(&:length).last if tickets_urls.length > 0
+        if tickets_urls.length > 0
+          @tickets_url = tickets_urls.sort_by(&:length).last
+        else
+          @tickets_url = urls.first
+        end
+      elsif @json["venue"] && @json["venue"]["website"].present?
+        @tickets_url = @json["venue"]["website"]
+      else
+        @tickets_url = @json["url"]
       end
     end
   end

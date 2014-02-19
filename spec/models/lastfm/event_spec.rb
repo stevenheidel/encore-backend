@@ -88,14 +88,6 @@ describe Lastfm::Event do
       le.tickets_url.should == "http://www.ticketweb.ca/t3/sale/SaleEventDetail?dispatch=loadSelectionData&eventId=3792124" #prefer URL that has word 'ticket' in it
     end
 
-    it "should not take URLs which don't contain keywords: ticket, buy, sale, purchase" do
-      le = Lastfm::Event.new({
-        "description"=>
-          "<div class=\"bbcode\">UNION EVENTS PROUDLY PRESENTS <br /><br />HERBERT GRÖNEMEYER<br /><a href=\"https://www.facebook.com/herbertgroenemeyer\" rel=\"nofollow\">https://www.facebook.com/herbertgroenemeyer</a><br /><br />FRIDAY SEPTEMBER 20, 2013<br />THE OPERA HOUSE<br />Doors 8:00 PM – 19+<br /><br />TICKETS ON SALE MONDAY JUNE 17<br /><a href=\"\" rel=\"nofollow\"></a><br />VIP Advance ticket (includes meet &amp; greet) $100.00 + S/C /<br /><br />GA Advance tickets $35.00 + S/C available online at Ticketfly.com, UnionEvents.com, Rotate This, Soundscapes</div>",
-      })
-      le.tickets_url.should == nil
-    end
-
     it "should fail gracefully" do
       le = Lastfm::Event.new({"description"=>nil})
       le.tickets_url.should == nil
@@ -119,6 +111,27 @@ describe Lastfm::Event do
       le.tickets_url.should == nil
       le = Lastfm::Event.new([1,2,3])
       le.tickets_url.should == nil
+    end
+
+    it "should work for the samples" do
+      def check(id)
+        Lastfm::Event.new(LastfmAPI.event_getInfo(id)).tickets_url
+      end
+
+      # See examples here: https://github.com/stevenheidel/encore-backend/issues/65
+      check(3751082).should == "http://www.ticketmaster.ca/event/10004B82B64C638D"
+      check(3761369).should == "http://www.wavelengthtoronto.com/wavelog/2013/12/wavelength-music-festival-fourteen"
+      check(3650152).should == "http://www.ticketmaster.ca/event/10004AC4F02EA4AA"
+      check(3788977).should == "http://adelaidehallto.com/event/sam-roberts-band/"
+      check(3758642).should == "http://www.collectiveconcerts.com/event/446067-robert-ellis-toronto/"
+      check(3770209).should == "http://www.last.fm/event/3770209+Paint+at+Rancho+Relaxo+on+14+February+2014"
+      check(3757290).should == "http://www.generalmotorscentre.com/"
+      check(3742671).should == "https://www.facebook.com/events/581540511899588/"
+      check(3775584).should == "https://www.facebook.com/events/1443349222545554/"
+      check(3776610).should == "https://www.facebook.com/events/494672223984264/"
+      check(3755601).should == "http://www.generalmotorscentre.com/"
+      check(3805464).should == "https://www.facebook.com/events/192760027601312/"
+      check(3656109).should == "http://www.markham.ca/Markham/Attractions/Theatre/"
     end
   end
 end
