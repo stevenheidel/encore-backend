@@ -13,8 +13,6 @@ class Saver::InstagramDeadLinks
       if Faraday.head(p.image_url).status == 403
         to_destroy << p.id
       end
-
-      pp i if i % 100 == 0
     end
 
     # Ensure we're not deleting more than 5% at a time
