@@ -10,8 +10,7 @@
 .row
   ul.eventinfo
     li.col-lg-2.artist-photo
-      = image_tag 'http://userserve-ak.last.fm/serve/252/85176341.png', :size => '180', :class => ''
-    / = image_tag @event.image_url, :size => '180'
+      = image_tag @event.image_url, :size => '180', :class => ''
     li.col-lg-10
       p.artist #{@event.name}
       p.venue #{@event.venue.name}, #{@event.date.to_formatted_s(:long) }
