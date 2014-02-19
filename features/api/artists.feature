@@ -184,7 +184,7 @@ Feature: Artists API
               "start_time": "Sat, 13 Jul 2013 19:00:00",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3529118+Streetlight+Manifesto+at+Lupo%E2%80%99s+Heartbreak+Hotel+on+13+July+2013",
-              "tickets_url": null,
+              "tickets_url": "http://www.lupos.com",
               "venue_name": "Lupo’s Heartbreak Hotel",
               "venue": {
                 "street": "79 Washington St.",
@@ -214,7 +214,7 @@ Feature: Artists API
               "start_time": "Fri, 12 Jul 2013 20:00:00",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3531564+Streetlight+Manifesto",
-              "tickets_url": null,
+              "tickets_url": "http://www.paramountny.com/",
               "venue_name": "The Paramount Theater",
               "venue": {
                 "street": "370 New York Ave",
@@ -240,7 +240,7 @@ Feature: Artists API
               "start_time": "Thu, 10 Oct 2013 21:22:01",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3645343+Streetlight+Manifesto+at+House+of+Blues+on+10+October+2013",
-              "tickets_url": null,
+              "tickets_url": "http://www.hob.com/venues/clubvenues/cleveland/",
               "venue_name": "House of Blues",
               "venue": {
                 "street": "308 Euclid Avenue",
@@ -264,7 +264,7 @@ Feature: Artists API
               "start_time": "Fri, 11 Oct 2013 19:00:00",
               "image_url": "http://userserve-ak.last.fm/serve/252/64020067.jpg",
               "lastfm_url": "http://www.last.fm/event/3653939+Streetlight+Manifesto+at+Turner+Hall+Ballroom+on+11+October+2013",
-              "tickets_url": null,
+              "tickets_url": "http://pabsttheater.org/show/streetlightmanifesto2013",
               "venue_name": "Turner Hall Ballroom",
               "venue": {
                 "street": "1032 N 4th St",
