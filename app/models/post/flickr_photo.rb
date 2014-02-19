@@ -17,6 +17,8 @@
 #
 
 class Post::FlickrPhoto < ActiveRecord::Base
+  include Concerns::Postable
+  
   # Builds an object from JSON returned by Flickr
   def self.build_from_hashie(hashie)
     self.new(

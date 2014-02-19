@@ -13,6 +13,8 @@
 #
 
 class Post::YoutubeVideo < ActiveRecord::Base
+  include Concerns::Postable
+  
   def self.build_from_response(response)
     self.new(
       caption: response.title,

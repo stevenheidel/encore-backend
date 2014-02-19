@@ -17,8 +17,6 @@
       p.venue #{@event.venue.name}, #{@event.date.to_formatted_s(:long) }
   
 .row
-  = render :partial => 'posts', :locals => { :posts => @posts }
+  = render :partial => 'posts', locals: {posts: @posts}
 .row
-  = link_to 'Load More Posts', event_url(@event.lastfm_id, :page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page    
-  
-  
+  = link_to 'Load More Posts', event_url(@event.lastfm_id, :page => @posts.next_page), :class => 'load-more-posts', :remote => true if @posts.next_page

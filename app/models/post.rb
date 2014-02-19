@@ -1,7 +1,10 @@
 class Post
   def self.find(post_id)
-    (Post::FlickrPhoto.find(post_id) + Post::InstagramPhoto.find(post_id) + 
-      Post::YoutubeVideo.find(post_id)).first
+    [
+      Post::FlickrPhoto.find_by_id(post_id),
+      Post::InstagramPhoto.find_by_id(post_id),
+      Post::YoutubeVideo.find_by_id(post_id)
+    ].compact.first
   end
 
   def self.all_for_event(event_id)

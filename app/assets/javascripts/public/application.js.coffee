@@ -9,7 +9,8 @@
 $(document).ready ->
   $(".appstore").hide()
   $(".appstore").fadeIn "slow"
-  $ ->
+
+$ ->
   $('a.load-more-posts').on 'inview', (e, visible) ->
     return unless visible
     

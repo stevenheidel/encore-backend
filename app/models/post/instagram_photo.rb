@@ -16,6 +16,8 @@
 #
 
 class Post::InstagramPhoto < ActiveRecord::Base
+  include Concerns::Postable
+
   # TODO: add belongs_to instagram_location or something
   
   # Builds an object from JSON returned by Instagram
