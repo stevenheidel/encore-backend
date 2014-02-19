@@ -9,7 +9,7 @@ class Saver::InstagramDeadLinks
   def perform
     to_destroy = []
 
-    Post::InstagramPhoto.all.each_with_index do |p,i|
+    Post::InstagramPhoto.all.each do |p|
       if Faraday.head(p.image_url).status == 403
         to_destroy << p.id
       end
