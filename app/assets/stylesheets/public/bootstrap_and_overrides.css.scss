@@ -15,7 +15,7 @@ body {
 
 .navbar {padding: 0;}
 .navbar-inner{
-  padding: 20px 0;
+  padding: 12px 0;
 }
 
 .navbar-fixed-top {
@@ -26,7 +26,6 @@ body {
   background-color: #108cb0;
   background-image: none;
   border-color: transparent;
-  height: 124px;
 }
 
 .navbar .download {
@@ -89,10 +88,12 @@ line-height: 180px;
 
 .col-lg-2 {
   width: 25%;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .col-lg-10 {
   width: 75%;
   padding-top: 70px;
-  padding-left: 5px;
+  padding-left: 2px;
 }
