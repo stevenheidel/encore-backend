@@ -23,9 +23,10 @@ body {
 }
 
 .navbar .logo { 
-  background-color: #01b5c5;
+  background-color: #108cb0;
   background-image: none;
   border-color: transparent;
+  height: 124px;
 }
 
 .navbar .download {
@@ -35,26 +36,30 @@ body {
 }
 
 .navbar .download li {
-  font-family:"Hero Regular", Helvetica, Arial, Verdana , sans-serif; font-size-adjust:0.65; font-weight:normal; font-style:normal;
+  font-size: 15px; font-weight:300; font-style:normal;
   color: #fff;
   
   display: inline-block;
 }
-.appstore-badge { width: 150px; }
+.appstore-badge { width: 155px; padding-left: 10px; padding-bottom: 19px; }
+
+.icon small 50@2x {
+  padding-right: 13px;
+}
 
 .photo img {
-  padding: 4px;
+  padding: 0px;
 }
 .photo {
   text-align: center;
-  background-color: #fff;
+  background-color: #000;
   margin-bottom: 10px;
 }
 
 
 .eventinfo {
   margin-top: 50px;
-  height: 200px;
+  height: 280px;
 line-height: 180px;
 }
 
@@ -65,18 +70,29 @@ line-height: 180px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  width: initial; 
 }
 
 .artist {
-  font-size: 25px;
+  font-size: 35px;
   color: #04b1df;
-//    line-height: 1px;
+  font-weight: 200;
 }
+
+
 
 .venue {
-  font-family: oxygen;
-  font-size: 14px;
+  font-size: 20px;
   color: white;
+  font-weight: 100;
 }
 
+.col-lg-2 {
+  width: 25%;
+}
 
+.col-lg-10 {
+  width: 75%;
+  padding-top: 70px;
+  padding-left: 5px;
+}
