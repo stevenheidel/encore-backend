@@ -49,6 +49,7 @@ EncoreBackend::Application.routes.draw do
       end
     end
 
+    # For Cyfe dashboard
     namespace :stats do
       get :users_time
       get :users_gauge
@@ -64,13 +65,6 @@ EncoreBackend::Application.routes.draw do
 
   # Private routes TODO: Secure this from outsiders
   scope '/private' do
-    # Demo webapp
-    namespace :demo do
-      root to: redirect('/private/demo/users')
-      resources :users, only: [:show, :index]
-      resources :events, only: [:show, :index]
-    end
-
     # Rails Admin
     devise_for :admins, :path_prefix => '/private'
     mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'

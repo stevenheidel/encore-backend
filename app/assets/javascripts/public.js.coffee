@@ -1,14 +1,4 @@
-#= require jquery
-#= require jquery_ujs
 #= require jquery.inview.min.js
-
-#= require_self
-#= require_tree .
-
-
-$(document).ready ->
-  $(".appstore").hide()
-  $(".appstore").fadeIn "slow"
 
 $ ->
   $('a.load-more-posts').on 'inview', (e, visible) ->
@@ -44,4 +34,3 @@ WebFontConfig = fontdeck:
 ) window, document, "script", "//www.google-analytics.com/analytics.js", "ga"
 ga "create", "UA-40542837-4", "encore.fm"
 ga "send", "pageview"
-

@@ -128,10 +128,13 @@ gem 'newrelic_rpm'
 # Whenever
 gem 'whenever'
 
+# Timezones/Location
 gem 'google_timezone'
 gem 'geocoder'
 
 # Paginate 
 gem 'will_paginate'
 
-gem "twitter-bootstrap-rails"
+# Bootstrap
+gem 'twitter-bootstrap-rails', branch: 'bootstrap3', git: 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'less-rails'

@@ -6,17 +6,15 @@
 
   meta property="og:description" content="Download Encore in the App Store!"
 
-.row
-  ul.eventinfo
-    li.col-lg-2.artist-photo
-      = image_tag @event.image_url, :size => '180', :class => ''
-    li.col-lg-10
-      p.artist #{@event.name}
-      p.venue #{@event.venue.name}, #{@event.date.to_formatted_s(:long) }
+.row.eventinfo
+  .col-md-3.photo.text-center
+    = image_tag @event.image_url
+  .col-md-9.description
+    p.artist #{@event.name}
+    p.venue #{@event.venue.name}, #{@event.date.to_formatted_s(:long) }
 
-.row
-  img.caption title=@post.caption src=@post.image_url
-
-.row
-  p #{@event.name}  
-  p #{@post.user_name}
+.row.single-image
+  .col-md-9.photo
+    img src=@post.image_url
+  .col-md-3.caption
+    p "#{@post.caption}" - #{@post.user_name}
