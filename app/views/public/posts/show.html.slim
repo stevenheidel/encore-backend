@@ -8,10 +8,11 @@
 
 .row.eventinfo
   .col-md-3.photo.text-center
-    = image_tag @event.image_url
+    = link_to image_tag(@event.image_url), event_path(@event.lastfm_id)
   .col-md-9.description
     p.artist #{@event.name}
     p.venue #{@event.venue.name}, #{@event.date.to_formatted_s(:long) }
+    p.seemore= link_to "See more photos and videos from this concert", event_path(@event.lastfm_id)
 
 .row.single-image
   .col-md-9.photo
