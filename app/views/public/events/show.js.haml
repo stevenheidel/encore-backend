@@ -1,4 +1,4 @@
-$('.gallery').append('#{escape_javascript(render partial: "posts", :locals => { :posts => @posts })}');
+$('.image-gallery').append('#{escape_javascript(render partial: "posts", :locals => { :posts => @posts })}');
 $('a.load-more-posts').attr('href', '#{event_url(@event.lastfm_id, page: @posts.next_page)}');
 
  
