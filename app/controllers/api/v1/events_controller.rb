@@ -25,6 +25,8 @@ class Api::V1::EventsController < Api::V1::BaseController
 
   def show
     @event = Event.find_or_create_from_lastfm(params[:id])
+
+    render 'api/v1/events/show.json'
   end
 
   def populate
