@@ -128,4 +128,26 @@ class Api::V1::EventsController < Api::V1::BaseController
       render 'api/v1/users/friends.json'
     end
   end
+
+  def seatgeek_url
+    seatgeek = Faraday.new(url: "http://api.seatgeek.com/2") do |conn|
+      conn.response :json
+      conn.adapter Faraday.default_adapter
+    end
+
+    event = Event.find_or_create_from_lastfm(params[:id])
+
+    params = {}
+    params['aid'] = 10708
+    params['taxonomies.name'] = 'concert'
+    params['performers.slug'] = event.headliner.parameterize
+    params['venue.city'] = event.venue.city.parameterize
+    params['datetime_utc'] = event.local_date.to_s
+
+    resp = seatgeek.get('/events', params).body
+
+    @seatgeek_url = resp["events"][0]["url"] rescue nil
+
+    render 'api/v1/events/seatgeek_url.json'
+  end
 end

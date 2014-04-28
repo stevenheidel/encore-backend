@@ -30,6 +30,7 @@ EncoreBackend::Application.routes.draw do
         member do
           get :populating
           post :populate
+          get :seatgeek_url
         end
       end
 

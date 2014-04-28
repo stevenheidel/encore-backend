@@ -120,3 +120,12 @@ Feature: Events API
         ]
       }
       """
+
+  Scenario: Seatgeek Url
+    When I send a GET request to "/api/v1/events/3749717/seatgeek_url.json"
+    Then the JSON response should be:
+      """
+      {
+        "seatgeek_url": "http://seatgeek.com/lady-gaga-with-lady-starlight-and-crayon-pop-tickets/toronto-air-canada-centre-2014-07-09-7-30-pm/concert/1916510/?aid=10708"
+      }
+      """
