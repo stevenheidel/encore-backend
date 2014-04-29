@@ -141,8 +141,8 @@ class Api::V1::EventsController < Api::V1::BaseController
     params['aid'] = 10708
     params['taxonomies.name'] = 'concert'
     params['performers.slug'] = event.headliner.parameterize
-    params['venue.city'] = event.venue.city.parameterize
-    params['datetime_utc'] = event.local_date.to_s
+    #params['venue.city'] = event.venue.city.parameterize
+    params['datetime_utc'] = event.date.to_s
 
     resp = seatgeek.get('/events', params).body
 
