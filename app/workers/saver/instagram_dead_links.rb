@@ -1,7 +1,7 @@
 class Saver::InstagramDeadLinks
   include Sidekiq::Worker
   include Sidetiq::Schedulable
-  sidekiq_options :queue => :default, :backtrace => true
+  sidekiq_options :queue => :default, :backtrace => false
 
   recurrence { weekly }
 
