@@ -1,6 +1,6 @@
 class Saver::Facebook
   include Sidekiq::Worker
-  sidekiq_options :queue => :default, :backtrace => true
+  sidekiq_options :queue => :default, :backtrace => false
 
   def perform(facebook_ids)
     facebook_ids.each do |facebook_id|
