@@ -1,7 +1,7 @@
 class Saver::PastCheck
   include Sidekiq::Worker
   include Sidetiq::Schedulable
-  sidekiq_options :queue => :default, :backtrace => true
+  sidekiq_options :queue => :default, :backtrace => false
 
   recurrence { daily }
 
