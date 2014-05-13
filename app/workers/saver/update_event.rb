@@ -1,6 +1,6 @@
 class Saver::UpdateEvent
   include Sidekiq::Worker
-  sidekiq_options :queue => :default, :backtrace => true
+  sidekiq_options :queue => :default, :backtrace => false
 
   # Update an event with new info
   def perform(lastfm_id)
