@@ -2,20 +2,16 @@ require 'sidekiq'
 require 'sidekiq-status'
 
 Sidekiq.configure_client do |config|
-  config.redis = { :size => 3 }
-  
   config.client_middleware do |chain|
     chain.add Sidekiq::Status::ClientMiddleware
   end
 end
 
 Sidekiq.configure_server do |config|
-  config.redis = { :size => 105 }
-  
   if defined?(ActiveRecord::Base)
     db_config = Rails.application.config.database_configuration[Rails.env]
     db_config['reaping_frequency'] = ENV['DB_REAP_FREQ'] || 10 # seconds
-    db_config['pool']              = ENV['SIDEKIQ_DB_POOL'] || 20
+    db_config['pool']              = ENV['SIDEKIQ_DB_POOL'] || 30
     ActiveRecord::Base.establish_connection(db_config)
   end
 
