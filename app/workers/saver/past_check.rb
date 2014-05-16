@@ -3,7 +3,7 @@ class Saver::PastCheck
   include Sidetiq::Schedulable
   sidekiq_options :queue => :default, :backtrace => false
 
-  recurrence { daily }
+  recurrence { weekly }
 
   # Update past events lists
   def perform
