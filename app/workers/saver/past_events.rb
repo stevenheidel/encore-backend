@@ -8,7 +8,7 @@ class Saver::PastEvents
 
     # Loop through each event and save
     events.each do |lastfm_event|
-      Saver::UpdateEvent.perform_async(lastfm_event.lastfm_id)
+      Event.delay.find_or_create_from_lastfm(lastfm_event.lastfm_id, lastfm_event)
     end
 
     artist.past_event_freshness = DateTime.now
