@@ -29,7 +29,6 @@ describe Artist, :vcr do
     it "should get past events from database" do
       lastfm_events = artist.past_events(geo)
       Saver::PastEvents.drain # run the cache creator
-      Saver::UpdateEvent.drain
       artist.reload
       database_events = artist.past_events(geo)
 
