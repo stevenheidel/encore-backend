@@ -1,4 +1,4 @@
 - posts.each do |p|
   .col-md-4.photo
     = link_to post_path(p.id) do
-      = image_tag p.image_url
+      = image_tag p.image_url, onError: "this.onerror = '';this.style.visibility='hidden';"
