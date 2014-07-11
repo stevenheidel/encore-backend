@@ -7,7 +7,8 @@ EncoreBackend::Application.routes.draw do
   # API Routes
   # TODO: secure this with some sort of shared key
   namespace :api do
-    namespace :v1 do
+    [:v1, :v2].each do |path|
+    namespace path, module: "v1" do
       resources :users, only: [:create, :show, :update] do
         resources :events, only: [:index, :create, :destroy] do
           member do
@@ -48,6 +49,7 @@ EncoreBackend::Application.routes.draw do
           post :flag
         end
       end
+    end
     end
 
     # For Cyfe dashboard
