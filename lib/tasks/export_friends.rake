@@ -6,7 +6,7 @@ namespace :encore do
   task :export_friends => :environment do
     hash = Hash.new
 
-    Event::FriendVisitor.first(100).map do |friend|
+    Event::FriendVisitor.all.map do |friend|
       k = [friend.user.facebook_id.to_i, friend.event.lastfm_id.to_i]
       v = friend.friend.facebook_id.to_i
 

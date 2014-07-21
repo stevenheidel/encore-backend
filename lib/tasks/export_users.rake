@@ -4,7 +4,7 @@ require 'pp'
 namespace :encore do
   desc "Export the database OF USERS to be imported into Scala's MongoDB database"
   task :export_users => :environment do
-    users = User.last(10).map do |user|
+    users = User.all.map do |user|
       hash = { 
         :name => user.name,
         :facebook_id => user.facebook_id.to_i,
